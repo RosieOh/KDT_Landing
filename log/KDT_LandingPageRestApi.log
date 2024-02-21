@@ -489,3 +489,385 @@ java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.Sql
 2024-02-21 16:05:05.271 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
 2024-02-21 16:05:05.284 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
 2024-02-21 16:05:05.289 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 1.809 seconds (process running for 2.245)
+2024-02-21 16:11:21.450 INFO  [http-nio-8083-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-21 16:11:21.453 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2024-02-21 16:11:21.476 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 22 ms
+2024-02-21 16:22:16.482 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-02-21 16:22:16.493 INFO  [Thread-5] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:16.493 INFO  [Thread-5] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2024-02-21 16:22:16.495 INFO  [Thread-5] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-02-21 16:22:16.499 INFO  [Thread-5] [o.apache.coyote.http11.Http11NioProtocol] - Stopping ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:16.501 INFO  [Thread-5] [o.apache.coyote.http11.Http11NioProtocol] - Destroying ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:16.505 INFO  [Thread-5] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:22:16.518 INFO  [Thread-5] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2024-02-21 16:22:16.525 INFO  [Thread-5] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2024-02-21 16:22:16.606 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 2944 (C:\Users\user\Desktop\프로젝트\백업\kdt\build\classes\java\main started by user in C:\Users\user\Desktop\프로젝트\백업\kdt)
+2024-02-21 16:22:16.606 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - No active profile set, falling back to 1 default profile: "default"
+2024-02-21 16:22:16.711 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-21 16:22:16.712 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2024-02-21 16:22:16.756 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-21 16:22:16.756 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:16.756 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-21 16:22:16.756 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-21 16:22:16.768 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-21 16:22:16.768 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 161 ms
+2024-02-21 16:22:16.773 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Starting...
+2024-02-21 16:22:16.776 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-2 - Added connection org.mariadb.jdbc.Connection@344f042c
+2024-02-21 16:22:16.776 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Start completed.
+2024-02-21 16:22:16.776 INFO  [restartedMain] [o.s.b.a.h2.H2ConsoleAutoConfiguration] - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost/kdtlanding?user=root&password=***'
+2024-02-21 16:22:16.786 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-21 16:22:16.789 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-21 16:22:16.790 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-21 16:22:16.790 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-21 16:22:16.794 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-21 16:22:16.794 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:22:16.801 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-21 16:22:16.846 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2024-02-21 16:22:16.849 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:16.851 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-02-21 16:22:16.853 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 0.263 seconds (process running for 1033.808)
+2024-02-21 16:22:16.854 INFO  [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] - Condition evaluation unchanged
+2024-02-21 16:22:48.820 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-02-21 16:22:48.827 INFO  [Thread-7] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:48.827 INFO  [Thread-7] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2024-02-21 16:22:48.829 INFO  [Thread-7] [o.apache.coyote.http11.Http11NioProtocol] - Stopping ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:48.830 INFO  [Thread-7] [o.apache.coyote.http11.Http11NioProtocol] - Destroying ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:48.831 INFO  [Thread-7] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:22:48.831 INFO  [Thread-7] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Shutdown initiated...
+2024-02-21 16:22:48.834 INFO  [Thread-7] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Shutdown completed.
+2024-02-21 16:22:48.868 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 2944 (C:\Users\user\Desktop\프로젝트\백업\kdt\build\classes\java\main started by user in C:\Users\user\Desktop\프로젝트\백업\kdt)
+2024-02-21 16:22:48.869 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - No active profile set, falling back to 1 default profile: "default"
+2024-02-21 16:22:48.927 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-21 16:22:48.928 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2024-02-21 16:22:48.957 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-21 16:22:48.957 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:48.957 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-21 16:22:48.957 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-21 16:22:48.964 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-21 16:22:48.964 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 95 ms
+2024-02-21 16:22:48.969 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-3 - Starting...
+2024-02-21 16:22:48.971 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-3 - Added connection org.mariadb.jdbc.Connection@60d9c716
+2024-02-21 16:22:48.971 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-3 - Start completed.
+2024-02-21 16:22:48.971 INFO  [restartedMain] [o.s.b.a.h2.H2ConsoleAutoConfiguration] - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost/kdtlanding?user=root&password=***'
+2024-02-21 16:22:48.979 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-21 16:22:48.982 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-21 16:22:48.982 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-21 16:22:48.982 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-21 16:22:48.985 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-21 16:22:48.986 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:22:48.992 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-21 16:22:49.026 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2024-02-21 16:22:49.028 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:22:49.029 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-02-21 16:22:49.031 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 0.174 seconds (process running for 1065.987)
+2024-02-21 16:22:49.032 INFO  [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] - Condition evaluation unchanged
+2024-02-21 16:25:13.904 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-02-21 16:25:13.909 INFO  [Thread-11] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:25:13.909 INFO  [Thread-11] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2024-02-21 16:25:13.911 INFO  [Thread-11] [o.apache.coyote.http11.Http11NioProtocol] - Stopping ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:25:13.912 INFO  [Thread-11] [o.apache.coyote.http11.Http11NioProtocol] - Destroying ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:25:13.913 INFO  [Thread-11] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:25:13.913 INFO  [Thread-11] [com.zaxxer.hikari.HikariDataSource] - HikariPool-3 - Shutdown initiated...
+2024-02-21 16:25:13.916 INFO  [Thread-11] [com.zaxxer.hikari.HikariDataSource] - HikariPool-3 - Shutdown completed.
+2024-02-21 16:25:13.947 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 2944 (C:\Users\user\Desktop\프로젝트\백업\kdt\build\classes\java\main started by user in C:\Users\user\Desktop\프로젝트\백업\kdt)
+2024-02-21 16:25:13.947 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - No active profile set, falling back to 1 default profile: "default"
+2024-02-21 16:25:14.017 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-21 16:25:14.020 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-02-21 16:25:14.058 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-21 16:25:14.058 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:25:14.059 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-21 16:25:14.059 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-21 16:25:14.072 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-21 16:25:14.072 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 124 ms
+2024-02-21 16:25:14.079 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-4 - Starting...
+2024-02-21 16:25:14.081 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-4 - Added connection org.mariadb.jdbc.Connection@4743f0b5
+2024-02-21 16:25:14.081 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-4 - Start completed.
+2024-02-21 16:25:14.082 INFO  [restartedMain] [o.s.b.a.h2.H2ConsoleAutoConfiguration] - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost/kdtlanding?user=root&password=***'
+2024-02-21 16:25:14.092 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-21 16:25:14.098 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-21 16:25:14.099 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-21 16:25:14.099 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-21 16:25:14.147 ERROR [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Failed to initialize JPA EntityManagerFactory: Entity 'com.kdt.landing.global.cosntant.BaseEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-02-21 16:25:14.148 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.kdt.landing.global.cosntant.BaseEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-02-21 16:25:14.148 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-4 - Shutdown initiated...
+2024-02-21 16:25:14.150 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-4 - Shutdown completed.
+2024-02-21 16:25:14.150 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2024-02-21 16:25:14.156 INFO  [restartedMain] [o.s.b.a.l.ConditionEvaluationReportLogger] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-21 16:25:14.174 ERROR [restartedMain] [o.springframework.boot.SpringApplication] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.kdt.landing.global.cosntant.BaseEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.kdt.landing.KdtApplication.main(KdtApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.hibernate.AnnotationException: Entity 'com.kdt.landing.global.cosntant.BaseEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279)
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215)
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160)
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:293)
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:228)
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:417)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:255)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:278)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:321)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1383)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 21 common frames omitted
+2024-02-21 16:25:15.626 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 2944 (C:\Users\user\Desktop\프로젝트\백업\kdt\build\classes\java\main started by user in C:\Users\user\Desktop\프로젝트\백업\kdt)
+2024-02-21 16:25:15.627 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - No active profile set, falling back to 1 default profile: "default"
+2024-02-21 16:25:15.682 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-21 16:25:15.683 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2024-02-21 16:25:15.709 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-21 16:25:15.710 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:25:15.710 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-21 16:25:15.710 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-21 16:25:15.717 INFO  [restartedMain] [o.a.c.c.C.[Tomcat-1].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-21 16:25:15.717 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 89 ms
+2024-02-21 16:25:15.722 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-5 - Starting...
+2024-02-21 16:25:15.723 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-5 - Added connection org.mariadb.jdbc.Connection@f3877ab
+2024-02-21 16:25:15.723 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-5 - Start completed.
+2024-02-21 16:25:15.723 INFO  [restartedMain] [o.s.b.a.h2.H2ConsoleAutoConfiguration] - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost/kdtlanding?user=root&password=***'
+2024-02-21 16:25:15.730 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-21 16:25:15.733 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-21 16:25:15.734 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-21 16:25:15.734 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-21 16:25:15.735 ERROR [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Failed to initialize JPA EntityManagerFactory: Entity 'com.kdt.landing.global.cosntant.BaseEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-02-21 16:25:15.735 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.kdt.landing.global.cosntant.BaseEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-02-21 16:25:15.735 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-5 - Shutdown initiated...
+2024-02-21 16:25:15.735 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-5 - Shutdown completed.
+2024-02-21 16:25:15.736 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2024-02-21 16:25:15.737 INFO  [restartedMain] [o.s.b.a.l.ConditionEvaluationReportLogger] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-21 16:25:15.739 ERROR [restartedMain] [o.springframework.boot.SpringApplication] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.kdt.landing.global.cosntant.BaseEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.kdt.landing.KdtApplication.main(KdtApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.hibernate.AnnotationException: Entity 'com.kdt.landing.global.cosntant.BaseEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279)
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215)
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160)
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:293)
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:228)
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:417)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:255)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:278)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:321)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1383)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 21 common frames omitted
+2024-02-21 16:25:54.249 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 2944 (C:\Users\user\Desktop\프로젝트\백업\kdt\build\classes\java\main started by user in C:\Users\user\Desktop\프로젝트\백업\kdt)
+2024-02-21 16:25:54.249 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - No active profile set, falling back to 1 default profile: "default"
+2024-02-21 16:25:54.314 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-21 16:25:54.315 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2024-02-21 16:25:54.343 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-21 16:25:54.343 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:25:54.343 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-21 16:25:54.343 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-21 16:25:54.351 INFO  [restartedMain] [o.a.c.c.C.[Tomcat-2].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-21 16:25:54.351 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 101 ms
+2024-02-21 16:25:54.354 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-6 - Starting...
+2024-02-21 16:25:54.356 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-6 - Added connection org.mariadb.jdbc.Connection@7764af7d
+2024-02-21 16:25:54.356 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-6 - Start completed.
+2024-02-21 16:25:54.356 INFO  [restartedMain] [o.s.b.a.h2.H2ConsoleAutoConfiguration] - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost/kdtlanding?user=root&password=***'
+2024-02-21 16:25:54.364 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-21 16:25:54.367 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-21 16:25:54.367 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-21 16:25:54.367 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-21 16:25:54.371 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-21 16:25:54.371 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:25:54.381 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-21 16:25:54.417 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2024-02-21 16:25:54.420 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:25:54.421 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-02-21 16:25:54.423 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 0.186 seconds (process running for 1251.378)
+2024-02-21 16:25:54.423 INFO  [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] - Condition evaluation unchanged
+2024-02-21 16:26:23.747 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 3 class path changes (1 addition, 0 deletions, 2 modifications)
+2024-02-21 16:26:23.751 INFO  [Thread-15] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:23.751 INFO  [Thread-15] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2024-02-21 16:26:23.752 INFO  [Thread-15] [o.apache.coyote.http11.Http11NioProtocol] - Stopping ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:23.753 INFO  [Thread-15] [o.apache.coyote.http11.Http11NioProtocol] - Destroying ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:23.753 INFO  [Thread-15] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:26:23.753 INFO  [Thread-15] [com.zaxxer.hikari.HikariDataSource] - HikariPool-6 - Shutdown initiated...
+2024-02-21 16:26:23.755 INFO  [Thread-15] [com.zaxxer.hikari.HikariDataSource] - HikariPool-6 - Shutdown completed.
+2024-02-21 16:26:23.784 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 2944 (C:\Users\user\Desktop\프로젝트\백업\kdt\build\classes\java\main started by user in C:\Users\user\Desktop\프로젝트\백업\kdt)
+2024-02-21 16:26:23.784 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - No active profile set, falling back to 1 default profile: "default"
+2024-02-21 16:26:23.840 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-21 16:26:23.841 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2024-02-21 16:26:23.869 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-21 16:26:23.869 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:23.869 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-21 16:26:23.869 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-21 16:26:23.876 INFO  [restartedMain] [o.a.c.c.C.[Tomcat-2].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-21 16:26:23.876 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 91 ms
+2024-02-21 16:26:23.882 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-7 - Starting...
+2024-02-21 16:26:23.883 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-7 - Added connection org.mariadb.jdbc.Connection@50484cbd
+2024-02-21 16:26:23.884 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-7 - Start completed.
+2024-02-21 16:26:23.884 INFO  [restartedMain] [o.s.b.a.h2.H2ConsoleAutoConfiguration] - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost/kdtlanding?user=root&password=***'
+2024-02-21 16:26:23.890 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-21 16:26:23.893 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-21 16:26:23.894 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-21 16:26:23.894 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-21 16:26:23.897 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-21 16:26:23.897 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:26:23.902 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-21 16:26:23.935 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2024-02-21 16:26:23.938 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:23.939 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-02-21 16:26:23.941 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 0.168 seconds (process running for 1280.896)
+2024-02-21 16:26:23.942 INFO  [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] - Condition evaluation unchanged
+2024-02-21 16:26:40.028 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-02-21 16:26:40.032 INFO  [Thread-25] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:40.032 INFO  [Thread-25] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2024-02-21 16:26:40.033 INFO  [Thread-25] [o.apache.coyote.http11.Http11NioProtocol] - Stopping ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:40.034 INFO  [Thread-25] [o.apache.coyote.http11.Http11NioProtocol] - Destroying ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:40.034 INFO  [Thread-25] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:26:40.034 INFO  [Thread-25] [com.zaxxer.hikari.HikariDataSource] - HikariPool-7 - Shutdown initiated...
+2024-02-21 16:26:40.035 INFO  [Thread-25] [com.zaxxer.hikari.HikariDataSource] - HikariPool-7 - Shutdown completed.
+2024-02-21 16:26:40.065 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 2944 (C:\Users\user\Desktop\프로젝트\백업\kdt\build\classes\java\main started by user in C:\Users\user\Desktop\프로젝트\백업\kdt)
+2024-02-21 16:26:40.065 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - No active profile set, falling back to 1 default profile: "default"
+2024-02-21 16:26:40.123 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-21 16:26:40.125 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2024-02-21 16:26:40.151 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-21 16:26:40.151 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:40.151 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-21 16:26:40.151 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-21 16:26:40.158 INFO  [restartedMain] [o.a.c.c.C.[Tomcat-2].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-21 16:26:40.158 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 92 ms
+2024-02-21 16:26:40.164 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-8 - Starting...
+2024-02-21 16:26:40.166 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-8 - Added connection org.mariadb.jdbc.Connection@5a9997c5
+2024-02-21 16:26:40.166 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-8 - Start completed.
+2024-02-21 16:26:40.166 INFO  [restartedMain] [o.s.b.a.h2.H2ConsoleAutoConfiguration] - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost/kdtlanding?user=root&password=***'
+2024-02-21 16:26:40.174 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-21 16:26:40.177 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-21 16:26:40.178 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-21 16:26:40.178 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-21 16:26:40.181 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-21 16:26:40.181 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:26:40.187 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-21 16:26:40.221 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2024-02-21 16:26:40.223 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:40.225 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-02-21 16:26:40.226 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 0.171 seconds (process running for 1297.181)
+2024-02-21 16:26:40.227 INFO  [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] - Condition evaluation unchanged
+2024-02-21 16:26:48.800 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-02-21 16:26:48.807 INFO  [Thread-29] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:48.807 INFO  [Thread-29] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2024-02-21 16:26:48.809 INFO  [Thread-29] [o.apache.coyote.http11.Http11NioProtocol] - Stopping ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:48.810 INFO  [Thread-29] [o.apache.coyote.http11.Http11NioProtocol] - Destroying ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:48.810 INFO  [Thread-29] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:26:48.810 INFO  [Thread-29] [com.zaxxer.hikari.HikariDataSource] - HikariPool-8 - Shutdown initiated...
+2024-02-21 16:26:48.811 INFO  [Thread-29] [com.zaxxer.hikari.HikariDataSource] - HikariPool-8 - Shutdown completed.
+2024-02-21 16:26:48.843 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 2944 (C:\Users\user\Desktop\프로젝트\백업\kdt\build\classes\java\main started by user in C:\Users\user\Desktop\프로젝트\백업\kdt)
+2024-02-21 16:26:48.843 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - No active profile set, falling back to 1 default profile: "default"
+2024-02-21 16:26:48.897 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-21 16:26:48.899 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2024-02-21 16:26:48.926 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-21 16:26:48.926 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:48.926 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-21 16:26:48.927 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-21 16:26:48.935 INFO  [restartedMain] [o.a.c.c.C.[Tomcat-2].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-21 16:26:48.935 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 92 ms
+2024-02-21 16:26:48.939 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-9 - Starting...
+2024-02-21 16:26:48.940 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-9 - Added connection org.mariadb.jdbc.Connection@750a6d4d
+2024-02-21 16:26:48.941 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-9 - Start completed.
+2024-02-21 16:26:48.941 INFO  [restartedMain] [o.s.b.a.h2.H2ConsoleAutoConfiguration] - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost/kdtlanding?user=root&password=***'
+2024-02-21 16:26:48.948 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-21 16:26:48.950 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-21 16:26:48.951 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-21 16:26:48.951 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-21 16:26:48.954 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-21 16:26:48.954 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:26:48.960 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-21 16:26:48.992 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2024-02-21 16:26:48.994 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:26:48.995 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-02-21 16:26:48.997 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 0.166 seconds (process running for 1305.952)
+2024-02-21 16:26:48.997 INFO  [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] - Condition evaluation unchanged
+2024-02-21 16:45:43.925 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-02-21 16:45:44.001 INFO  [Thread-33] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:45:44.001 INFO  [Thread-33] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
+2024-02-21 16:45:44.029 INFO  [Thread-33] [o.apache.coyote.http11.Http11NioProtocol] - Stopping ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:45:44.033 INFO  [Thread-33] [o.apache.coyote.http11.Http11NioProtocol] - Destroying ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:45:44.038 INFO  [Thread-33] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:45:44.052 INFO  [Thread-33] [com.zaxxer.hikari.HikariDataSource] - HikariPool-9 - Shutdown initiated...
+2024-02-21 16:45:44.064 INFO  [Thread-33] [com.zaxxer.hikari.HikariDataSource] - HikariPool-9 - Shutdown completed.
+2024-02-21 16:45:44.164 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 2944 (C:\Users\user\Desktop\프로젝트\백업\kdt\build\classes\java\main started by user in C:\Users\user\Desktop\프로젝트\백업\kdt)
+2024-02-21 16:45:44.164 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - No active profile set, falling back to 1 default profile: "default"
+2024-02-21 16:45:44.273 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-21 16:45:44.276 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2024-02-21 16:45:44.318 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-21 16:45:44.318 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:45:44.318 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-21 16:45:44.318 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-21 16:45:44.333 INFO  [restartedMain] [o.a.c.c.C.[Tomcat-2].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-21 16:45:44.333 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 167 ms
+2024-02-21 16:45:44.348 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-10 - Starting...
+2024-02-21 16:45:44.351 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-10 - Added connection org.mariadb.jdbc.Connection@5153c66b
+2024-02-21 16:45:44.351 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-10 - Start completed.
+2024-02-21 16:45:44.351 INFO  [restartedMain] [o.s.b.a.h2.H2ConsoleAutoConfiguration] - H2 console available at '/h2-console'. Database available at 'jdbc:mariadb://localhost/kdtlanding?user=root&password=***'
+2024-02-21 16:45:44.360 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-21 16:45:44.363 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-21 16:45:44.364 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-21 16:45:44.364 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-21 16:45:44.368 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-21 16:45:44.368 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-21 16:45:44.376 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-21 16:45:44.416 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2024-02-21 16:45:44.418 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-02-21 16:45:44.419 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-02-21 16:45:44.421 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 0.277 seconds (process running for 2441.376)
+2024-02-21 16:45:44.422 INFO  [restartedMain] [o.s.b.d.a.ConditionEvaluationDeltaLoggingListener] - Condition evaluation unchanged
