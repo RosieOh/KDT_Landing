@@ -14,18 +14,20 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = "roleSet")
-public class User extends BaseEntity {
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long no;
+    private int id;
 
     private String pw;
 
-    @Column(unique = true)
-    private String email;
+    private String name;
 
     private String nickname;
+
+    @Column(unique = true)
+    private String email;
 
     private int active;
 
@@ -37,7 +39,7 @@ public class User extends BaseEntity {
     @Builder.Default
     private Role role = Role.STUDENT; // 디폴트로 USER 권한을 갖도록 초기화
 
-    public void changePassword(String pw) {
+    public void changePassword(String mpw) {
         this.pw = pw;
     }
 
@@ -52,5 +54,4 @@ public class User extends BaseEntity {
     public void clearRoles() {
         this.roleSet.clear();
     }
-
 }
