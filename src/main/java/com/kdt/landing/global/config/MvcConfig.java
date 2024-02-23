@@ -6,14 +6,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class MapperConfig {
+public class MvcConfig {
     @Bean
-    public ModelMapper getMapper() {
+    public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration()
-                .setFieldMatchingEnabled(true)
                 .setFieldAccessLevel(org.modelmapper.config.Configuration.AccessLevel.PRIVATE)
-                .setMatchingStrategy(MatchingStrategies.LOOSE);
+                .setFieldMatchingEnabled(true)
+                .setMatchingStrategy(MatchingStrategies.STRICT);
         return modelMapper;
     }
+
 }
