@@ -33,7 +33,7 @@ public class Apply extends BaseEntity {
     @Column(nullable = false)
     private String email;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String comment;
 
     @Enumerated(EnumType.STRING)

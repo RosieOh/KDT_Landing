@@ -15,14 +15,19 @@ public class ApplyDTO {
 
     @Column(length = 50)
     private String name;
+
     @Column(length = 4)
     private String age;
+
     @Column(length = 11)
     private String tel;
+
     @Column(length = 100)
     private String email;
+
     @Column(length = 100)
     private String comment;
+
     @Enumerated(EnumType.STRING)
     private Category category;
 
