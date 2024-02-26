@@ -13833,6 +13833,7 @@ Caused by: java.sql.SQLException: (conn=366) Cannot change column 'member_id': u
 2024-02-26 15:53:52.534 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
 =======
 >>>>>>> 85fe4c202bea7a5b7ccc26cf38f4dc6cf8ad3e34
+<<<<<<< HEAD
 2024-02-26 16:50:29.714 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
 2024-02-26 16:50:29.738 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 11356 (C:\kyo\KDT_Landing\build\classes\java\main started by user in C:\kyo\KDT_Landing)
 2024-02-26 16:50:29.739 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
@@ -23559,3 +23560,5 @@ Caused by: java.sql.SQLException: (conn=617) Cannot change column 'member_id': u
 2024-02-26 17:32:58.531 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-02-26 17:32:58.533 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
 2024-02-26 17:32:58.535 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+=======
+>>>>>>> a9a38220084af33f48ea430f7cebb3ac7c2a8e14
