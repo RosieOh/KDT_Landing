@@ -21,6 +21,9 @@ public class HomeController {
     private final MemberRepository memberRepository;
     private final MemberService memberService;
 
+
+
+    //jsp index
     @GetMapping("/")
     public String home(Principal principal,Model model) {
         Optional<Member> member = Optional.of(new Member());
@@ -31,5 +34,13 @@ public class HomeController {
         model.addAttribute("member", member);
         memberService.createAdminMember(); // 관리자 회원 생성 메서드 호출
         return "index";
+    }
+
+
+
+    //thymeleaf index
+    @GetMapping("/home")
+    public String home2() {
+        return "thymeleaf/index";
     }
 }
