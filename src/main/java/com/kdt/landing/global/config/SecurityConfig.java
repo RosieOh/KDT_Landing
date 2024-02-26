@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.sql.DataSource;
 
@@ -30,21 +31,27 @@ public class SecurityConfig {
 
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         log.info("-------------------  filter Chain  ------------------");
 
         http
-                .authorizeHttpRequests((authorizeHttpRequests) ->
-                        authorizeHttpRequests
-                        .requestMatchers("/", "/**","/login","/join","/emailConfrim","/java/project").permitAll()
-                                .requestMatchers("/admin/**").hasAnyRole("ADMIN")
-                                .requestMatchers("/member/mypage").hasAnyRole("USER")
-                                .anyRequest().authenticated());
+//                .csrf(AbstractHttpConfigurer::disable)
+//                .cors(AbstractHttpConfigurer::disable)
+
+//                .authorizeHttpRequests((authorizeHttpRequests) ->
+//                        authorizeHttpRequests
+//                        .requestMatchers("/", "/**","/login","/join","/emailConfrim","/java/project").permitAll()
+//                                .requestMatchers("/admin/**").hasAnyRole("ADMIN")
+//                                .requestMatchers("/member/mypage").hasAnyRole("USER")
+//                                .anyRequest().permitAll());
+
+
+                .authorizeHttpRequests((authorizeRequests) -> {
+            authorizeRequests
+                    .requestMatchers(new AntPathRequestMatcher("/apply/**"))
+                    .permitAll() // 모두 접근 가능
+                    .anyRequest().permitAll();
+        });
 
         http
                 .formLogin((formLogin) -> formLogin
@@ -52,13 +59,6 @@ public class SecurityConfig {
                         .failureUrl("/member/loginFail")
                         .defaultSuccessUrl("/")
                 );
-
-       http
-                .csrf((csrf) ->
-                        csrf.disable()
-                );
-
-
 
         http
                 .logout((logout) ->
@@ -74,7 +74,13 @@ public class SecurityConfig {
                         .addHeaderWriter(new XFrameOptionsHeaderWriter(
                                 XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)));
 
-        return http.build();
+       return http.build();
+    }
+
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     @Bean
