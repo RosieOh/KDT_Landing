@@ -151,7 +151,7 @@
 <!-- sign Form -->
 <div class="sign_form_back">
     <div class="sign_form">
-        <form action="" >
+        <form action="cssa/apply/register" method="post">
             <button class="close_btn" id="close_btn">X</button>
             <div class="sign_title">
                 <h2> 신청 양식 폼</h2>
@@ -169,15 +169,15 @@
                             <div class="sign_list_title">이메일</div>
                         </div>
                         <div class="sign_list_wrap">
-                            <select class="sign_list_input">
-                                <option value="풀스택(Java)">풀스택(Java)</option>
-                                <option value="풀스택(Java)">빅데이터</option>
-                                <option value="풀스택(Java)">PM</option>
+                            <select name="category" class="sign_list_input">
+                                <option value="FullStack">풀스택(Java)</option>
+                                <option value="BigData">빅데이터</option>
+                                <option value="ProductManager">PM</option>
                             </select>
-                            <input class="sign_list_input">
-                            <input class="sign_list_input">
-                            <input class="sign_list_input">
-                            <input class="sign_list_input">
+                            <input class="sign_list_input" name="name">
+                            <input class="sign_list_input" name="age">
+                            <input class="sign_list_input" name="tel">
+                            <input class="sign_list_input" name="email">
                         </div>
                         <div class="sign_list_wrap">
                             <button type="button" class="sign_list_btn">인증</button>
@@ -201,7 +201,7 @@
                             <textarea class="sign_list_textarea" cols="50" rows="5"></textarea>
                         </div>
                         <div class="sign_list_title">
-                            <input class="sign_list_chek" type="checkbox" id="sign_chek" name="sign_chek">
+                            <input class="sign_list_chek" type="checkbox" id="sign_chek" name="comment">
                             <label class="sign_list_chek" for="sign_chek">개인정보 수집 및 이용에 동의합니다.<em> (필수)</em></label>
                         </div>
                     </li>
