@@ -3,12 +3,15 @@ package com.kdt.landing.global.Rest;
 import com.kdt.landing.domain.user.entity.Member;
 import com.kdt.landing.domain.user.repository.MemberRepository;
 import com.kdt.landing.domain.user.service.MemberService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.jsp.PageContext;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.net.http.HttpRequest;
 import java.security.Principal;
 import java.util.Optional;
 
