@@ -25,7 +25,7 @@ import java.util.Objects;
 @Log4j2
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("apply")
+@RequestMapping("/apply")
 public class ApplyController {
 
     @Autowired
@@ -35,25 +35,25 @@ public class ApplyController {
     public String applyList(Model model) throws Exception{
         List<ApplyDTO> applyDTOList = applyService.findAll();
         model.addAttribute("applyDTOList", applyDTOList);
-        return "list";
+        return "apply/list";
     }
 
     @GetMapping("/register")
     public String applyRegister() throws Exception{
-        return "/register";
+        return "apply/register";
     }
 
     @PostMapping("/register")
     public String applyRegister(Model model, ApplyDTO applyDTO) throws Exception{
             applyService.register(applyDTO);
-        return "redirect:/list";
+        return "redirect:apply/list";
     }
 
     @PostMapping("/statusModify")
     public String applyStatus(Model model, ApplyDTO applyDTO) throws Exception{
 
         applyService.modify(applyDTO);
-        return "redirect:/list";
+        return "redirect:apply/list";
     }
 
 }

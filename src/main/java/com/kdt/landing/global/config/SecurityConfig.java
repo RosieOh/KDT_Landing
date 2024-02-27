@@ -64,6 +64,7 @@ public class SecurityConfig {
                 .logout((logout) ->
                         logout.logoutUrl("/logout").logoutSuccessUrl("/")
                 );
+              //  .requestmvcMatchers("/", "/resource/**", "/css/**", "/js/**", "/images/**").permitAll();
 
         http
                 .exceptionHandling((exceptionHandling) ->
