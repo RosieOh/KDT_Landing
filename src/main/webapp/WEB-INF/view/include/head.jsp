@@ -43,7 +43,8 @@
 
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="/resources/css/index.css">
-<link rel="stylesheet" href="/resources/css/footer.css" />">
+<link rel="stylesheet" href="/resources/css/footer.css" />
 
-
+<%-- JS 요소 정리--%>
 <script defer src="/resources/js/script.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
