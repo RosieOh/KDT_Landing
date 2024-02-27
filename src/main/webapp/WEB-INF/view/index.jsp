@@ -12,15 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDT Rending</title>
 
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <link rel="stylesheet" href="${path }/resources/static/index.css">
-    <link rel="stylesheet" href="${path }/index.css">
-    <script src="${path }/resources/static/index.css"></script>
-    <script src="resources/static/index.css"></script>
-    <script src="./index.css"></script>
-
 </head>
 <body>
+
+<jsp:include page="./include/head.jsp" />
 <div class="main">
     <header>
         <!-- topHeader -->
@@ -219,6 +214,8 @@
     </div>
 </div>
 
+
+<jsp:include page="./include/footer.jsp" />
 
 
 </body>
