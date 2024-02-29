@@ -217,6 +217,8 @@
 </div>
 
 
+<a href="#main" class="gotop" id="gotop">▲</a>
+
 <jsp:include page="./include/footer.jsp" />
 
 
