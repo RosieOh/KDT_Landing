@@ -14,6 +14,7 @@
 
 
 /* 전역 설정 */
+
 body {
     margin: 0;
     padding: 0;
@@ -77,13 +78,25 @@ span {
 /*=================================================================== */
 
 /* 헤더 구역 */
+
 .topHeader {
-    background-color: bisque;
+    display: flex;
+    background-color: white;
     padding: 0.5rem;
     width: 100%;
     height: auto;
-    text-align: center;
     vertical-align: middle;
+}
+
+.img_header {
+    float: left;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.menu_header {
+    float: right;
 }
 
 .bottomHeader {

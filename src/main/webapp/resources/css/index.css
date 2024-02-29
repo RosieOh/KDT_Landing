@@ -168,6 +168,6 @@
     border-radius: 10px;
     padding: 10px;
     background-color: blanchedalmond;
-    box-shadow: 5px;
+    box-shadow: 0 5px 5px 0;
     transition: all 0.5s ease-in-out;
 }

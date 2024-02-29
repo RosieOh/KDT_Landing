@@ -29,6 +29,8 @@ $(".agree_wrap").off("click").on("click",function(){
 });
 
 })
+
+
 $(document).ready(function(){
 
     if ($("#sign_chek:checked").length == 0) {
