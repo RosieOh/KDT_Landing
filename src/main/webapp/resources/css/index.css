@@ -7,15 +7,27 @@
     padding: 0;
 }
 
+
 /* header */
 
 .topHeader {
-    background-color: bisque;
+    display: flex;
+    background-color: white;
     padding: 0.5rem;
     width: 100%;
     height: auto;
-    text-align: center;
     vertical-align: middle;
+}
+
+.img_header {
+    float: left;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.menu_header {
+    float: right;
 }
 
 .bottomHeader {
@@ -27,7 +39,6 @@
     font-weight: bold;
     vertical-align: middle;
 }
-
 
 
 /* banner */
@@ -118,172 +129,7 @@
 
 
 
-/* sec_6 FAQ */
-.con_wrap {
-    position: relative;
-    padding-left: 10rem;
-    padding-right: 10rem;
-}
 
-.con_wrap h1{
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-
-.faq_wrap {
-    margin: 0;
-    margin-bottom: 5rem;
-    padding: 0;
-    padding-left: 30rem;
-    min-width: 800px;
-
-}
-
-
-.faq_con {
-    display: none;
-    margin-top: 0.7rem;
-}
-
-.faq_con:target {
-    transition-duration: 0.5s;
-    display: block;
-
-}
-
-
-
-
-
-/* 신청 양식 폼 */
-
-.sign_form_back {
-    display: none;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(78, 81, 82, 0.774);
-    z-index: 999;
-}
-
-.sign_form {
-    position: fixed;
-    width: 700px;
-    top:10%;
-    left: 30%;
-    height: auto;
-    padding: 3rem;
-    background-color: white;
-    border: none;
-    border-radius: 40px;
-}
-.sign_title {
-    width: 100%;
-    text-align: center;
-}
-
-
-.sign_form h2 {
-    font-size: 32px;
-
-}
-
-.sign_form h4 {
-    margin: 0;
-    margin-top: 3rem;
-    font-weight: bold;
-}
-
-
-.sign_top em {
-    color: #6574ff;
-    font-weight: bold;
-    font-style: normal;
-}
-
-.sign_list {
-    margin-top: 2rem;
-}
-
-.sign_list_wrap {
-    display: inline-block;
-}
-.sign_list_title {
-    display: block;
-    margin-right: 2rem;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    height: 35px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.sign_list_input {
-    display: block;
-    margin-right: 0.5rem;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    height: 32px;
-    border-radius: 4px;
-    padding-left: 10px;
-    border: 1px solid black;
-    font-size: 14px;
-}
-
-.sign_list_input:focus {
-    border: 3px solid #6574ff;
-}
-
-.sign_list_btn {
-    background-color: antiquewhite;
-    border: none;
-    padding: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 15%;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 2.5rem;
-}
-
-.sign_bottom {
-    margin-top: 5rem;
-    text-align: center;
-}
-
-.sign_btn {
-    background-color: antiquewhite;
-    border: none;
-    padding: 0.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    border-radius: 50px;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.sign_list_chek {
-    display: inline-block;
-    margin-top: 3rem;
-}
-
-.close_btn {
-    background-color: antiquewhite;
-    border: none;
-    padding: 0.1rem;
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
-    border-radius: 50px;
-    font-size: 25px;
-    font-weight: bold;
-    position: absolute;
-    top: 3%;
-    right: 5%;
-}
 
 
 
@@ -322,5 +168,6 @@
     border-radius: 10px;
     padding: 10px;
     background-color: blanchedalmond;
+    box-shadow: 5px;
     transition: all 0.5s ease-in-out;
 }

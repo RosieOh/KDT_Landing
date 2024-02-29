@@ -1,0 +1,171 @@
+
+/* 신청 양식 폼 */
+
+.sign_form_back {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(78, 81, 82, 0.774);
+    z-index: 999;
+}
+
+.sign_form {
+    position: relative;
+    width: 700px;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    height: auto;
+    padding: 30px 50px 30px;
+    margin: 0;
+    background-color: white;
+    border: none;
+    border-radius: 40px;
+}
+
+
+.sign_form h1 {
+    margin: 0;
+    font-size: 48px;
+    color: black
+}
+
+.sign_form h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.sign_title {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.close_btn {
+    background-color: rgb(255, 237, 216);
+    color: black;
+    border: none;
+    border-radius: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    right: 45px;
+    top: 40px;
+    width: 45px;
+    height: 45px;
+}
+
+
+.sign_top{
+    align-items: center;
+    width: 90%;
+    height: auto;
+    margin: 0;
+    padding: 0 2rem;
+}
+
+.sign_top p {
+    font-size: 16px;
+}
+
+.sign_top em {
+    color: #6574ff;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.sign_list {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.sign_list_wrap {
+    width: 100%;
+    display: block;
+}
+
+.sign_list_title {
+    display: flex;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0.2rem;
+}
+
+.sign_list_input {
+    display: block;
+    width: 80%;
+    height: 32px;
+    border-radius: 4px;
+    padding: 0 10px;
+    border: 1px solid black;
+    font-size: 14px;
+}
+
+.sign_list_input:focus {
+    border: 3px solid #6574ff;
+}
+
+.agree {
+    display: inline-block;
+    background-color: rgb(255, 237, 216);
+    padding: 1rem;
+    border-radius: 20px;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.agree a{
+    background-color: rgb(255, 237, 216);
+    font-size: 16px;
+    float: right;
+}
+
+
+.agree_check {
+    display: inline-block;
+    margin: 1rem 1rem;
+}
+
+.scroll_wrap{
+    display:none;
+    margin-top: 1.5rem;
+}
+
+.scrollBox{
+    overflow-y: scroll;
+    height: 90px;
+}
+
+
+
+.sign_list_btn {
+    background-color: antiquewhite;
+    border: none;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 15%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 2.5rem;
+}
+
+.sign_bottom {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.sign_btn {
+    background-color: antiquewhite;
+    border: none;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
