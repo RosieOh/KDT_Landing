@@ -13834,6 +13834,8 @@ Caused by: java.sql.SQLException: (conn=366) Cannot change column 'member_id': u
 =======
 >>>>>>> 85fe4c202bea7a5b7ccc26cf38f4dc6cf8ad3e34
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 2024-02-26 16:50:29.714 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
@@ -25004,6 +25006,7 @@ java.lang.InstantiationException: null
 	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
 =======
+>>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
 2024-02-27 17:13:47.971 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
 2024-02-27 17:13:47.997 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 29392 (C:\Users\user\Desktop\first_proj\0227\확인\테스트\KDT_Landing\build\classes\java\main started by user in C:\Users\user\Desktop\first_proj\0227\확인\테스트\KDT_Landing)
 2024-02-27 17:13:47.998 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
@@ -25062,7 +25065,10 @@ java.lang.NullPointerException: Cannot invoke "java.security.Principal.getName()
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+<<<<<<< HEAD
+=======
 >>>>>>> 519e1685b25e06a83e3656127b4858ec6fb7cf56
+>>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
@@ -25139,6 +25145,8 @@ java.lang.NullPointerException: Cannot invoke "java.security.Principal.getName()
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 	at java.base/java.lang.Thread.run(Thread.java:842)
 2024-02-27 10:29:42.875 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
@@ -33894,10 +33902,14 @@ Caused by: java.sql.SQLException: (conn=1208) Cannot change column 'member_id': 
 2024-02-27 17:06:31.829 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
 2024-02-27 17:06:31.838 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
 =======
+>>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
 	at java.base/java.lang.Thread.run(Thread.java:840)
 2024-02-27 17:14:30.091 INFO  [http-nio-8083-exec-3] [c.k.l.d.user.service.MemberServiceImpl] - Admin 계정이 이미 존재합니다.
 2024-02-27 17:26:01.013 INFO  [http-nio-8083-exec-9] [c.k.l.d.user.service.MemberServiceImpl] - Admin 계정이 이미 존재합니다.
 2024-02-27 17:26:52.047 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-02-27 17:26:52.065 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
 2024-02-27 17:26:52.076 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+<<<<<<< HEAD
+=======
 >>>>>>> 519e1685b25e06a83e3656127b4858ec6fb7cf56
+>>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
