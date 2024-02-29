@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2024-02-28 09:54:25.073 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
 2024-02-28 09:54:25.114 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 18132 (C:\kyo\KDT_Landing\build\classes\java\main started by user in C:\kyo\KDT_Landing)
 2024-02-28 09:54:25.115 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
@@ -1748,3 +1749,73 @@ Caused by: java.sql.SQLException: (conn=104) Cannot change column 'member_id': u
 2024-02-28 10:53:03.761 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-02-28 10:53:03.762 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-4 - Shutdown initiated...
 2024-02-28 10:53:03.764 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-4 - Shutdown completed.
+=======
+2024-02-29 00:06:02.453 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m964ms).
+2024-02-29 01:28:57.486 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h22m55s37ms).
+2024-02-29 02:35:24.350 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h6m26s863ms).
+2024-02-29 03:19:27.351 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m3s2ms).
+2024-02-29 04:09:51.800 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50m24s449ms).
+2024-02-29 04:52:52.871 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=43m1s72ms).
+2024-02-29 06:12:49.706 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h19m56s836ms).
+2024-02-29 07:28:39.511 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h15m49s804ms).
+2024-02-29 07:54:05.906 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m26s395ms).
+2024-02-29 07:56:55.180 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m49s274ms).
+2024-02-29 08:05:20.776 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m25s597ms).
+2024-02-29 08:39:47.303 WARN  [HikariPool-1 housekeeper] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m26s526ms).
+2024-02-29 08:41:08.366 INFO  [http-nio-8083-exec-4] [c.k.l.domain.email.service.EmailService] - Success
+2024-02-29 08:41:23.673 INFO  [http-nio-8083-exec-7] [c.k.l.d.m.controller.MemberController] - ==============================================================================
+2024-02-29 08:41:23.675 INFO  [http-nio-8083-exec-7] [c.k.l.d.m.controller.MemberController] - MemberJoinDTO(pw=458963!asd, name=오태훈, email=dhxogns920@naver.com, code=null, nickname=null, nowPassword=null, passwordConfirm=null)
+2024-02-29 08:41:23.675 INFO  [http-nio-8083-exec-7] [c.k.l.d.m.controller.MemberController] - ==============================================================================
+2024-02-29 08:41:23.754 INFO  [http-nio-8083-exec-7] [c.k.l.d.m.controller.MemberController] - ==============================================================================
+2024-02-29 08:41:23.755 INFO  [http-nio-8083-exec-7] [c.k.l.d.m.controller.MemberController] - 나와라!! null
+2024-02-29 08:41:25.183 INFO  [http-nio-8083-exec-4] [c.k.l.d.m.s.CustomUserDetailsService] - loadUserByUsername: dhxogns920@naver.com
+2024-02-29 08:54:49.723 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-29 08:54:49.738 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2024-02-29 08:54:49.777 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+2024-02-29 08:54:57.096 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
+2024-02-29 08:54:57.132 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.8 with PID 67872 (/Users/otaehun/Desktop/test/0228/백업/KDT_Landing 복사본/build/classes/java/main started by otaehun in /Users/otaehun/Desktop/test/0228/백업/KDT_Landing 복사본)
+2024-02-29 08:54:57.133 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
+2024-02-29 08:54:57.450 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-29 08:54:57.451 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-29 08:54:58.260 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-29 08:54:58.342 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 78 ms. Found 4 JPA repository interfaces.
+2024-02-29 08:54:59.204 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-29 08:54:59.213 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-29 08:54:59.215 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-29 08:54:59.215 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-29 08:54:59.454 INFO  [restartedMain] [org.apache.jasper.servlet.TldScanner] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-02-29 08:54:59.482 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-29 08:54:59.484 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 2032 ms
+2024-02-29 08:54:59.685 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-29 08:54:59.728 INFO  [restartedMain] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-29 08:54:59.730 INFO  [restartedMain] [org.hibernate.cfg.Environment] - HHH000406: Using bytecode reflection optimizer
+2024-02-29 08:54:59.905 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-29 08:54:59.924 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2024-02-29 08:55:00.049 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@3bc22a97
+2024-02-29 08:55:00.053 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2024-02-29 08:55:00.081 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-29 08:55:00.082 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-29 08:55:00.861 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-29 08:55:00.936 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-29 08:55:01.297 INFO  [restartedMain] [o.s.d.j.r.query.QueryEnhancerFactory] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-29 08:55:02.000 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-29 08:55:02.072 INFO  [restartedMain] [c.k.landing.global.config.SecurityConfig] - -------------------  filter Chain  ------------------
+2024-02-29 08:55:02.098 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@51903873, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1483dc21, org.springframework.security.web.context.SecurityContextHolderFilter@169c5a83, org.springframework.security.web.header.HeaderWriterFilter@16240998, org.springframework.security.web.authentication.logout.LogoutFilter@21bc0d23, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4c3bc0dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a04f14e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34f78f0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d901aa4, org.springframework.security.web.access.ExceptionTranslationFilter@2f3bf620, org.springframework.security.web.access.intercept.AuthorizationFilter@300fb504]
+2024-02-29 08:55:02.099 INFO  [restartedMain] [c.k.landing.global.config.SecurityConfig] - -------------------- WebSecurity ----------------------
+2024-02-29 08:55:02.101 WARN  [restartedMain] [o.s.s.c.a.web.builders.WebSecurity] - You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@104b5a6. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-29 08:55:02.101 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@104b5a6
+2024-02-29 08:55:02.347 INFO  [restartedMain] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2024-02-29 08:55:02.561 WARN  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - Unable to start LiveReload server
+2024-02-29 08:55:02.590 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-02-29 08:55:02.614 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-02-29 08:55:02.625 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 6.021 seconds (process running for 7.095)
+2024-02-29 08:55:09.822 INFO  [http-nio-8083-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-29 08:55:09.824 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2024-02-29 08:55:09.833 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 9 ms
+2024-02-29 08:55:26.505 INFO  [http-nio-8083-exec-1] [c.k.l.domain.email.service.EmailService] - Success
+2024-02-29 08:55:40.993 INFO  [http-nio-8083-exec-9] [c.k.l.d.m.controller.MemberController] - ==============================================================================
+2024-02-29 08:55:41.004 INFO  [http-nio-8083-exec-9] [c.k.l.d.m.controller.MemberController] - MemberJoinDTO(pw=458963!asd, name=오태훈, email=dhxogns920@naver.com, code=null, nickname=null, role=null, nowPassword=null, passwordConfirm=null)
+2024-02-29 08:55:41.004 INFO  [http-nio-8083-exec-9] [c.k.l.d.m.controller.MemberController] - ==============================================================================
+2024-02-29 08:55:41.097 INFO  [http-nio-8083-exec-9] [c.k.l.d.m.controller.MemberController] - ==============================================================================
+2024-02-29 08:55:41.098 INFO  [http-nio-8083-exec-9] [c.k.l.d.m.controller.MemberController] - 나와라!! null
+>>>>>>> 519e1685b25e06a83e3656127b4858ec6fb7cf56

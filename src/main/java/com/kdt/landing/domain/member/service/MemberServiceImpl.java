@@ -1,8 +1,8 @@
-package com.kdt.landing.domain.user.service;
+package com.kdt.landing.domain.member.service;
 
-import com.kdt.landing.domain.user.dto.MemberJoinDTO;
-import com.kdt.landing.domain.user.entity.Member;
-import com.kdt.landing.domain.user.repository.MemberRepository;
+import com.kdt.landing.domain.member.dto.MemberJoinDTO;
+import com.kdt.landing.domain.member.entity.Member;
+import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.global.cosntant.Role;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -11,7 +11,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
-import java.util.Optional;
 
 @Log4j2
 @Service
@@ -24,17 +23,15 @@ public class MemberServiceImpl implements MemberService{
 
     private final PasswordEncoder passwordEncoder;
 
-
     @Override
     public void join(MemberJoinDTO memberJoinDTO) {
-
-        Member member = modelMapper.map(memberJoinDTO, Member.class);
-        member.changePassword(passwordEncoder.encode(memberJoinDTO.getPw()));
-        member.addRole(Role.STUDENT);
-        log.info("=======================");
-        log.info(member);
-        log.info(member.getRoleSet());
-        memberRepository.save(member);
+        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + memberJoinDTO);
+        // Member 엔티티를 생성할 때 ID는 자동으로 생성되도록 변경
+        memberJoinDTO.setPw(passwordEncoder.encode(memberJoinDTO.getPw()));
+        memberJoinDTO.setRole(Role.STUDENT); // 기본 역할 설정
+        Member newMember = modelMapper.map(memberJoinDTO, Member.class);
+        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + newMember);
+        memberRepository.save(newMember);
     }
 
     @Override
@@ -49,7 +46,7 @@ public class MemberServiceImpl implements MemberService{
                     .email("admin@naver.com")
                     .active(1)
                     .roleSet(Collections.singleton(Role.ADMIN))
-                    .role(Role.valueOf("ADMIN"))
+                    .role(Role.ADMIN)
                     .build();
 
             memberRepository.save(admin);
@@ -66,12 +63,12 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public void changePw(MemberJoinDTO memberJoinDTO) {
-
-        Optional<Member> result = memberRepository.findById(Long.valueOf(memberJoinDTO.getId()));
-        Member member = result.orElseThrow();
-        member.changePassword(passwordEncoder.encode(memberJoinDTO.getPw()));
-        memberRepository.save(member);
+    public void changePw(Member member) {
+        // 회원 비밀번호 변경
+        Member existingMember = memberRepository.findById(member.getId())
+                .orElseThrow(() -> new IllegalArgumentException("해당하는 회원을 찾을 수 없습니다."));
+        existingMember.changePassword(passwordEncoder.encode(member.getPw()));
+        memberRepository.save(existingMember);
     }
 
     @Override

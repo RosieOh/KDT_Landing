@@ -1,8 +1,8 @@
 package com.kdt.landing.global.Rest;
 
-import com.kdt.landing.domain.user.entity.Member;
-import com.kdt.landing.domain.user.repository.MemberRepository;
-import com.kdt.landing.domain.user.service.MemberService;
+import com.kdt.landing.domain.member.entity.Member;
+import com.kdt.landing.domain.member.repository.MemberRepository;
+import com.kdt.landing.domain.member.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.jsp.PageContext;
 import lombok.RequiredArgsConstructor;

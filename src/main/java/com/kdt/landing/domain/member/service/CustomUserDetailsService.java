@@ -1,8 +1,8 @@
-package com.kdt.landing.domain.user.service;
+package com.kdt.landing.domain.member.service;
 
-import com.kdt.landing.domain.user.dto.MemberSecurityDTO;
-import com.kdt.landing.domain.user.entity.Member;
-import com.kdt.landing.domain.user.repository.MemberRepository;
+import com.kdt.landing.domain.member.dto.MemberSecurityDTO;
+import com.kdt.landing.domain.member.entity.Member;
+import com.kdt.landing.domain.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

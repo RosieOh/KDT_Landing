@@ -2,10 +2,6 @@ package com.kdt.landing.domain.apply.controller;
 
 import com.kdt.landing.domain.apply.dto.ApplyDTO;
 import com.kdt.landing.domain.apply.service.ApplyService;
-import com.kdt.landing.domain.user.dto.MemberJoinDTO;
-import com.kdt.landing.domain.user.entity.Member;
-import com.kdt.landing.domain.user.repository.MemberRepository;
-import com.kdt.landing.domain.user.service.MemberService;
 import com.kdt.landing.global.cosntant.Category;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
