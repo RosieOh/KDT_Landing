@@ -25,6 +25,8 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public void join(MemberJoinDTO memberJoinDTO) {
+        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + memberJoinDTO);
+        // Member 엔티티를 생성할 때 ID는 자동으로 생성되도록 변경
         log.info("MemberServiceㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + memberJoinDTO);
         // Member 엔티티를 생성할 때 ID는 자동으로 생성되도록 변경
 
@@ -46,8 +48,7 @@ public class MemberServiceImpl implements MemberService{
                     .nickname("관리자")
                     .email("admin@naver.com")
                     .active(1)
-//                    .roleSet(Collections.singleton(Role.ADMIN))
-                    .role(Role.ADMIN)
+                    .roleSet(Collections.singleton(Role.ADMIN))
                     .build();
 
             memberRepository.save(admin);

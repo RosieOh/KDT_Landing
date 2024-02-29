@@ -18,7 +18,7 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <title>회원가입</title>
 
-    <jsp:include page="../include/head.jsp"/>
+    <jsp:include page="../../include/head.jsp"/>
 </head>
 
 <body>
@@ -52,13 +52,13 @@
                         <label class="form-label blind" for="email">이메일</label>
                         <input type="email" name="email" id="email" placeholder="이메일" class="form-control" style="background-color: white;"  required>
                         <input type="hidden" id="emailCK" name="emailCK" value="no">
-                        <button type="button" onclick="PostEmail()" id="PostEmailbtn" class="btn1" style="width: 160px; margin-top: 10px; margin-left: 0"> 인증번호 보내기 </button>
-                        <div class="insubForm" style="display: none; ">
-                            <label class="form-label blind" for="insub">인증번호</label>
-                            <input type="text" id="insub" name="insub" placeholder="인증번호 입력" class="form-control">
-                            <button type="button" onclick="Insub()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 인증번호 인증</button>
-                            <button type="button" onclick="Insubreset()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 취소</button>
-                        </div>
+<%--                        <button type="button" onclick="PostEmail()" id="PostEmailbtn" class="btn1" style="width: 160px; margin-top: 10px; margin-left: 0"> 인증번호 보내기 </button>--%>
+<%--                        <div class="insubForm" style="display: none; ">--%>
+<%--                            <label class="form-label blind" for="insub">인증번호</label>--%>
+<%--                            <input type="text" id="insub" name="insub" placeholder="인증번호 입력" class="form-control">--%>
+<%--                            <button type="button" onclick="Insub()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 인증번호 인증</button>--%>
+<%--                            <button type="button" onclick="Insubreset()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 취소</button>--%>
+<%--                        </div>--%>
                     </div>
 
                     <div class="d-flex justify-content-center">
@@ -66,13 +66,13 @@
                     </div>
 
                 </form>
-            <!-- 생략 -->
+                <!-- 생략 -->
 
-            <button class="btn btn-primary w-100 py-2 mt-4" type="submit"> 회원가입 </button>
-            <p class="d-flex justify-content-center mt-3"> 이미 회원이신가요? &nbsp; <a href="${path}/member/login" class="text-secondary"> 로그인하기 </a></p>
-        </form>
-    </main>
-</div>
+                <button class="btn btn-primary w-100 py-2 mt-4" type="submit"> 회원가입 </button>
+                <p class="d-flex justify-content-center mt-3"> 이미 회원이신가요? &nbsp; <a href="${path}/member/login" class="text-secondary"> 로그인하기 </a></p>
+                </form>
+            </main>
+        </div>
         <script>
             var code = "";
 
@@ -145,6 +145,6 @@
                 });
             }
         </script>
-    <jsp:include page="../include/footer.jsp" />
+        <jsp:include page="../../include/footer/footer.jsp" />
 </body>
 </html>
