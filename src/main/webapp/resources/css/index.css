@@ -1,37 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-
-a { 
-    text-decoration: none;
-    padding: 1px;    
-    background-color: bisque;
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 0.5em;
-}
-
-p {
-    margin: 0;
-}
-
-li{
-    list-style: none;
-}
-
-
-section {
-    width: 100%;
-}
-
-span {
-}
+@charset "UTF-8";
 
 .main {
     width: 100%;
@@ -320,9 +287,6 @@ span {
 
 
 
-
-
-
 /* Footer */
 
 .footer {
@@ -344,4 +308,19 @@ span {
     display: block;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+
+/* gotop */
+
+.gotop{
+    display: none;
+    position: fixed;
+    right: 2%;
+    top: 92%;
+    width: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: blanchedalmond;
+    transition: all 0.5s ease-in-out;
 }

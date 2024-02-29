@@ -156,7 +156,7 @@
 <!-- sign Form -->
 <div class="sign_form_back">
     <div class="sign_form">
-        <form action="cssa/apply/register" method="post">
+        <form action="${path }/apply/register" method="post">
             <button class="close_btn" id="close_btn">X</button>
             <div class="sign_title">
                 <h2> 신청 양식 폼</h2>
@@ -167,25 +167,22 @@
                     <hr>
                     <li class="sign_list">
                         <div class="sign_list_wrap">
-                            <div class="sign_list_title">신청 과목</div>
-                            <div class="sign_list_title">이름</div>
-                            <div class="sign_list_title">나이</div>
-                            <div class="sign_list_title">연락처</div>
-                            <div class="sign_list_title">이메일</div>
+                            <label class="sign_list_title" >신청 과목</label>
+                            <label class="sign_list_title" for="name">이름</label>
+                            <label class="sign_list_title" for="age">나이</label>
+                            <label class="sign_list_title" for="tel">연락처</label>
+                            <label class="sign_list_title" for="email">이메일</label>
                         </div>
                         <div class="sign_list_wrap">
-                            <select name="category" class="sign_list_input">
+                            <select name="subject" class="sign_list_input">
                                 <option value="FullStack">풀스택(Java)</option>
                                 <option value="BigData">빅데이터</option>
                                 <option value="ProductManager">PM</option>
                             </select>
-                            <input class="sign_list_input" name="name">
-                            <input class="sign_list_input" name="age">
-                            <input class="sign_list_input" name="tel">
-                            <input class="sign_list_input" name="email">
-                        </div>
-                        <div class="sign_list_wrap">
-                            <button type="button" class="sign_list_btn">인증</button>
+                            <input type="text" class="sign_list_input" name="name" id="name" required>
+                            <input type="text" class="sign_list_input" name="age" id="age" required>
+                            <input type="text" class="sign_list_input" name="tel" id="tel" required>
+                            <input type="text" class="sign_list_input" name="email" id="email" required>
                         </div>
                     </li>
 
@@ -194,7 +191,7 @@
                     <li class="sign_list">
                         <div class="sign_list_wrap">
                             <div class="sign_list_title">
-                                <textarea class="sign_list_textarea" cols="50" rows="5" ></textarea>
+                                <textarea class="sign_list_textarea" cols="50" rows="5" name="comment" ></textarea>
                             </div>
                         </div>
                     </li>
@@ -206,7 +203,7 @@
                             <textarea class="sign_list_textarea" cols="50" rows="5"></textarea>
                         </div>
                         <div class="sign_list_title">
-                            <input class="sign_list_chek" type="checkbox" id="sign_chek" name="comment">
+                            <input class="sign_list_chek" type="checkbox" id="sign_chek">
                             <label class="sign_list_chek" for="sign_chek">개인정보 수집 및 이용에 동의합니다.<em> (필수)</em></label>
                         </div>
                     </li>
@@ -233,5 +230,16 @@
             $(".sign_form_back").css("display", "none")
         })
     })
+</script>
+<script>
+    $(document).ready(function() {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 250) {
+                $('#gotop').show();
+            } else {
+                $('#gotop').hide();
+            }
+        });
+    });
 </script>
 </html>

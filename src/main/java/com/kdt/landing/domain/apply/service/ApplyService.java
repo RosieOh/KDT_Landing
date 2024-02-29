@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ApplyService {
 
+
     public List<ApplyDTO> findAll() throws Exception;
     public ApplyDTO findById(Long no) throws Exception;
     public void register(ApplyDTO applyDTO) throws Exception;

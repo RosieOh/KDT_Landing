@@ -15,7 +15,7 @@ import org.hibernate.annotations.ColumnDefault;
 @ToString
 public class MemberJoinDTO {
 
-//    private Long id;
+    private Long id;
 
     @NotBlank(message = "**")
     private String pw;
