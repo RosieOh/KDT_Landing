@@ -1,7 +1,7 @@
-package com.kdt.landing.domain.user.service;
+package com.kdt.landing.domain.member.service;
 
-import com.kdt.landing.domain.user.dto.MemberJoinDTO;
-import com.kdt.landing.domain.user.entity.Member;
+import com.kdt.landing.domain.member.dto.MemberJoinDTO;
+import com.kdt.landing.domain.member.entity.Member;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public interface MemberService {
@@ -11,7 +11,8 @@ public interface MemberService {
     Member existByEmail(String email);
     void join(MemberJoinDTO memberJoinDTO) ;
 
-    void changePw(MemberJoinDTO memberJoinDTO);
+    void changePw(Member member);
+
     public PasswordEncoder passwordEncoder();
 
 

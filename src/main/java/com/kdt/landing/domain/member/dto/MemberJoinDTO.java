@@ -1,21 +1,21 @@
-package com.kdt.landing.domain.user.dto;
+package com.kdt.landing.domain.member.dto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.kdt.landing.global.cosntant.Role;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.ColumnDefault;
 
 @Getter
 @Setter
+@ToString
 public class MemberJoinDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+//    private Long id;
 
     @NotBlank(message = "**")
     private String pw;
@@ -33,11 +33,8 @@ public class MemberJoinDTO {
     @NotBlank(message = "**")
     private String nickname;
 
-    @NotBlank(message = "**")
-    private String school;
-
-    @ColumnDefault("0")
-    private int active;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     private String nowPassword;
     private String passwordConfirm;

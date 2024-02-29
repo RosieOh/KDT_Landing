@@ -1,6 +1,6 @@
 package com.kdt.landing.global.config;
 
-import com.kdt.landing.domain.user.service.CustomUserDetailsService;
+import com.kdt.landing.domain.member.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -10,12 +10,11 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import javax.sql.DataSource;
 
 @Log4j2
 @Configuration
@@ -24,58 +23,27 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private final DataSource dataSource;
-
     private final CustomUserDetailsService userDetailsService;
-
-
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         log.info("-------------------  filter Chain  ------------------");
 
-        http
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .cors(AbstractHttpConfigurer::disable)
-
-//                .authorizeHttpRequests((authorizeHttpRequests) ->
-//                        authorizeHttpRequests
-//                        .requestMatchers("/", "/**","/login","/join","/emailConfrim","/java/project").permitAll()
-//                                .requestMatchers("/admin/**").hasAnyRole("ADMIN")
-//                                .requestMatchers("/member/mypage").hasAnyRole("USER")
-//                                .anyRequest().permitAll());
-
-
-                .authorizeHttpRequests((authorizeRequests) -> {
-            authorizeRequests
-                    .requestMatchers(new AntPathRequestMatcher("/apply/**"))
-                    .permitAll() // 모두 접근 가능
-                    .anyRequest().permitAll();
-        });
-
-        http
-                .formLogin((formLogin) -> formLogin
-                        .loginPage("/login")
+        http.csrf(AbstractHttpConfigurer::disable)
+//            .cors(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests((authorizeRequests) -> {authorizeRequests.requestMatchers(new AntPathRequestMatcher("**")).permitAll();})
+            .formLogin((formLogin) -> formLogin
+                        .loginPage("/member/login")
                         .failureUrl("/member/loginFail")
+                        .loginProcessingUrl("/member/loginPro")
                         .defaultSuccessUrl("/")
-                );
-
-        http
-                .logout((logout) ->
-                        logout.logoutUrl("/logout").logoutSuccessUrl("/")
-                );
-              //  .requestmvcMatchers("/", "/resource/**", "/css/**", "/js/**", "/images/**").permitAll();
-
-        http
-                .exceptionHandling((exceptionHandling) ->
-                        exceptionHandling.authenticationEntryPoint(new CustomAuthenticationEntryPoint())
-                );
-        http
-                .headers((headers) -> headers
-                        .addHeaderWriter(new XFrameOptionsHeaderWriter(
-                                XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)));
-
-       return http.build();
+                        // default 값은 username 으로 잡혀 있기 떄문에 오류 발생
+                        .usernameParameter("email")
+                        .passwordParameter("password"))
+            .logout((logout) -> logout.logoutUrl("/logout").logoutSuccessUrl("/"))
+            .exceptionHandling((exceptionHandling) -> exceptionHandling.authenticationEntryPoint(new CustomAuthenticationEntryPoint()))
+            .headers((headers) -> headers.addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)));
+        return http.build();
     }
 
 
@@ -87,8 +55,6 @@ public class SecurityConfig {
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer(){
         log.info("-------------------- WebSecurity ----------------------");
-        return (web) -> web.ignoring().requestMatchers(
-                PathRequest.toStaticResources().atCommonLocations());
+        return (web) -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
     }
-
 }
