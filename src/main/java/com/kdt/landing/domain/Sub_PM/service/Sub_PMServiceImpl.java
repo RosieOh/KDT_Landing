@@ -1,8 +1,8 @@
 package com.kdt.landing.domain.Sub_PM.service;
 
-import com.kdt.landing.domain.Sub_PM.dto.Sub_FullStackDTO;
-import com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack;
-import com.kdt.landing.domain.Sub_PM.repository.Sub_FullStackRepository;
+import com.kdt.landing.domain.Sub_PM.dto.Sub_PMDTO;
+import com.kdt.landing.domain.Sub_PM.entity.Sub_PM;
+import com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository;
 import jakarta.transaction.Transactional;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class Sub_PMServiceImpl implements Sub_PMService {
 
     @Autowired
-    private Sub_FullStackRepository subFullStackRepository;
+    private Sub_PMRepository subFullStackRepository;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -29,34 +29,34 @@ public class Sub_PMServiceImpl implements Sub_PMService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public List<Sub_FullStackDTO> findAll() throws Exception {
-        List<Sub_FullStack> subFullStackList = subFullStackRepository.findAll();
-        List<Sub_FullStackDTO> subFullStackDTOList = subFullStackList.stream().map(
-                        subFullStack -> modelMapper.map(subFullStack, Sub_FullStackDTO.class))
+    public List<Sub_PMDTO> findAll() throws Exception {
+        List<Sub_PM> subFullStackList = subFullStackRepository.findAll();
+        List<Sub_PMDTO> subFullStackDTOList = subFullStackList.stream().map(
+                        subFullStack -> modelMapper.map(subFullStack, Sub_PMDTO.class))
                 .collect(Collectors.toList());
         return subFullStackDTOList;
     }
 
     @Override
-    public Sub_FullStackDTO findById(Long no) throws Exception {
-        Optional<Sub_FullStack> subFullStack = subFullStackRepository.findById(no);
-        Sub_FullStackDTO subFullStackDTO = modelMapper.map(subFullStack, Sub_FullStackDTO.class);
+    public Sub_PMDTO findById(Long no) throws Exception {
+        Optional<Sub_PM> subFullStack = subFullStackRepository.findById(no);
+        Sub_PMDTO subFullStackDTO = modelMapper.map(subFullStack, Sub_PMDTO.class);
         return subFullStackDTO;
     }
 
     @Override
-    public void register(Sub_FullStackDTO subFullStackDTO) throws Exception {
+    public void register(Sub_PMDTO subFullStackDTO) throws Exception {
         String emailEn = passwordEncoder.encode(subFullStackDTO.getEmail());
         String telEn = passwordEncoder.encode(subFullStackDTO.getTel());
         subFullStackDTO.setEmail(emailEn);
         subFullStackDTO.setTel(telEn);
-        Sub_FullStack subFullStack = modelMapper.map(subFullStackDTO, Sub_FullStack.class);
-        subFullStackRepository.save(subFullStack);
+        Sub_PM subPm = modelMapper.map(subFullStackDTO, Sub_PM.class);
+        subFullStackRepository.save(subPm);
     }
 
     @Override
-    public void modify(Sub_FullStackDTO subFullStackDTO) throws Exception {
-        Sub_FullStack subFullStack = modelMapper.map(subFullStackDTO, Sub_FullStack.class);
+    public void modify(Sub_PMDTO subFullStackDTO) throws Exception {
+        Sub_PM subFullStack = modelMapper.map(subFullStackDTO, Sub_PM.class);
         subFullStackRepository.save(subFullStack);
     }
 

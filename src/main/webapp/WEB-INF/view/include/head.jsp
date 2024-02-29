@@ -27,24 +27,9 @@
 <link rel="icon" href="/resources/images/logo_48.png" sizes="48x48">
 <link rel="icon" href="/resources/images/logo_64.png" sizes="64x64">
 
-<!-- bulma.min css -->
-<link rel="stylesheet" href="/resources/plugins/bulma/bulma.min.css">
-
-<!-- Icon Font Css -->
-<link rel="stylesheet" href="/resources/plugins/themify/css/themify-icons.css">
-<link rel="stylesheet" href="/resources/plugins/icofont/icofont.css">
-<link rel="stylesheet" href="/resources/plugins/magnific-popup/dist/magnific-popup.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-
-<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="/resources/plugins/slick-carousel/slick/slick.css">
-<link rel="stylesheet" href="/resources/plugins/slick-carousel/slick/slick-theme.css">
-<link rel="stylesheet" href="/resources/plugins/modal-video/modal-video.min.css">
-
-<!-- Main Stylesheet -->
-<link rel="stylesheet" href="/resources/css/index.css">
-<link rel="stylesheet" href="/resources/css/footer.css" />
+<%--전역적 CSS  설정--%>
+<link rel="stylesheet" href="/resources/css/global.css">
 
 <%-- JS 요소 정리--%>
-<script defer src="/resources/js/script.js"></script>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script defer src="/resources/js/global.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>

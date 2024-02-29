@@ -25,14 +25,10 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public void join(MemberJoinDTO memberJoinDTO) {
-<<<<<<< HEAD
         log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + memberJoinDTO);
         // Member 엔티티를 생성할 때 ID는 자동으로 생성되도록 변경
-=======
         log.info("MemberServiceㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + memberJoinDTO);
         // Member 엔티티를 생성할 때 ID는 자동으로 생성되도록 변경
-
->>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
         memberJoinDTO.setPw(passwordEncoder.encode(memberJoinDTO.getPw()));
         memberJoinDTO.setRole(Role.STUDENT); // 기본 역할 설정
         Member newMember = modelMapper.map(memberJoinDTO, Member.class);
@@ -51,11 +47,7 @@ public class MemberServiceImpl implements MemberService{
                     .nickname("관리자")
                     .email("admin@naver.com")
                     .active(1)
-<<<<<<< HEAD
                     .roleSet(Collections.singleton(Role.ADMIN))
-=======
-//                    .roleSet(Collections.singleton(Role.ADMIN))
->>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
                     .role(Role.ADMIN)
                     .build();
 
