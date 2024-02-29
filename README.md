@@ -50,20 +50,40 @@ docker run -d --name my_app_container springbootapp
 ```
 
 
-# 트러블 슈팅(아래는 예시입니다!! 이대로 오류 사항 토글 박스로 작성 부탁드려요!)
+# 트러블 슈팅
 
 <details>
- <summary><b>GlobalExceptionHandler에서의 of 메서드 오류</b></summary>
+ <summary><b>JSP와 thymeleaf 충돌로 인한 문제 해결</b></summary>
 
->  ErrorResponse 클래스에 of 메서드가 없어서 해당 오류가 발생
-- GlobalExceptionHandler에서 ErrorResponse 호출 시 미 호출로 인한 해당 오류가 발생
+> 작성중
+- 작성중
 
 ## 원인이 뭘까? 🧐
-> import com.dalbang.global.error.*; <- 이게 아닌 import org.springframework.web.ErrorResponse; 자체 내장 클래스로 지정되어서 호출이 되지 않았음
+> 작성중
 
 ## 어떻게 해결하나요? 🧐
-> import의 경로 수정
-- import com.dalbang.global.error.*; 로 수정
+> 작성중
+- 작성중
+</details>
+
+<br/>
+
+<details>
+ <summary><b>로그인 시 POST 요청에 따른 오류</b></summary>
+
+> Security 내장 LoginPro 메서드로 활용시 오류 발생
+- Security 내장 LoginPro 메서드로 활용시 Default 값으로 오류
+
+## 원인이 뭘까? 🧐
+> Spring Security 내에서 Http csrf.disabled 설정 해준 이후 로그인 작업 시 Parameter 요청이 어긋나는 현상 발생
+
+## 어떻게 해결하나요? 🧐
+> .loginPage("/member/login")
+- Custom 로그인을 MemberController와 맞게 설정
+> .loginProcessingUrl("/member/loginPro")
+- loginProcessingUrl 경로를 member의 Security 내장 메서드인 LoginPro로 설정
+> .usernameParameter("email")<br/>.passwordParameter("password")
+- Parameter 값을 Entity 클래스에서 지정한 방식으로 따로 지정 해줌
 </details>
 
 ## 💡 Commit Convention

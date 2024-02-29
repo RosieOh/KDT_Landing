@@ -1,16 +1,17 @@
-package com.kdt.landing.domain.user.entity;
+package com.kdt.landing.domain.member.entity;
 
 import com.kdt.landing.global.cosntant.BaseEntity;
 import com.kdt.landing.global.cosntant.Role;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
+
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,7 +27,7 @@ public class Member extends BaseEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String nickname;
 
     @Column(unique = true, nullable = false)
@@ -42,7 +43,16 @@ public class Member extends BaseEntity {
     @Builder.Default
     private Role role = Role.STUDENT; // 디폴트로 USER 권한을 갖도록 초기화
 
-    public void changePassword(String mpw) {
+    @Builder
+    public Member(Long id, String pw, String name, String nickname, String email) {
+        this.id = id;
+        this.pw = pw;
+        this.name = name;
+        this.nickname = nickname;
+        this.email = email;
+    }
+
+    public void changePassword(String pw) {
         this.pw = pw;
     }
 

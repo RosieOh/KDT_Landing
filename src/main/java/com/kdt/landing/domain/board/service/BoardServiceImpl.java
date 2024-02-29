@@ -25,11 +25,19 @@ public class BoardServiceImpl implements BoardService {
     public void createAndSaveBoards() {
         List<Board> board = new ArrayList<>();
 
+        // 인스펙션 필요
         Board noticeBoard = new Board();
         noticeBoard.setTitle("공지사항");
         noticeBoard.setContent("내용");
         noticeBoard.setBoardType(BoardType.NOTICE.toString());
         board.add(noticeBoard);
+
+        Board modifyBoard = new Board();
+        modifyBoard.setTitle("수정요청");
+        modifyBoard.setContent("내용");
+        modifyBoard.setBoardType(BoardType.MODIFY.toString());
+        board.add(modifyBoard);
+
 
         // 생성된 게시판들을 저장
         boardRepository.saveAll(board);

@@ -5,8 +5,8 @@ import com.kdt.landing.domain.board.entity.Board;
 import com.kdt.landing.domain.board.service.BoardService;
 import com.kdt.landing.domain.file.dto.FileDTO;
 import com.kdt.landing.domain.file.service.FileService;
-import com.kdt.landing.domain.user.entity.Member;
-import com.kdt.landing.domain.user.repository.MemberRepository;
+import com.kdt.landing.domain.member.entity.Member;
+import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.global.util.MD5Generator;
 import jakarta.validation.Valid;
 import lombok.Getter;
@@ -27,6 +27,7 @@ import java.io.File;
 import java.nio.file.Files;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -50,7 +51,7 @@ public class BoardController {
         }
         model.addAttribute("boardList", boardList);
         String id = principal.getName();
-        Member member = memberRepository.findById(id);
+        Optional<Member> member = memberRepository.findById(Long.valueOf(id));
         model.addAttribute("member", member);
         model.addAttribute("principal", principal);
         return "notice/list";
@@ -61,7 +62,7 @@ public class BoardController {
     public String registerForm(Model model, Principal principal) {
         model.addAttribute("principal", principal);
         String id = principal.getName();
-        Member member = memberRepository.findById(id);
+        Optional<Member> member = memberRepository.findById(Long.valueOf(id));
         model.addAttribute("writer", "admin");
         return "notice/register";
     }

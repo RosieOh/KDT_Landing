@@ -25,6 +25,7 @@ import java.io.File;
 import java.nio.file.Files;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -48,7 +49,7 @@ public class ModifyBoardController {
         }
         model.addAttribute("boardList", boardList);
         String id = principal.getName();
-        Member member = memberRepository.findById(id);
+        Optional<Member> member = memberRepository.findById(Long.valueOf(id));
         model.addAttribute("member", member);
         model.addAttribute("principal", principal);
         return "modifyboard/list";
@@ -59,7 +60,7 @@ public class ModifyBoardController {
     public String modifyRegisterForm(Model model, Principal principal) {
         model.addAttribute("principal", principal);
         String id = principal.getName();
-        Member member = memberRepository.findById(id);
+        Optional<Member> member = memberRepository.findById(Long.valueOf(id));
         model.addAttribute("writer", "admin");
         return "modifyboard/register";
     }

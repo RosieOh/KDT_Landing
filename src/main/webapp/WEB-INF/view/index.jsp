@@ -25,7 +25,12 @@
             <a href="">빅데이터</a>
             <a href="">PM(프로덕트 매니저)</a>
             <a href="${path }/apply/list">신청목록으로</a>
+            <a href="${path }/member/login">로그인</a>
+            <a href="${path }/member/join">회원가입</a>
+
         </div>
+
+
 
         <!-- bottomHeader -->
         <div class="bottomHeader">
@@ -118,35 +123,35 @@
 
 
 <!-- footer -->
-<footer>
-    <div class="footer">
-        <div class="footer_wrap">
-            <div class="footer_wrap_in">
-                <p>
-                    (주)천재교육
-                    서울특별시 디지털로9길 23 마리오아울렛2관 11층 천재IT교육센터
-                </p>
-            </div>
-            <div class="footer_wrap_in">
-                <p>
-                    접수 문의 및 사이트 이용 문의 : 02-3282-8589
-                </p>
-            </div>
-        </div>
-        <div class="footer_wrap">
-            <div class="footer_wrap_in">
-                <p>
-                    E-Mali: genia@chunjae.co.kr
-                </p>
-            </div>
-            <div class="footer_wrap_in">
-                <p>
-                    COPYRIGHT ⓒ 2023 BY CHUNJAE CO.,LTD ALL RIGHTS RESERVED
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
+<%--<footer>--%>
+<%--    <div class="footer">--%>
+<%--        <div class="footer_wrap">--%>
+<%--            <div class="footer_wrap_in">--%>
+<%--                <p>--%>
+<%--                    (주)천재교육--%>
+<%--                    서울특별시 디지털로9길 23 마리오아울렛2관 11층 천재IT교육센터--%>
+<%--                </p>--%>
+<%--            </div>--%>
+<%--            <div class="footer_wrap_in">--%>
+<%--                <p>--%>
+<%--                    접수 문의 및 사이트 이용 문의 : 02-3282-8589--%>
+<%--                </p>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <div class="footer_wrap">--%>
+<%--            <div class="footer_wrap_in">--%>
+<%--                <p>--%>
+<%--                    E-Mali: genia@chunjae.co.kr--%>
+<%--                </p>--%>
+<%--            </div>--%>
+<%--            <div class="footer_wrap_in">--%>
+<%--                <p>--%>
+<%--                    COPYRIGHT ⓒ 2023 BY CHUNJAE CO.,LTD ALL RIGHTS RESERVED--%>
+<%--                </p>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</footer>--%>
 
 <!-- sign Form -->
 <div class="sign_form_back">
