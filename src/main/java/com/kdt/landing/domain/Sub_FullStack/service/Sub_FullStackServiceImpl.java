@@ -1,8 +1,8 @@
 package com.kdt.landing.domain.Sub_FullStack.service;
 
-import com.kdt.landing.domain.apply.dto.ApplyDTO;
-import com.kdt.landing.domain.apply.entity.Apply;
-import com.kdt.landing.domain.apply.repository.ApplyRepository;
+import com.kdt.landing.domain.Sub_FullStack.dto.Sub_FullStackDTO;
+import com.kdt.landing.domain.Sub_FullStack.entity.Sub_FullStack;
+import com.kdt.landing.domain.Sub_FullStack.repository.Sub_FullStackRepository;
 import jakarta.transaction.Transactional;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 @Log4j2
 @Service
 @Transactional
-public class SubFullStackServiceImpl implements Sub_FullStackService {
+public class Sub_FullStackServiceImpl implements Sub_FullStackService {
 
     @Autowired
-    private ApplyRepository applyRepository;
+    private Sub_FullStackRepository subFullStackRepository;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -28,48 +28,41 @@ public class SubFullStackServiceImpl implements Sub_FullStackService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    // 리스트
     @Override
-    public List<ApplyDTO> findAll() {
-        List<Apply> applyList = applyRepository.findAll();
-        List<ApplyDTO> applyDTOList = applyList.stream().map(
-                        user -> modelMapper.map(user, ApplyDTO.class))
+    public List<Sub_FullStackDTO> findAll() throws Exception {
+        List<Sub_FullStack> subFullStackList = subFullStackRepository.findAll();
+        List<Sub_FullStackDTO> subFullStackDTOList = subFullStackList.stream().map(
+                        subFullStack -> modelMapper.map(subFullStack, Sub_FullStackDTO.class))
                 .collect(Collectors.toList());
-        return applyDTOList;
+        return subFullStackDTOList;
     }
 
-    // 조회
     @Override
-    public ApplyDTO findById(Long no) {
-        Optional<Apply> apply = applyRepository.findById(no);
-        ApplyDTO applyDTO = modelMapper.map(apply, ApplyDTO.class);
-        return applyDTO;
+    public Sub_FullStackDTO findById(Long no) throws Exception {
+        Optional<Sub_FullStack> subFullStack = subFullStackRepository.findById(no);
+        Sub_FullStackDTO subFullStackDTO = modelMapper.map(subFullStack, Sub_FullStackDTO.class);
+        return subFullStackDTO;
     }
 
-    // 등록
     @Override
-    public void register(ApplyDTO applyDTO) {
-        String emailEn = passwordEncoder.encode(applyDTO.getEmail());
-        String telEn = passwordEncoder.encode(applyDTO.getTel());
-        applyDTO.setEmail(emailEn);
-        applyDTO.setTel(telEn);
-        Apply apply = modelMapper.map(applyDTO, Apply.class);
-        applyRepository.save(apply);
+    public void register(Sub_FullStackDTO subFullStackDTO) throws Exception {
+        String emailEn = passwordEncoder.encode(subFullStackDTO.getEmail());
+        String telEn = passwordEncoder.encode(subFullStackDTO.getTel());
+        subFullStackDTO.setEmail(emailEn);
+        subFullStackDTO.setTel(telEn);
+        Sub_FullStack subFullStack = modelMapper.map(subFullStackDTO, Sub_FullStack.class);
+        subFullStackRepository.save(subFullStack);
     }
 
-    // 수정
     @Override
-    public void modify(ApplyDTO applyDTO) {
-        Apply apply = modelMapper.map(applyDTO, Apply.class);
-        applyRepository.save(apply);
+    public void modify(Sub_FullStackDTO subFullStackDTO) throws Exception {
+        Sub_FullStack subFullStack = modelMapper.map(subFullStackDTO, Sub_FullStack.class);
+        subFullStackRepository.save(subFullStack);
     }
 
-    // 이메일체크
     @Override
-    public boolean emailCheck(String email) {
-        boolean pass = true;
-//        int cnt = applyRepository.countBy(email);
-//        if(cnt > 0) pass = false;
-        return pass;
+    public boolean emailCheck(String email) throws Exception {
+        return false;
     }
+
 }

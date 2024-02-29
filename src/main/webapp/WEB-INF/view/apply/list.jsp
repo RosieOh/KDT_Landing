@@ -21,7 +21,7 @@
             <td class="has-text-centered">${apply.email }</td>
             <td class="has-text-centered">${apply.comment }</td>
             <td class="has-text-centered">${apply.regDate }</td>
-            <td class="has-text-centered">${apply.category }</td>
+            <td class="has-text-centered">${apply.subject }</td>
         </tr>
     </c:forEach>
     <c:if test="${empty applyDTOList}" >

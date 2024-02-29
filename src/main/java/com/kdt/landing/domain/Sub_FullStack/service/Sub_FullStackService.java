@@ -1,16 +1,17 @@
-package com.kdt.landing.domain.Eduapply.service;
+package com.kdt.landing.domain.Sub_FullStack.service;
 
-import com.kdt.landing.domain.apply.dto.ApplyDTO;
+
+import com.kdt.landing.domain.Sub_FullStack.dto.Sub_FullStackDTO;
 
 import java.util.List;
 
-public interface EduApplyService {
+public interface Sub_FullStackService {
 
 
-    public List<ApplyDTO> findAll() throws Exception;
-    public ApplyDTO findById(Long no) throws Exception;
-    public void register(ApplyDTO applyDTO) throws Exception;
-    public void modify(ApplyDTO applyDTO) throws Exception;
+    public List<Sub_FullStackDTO> findAll() throws Exception;
+    public Sub_FullStackDTO findById(Long no) throws Exception;
+    public void register(Sub_FullStackDTO subFullStackDTO) throws Exception;
+    public void modify(Sub_FullStackDTO subFullStackDTO) throws Exception;
     public boolean emailCheck(String email) throws Exception;
 
 

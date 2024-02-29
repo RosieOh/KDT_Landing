@@ -2,27 +2,21 @@ package com.kdt.landing.domain.apply.controller;
 
 import com.kdt.landing.domain.apply.dto.ApplyDTO;
 import com.kdt.landing.domain.apply.service.ApplyService;
-import com.kdt.landing.global.cosntant.Category;
+import com.kdt.landing.global.cosntant.Subject;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.security.Principal;
 import java.util.List;
-import java.util.Objects;
 
 @Log4j2
 @Controller
-@RequestMapping("/apply")
+@RequestMapping("/eduApply")
 @RequiredArgsConstructor
 public class ApplyController {
 
@@ -38,8 +32,8 @@ public class ApplyController {
 
     //등록
     @PostMapping("/register")
-    public String applyRegister(Model model, ApplyDTO applyDTO, Category category, HttpServletRequest request) throws Exception{
-        applyDTO.setCategory(category);
+    public String applyRegister(Model model, ApplyDTO applyDTO, Subject subject, HttpServletRequest request) throws Exception{
+        applyDTO.setSubject(subject);
         applyService.register(applyDTO);
         return "apply/list";
     }

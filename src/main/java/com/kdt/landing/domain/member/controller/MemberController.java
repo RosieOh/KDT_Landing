@@ -52,28 +52,28 @@ public class MemberController {
         log.info(memberJoinDTO);
 //        String id = String.valueOf(memberJoinDTO.getId());
         String email = memberJoinDTO.getEmail();
-        log.info("==============================================================================");
+        log.info("==============================================================================email" + email);
 //        log.info("나와라!! " + id);
-        Member existEmail = memberService.existByEmail(email);
+//        Member existEmail = memberService.existByEmail(email);
+//        Member existEmail = memberService.existByEmail(email);
         log.info("==============================================================================");
-        log.info("나와라!! " + existEmail);
+//        log.info("나와라!! " + existEmail);
 
-        if (existEmail != null) {
-            bindingResult
-                    .rejectValue("email", "error.email", "사용이 불가한 이메일입니다.");
-        }
+//        if (existEmail != null) {
+//            bindingResult
+//                    .rejectValue("email", "error.email", "사용이 불가한 이메일입니다.");
+//        }
 
-        if (!Objects.equals(memberJoinDTO.getPasswordConfirm(), memberJoinDTO.getPw())) {
-            bindingResult.rejectValue("passwordConfirm", "error.passwordConfirm", "비밀번호와 비밀번호 확인이 다릅니다.");
-        }
-
-        if (bindingResult.hasErrors()) {
-            System.out.println("error" + bindingResult.hasErrors());
-            System.out.println("e" + bindingResult.getFieldError().getDefaultMessage());
-            model.addAttribute("error", bindingResult.hasErrors());
-            model.addAttribute("memberJoinDTO", memberJoinDTO);
-            return "member/login";
-        }
+//        if (!Objects.equals(memberJoinDTO.getPasswordConfirm(), memberJoinDTO.getPw())) {
+//            bindingResult.rejectValue("passwordConfirm", "error.passwordConfirm", "비밀번호와 비밀번호 확인이 다릅니다.");
+//        }
+//
+//        if (bindingResult.hasErrors()) {
+//            model.addAttribute("error", bindingResult.hasErrors());
+//            model.addAttribute("memberJoinDTO", memberJoinDTO);
+//            return "member/login";
+//        }
+        log.info("==============================================================================memberJoinDTO" + memberJoinDTO);
 
         memberService.join(memberJoinDTO);
         return "redirect:login";

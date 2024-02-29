@@ -174,7 +174,7 @@
                             <label class="sign_list_title" for="email">이메일</label>
                         </div>
                         <div class="sign_list_wrap">
-                            <select name="category" class="sign_list_input">
+                            <select name="subject" class="sign_list_input">
                                 <option value="FullStack">풀스택(Java)</option>
                                 <option value="BigData">빅데이터</option>
                                 <option value="ProductManager">PM</option>

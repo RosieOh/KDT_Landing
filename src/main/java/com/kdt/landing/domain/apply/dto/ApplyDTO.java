@@ -1,6 +1,6 @@
 package com.kdt.landing.domain.apply.dto;
 
-import com.kdt.landing.global.cosntant.Category;
+import com.kdt.landing.global.cosntant.Subject;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,7 +29,7 @@ public class ApplyDTO {
     private String comment;
 
     @Enumerated(EnumType.STRING)
-    private Category category;
+    private Subject subject;
 
     private LocalDateTime regDate;
     private LocalDateTime modDate;

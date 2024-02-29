@@ -1,14 +1,12 @@
 package com.kdt.landing.domain.apply.entity;
 
 import com.kdt.landing.global.cosntant.BaseEntity;
-import com.kdt.landing.global.cosntant.Category;
+import com.kdt.landing.global.cosntant.Subject;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Setter
@@ -33,11 +31,9 @@ public class Apply extends BaseEntity {
     @Column(nullable = false)
     private String email;                   //신청자 이메일
 
-    @Column(nullable = false)
-    private String comment;                 //요청사항
 
     @Enumerated(EnumType.STRING)
-    private Category category;              //신청자 과목
+    private Subject subject;              //신청자 과목
 
 
 

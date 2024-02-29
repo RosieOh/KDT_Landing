@@ -15,6 +15,9 @@ public interface MemberService {
 
     public PasswordEncoder passwordEncoder();
 
+    boolean findEmail(String email);
+
+
 
 
 }

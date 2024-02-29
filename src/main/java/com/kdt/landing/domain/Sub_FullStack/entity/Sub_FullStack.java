@@ -1,7 +1,7 @@
-package com.kdt.landing.domain.Eduapply.entity;
+package com.kdt.landing.domain.Sub_FullStack.entity;
 
 import com.kdt.landing.global.cosntant.BaseEntity;
-import com.kdt.landing.global.cosntant.Category;
+import com.kdt.landing.global.cosntant.Subject;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,30 +13,56 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class EduApply extends BaseEntity {
+public class Sub_FullStack extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no;
 
     @Column(nullable = false)
-    private String name;                    //신청자 이름
+    private String name;                              //신청자 이름
 
     @Column(nullable = false)
-    private String age;                     //신청자 나이
+    private String age;                              //신청자 나이
 
     @Column(nullable = false)
-    private String tel;                     //신청자 연락처
+    private String tel;                              //신청자 연락처
 
     @Column(nullable = false)
-    private String email;                   //신청자 이메일
+    private String email;                            //신청자 이메일
 
     @Column(nullable = false)
-    private String comment;                 //요청사항
+    private String recomment;                        //추천 전형
 
-    @Enumerated(EnumType.STRING)
-    private Category category;              //신청자 과목
+    @Column(nullable = false)
+    private String degree;                           //최종학력
 
+    @Column(nullable = false)
+    private String graduation_degree;               //학교 및 전공명
+
+    @Column(nullable = false)
+    private String studen_card;                     // 내일배움카드 여부
+
+    @Column(nullable = false)
+    private String workup;                          // 국민취업제도 참여 경험
+
+    @Column(nullable = false)
+    private boolean kdt_process;                    // KDT 과정 수강이력
+
+    @Column(nullable = false)
+    private String coding_experience;               // 코딩 경험 여부
+
+    @Column(nullable = false)
+    private String paper1;                          // 자기소개서 1
+
+    @Column(nullable = false)
+    private String paper2;                          // 자기소개서 2
+
+    @Column(nullable = false)
+    private String paper3;                          // 자기소개서 3
+
+    @Column(nullable = false)
+    private String route;                           // 인입 경로
 
 
 }

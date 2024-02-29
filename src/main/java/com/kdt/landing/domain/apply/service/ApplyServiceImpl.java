@@ -33,7 +33,7 @@ public class ApplyServiceImpl implements ApplyService{
     public List<ApplyDTO> findAll() {
         List<Apply> applyList = applyRepository.findAll();
         List<ApplyDTO> applyDTOList = applyList.stream().map(
-                        user -> modelMapper.map(user, ApplyDTO.class))
+                        apply -> modelMapper.map(apply, ApplyDTO.class))
                 .collect(Collectors.toList());
         return applyDTOList;
     }
