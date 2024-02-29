@@ -1,10 +1,6 @@
 package com.kdt.landing.global.config;
 
-<<<<<<< HEAD
 import com.kdt.landing.domain.member.service.CustomUserDetailsService;
-=======
-//import com.kdt.landing.domain.member.service.CustomUserDetailsService;
->>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -27,11 +23,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class SecurityConfig {
 
-<<<<<<< HEAD
     private final CustomUserDetailsService userDetailsService;
-=======
-//    private final CustomUserDetailsService userDetailsService;
->>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
+
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {

@@ -2,16 +2,13 @@ package com.kdt.landing.domain.apply.controller;
 
 import com.kdt.landing.domain.apply.dto.ApplyDTO;
 import com.kdt.landing.domain.apply.service.ApplyService;
-<<<<<<< HEAD
 import com.kdt.landing.domain.member.dto.MemberJoinDTO;
 import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.domain.member.service.MemberService;
 import jakarta.validation.Valid;
-=======
 import com.kdt.landing.global.cosntant.Subject;
 import jakarta.servlet.http.HttpServletRequest;
->>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
