@@ -1,15 +1,19 @@
-package com.kdt.landing.domain.apply.dto;
+package com.kdt.landing.domain.Eduapply.dto;
 
 import com.kdt.landing.global.cosntant.Category;
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
 @Setter
 @Getter
 @ToString
-public class ApplyDTO {
+public class EduApplyDTO {
 
     private Long no;
 

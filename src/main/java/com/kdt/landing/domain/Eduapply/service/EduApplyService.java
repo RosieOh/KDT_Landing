@@ -1,11 +1,10 @@
-package com.kdt.landing.domain.apply.service;
+package com.kdt.landing.domain.Eduapply.service;
 
 import com.kdt.landing.domain.apply.dto.ApplyDTO;
-import com.kdt.landing.domain.apply.entity.Apply;
 
 import java.util.List;
 
-public interface ApplyService {
+public interface EduApplyService {
 
 
     public List<ApplyDTO> findAll() throws Exception;

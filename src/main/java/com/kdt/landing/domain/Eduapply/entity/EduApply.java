@@ -1,4 +1,4 @@
-package com.kdt.landing.domain.apply.entity;
+package com.kdt.landing.domain.Eduapply.entity;
 
 import com.kdt.landing.global.cosntant.BaseEntity;
 import com.kdt.landing.global.cosntant.Category;
@@ -8,14 +8,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Apply extends BaseEntity {
+public class EduApply extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

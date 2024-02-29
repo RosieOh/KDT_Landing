@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
@@ -30,13 +31,15 @@ public class SecurityConfig {
 
 
 
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         log.info("-------------------  filter Chain  ------------------");
 
         http
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .cors(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable);
+
+        http
 
 //                .authorizeHttpRequests((authorizeHttpRequests) ->
 //                        authorizeHttpRequests
@@ -48,9 +51,7 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests((authorizeRequests) -> {
             authorizeRequests
-                    .requestMatchers(new AntPathRequestMatcher("/apply/**"))
-                    .permitAll() // 모두 접근 가능
-                    .anyRequest().permitAll();
+                    .requestMatchers(new AntPathRequestMatcher("**")).permitAll(); // 모두 접근 가능
         });
 
         http

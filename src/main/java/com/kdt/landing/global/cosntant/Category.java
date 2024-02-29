@@ -4,5 +4,5 @@ import lombok.Getter;
 
 @Getter
 public enum Category {
-    FullStack, BigData, ProductManager`
+    FullStack, BigData, ProductManager
 }

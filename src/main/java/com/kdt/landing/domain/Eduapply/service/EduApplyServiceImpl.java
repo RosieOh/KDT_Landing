@@ -1,4 +1,4 @@
-package com.kdt.landing.domain.apply.service;
+package com.kdt.landing.domain.Eduapply.service;
 
 import com.kdt.landing.domain.apply.dto.ApplyDTO;
 import com.kdt.landing.domain.apply.entity.Apply;
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @Log4j2
 @Service
 @Transactional
-public class ApplyServiceImpl implements ApplyService{
+public class EduApplyServiceImpl implements EduApplyService {
 
     @Autowired
     private ApplyRepository applyRepository;
