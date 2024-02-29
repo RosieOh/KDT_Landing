@@ -65,4 +65,7 @@
         </p>
         <p class="cp">COPYRIGHT 1981-2023 Week EDUCATION INC. ALL RIGHTS RESERVED.</p>
     </div>
+
+    <a href="#main" class="gotop" id="gotop">▲</a>
+
 </footer>

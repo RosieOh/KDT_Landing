@@ -32,4 +32,6 @@
 
 <%-- JS 요소 정리--%>
 <script defer src="/resources/js/global.js"></script>
+<script src="/resources/js/global.js"></script>
+<script src="/resources/js/signup.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
