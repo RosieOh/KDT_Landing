@@ -50,8 +50,8 @@ public class Sub_PMServiceImpl implements Sub_PMService {
         String telEn = passwordEncoder.encode(subFullStackDTO.getTel());
         subFullStackDTO.setEmail(emailEn);
         subFullStackDTO.setTel(telEn);
-        Sub_PM subFullStack = modelMapper.map(subFullStackDTO, Sub_PM.class);
-        subFullStackRepository.save(subFullStack);
+        Sub_PM subPm = modelMapper.map(subFullStackDTO, Sub_PM.class);
+        subFullStackRepository.save(subPm);
     }
 
     @Override

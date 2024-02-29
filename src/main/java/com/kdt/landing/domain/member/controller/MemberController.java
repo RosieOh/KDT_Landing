@@ -19,6 +19,7 @@ import java.util.Objects;
 @Log4j2
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/member/")
 public class MemberController {
 
     private final MemberService memberService;
@@ -27,71 +28,60 @@ public class MemberController {
     private final BCryptPasswordEncoder passwordEncoder;
 
 
-    @GetMapping("/member/login")
+    @GetMapping("login")
     public String login(Model model, Principal principal) {
         model.addAttribute("memberJoinDTO", new MemberJoinDTO());
-        return "member/login";
+        return "member/login/login";
     }
 
-    @GetMapping("/member/loginFail")
+    @GetMapping("loginFail")
     public String loginFail(Model model) {
         model.addAttribute("msg", "로그인 실패! 다시 시도해 주세요!");
         model.addAttribute("url", "login");
-        return "member/login";
+        return "member/login/login";
     }
 
-    @GetMapping("/member/join")
+    @GetMapping("join")
     public String join(Model model) {
         model.addAttribute("memberJoinDTO", new MemberJoinDTO());
-        return "member/join";
+        return "member/join/join";
     }
 
-    @PostMapping("/member/joinPro")
+    @PostMapping("joinPro")
     public String joinPOST(@Valid MemberJoinDTO memberJoinDTO, BindingResult bindingResult, Model model) {
         log.info("==============================================================================");
         log.info(memberJoinDTO);
 //        String id = String.valueOf(memberJoinDTO.getId());
         String email = memberJoinDTO.getEmail();
-        log.info("==============================================================================email" + email);
-//        log.info("나와라!! " + id);
-//        Member existEmail = memberService.existByEmail(email);
-//        Member existEmail = memberService.existByEmail(email);
         log.info("==============================================================================");
-//        log.info("나와라!! " + existEmail);
+//        log.info("나와라!! " + id);
+        Member existEmail = memberService.existByEmail(email);
+        log.info("==============================================================================");
+        log.info("나와라!! " + existEmail);
 
-//        if (existEmail != null) {
-//            bindingResult
-//                    .rejectValue("email", "error.email", "사용이 불가한 이메일입니다.");
-//        }
+        if (existEmail != null) {
+            bindingResult
+                    .rejectValue("email", "error.email", "사용이 불가한 이메일입니다.");
+        }
 
-//        if (!Objects.equals(memberJoinDTO.getPasswordConfirm(), memberJoinDTO.getPw())) {
-//            bindingResult.rejectValue("passwordConfirm", "error.passwordConfirm", "비밀번호와 비밀번호 확인이 다릅니다.");
-//        }
-//
-//        if (bindingResult.hasErrors()) {
-//            model.addAttribute("error", bindingResult.hasErrors());
-//            model.addAttribute("memberJoinDTO", memberJoinDTO);
-//            return "member/login";
-//        }
+        if (!Objects.equals(memberJoinDTO.getPasswordConfirm(), memberJoinDTO.getPw())) {
+            bindingResult.rejectValue("passwordConfirm", "error.passwordConfirm", "비밀번호와 비밀번호 확인이 다릅니다.");
+        }
+
+        if (bindingResult.hasErrors()) {
+            System.out.println("error" + bindingResult.hasErrors());
+            System.out.println("e" + bindingResult.getFieldError().getDefaultMessage());
+            model.addAttribute("error", bindingResult.hasErrors());
+            model.addAttribute("memberJoinDTO", memberJoinDTO);
+            return "member/login";
+        }
+        log.info("==============================================================================email" + email);
         log.info("==============================================================================memberJoinDTO" + memberJoinDTO);
 
         memberService.join(memberJoinDTO);
         return "redirect:login";
     }
 
-    @PostMapping("/idCheck")
-    @ResponseBody
-    public boolean idCheckAjax(@RequestBody Member member) {
-        log.info("**************** name :"+member.getEmail());
-        boolean result = false;
-        Member member1 = memberService.existByEmail(member.getEmail());
-        if(member1 != null) {
-            result = false;
-        } else {
-            result = true;
-        }
-        return result;
-    }
 
     @PostMapping("/emailCheck")
     @ResponseBody

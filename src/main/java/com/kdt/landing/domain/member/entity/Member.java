@@ -16,6 +16,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = "roleSet")
+//@ToString(exclude = "roleSet")
 public class Member extends BaseEntity {
 
     @Id
@@ -31,7 +32,7 @@ public class Member extends BaseEntity {
     @Column(nullable = true)
     private String nickname;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = true)
     private String email;
 
     private int active;
@@ -68,11 +69,4 @@ public class Member extends BaseEntity {
     public void clearRoles() {
         this.roleSet.clear();
     }
-//    public void addRole(Role role) {
-//        this.roleSet.add(role);
-//    }
-//
-//    public void clearRoles() {
-//        this.roleSet.clear();
-//    }
 }

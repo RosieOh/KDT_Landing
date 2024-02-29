@@ -29,7 +29,6 @@ public class MemberServiceImpl implements MemberService{
         // Member 엔티티를 생성할 때 ID는 자동으로 생성되도록 변경
         log.info("MemberServiceㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + memberJoinDTO);
         // Member 엔티티를 생성할 때 ID는 자동으로 생성되도록 변경
-
         memberJoinDTO.setPw(passwordEncoder.encode(memberJoinDTO.getPw()));
         memberJoinDTO.setRole(Role.STUDENT); // 기본 역할 설정
         Member newMember = modelMapper.map(memberJoinDTO, Member.class);
@@ -49,6 +48,7 @@ public class MemberServiceImpl implements MemberService{
                     .email("admin@naver.com")
                     .active(1)
                     .roleSet(Collections.singleton(Role.ADMIN))
+                    .role(Role.ADMIN)
                     .build();
 
             memberRepository.save(admin);
