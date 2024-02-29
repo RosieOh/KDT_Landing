@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @ToString
-public class Sub_FullStackDTO {
+public class Sub_PMDTO {
 
     private Long no;
 

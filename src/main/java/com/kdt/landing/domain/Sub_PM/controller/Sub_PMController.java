@@ -1,7 +1,7 @@
 package com.kdt.landing.domain.Sub_PM.controller;
 
-import com.kdt.landing.domain.Sub_PM.dto.Sub_FullStackDTO;
-import com.kdt.landing.domain.Sub_PM.service.Sub_FullStackService;
+import com.kdt.landing.domain.Sub_PM.dto.Sub_PMDTO;
+import com.kdt.landing.domain.Sub_PM.service.Sub_PMService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -14,30 +14,30 @@ import java.util.List;
 
 @Log4j2
 @Controller
-@RequestMapping("/sub_FullStack")
+@RequestMapping("/sub_PM")
 @RequiredArgsConstructor
-public class Sub_FullStackController {
+public class Sub_PMController {
 
-    private final Sub_FullStackService subFullStackService;
+    private final Sub_PMService subFullStackService;
 
     //리스트
     @GetMapping("/list")
     public String applyList(Model model) throws Exception{
-        List<Sub_FullStackDTO> subFullStackDTOList = subFullStackService.findAll();
+        List<Sub_PMDTO> subFullStackDTOList = subFullStackService.findAll();
         model.addAttribute("subFullStackDTOList", subFullStackDTOList);
         return "sub_FullStack/list";
     }
 
     //등록
     @PostMapping("/register")
-    public String applyRegister(Model model, Sub_FullStackDTO subFullStackDTO)throws Exception{
+    public String applyRegister(Model model, Sub_PMDTO subFullStackDTO)throws Exception{
         subFullStackService.register(subFullStackDTO);
         return "sub_FullStack/list";
     }
 
     //상태변경
     @PostMapping("/statusModify")
-    public String applyStatus(Model model, Sub_FullStackDTO subFullStackDTO) throws Exception{
+    public String applyStatus(Model model, Sub_PMDTO subFullStackDTO) throws Exception{
         subFullStackService.modify(subFullStackDTO);
         return "redirect:/";
     }

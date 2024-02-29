@@ -2382,3 +2382,118 @@ Unconditional classes:
 2024-02-29 10:06:24.385 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-02-29 10:06:24.385 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Shutdown initiated...
 2024-02-29 10:06:24.387 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-2 - Shutdown completed.
+2024-02-29 12:32:38.467 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
+2024-02-29 12:32:38.521 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 17820 (C:\kyo\KDT_Landing\build\classes\java\main started by user in C:\kyo\KDT_Landing)
+2024-02-29 12:32:38.521 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
+2024-02-29 12:32:38.709 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-29 12:32:38.709 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-29 12:32:38.807 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.kdt.landing.KdtApplication]
+2024-02-29 12:32:38.837 ERROR [restartedMain] [o.springframework.boot.SpringApplication] - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.kdt.landing.KdtApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:178)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:415)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:287)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:344)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:115)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:779)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:597)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.kdt.landing.KdtApplication.main(KdtApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:289)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:243)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:164)
+	... 18 common frames omitted
+2024-02-29 12:33:20.744 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
+2024-02-29 12:33:20.761 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 19024 (C:\kyo\KDT_Landing\build\classes\java\main started by user in C:\kyo\KDT_Landing)
+2024-02-29 12:33:20.762 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
+2024-02-29 12:33:20.882 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-29 12:33:20.883 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-29 12:33:20.956 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.kdt.landing.KdtApplication]
+2024-02-29 12:33:20.973 ERROR [restartedMain] [o.springframework.boot.SpringApplication] - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.kdt.landing.KdtApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:178)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:415)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:287)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:344)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:115)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:779)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:597)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:738)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:440)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.kdt.landing.KdtApplication.main(KdtApplication.java:13)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:289)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:243)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:164)
+	... 18 common frames omitted
+2024-02-29 12:36:09.600 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
+2024-02-29 12:36:09.641 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 18992 (C:\kyo\KDT_Landing\build\classes\java\main started by user in C:\kyo\KDT_Landing)
+2024-02-29 12:36:09.642 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
+2024-02-29 12:36:09.847 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-29 12:36:09.847 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-29 12:36:10.243 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-29 12:36:10.294 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 46 ms. Found 7 JPA repository interfaces.
+2024-02-29 12:36:10.774 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-02-29 12:36:10.779 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-02-29 12:36:10.780 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-02-29 12:36:10.780 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-02-29 12:36:10.870 INFO  [restartedMain] [org.apache.jasper.servlet.TldScanner] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-02-29 12:36:10.873 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-02-29 12:36:10.873 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1026 ms
+2024-02-29 12:36:10.953 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-29 12:36:10.989 INFO  [restartedMain] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-02-29 12:36:10.991 INFO  [restartedMain] [org.hibernate.cfg.Environment] - HHH000406: Using bytecode reflection optimizer
+2024-02-29 12:36:11.154 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-29 12:36:11.170 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2024-02-29 12:36:11.273 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@6351f106
+2024-02-29 12:36:11.275 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2024-02-29 12:36:11.289 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-29 12:36:11.289 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-02-29 12:36:11.810 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-29 12:36:11.921 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-29 12:36:12.092 INFO  [restartedMain] [o.s.d.j.r.query.QueryEnhancerFactory] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-29 12:36:12.433 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-29 12:36:12.485 INFO  [restartedMain] [c.k.landing.global.config.SecurityConfig] - -------------------  filter Chain  ------------------
+2024-02-29 12:36:12.502 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6a409615, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4151a813, org.springframework.security.web.context.SecurityContextHolderFilter@53e93731, org.springframework.security.web.header.HeaderWriterFilter@1a002893, org.springframework.security.web.authentication.logout.LogoutFilter@15460258, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3ed17a59, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60a8dbf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bcfc7ed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a5529cd, org.springframework.security.web.access.ExceptionTranslationFilter@2a7c4ca5, org.springframework.security.web.access.intercept.AuthorizationFilter@5811ab08]
+2024-02-29 12:36:12.504 INFO  [restartedMain] [c.k.landing.global.config.SecurityConfig] - -------------------- WebSecurity ----------------------
+2024-02-29 12:36:12.506 WARN  [restartedMain] [o.s.s.c.a.web.builders.WebSecurity] - You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@40eb7dbf. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-02-29 12:36:12.506 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@40eb7dbf
+2024-02-29 12:36:12.602 INFO  [restartedMain] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
+2024-02-29 12:36:12.705 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2024-02-29 12:36:12.713 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-02-29 12:36:12.730 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-02-29 12:36:12.734 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 3.666 seconds (process running for 4.131)
+2024-02-29 12:36:16.409 INFO  [http-nio-8083-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-29 12:36:16.409 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2024-02-29 12:36:16.410 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 1 ms
+2024-02-29 12:37:17.797 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-29 12:37:17.800 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2024-02-29 12:37:17.803 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.

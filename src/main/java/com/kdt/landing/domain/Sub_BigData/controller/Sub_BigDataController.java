@@ -14,9 +14,9 @@ import java.util.List;
 
 @Log4j2
 @Controller
-@RequestMapping("/sub_FullStack")
+@RequestMapping("/sub_BigData")
 @RequiredArgsConstructor
-public class Sub_FullStackController {
+public class Sub_BigDataController {
 
     private final Sub_BigDataService subFullStackService;
 
