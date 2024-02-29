@@ -29,21 +29,14 @@ public class HomeController {
     //jsp index
     @GetMapping("/")
     public String home(Principal principal,Model model) {
-        Optional<Member> member = Optional.of(new Member());
-        if (principal != null) {
-            String id = principal.getName();
-            member = memberRepository.findById(Long.valueOf(id));
-        }
-        model.addAttribute("member", member);
-        memberService.createAdminMember(); // 관리자 회원 생성 메서드 호출
+//        Optional<Member> member = Optional.of(new Member());
+//        if (principal != null) {
+//            String id = principal.getName();
+//            member = memberRepository.findById(Long.valueOf(id));
+//        }
+//        model.addAttribute("member", member);
+//        memberService.createAdminMember(); // 관리자 회원 생성 메서드 호출
         return "index";
     }
 
-
-
-    //thymeleaf index
-    @GetMapping("/home")
-    public String home2() {
-        return "thymeleaf/index";
-    }
 }

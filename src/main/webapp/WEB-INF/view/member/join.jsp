@@ -33,10 +33,17 @@
                         <input type="password" name="pw" id="pw" placeholder="비밀번호" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&.,])[A-Za-z\d$@$!%*#?&]{8,16}$" class="form-control" minlength="8" maxlength="16" required title="양식을 지켜주세요" />
                         <p class="info mb-0"><i class="fas fa-check"></i> 비밀번호는 최소 8자리에서 최대 16자리 <br> 숫자, 영문, 특수문자 각 1개 이상 포함</p>
                     </div>
+<<<<<<< HEAD
                     <div class="form-outline mb-4">
                         <label class="form-label blind" for="pw2">비밀번호확인</label>
                         <input type="password" name="pw2" id="pw2" placeholder="비밀번호확인" class="form-control" minlength="8" maxlength="16" required />
                     </div>
+=======
+<%--                    <div class="form-outline mb-4">--%>
+<%--                        <label class="form-label blind" for="pw2">비밀번호확인</label>--%>
+<%--                        <input type="password" name="pw2" id="pw2" placeholder="비밀번호확인" class="form-control" minlength="8" maxlength="16" required />--%>
+<%--                    </div>--%>
+>>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
 
                     <div class="form-outline mb-4">
                         <label class="form-label blind" for="name">이름</label>
@@ -51,6 +58,7 @@
                     <div class="form-outline mb-4">
                         <label class="form-label blind" for="email">이메일</label>
                         <input type="email" name="email" id="email" placeholder="이메일" class="form-control" style="background-color: white;"  required>
+<<<<<<< HEAD
                         <input type="hidden" id="emailCK" name="emailCK" value="no">
                         <button type="button" onclick="PostEmail()" id="PostEmailbtn" class="btn1" style="width: 160px; margin-top: 10px; margin-left: 0"> 인증번호 보내기 </button>
                         <div class="insubForm" style="display: none; ">
@@ -59,6 +67,16 @@
                             <button type="button" onclick="Insub()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 인증번호 인증</button>
                             <button type="button" onclick="Insubreset()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 취소</button>
                         </div>
+=======
+                        <input type="hidden" id="emailCK" name="emailCK" value="Yes">
+<%--                        <button type="button" onclick="PostEmail()" id="PostEmailbtn" class="btn1" style="width: 160px; margin-top: 10px; margin-left: 0"> 인증번호 보내기 </button>--%>
+<%--                        <div class="insubForm" style="display: none; ">--%>
+<%--                            <label class="form-label blind" for="insub">인증번호</label>--%>
+<%--                            <input type="text" id="insub" name="insub" placeholder="인증번호 입력" class="form-control">--%>
+<%--                            <button type="button" onclick="Insub()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 인증번호 인증</button>--%>
+<%--                            <button type="button" onclick="Insubreset()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 취소</button>--%>
+<%--                        </div>--%>
+>>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
                     </div>
 
                     <div class="d-flex justify-content-center">

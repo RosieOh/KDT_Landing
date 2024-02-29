@@ -2,35 +2,35 @@ package com.kdt.landing.domain.apply.controller;
 
 import com.kdt.landing.domain.apply.dto.ApplyDTO;
 import com.kdt.landing.domain.apply.service.ApplyService;
+<<<<<<< HEAD
 import com.kdt.landing.domain.member.dto.MemberJoinDTO;
 import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.domain.member.service.MemberService;
 import jakarta.validation.Valid;
+=======
+import com.kdt.landing.global.cosntant.Subject;
+import jakarta.servlet.http.HttpServletRequest;
+>>>>>>> 948ed3d6b7135271b5bc92ce5693c0a636e372cc
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.security.Principal;
 import java.util.List;
-import java.util.Objects;
 
 @Log4j2
 @Controller
+@RequestMapping("/eduApply")
 @RequiredArgsConstructor
-@RequestMapping("/apply")
 public class ApplyController {
 
-    @Autowired
-    private ApplyService applyService;
+    private final ApplyService applyService;
 
+    //리스트
     @GetMapping("/list")
     public String applyList(Model model) throws Exception{
         List<ApplyDTO> applyDTOList = applyService.findAll();
@@ -38,22 +38,19 @@ public class ApplyController {
         return "apply/list";
     }
 
-    @GetMapping("/register")
-    public String applyRegister() throws Exception{
-        return "apply/register";
-    }
-
+    //등록
     @PostMapping("/register")
-    public String applyRegister(Model model, ApplyDTO applyDTO) throws Exception{
-            applyService.register(applyDTO);
-        return "redirect:apply/list";
+    public String applyRegister(Model model, ApplyDTO applyDTO, Subject subject, HttpServletRequest request) throws Exception{
+        applyDTO.setSubject(subject);
+        applyService.register(applyDTO);
+        return "apply/list";
     }
 
+    //상태변경
     @PostMapping("/statusModify")
     public String applyStatus(Model model, ApplyDTO applyDTO) throws Exception{
-
         applyService.modify(applyDTO);
-        return "redirect:apply/list";
+        return "redirect:/";
     }
 
 }

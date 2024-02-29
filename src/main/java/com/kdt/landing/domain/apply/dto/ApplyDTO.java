@@ -1,6 +1,6 @@
 package com.kdt.landing.domain.apply.dto;
 
-import com.kdt.landing.global.cosntant.Category;
+import com.kdt.landing.global.cosntant.Subject;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,13 +13,13 @@ public class ApplyDTO {
 
     private Long no;
 
-    @Column(length = 50)
+    @Column(length = 100)
     private String name;
 
-    @Column(length = 4)
+    @Column(length = 100)
     private String age;
 
-    @Column(length = 11)
+    @Column(length = 100)
     private String tel;
 
     @Column(length = 100)
@@ -29,7 +29,7 @@ public class ApplyDTO {
     private String comment;
 
     @Enumerated(EnumType.STRING)
-    private Category category;
+    private Subject subject;
 
     private LocalDateTime regDate;
     private LocalDateTime modDate;
