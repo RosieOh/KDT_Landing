@@ -11,7 +11,8 @@
 @import url("section.css");
 @import url("sign.css");
 @import url("sub.css");
-
+@import url("bulma.css");
+@import url("main.css");
 
 /* 전역 설정 */
 
