@@ -9,12 +9,12 @@
 @import url("member.css");
 @import url("modify.css");
 @import url("section.css");
+@import url("sign.css");
 @import url("sub.css");
-/*@import url("reset.css");*/
-
+@import url("bulma.css");
+@import url("main.css");
 
 /* 전역 설정 */
-
 
 body {
     font-family: Pretendard, serif;
@@ -25,7 +25,11 @@ body {
     height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    min-height: 100vh;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, input {
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -41,6 +45,10 @@ p {
     margin: 0;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
 li{
     list-style: none;
 }
@@ -73,13 +81,25 @@ span {
 /*=================================================================== */
 
 /* 헤더 구역 */
+
 .topHeader {
-    background-color: bisque;
+    display: flex;
+    background-color: white;
     padding: 0.5rem;
     width: 100%;
     height: auto;
-    text-align: center;
     vertical-align: middle;
+}
+
+.img_header {
+    float: left;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.menu_header {
+    float: right;
 }
 
 .bottomHeader {

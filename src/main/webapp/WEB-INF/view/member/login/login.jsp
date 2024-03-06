@@ -14,14 +14,13 @@
     <meta id="_csrf" name="_csrf" content="${_csrf.token}"/>
     <meta id="_csrf_header" name="_csrf_header" content="${_csrf.headerName}"/>
     <title>천재 IT 교육센터</title>
+    <link rel="stylesheet" href="${path }./resources/css/member.css">
     <jsp:include page="../../include/head.jsp"/>
 </head>
 
 <body style="min-height: 100vh;">
 <jsp:include page="../../include/header.jsp" />
 <jsp:include page="./breadcrumb.jsp"/>
-<link rel="stylesheet" href="${path }./resources/css/member.css">
-
 
 <div class="login-wrapper" style="margin: 0 auto; padding-top: 100px; min-height: 70vh;">
     <h2 style="text-align: center;">Login</h2>

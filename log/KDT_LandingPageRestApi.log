@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2024-03-06 08:35:29.888 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
 2024-03-06 08:35:29.915 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 11260 (C:\Users\user\Desktop\first_proj\0304\KDT_Landing\build\classes\java\main started by user in C:\Users\user\Desktop\first_proj\0304\KDT_Landing)
 2024-03-06 08:35:29.915 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
@@ -1716,3 +1717,49 @@ org.apache.jasper.JasperException: /WEB-INF/view/include/header.jsp (line: [55],
 2024-03-06 09:47:04.765 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-06 09:47:05.063 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
 2024-03-06 09:47:05.125 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+=======
+2024-03-04 08:03:29.850 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-04 08:03:29.879 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 20096 (C:\kyo\KDT_Landing\build\classes\java\main started by user in C:\kyo\KDT_Landing)
+2024-03-04 08:03:29.879 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
+2024-03-04 08:03:30.022 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-04 08:03:30.022 INFO  [restartedMain] [o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-04 08:03:30.482 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-04 08:03:30.533 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Finished Spring Data repository scanning in 47 ms. Found 7 JPA repository interfaces.
+2024-03-04 08:03:30.943 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port(s): 8083 (http)
+2024-03-04 08:03:30.948 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8083"]
+2024-03-04 08:03:30.949 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2024-03-04 08:03:30.950 INFO  [restartedMain] [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2024-03-04 08:03:31.056 INFO  [restartedMain] [org.apache.jasper.servlet.TldScanner] - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-04 08:03:31.060 INFO  [restartedMain] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2024-03-04 08:03:31.060 INFO  [restartedMain] [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1038 ms
+2024-03-04 08:03:31.149 INFO  [restartedMain] [o.hibernate.jpa.internal.util.LogHelper] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-04 08:03:31.196 INFO  [restartedMain] [org.hibernate.Version] - HHH000412: Hibernate ORM core version 6.2.13.Final
+2024-03-04 08:03:31.197 INFO  [restartedMain] [org.hibernate.cfg.Environment] - HHH000406: Using bytecode reflection optimizer
+2024-03-04 08:03:31.375 INFO  [restartedMain] [o.s.o.j.p.SpringPersistenceUnitInfo] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-04 08:03:31.393 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Starting...
+2024-03-04 08:03:31.500 INFO  [restartedMain] [com.zaxxer.hikari.pool.HikariPool] - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@3986b0d4
+2024-03-04 08:03:31.501 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
+2024-03-04 08:03:31.515 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-04 08:03:31.517 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
+2024-03-04 08:03:32.135 INFO  [restartedMain] [o.h.e.t.j.p.i.JtaPlatformInitiator] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-04 08:03:32.179 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04 08:03:32.328 INFO  [restartedMain] [o.s.d.j.r.query.QueryEnhancerFactory] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-03-04 08:03:32.712 WARN  [restartedMain] [o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-04 08:03:32.766 INFO  [restartedMain] [c.k.landing.global.config.SecurityConfig] - -------------------  filter Chain  ------------------
+2024-03-04 08:03:32.786 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@20c6a6ea, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@562335ac, org.springframework.security.web.context.SecurityContextHolderFilter@ef5d38b, org.springframework.security.web.header.HeaderWriterFilter@d57d084, org.springframework.security.web.authentication.logout.LogoutFilter@2940ea0d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@72b021db, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d53bfc3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c3e5db5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d536024, org.springframework.security.web.access.ExceptionTranslationFilter@681313b6, org.springframework.security.web.access.intercept.AuthorizationFilter@71b75eda]
+2024-03-04 08:03:32.787 INFO  [restartedMain] [c.k.landing.global.config.SecurityConfig] - -------------------- WebSecurity ----------------------
+2024-03-04 08:03:32.791 WARN  [restartedMain] [o.s.s.c.a.web.builders.WebSecurity] - You are asking Spring Security to ignore org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@3190945f. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-03-04 08:03:32.791 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@3190945f
+2024-03-04 08:03:33.027 INFO  [restartedMain] [o.s.b.d.a.OptionalLiveReloadServer] - LiveReload server is running on port 35729
+2024-03-04 08:03:33.036 INFO  [restartedMain] [o.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8083"]
+2024-03-04 08:03:33.051 INFO  [restartedMain] [o.s.b.w.embedded.tomcat.TomcatWebServer] - Tomcat started on port(s): 8083 (http) with context path ''
+2024-03-04 08:03:33.055 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Started KdtApplication in 3.511 seconds (process running for 3.964)
+2024-03-04 08:03:39.592 INFO  [http-nio-8083-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-04 08:03:39.592 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2024-03-04 08:03:39.593 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 1 ms
+2024-03-04 08:03:39.687 INFO  [http-nio-8083-exec-1] [c.k.l.d.member.service.MemberServiceImpl] - Admin 계정이 이미 존재합니다.
+2024-03-04 09:15:18.836 INFO  [http-nio-8083-exec-5] [c.k.l.d.member.service.MemberServiceImpl] - Admin 계정이 이미 존재합니다.
+2024-03-04 09:15:24.866 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-04 09:15:24.940 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2024-03-04 09:15:24.963 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
+>>>>>>> 7b87f787c21dd5a85efb2e1b40a093de1db9de9f
