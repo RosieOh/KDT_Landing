@@ -20,6 +20,9 @@ public class Sub_FullStack extends BaseEntity {
     private Long no;
 
     @Column(nullable = false)
+    private String subject;                            //신청 과목
+
+    @Column(nullable = false)
     private String name;                              //신청자 이름
 
     @Column(nullable = false)
