@@ -29,6 +29,8 @@
 
 <%--전역적 CSS  설정--%>
 <link rel="stylesheet" href="/resources/css/global.css">
+<link rel="stylesheet" href="/resources/css/member.css">
+
 
 <%-- JS 요소 정리--%>
 <script defer src="/resources/js/global.js"></script>
