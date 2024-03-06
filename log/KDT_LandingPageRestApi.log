@@ -1713,3 +1713,6 @@ org.apache.jasper.JasperException: /WEB-INF/view/include/header.jsp (line: [55],
 2024-03-06 08:51:02.906 INFO  [http-nio-8083-exec-8] [c.k.l.d.member.service.MemberServiceImpl] - Admin 계정이 이미 존재합니다.
 2024-03-06 08:51:04.505 INFO  [http-nio-8083-exec-3] [c.k.l.d.member.service.MemberServiceImpl] - Admin 계정이 이미 존재합니다.
 2024-03-06 09:41:55.294 INFO  [http-nio-8083-exec-9] [c.k.l.d.member.service.MemberServiceImpl] - Admin 계정이 이미 존재합니다.
+2024-03-06 09:47:04.765 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-06 09:47:05.063 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
+2024-03-06 09:47:05.125 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
