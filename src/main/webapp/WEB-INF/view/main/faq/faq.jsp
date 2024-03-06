@@ -8,7 +8,7 @@
     <div class="con_wrap">
         <h1>자주 묻는 질문</h1>
         <div class="faq_wrap">
-            <a href="#faq_con1">
+            <a href="#faq_con1" class="faq_1">
                 ※교육전 선수 지식이 필요할까요?
             </a>
             <div class="faq_con" id="faq_con1">
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="faq_wrap">
-            <a href="#faq_con2">
+            <a href="#faq_con2" class="faq_1">
                 ※회사를 다니고 있는 주니어 개발자나 개발 경력이 있는 사람도 지원이 가능한가요?
             </a>
             <div class="faq_con" id="faq_con2">

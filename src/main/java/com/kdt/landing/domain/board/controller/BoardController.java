@@ -50,9 +50,6 @@ public class BoardController {
             model.addAttribute("username", principal.getName());
         }
         model.addAttribute("boardList", boardList);
-        String id = principal.getName();
-        Optional<Member> member = memberRepository.findById(Long.valueOf(id));
-        model.addAttribute("member", member);
         model.addAttribute("principal", principal);
         return "notice/list";
     }

@@ -30,9 +30,11 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         log.info("-------------------  filter Chain  ------------------");
 
+
         http.csrf(AbstractHttpConfigurer::disable)
 //            .cors(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests((authorizeRequests) -> {authorizeRequests.requestMatchers(new AntPathRequestMatcher("**")).permitAll();})
+                .authorizeHttpRequests((authorizeRequests) -> {authorizeRequests.requestMatchers(new AntPathRequestMatcher("/")).permitAll();})
             .formLogin((formLogin) -> formLogin
                         .loginPage("/member/login")
                         .failureUrl("/member/loginFail")
