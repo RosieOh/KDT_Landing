@@ -36,6 +36,7 @@ public class MemberServiceImpl implements MemberService{
         memberRepository.save(newMember);
     }
 
+
     @Override
     public void createAdminMember() {
         // 이미 존재하는 회원인지 확인

@@ -30,6 +30,9 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
 
     @Query("select m from Member m where m.email =:email")
+    Member findByMid(String email);
+
+    @Query("select m from Member m where m.email =:email")
     Member existsMemberByEmail(String email);
 
     boolean existsByEmail(String email);

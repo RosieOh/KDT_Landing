@@ -45,15 +45,6 @@ public class Member extends BaseEntity {
     @Builder.Default
     private Role role = Role.STUDENT; // 디폴트로 USER 권한을 갖도록 초기화
 
-    @Builder
-    public Member(Long id, String pw, String name, String nickname, String email) {
-        this.id = id;
-        this.pw = pw;
-        this.name = name;
-        this.nickname = nickname;
-        this.email = email;
-    }
-
     public void changePassword(String pw) {
         this.pw = pw;
     }

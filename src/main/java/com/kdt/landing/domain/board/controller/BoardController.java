@@ -24,6 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.security.Principal;
 import java.util.List;
@@ -50,21 +51,38 @@ public class BoardController {
             model.addAttribute("username", principal.getName());
         }
         model.addAttribute("boardList", boardList);
+        String email = principal.getName();
+        Member member = memberRepository.findByEmail(email);
+        model.addAttribute("member", member);
         model.addAttribute("principal", principal);
         return "notice/list";
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    @GetMapping("/read")
+    public String  readNotice(Long id, Model model) {
+        BoardDTO boardDTO = boardService.findById(id);
+        FileDTO fileDTO = fileService.getFile(boardDTO.getFileId());
+        log.info(boardDTO.toString());
+        log.info(fileDTO.toString());
+        model.addAttribute("fileList", fileDTO);
+        model.addAttribute("boardList", boardDTO);
+        return "notice/view";
+    }
+
     @GetMapping("/register")
     public String registerForm(Model model, Principal principal) {
         model.addAttribute("principal", principal);
-        String id = principal.getName();
-        Optional<Member> member = memberRepository.findById(Long.valueOf(id));
-        model.addAttribute("writer", "admin");
+        log.info("==========================================================");
+        String email = principal.getName();
+        log.info(email);
+        log.info("==========================================================");
+        Member member = memberRepository.findByMid(email);
+        String name = (member != null) ? member.getName() : "Unknown";
+        log.info("니는 뭐냐? :" + name);
+        model.addAttribute("name", name);
         return "notice/register";
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     @PostMapping("/register")
     public String noticeRegister(@Valid BoardDTO boardDTO,
                                  BindingResult bindingResult,

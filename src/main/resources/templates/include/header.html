@@ -1,0 +1,88 @@
+<!doctype html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <body>
+    <th:block th:fragment="header">
+      <nav id="navbar" class="navbar main-nav">
+        <div class="container">
+          <div class="navbar-brand ml-0">
+            <a class="navbar-item" th:href="@{/}">
+              <h2 class="has-text-black">고용노동부 </h2>
+            </a>
+            <button
+              role="button"
+              class="navbar-burger burger"
+              data-hidden="true"
+              data-target="navigation"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="navbar-menu mr-0" id="navigation">
+            <ul class="navbar-end">
+              <li class="navbar-item">
+                <a class="navbar-link is-arrowless" th:href="@{/}">홈</a>
+              </li>
+
+              <li class="navbar-item">
+                <a class="navbar-link is-arrowless" href="about.html"
+                  >AI,데이터 과정</a
+                >
+              </li>
+
+              <li class="navbar-item">
+                <a class="navbar-link is-arrowless" href="service.html"
+                  >풀스택 과정</a
+                >
+              </li>
+
+              <li class="navbar-item">
+                <a class="navbar-link is-arrowless" href="project.html"
+                  >PM 과정</a
+                >
+              </li>
+              <li class="navbar-item">
+                <a class="navbar-link is-arrowless" href="project.html"
+                  >천재IT Blog</a
+                >
+              </li>
+              <th:block sec:authorize="isAnonymous()">
+                <li class="navbar-item">
+                  <a class="nav-link text-white add-button" th:href="@{/member/join}">회원가입</a>
+                </li>
+                <li class="navbar-item">
+                  <a th:href="@{/member/login}" class="nav-link text-white add-button">로그인</a>
+                </li>
+              </th:block>
+              <th:block sec:authorize="isAuthenticated()">
+<!--                <li class="navbar-item" th:if="${member != null}">-->
+<!--                            <span class="nav-link text-white">-->
+<!--                                <span th:text="${#authentication.principal.name}"></span>님 환영합니다!-->
+<!--                            </span>-->
+<!--                </li>-->
+                <li class="navbar-item">
+                  <form th:action="@{/logout}" method="post">
+                    <a href="#" onclick="this.closest('form').submit();" class="nav-link">로그아웃</a>
+                  </form>
+                </li>
+                <li class="navbar-item">
+                  <th:block sec:authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_ADMIN')">
+                    <a th:href="@{/modifyBoard/list}" class="nav-link">수정요청</a>
+                  </th:block>
+                  <th:block sec:authorize="hasAuthority('ROLE_STUDENT')">
+                    <a th:href="@{/notice/list}" class="nav-link">공지사항</a>
+                  </th:block>
+                </li>
+              </th:block>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </th:block>
+  </body>
+</html>

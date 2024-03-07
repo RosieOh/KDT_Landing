@@ -2,6 +2,8 @@ package com.kdt.landing.domain.member.service;
 
 import com.kdt.landing.domain.member.dto.MemberJoinDTO;
 import com.kdt.landing.domain.member.entity.Member;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public interface MemberService {

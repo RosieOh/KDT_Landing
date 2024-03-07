@@ -31,20 +31,20 @@ public class MemberController {
     @GetMapping("login")
     public String login(Model model, Principal principal) {
         model.addAttribute("memberJoinDTO", new MemberJoinDTO());
-        return "member/login/login";
+        return "member/login";
     }
 
     @GetMapping("loginFail")
     public String loginFail(Model model) {
         model.addAttribute("msg", "로그인 실패! 다시 시도해 주세요!");
         model.addAttribute("url", "login");
-        return "member/login/login";
+        return "member/login";
     }
 
     @GetMapping("join")
     public String join(Model model) {
         model.addAttribute("memberJoinDTO", new MemberJoinDTO());
-        return "member/join/join";
+        return "member/join";
     }
 
     @PostMapping("joinPro")

@@ -5,6 +5,7 @@ import com.kdt.landing.domain.board.dto.BoardDTO;
 import com.kdt.landing.domain.board.entity.Board;
 import com.kdt.landing.domain.board.repository.BoardRepository;
 import com.kdt.landing.global.cosntant.BoardType;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 @Log4j2
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class BoardServiceImpl implements BoardService {
 
     private final ModelMapper modelMapper;
