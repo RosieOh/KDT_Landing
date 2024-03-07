@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* abc 순으로 기입 */
+@import url("ImportCSS/apply.css");
+@import url("ImportCSS/bulma.css");
+@import url("ImportCSS/faq.css");
+@import url("ImportCSS/font.css");
+@import url("ImportCSS/index.css");
+@import url("ImportCSS/member.css");
+@import url("ImportCSS/modify.css");
+@import url("ImportCSS/sign.css");
+@import url("ImportCSS/subSign.css");
+@import url("ImportCSS/sub.css");
+
+:root {
+  --c-main: #757afd;
+  --c-main2: #485fc7;
+  --c-main3: #553bf3;
+  --c-card_back: #888888e0;
+  --c-card_border: #dddddde0;
+  --c-black: black;
+  --c-white: white;
+  --c-hover: #5f64d7;
+  --c-text_hover: lightgray;
+  --c-main_back: #292929;
+  --border_radius: 30px;
+  --c-gray: gray;
+  --c-check: #6574ff;
+  --c-button: #485fc7;
+  --c-lightgray: #f8f8f8;
+}
+
+/* 공통 사항 */
+.radius {
+  border-radius: 20px;
+  margin: 0 0.5rem;
+}
+
+.radius2 {
+  border-radius: 20px;
+}
+
+.back_lightgray {
+  background-color: var(--c-lightgray);
+}
