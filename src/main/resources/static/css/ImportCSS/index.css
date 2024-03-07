@@ -1,3 +1,8 @@
+.navbar {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
 .container_bottom {
   margin-bottom: 10rem;
 }
@@ -6,9 +11,8 @@
   box-shadow: 2px 2px 10px 1px gray;
 }
 
-.radius {
-  border-radius: 20px;
-  margin: 0 0.5rem;
+.box_shadow_in {
+  box-shadow: inset -5px 0 1px gray;
 }
 
 /* index.test */
@@ -67,7 +71,12 @@
   padding-bottom: 0.5rem;
 }
 .benefits_sub {
+  display: flex;
   margin-top: 1.5rem;
+}
+
+.benefits_sub_in {
+  margin: 0.5rem 1rem;
 }
 
 .title_2 {
@@ -92,6 +101,12 @@
 .multiline_box_1 {
   margin: -5px;
   padding-bottom: 20px;
+}
+
+.media-left {
+  margin: 0;
+  width: 50px;
+  height: auto;
 }
 
 /* 푸터 구역 스타일 */

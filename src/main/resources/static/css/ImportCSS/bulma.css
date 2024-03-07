@@ -83,7 +83,7 @@ p {
 }
 .notification {
   padding: 2rem;
-  border: 1px solid var(--c-font-gray);
+  border: 1px solid var(--c-gray);
   border-radius: 10px;
 }
 
@@ -180,13 +180,13 @@ footer li:before {
 
 .subtitle {
   padding-top: 2rem;
-  color: var(--c-font-gray) !important;
+  color: var(--c-gray) !important;
   text-align: center;
 }
 
 .subtitle_left {
   padding-top: 2rem;
-  color: var(--c-font-gray) !important;
+  color: var(--c-gray) !important;
   text-align: left;
 }
 

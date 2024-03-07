@@ -23,7 +23,22 @@
   --c-text_hover: lightgray;
   --c-main_back: #292929;
   --border_radius: 30px;
-  --c-font-gray: gray;
+  --c-gray: gray;
   --c-check: #6574ff;
   --c-button: #485fc7;
+  --c-lightgray: #f8f8f8;
+}
+
+/* 공통 사항 */
+.radius {
+  border-radius: 20px;
+  margin: 0 0.5rem;
+}
+
+.radius2 {
+  border-radius: 20px;
+}
+
+.back_lightgray {
+  background-color: var(--c-lightgray);
 }

@@ -1,9 +1,6 @@
-package com.kdt.landing.domain.Sub_FullStack.dto;
+package com.kdt.landing.domain.subject.dto;
 
-import com.kdt.landing.global.cosntant.Subject;
 import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,10 +10,10 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @ToString
-public class Sub_FullStackDTO {
+public class SubjectDTO {
 
     private Long no;
-    
+
     @Column(length = 20)
     private String subject;                            //신청 과목
 

@@ -1,7 +1,6 @@
-package com.kdt.landing.domain.Sub_FullStack.entity;
+package com.kdt.landing.domain.subject.entity;
 
 import com.kdt.landing.global.cosntant.BaseEntity;
-import com.kdt.landing.global.cosntant.Subject;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +12,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Sub_FullStack extends BaseEntity {
+public class Subject extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

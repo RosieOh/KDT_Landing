@@ -1,8 +1,8 @@
-package com.kdt.landing.domain.Sub_FullStack.service;
+package com.kdt.landing.domain.subject.service;
 
-import com.kdt.landing.domain.Sub_FullStack.dto.Sub_FullStackDTO;
-import com.kdt.landing.domain.Sub_FullStack.entity.Sub_FullStack;
-import com.kdt.landing.domain.Sub_FullStack.repository.Sub_FullStackRepository;
+import com.kdt.landing.domain.subject.dto.SubjectDTO;
+import com.kdt.landing.domain.subject.entity.Subject;
+import com.kdt.landing.domain.subject.repository.SubjectRepository;
 import jakarta.transaction.Transactional;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
@@ -17,10 +17,10 @@ import java.util.stream.Collectors;
 @Log4j2
 @Service
 @Transactional
-public class Sub_FullStackServiceImpl implements Sub_FullStackService {
+public class SubjectServiceImpl implements SubjectService {
 
     @Autowired
-    private Sub_FullStackRepository subFullStackRepository;
+    private SubjectRepository subFullStackRepository;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -29,34 +29,34 @@ public class Sub_FullStackServiceImpl implements Sub_FullStackService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public List<Sub_FullStackDTO> findAll() throws Exception {
-        List<Sub_FullStack> subFullStackList = subFullStackRepository.findAll();
-        List<Sub_FullStackDTO> subFullStackDTOList = subFullStackList.stream().map(
-                        subFullStack -> modelMapper.map(subFullStack, Sub_FullStackDTO.class))
+    public List<SubjectDTO> findAll() throws Exception {
+        List<Subject> subFullStackList = subFullStackRepository.findAll();
+        List<SubjectDTO> subFullStackDTOList = subFullStackList.stream().map(
+                        subFullStack -> modelMapper.map(subFullStack, SubjectDTO.class))
                 .collect(Collectors.toList());
         return subFullStackDTOList;
     }
 
     @Override
-    public Sub_FullStackDTO findById(Long no) throws Exception {
-        Optional<Sub_FullStack> subFullStack = subFullStackRepository.findById(no);
-        Sub_FullStackDTO subFullStackDTO = modelMapper.map(subFullStack, Sub_FullStackDTO.class);
+    public SubjectDTO findById(Long no) throws Exception {
+        Optional<Subject> subFullStack = subFullStackRepository.findById(no);
+        SubjectDTO subFullStackDTO = modelMapper.map(subFullStack, SubjectDTO.class);
         return subFullStackDTO;
     }
 
     @Override
-    public void register(Sub_FullStackDTO subFullStackDTO) throws Exception {
+    public void register(SubjectDTO subFullStackDTO) throws Exception {
         String emailEn = passwordEncoder.encode(subFullStackDTO.getEmail());
         String telEn = passwordEncoder.encode(subFullStackDTO.getTel());
         subFullStackDTO.setEmail(emailEn);
         subFullStackDTO.setTel(telEn);
-        Sub_FullStack subFullStack = modelMapper.map(subFullStackDTO, Sub_FullStack.class);
+        Subject subFullStack = modelMapper.map(subFullStackDTO, Subject.class);
         subFullStackRepository.save(subFullStack);
     }
 
     @Override
-    public void modify(Sub_FullStackDTO subFullStackDTO) throws Exception {
-        Sub_FullStack subFullStack = modelMapper.map(subFullStackDTO, Sub_FullStack.class);
+    public void modify(SubjectDTO subFullStackDTO) throws Exception {
+        Subject subFullStack = modelMapper.map(subFullStackDTO, Subject.class);
         subFullStackRepository.save(subFullStack);
     }
 

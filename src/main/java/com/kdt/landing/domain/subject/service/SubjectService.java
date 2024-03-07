@@ -1,17 +1,17 @@
-package com.kdt.landing.domain.Sub_FullStack.service;
+package com.kdt.landing.domain.subject.service;
 
 
-import com.kdt.landing.domain.Sub_FullStack.dto.Sub_FullStackDTO;
+import com.kdt.landing.domain.subject.dto.SubjectDTO;
 
 import java.util.List;
 
-public interface Sub_FullStackService {
+public interface SubjectService {
 
 
-    public List<Sub_FullStackDTO> findAll() throws Exception;
-    public Sub_FullStackDTO findById(Long no) throws Exception;
-    public void register(Sub_FullStackDTO subFullStackDTO) throws Exception;
-    public void modify(Sub_FullStackDTO subFullStackDTO) throws Exception;
+    public List<SubjectDTO> findAll() throws Exception;
+    public SubjectDTO findById(Long no) throws Exception;
+    public void register(SubjectDTO subFullStackDTO) throws Exception;
+    public void modify(SubjectDTO subFullStackDTO) throws Exception;
     public boolean emailCheck(String email) throws Exception;
 
 

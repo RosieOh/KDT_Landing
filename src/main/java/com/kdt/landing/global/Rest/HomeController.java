@@ -35,7 +35,11 @@ public class HomeController {
         }
         model.addAttribute("member", member);
         memberService.createAdminMember(); // 관리자 회원 생성 메서드 호출
-        return "main/index";
+        return "/index";
     }
 
+    @GetMapping("/subSign")
+    public String homesu(Model model) {
+        return "main/sign/subSign";
+    }
 }
