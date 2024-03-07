@@ -70,7 +70,7 @@
 }
 .subtitle{
     padding-top: 2rem;
-    color: var(--c-font-gray) !important;
+    /*color: var(--c-font-gray) !important;*/
     text-align: center;
 }
 
@@ -153,7 +153,7 @@
 }
 
 .curri_text_in {
-    transform: translateY(0 -50);
+    transform: translateY(-50%);
 }
 
 .curri_img {

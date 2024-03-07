@@ -12,23 +12,13 @@
 <body>
 
 <%--Main Contents --%>
-<div class="main">
     <jsp:include page="../../view/include/header.jsp" />
-
-    <div class="container">
-        <!-- banner -->
-        <jsp:include page="./banner/banner.jsp" />
-
-        <!-- section 1 -->
-        <jsp:include page="./section/section1.jsp" />
-        <jsp:include page="./section/section2.jsp" />
-        <jsp:include page="./section/section3.jsp" />
-        <jsp:include page="./section/section4.jsp" />
-
-        <%-- faq --%>
-        <jsp:include page="./faq/faq.jsp"/>
-    </div>
-</div>
+<!-- banner -->
+    <jsp:include page="./banner/banner.jsp" />
+<!-- section 1 -->
+    <jsp:include page="./section/section1.jsp" />
+    <jsp:include page="./section/section2.jsp" />
+    <jsp:include page="./section/section3.jsp" />
 
 <!-- sign Form -->
 <jsp:include page="./sign/sign.jsp" />

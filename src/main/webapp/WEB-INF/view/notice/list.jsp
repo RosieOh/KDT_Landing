@@ -55,14 +55,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <a href="" class="text-decoration-none"></a>
-                            </td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <c:forEach var="noti" items="${noticeList }" varStatus="status">
+                            <tr>
+                                <td>
+                                    <a href="${path }/notice/detail.do?no=${noti.no }" class="al">${noti.title }</a>
+                                </td>
+                                <fmt:parseDate value="${noti.resdate}" pattern="yyyy-MM-dd" var="formattedDate" />
+                                <td class="has-text-centered"><fmt:formatDate value="${formattedDate }" pattern="yyyy.MM.dd"/></td>
+                                <td class="has-text-centered">관리자</td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                     <script>

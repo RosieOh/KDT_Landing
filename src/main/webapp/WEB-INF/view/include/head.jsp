@@ -12,27 +12,30 @@
 
 <!-- 파비콘 설정 -->
 <!-- 표준 파비콘 -->
-<link rel="shortcut icon" href="/resources/images/logo.ico">
+<link rel="shortcut icon" href="/resource/images/logo.ico">
 
 <!-- 애플 계열 모바일 -->
-<link rel="apple-touch-icon-precomposed" href="/resources/images/logo_64.png">
+<link rel="apple-touch-icon-precomposed" href="/resource/images/logo_64.png">
 
 <!-- IE 계열 브라우저 -->
 <meta name="msapplication-TileColor" content="#FFFFFF">
 <meta name="msapplication-TileImage" content="/images/logo_48.png">
 
 <!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
-<link rel="icon" href="/resources/images/logo_16.png" sizes="16x16">
-<link rel="icon" href="/resources/images/logo_32.png" sizes="32x32">
-<link rel="icon" href="/resources/images/logo_48.png" sizes="48x48">
-<link rel="icon" href="/resources/images/logo_64.png" sizes="64x64">
+<link rel="icon" href="/resource/images/logo_16.png" sizes="16x16">
+<link rel="icon" href="/resource/images/logo_32.png" sizes="32x32">
+<link rel="icon" href="/resource/images/logo_48.png" sizes="48x48">
+<link rel="icon" href="/resource/images/logo_64.png" sizes="64x64">
 
 <%--전역적 CSS  설정--%>
-<link rel="stylesheet" href="/resources/css/global.css">
-<link rel="stylesheet" href="/resources/css/member.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+<link rel="stylesheet" href="/resource/css/global.css">
+<link rel="stylesheet" href="/resource/css/member.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
 
 
 <%-- JS 요소 정리--%>
-<script src="/resources/js/signup.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="/resource/js/signup.js"></script>
