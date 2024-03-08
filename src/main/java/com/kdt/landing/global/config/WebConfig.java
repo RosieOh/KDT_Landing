@@ -18,16 +18,10 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("file:///C:/Users/User/IdeaProjects/img_test/");
-        registry.addResourceHandler("/resource/**") .addResourceLocations("/resource/");
-    }
-
-    @Bean
-    public InternalResourceViewResolver setupViewResolver() {
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/view/");
-        resolver.setSuffix(".jsp");
-        return resolver;
+        registry.addResourceHandler("/resources/**") .addResourceLocations("/resources/");
+        registry.addResourceHandler("/static/**") .addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/picture/**") .addResourceLocations("classpath:/static/images/picture/");
+        registry.addResourceHandler("/ico/**") .addResourceLocations("classpath:/static/images/ico/");
     }
 
     @Bean

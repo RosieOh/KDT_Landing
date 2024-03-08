@@ -1,6 +1,5 @@
 package com.kdt.landing.global.config;
 
-import com.kdt.landing.domain.member.service.CustomUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -23,8 +22,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    private final CustomUserDetailsService userDetailsService;
-
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -32,17 +29,15 @@ public class SecurityConfig {
 
 
         http.csrf(AbstractHttpConfigurer::disable)
-//            .cors(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests((authorizeRequests) -> {authorizeRequests.requestMatchers(new AntPathRequestMatcher("**")).permitAll();})
                 .authorizeHttpRequests((authorizeRequests) -> {authorizeRequests.requestMatchers(new AntPathRequestMatcher("/")).permitAll();})
             .formLogin((formLogin) -> formLogin
                         .loginPage("/member/login")
-                        .failureUrl("/member/loginFail")
-                        .loginProcessingUrl("/member/loginPro")
+                        .failureUrl("/member/login?error=true")
+                        .loginProcessingUrl("/loginPro")
                         .defaultSuccessUrl("/")
-                        // default 값은 username 으로 잡혀 있기 떄문에 오류 발생
                         .usernameParameter("email")
-                        .passwordParameter("password"))
+                        .passwordParameter("pw"))
             .logout((logout) -> logout.logoutUrl("/logout").logoutSuccessUrl("/"))
             .exceptionHandling((exceptionHandling) -> exceptionHandling.authenticationEntryPoint(new CustomAuthenticationEntryPoint()))
             .headers((headers) -> headers.addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)));
@@ -61,3 +56,7 @@ public class SecurityConfig {
         return (web) -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
     }
 }
+
+
+
+

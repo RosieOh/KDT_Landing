@@ -6,6 +6,9 @@ import com.kdt.landing.domain.file.repository.FileRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.io.FileNotFoundException;
+import java.util.Optional;
+
 @Service
 public class FileService {
 
