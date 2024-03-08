@@ -1,0 +1,514 @@
+.main {
+  background-color: var(--c-white);
+  padding-top: 4rem;
+}
+.main2 {
+  background-color: var(--c-gray);
+  padding-top: 4rem;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.page_center {
+  justify-content: space-around;
+}
+
+.card_center {
+  justify-content: space-around;
+  background-color: var(--c-card_back);
+  border-radius: var(--border_radius);
+  color: var(--c-black);
+}
+
+.hero.is-fullheight {
+  min-height: 50vh;
+}
+
+.border_ra {
+  border-radius: var(--border_radius);
+}
+
+.flex_around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+}
+
+.box_color {
+  background-color: var(--c-card_back);
+  border: none;
+  /* opacity: 0.5; */
+  color: var(--c-white);
+}
+
+/* .box_color {
+    background-color: var(--c-card_back);
+    border: 1px solid var(--c-card_border);
+    color: var(--c-white);
+} */
+
+.in_box {
+  width: 70%;
+  background-color: var(--c-white);
+  color: var(--c-black);
+  padding: 2rem 2rem;
+  border-radius: var(--border_radius);
+}
+
+/* .in_box {
+    width: 350px;
+    min-height: 200px;
+    background-color: var(--c-white);
+    color: var(--c-black);
+    padding: 1rem 1rem;
+    border-radius: var(--border_radius);
+} */
+
+@media screen and (max-width: 1215px) {
+  .in_box {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .in_box {
+    width: 350px;
+  }
+}
+
+.category li {
+  margin-bottom: 2.75rem;
+}
+
+.curri_text {
+  margin: 0;
+  padding: 0;
+  flex: none;
+  background-color: var(--c-main);
+  color: var(--c-white);
+  font-size: 32px;
+  text-align: center;
+  width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+  .curri_text {
+    width: 100%;
+  }
+}
+.curri_text_in {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.curri_img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.image {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+}
+
+.port_box {
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .port_box {
+    display: block;
+  }
+}
+
+/* 풀스택 배너 */
+
+#bannerFull {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bannerTitle {
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+
+.bannerSub {
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+
+.bannerSub2 {
+  margin-bottom: 55px;
+}
+
+.bannerImg {
+  margin: 0px 95px;
+  width: 250px;
+  padding-top: 50px;
+}
+
+/* 모집 카드 */
+
+.tile .is-parent {
+  border: none;
+}
+
+.tile .is-child {
+  padding-top: 0;
+}
+
+.titleCard {
+  font-size: 16px;
+  background-color: #757afd;
+  padding: 12px 0;
+  width: 70%;
+  height: 50px;
+  margin: 0 auto;
+  border-radius: 0 0 130px 130px;
+}
+
+.subtitleCard {
+  font-size: 14px;
+  text-align: left;
+  margin: 30px 0;
+}
+
+strong {
+  color: #fff;
+  line-height: 25px;
+}
+
+#pick1 {
+  list-style: disc;
+  font-size: 14px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+#pick2 {
+  list-style: disc;
+  font-size: 14px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+#pick3 {
+  list-style: disc;
+  font-size: 14px;
+  text-align: left;
+}
+
+ul {
+  padding: 0 20px;
+}
+
+/* 모집 안내 */
+
+#orangeArrow {
+  position: relative;
+  top: -110px;
+  right: -203px;
+}
+
+#infoFullTitle {
+  height: 120px;
+}
+
+#infoFull_subtitle {
+  padding-top: 10px;
+}
+
+#cardFull {
+  border: 1px solid #b3aeae;
+}
+
+.iconBox {
+  width: 25%;
+  background-color: #757afd;
+  border-radius: var(--border_radius);
+}
+
+.iconIntro {
+  list-style: disc;
+  color: black;
+}
+
+.iconCard {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+  padding: 0;
+  transform: translateY(-50%);
+}
+
+p {
+  text-align: center;
+}
+
+.iconP {
+  margin-bottom: 10px;
+}
+
+/* 현직자 멘토링 */
+
+.subtitle_white {
+  padding-top: 1rem;
+  color: var(--c-white);
+}
+
+.subtitle_white_2 {
+  padding-top: 2rem;
+  color: var(--c-white);
+  text-align: center;
+}
+
+.title_sub_2 {
+  font-size: 15px;
+  padding-bottom: 10px;
+  color: var(--c-white);
+}
+
+/* 교육시설 */
+
+#eduTitleFull {
+  padding-bottom: 10px;
+}
+
+.buildingImage {
+  border-radius: 40px;
+  height: 100%;
+}
+
+#imgaeB1 {
+  width: 100%;
+  height: 80%;
+}
+
+#imageB2 {
+  width: 100%;
+  height: 120%;
+  position: relative;
+  top: -204px;
+}
+
+/* #imageB2 {
+    width: 100%;
+    height: 120%;
+    position: relative;
+    top: -82px;
+} */
+
+#class4 {
+  position: relative;
+  top: -109px;
+}
+
+#letter1 {
+  position: relative;
+  z-index: 99;
+  top: -374px;
+  left: 416px;
+  width: 25%;
+  height: 42px;
+  font-size: 12px;
+}
+
+#letter2 {
+  position: relative;
+  z-index: 99;
+  top: -471px;
+  left: 412px;
+  width: 25%;
+  height: 42px;
+  font-size: 12px;
+}
+
+#letter3 {
+  position: relative;
+  z-index: 99;
+  top: -765px;
+  left: 416px;
+  width: 25%;
+  height: 42px;
+  font-size: 12px;
+}
+
+#letter4 {
+  position: relative;
+  z-index: 99;
+  top: -569px;
+  left: 416px;
+  width: 25%;
+  height: 42px;
+  font-size: 12px;
+}
+
+#classIcon1 {
+  position: relative;
+  top: -560px;
+  right: -1180px;
+}
+
+#classIcon2 {
+  position: relative;
+  top: -780px;
+  left: -58px;
+}
+
+/* 선발절차 */
+
+.proImageA {
+  position: relative;
+  top: 20%;
+}
+
+/* review 4개 */
+
+.pm_subtitle {
+  text-align: left;
+  font-size: 20px;
+}
+
+.carousel {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.m-padding a {
+  margin: 5px;
+  background: #ccc;
+  display: block;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.slider-navigation-previous {
+  left: 10px;
+}
+.slider-navigation-next {
+  right: 10px;
+}
+
+.review_content {
+  padding: 3rem 0rem;
+}
+
+.reverse-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+#pm_reviewTitle {
+  position: relative;
+  top: -63px;
+  padding-left: 0px;
+}
+
+/* benefits */
+
+.pm_sandbox {
+  padding: 5rem 0 2.2rem 0;
+}
+
+.pm_benefits {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  height: 100%;
+  padding: 1.25rem 1.5rem 1.25rem 1.5rem;
+}
+
+.pm_benefits_img {
+  float: right;
+  height: 4rem;
+}
+
+.pm_content {
+  padding-left: 0.3rem;
+}
+
+.pm_h1 {
+  padding-top: 1.2rem;
+}
+
+/* digital transformation */
+.dt_btn {
+  background-color: var(--c-main);
+  padding: 1rem 1.5rem;
+  color: var(--c-white);
+  border: none;
+  border-radius: 30px;
+  width: max-content;
+}
+
+.pm_dt_box {
+  background-color: var(--c-card_back);
+  border-radius: 20px;
+  width: 48% !important;
+}
+
+.pm_dt1 {
+  position: relative;
+  top: -184px;
+  left: 160px;
+}
+
+.pm_dt2 {
+  position: relative;
+  top: -319px;
+  left: 126px;
+}
+
+.pm_dt3 {
+  position: relative;
+  top: -184px;
+  left: -245px;
+}
+
+.pm_box {
+  background-color: var(--c-card_back);
+  color: var(--c-white);
+}
+
+.arrow_image {
+  position: relative;
+  top: 15%;
+}
+
+.pick_image {
+  width: 200px;
+}
+
+.pick_image_btn {
+  width: 80%;
+  font-size: 16px;
+  height: 45px;
+  margin: 1rem auto;
+}
+
+@media screen and (max-width: 1023px) {
+  .arrow_image {
+    transform: rotate(90deg);
+  }
+}

@@ -9,7 +9,7 @@
 @import url("ImportCSS/modify.css");
 @import url("ImportCSS/sign.css");
 @import url("ImportCSS/subSign.css");
-@import url("ImportCSS/sub.css");
+@import url("ImportCSS/subject.css");
 
 :root {
   --c-main: #757afd;
@@ -27,6 +27,7 @@
   --c-check: #6574ff;
   --c-button: #485fc7;
   --c-lightgray: #f8f8f8;
+  --c-darkgray: #616161fc;
 }
 
 /* 공통 사항 */
@@ -41,4 +42,13 @@
 
 .back_lightgray {
   background-color: var(--c-lightgray);
+}
+
+.back_darkgray {
+  background-color: var(--c-darkgray);
+}
+@media screen and (max-width: 1023px) {
+  .change_width {
+    width: 100%;
+  }
 }
