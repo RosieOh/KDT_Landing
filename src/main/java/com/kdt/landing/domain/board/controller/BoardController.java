@@ -10,7 +10,6 @@ import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.domain.member.service.MemberService;
 import com.kdt.landing.global.cosntant.BoardType;
-import com.kdt.landing.global.cosntant.Subject;
 import com.kdt.landing.global.util.MD5Generator;
 import jakarta.validation.Valid;
 import lombok.Getter;
