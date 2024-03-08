@@ -8,31 +8,30 @@
 
     <!-- 파비콘 설정 -->
     <!-- 표준 파비콘 -->
-    <link rel="shortcut icon" th:href="@{/images/logo.ico}">
+    <link rel="shortcut icon" th:href="@{/static/images/logo.ico}">
 
     <!-- 애플 계열 모바일 -->
-    <link rel="apple-touch-icon-precomposed" th:href="@{/images/logo_64.png}">
+    <link rel="apple-touch-icon-precomposed" th:href="@{/static/images/logo_64.png}">
 
     <!-- IE 계열 브라우저 -->
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="/images/logo_48.png">
 
     <!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
-    <link rel="icon" th:href="@{/images/logo_16.png}" sizes="16x16">
-    <link rel="icon" th:href="@{/images/logo_32.png}" sizes="32x32">
-    <link rel="icon" th:href="@{/images/logo_48.png}" sizes="48x48">
-    <link rel="icon" th:href="@{/images/logo_64.png}" sizes="64x64">
+    <link rel="icon" th:href="@{/static/images/logo_16.png}" sizes="16x16">
+    <link rel="icon" th:href="@{/static/images/logo_32.png}" sizes="32x32">
+    <link rel="icon" th:href="@{/static/images/logo_48.png}" sizes="48x48">
+    <link rel="icon" th:href="@{/static/images/logo_64.png}" sizes="64x64">
 
     <!-- 전역적 CSS  설정-->
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.css" />
     <link rel="stylesheet" th:href="@{/static/css/global.css}">
 
 
     <!-- JS 요소 정리-->
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
-    <script th:src="@{/static/js/email.js}"></script>
-    <script th:src="@{/static/js/sign.js}"></script>
+    <script th:src="@{/static/js/global.js}"></script>
 
 </th:block>

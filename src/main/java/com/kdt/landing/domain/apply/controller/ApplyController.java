@@ -2,12 +2,7 @@ package com.kdt.landing.domain.apply.controller;
 
 import com.kdt.landing.domain.apply.dto.ApplyDTO;
 import com.kdt.landing.domain.apply.service.ApplyService;
-import com.kdt.landing.domain.member.dto.MemberJoinDTO;
-import com.kdt.landing.domain.member.entity.Member;
-import com.kdt.landing.domain.member.repository.MemberRepository;
-import com.kdt.landing.domain.member.service.MemberService;
-import jakarta.validation.Valid;
-import com.kdt.landing.global.cosntant.Subject;
+import com.kdt.landing.global.cosntant.Course;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -21,7 +16,7 @@ import java.util.List;
 
 @Log4j2
 @Controller
-@RequestMapping("/eduApply")
+@RequestMapping("/apply")
 @RequiredArgsConstructor
 public class ApplyController {
 
@@ -37,10 +32,10 @@ public class ApplyController {
 
     //등록
     @PostMapping("/register")
-    public String applyRegister(Model model, ApplyDTO applyDTO, Subject subject, HttpServletRequest request) throws Exception{
-        applyDTO.setSubject(subject);
+    public String applyRegister(Model model, ApplyDTO applyDTO, Course course, HttpServletRequest request) throws Exception{
+        applyDTO.setCourse(course);
         applyService.register(applyDTO);
-        return "apply/list";
+        return "redirect:/";
     }
 
     //상태변경
