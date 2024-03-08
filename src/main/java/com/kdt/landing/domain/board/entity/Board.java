@@ -22,14 +22,12 @@ public class Board extends BaseEntity {
     @Column(length = 2000, nullable = false)
     private String content;
 
+
     private String boardType;
 
     @Column
     private Long fileId;
 
-    //    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "id")
-//    private Member member;
     private String writer;
 
     public void create(String title, String content, String writer) {

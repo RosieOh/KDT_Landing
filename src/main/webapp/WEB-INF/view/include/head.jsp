@@ -22,17 +22,17 @@
 <meta name="msapplication-TileImage" content="/images/logo_48.png">
 
 <!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
-<link rel="icon" href="/resources/images/logo_16.png" sizes="16x16">
-<link rel="icon" href="/resources/images/logo_32.png" sizes="32x32">
-<link rel="icon" href="/resources/images/logo_48.png" sizes="48x48">
-<link rel="icon" href="/resources/images/logo_64.png" sizes="64x64">
+<link rel="icon" href="/resource/images/logo_16.png" sizes="16x16">
+<link rel="icon" href="/resource/images/logo_32.png" sizes="32x32">
+<link rel="icon" href="/resource/images/logo_48.png" sizes="48x48">
+<link rel="icon" href="/resource/images/logo_64.png" sizes="64x64">
 
 <%--전역적 CSS  설정--%>
-<link rel="stylesheet" href="/resources/css/global.css">
-<link rel="stylesheet" href="/resources/css/member.css">
+<link rel="stylesheet" href="/resource/css/global.css">
+<link rel="stylesheet" href="/resource/css/member.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
 
 
 <%-- JS 요소 정리--%>
-<script src="/resources/js/signup.js"></script>
+<script src="/resource/js/signup.js"></script>
 <script src="https://code.jquery.com/jquery-latest.js"></script>

@@ -36,7 +36,7 @@
 <jsp:include page="../include/header.jsp"></jsp:include>
 
     <div class="row mt-3">
-        <form action="/notice/list" method="get" class="col-md-8 offset-md-2">
+        <form action="${path }/notice/list" method="get" class="col-md-8 offset-md-2">
         </form>
     </div>
 
@@ -55,14 +55,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <a href="" class="text-decoration-none"></a>
-                            </td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <c:forEach>
+                            <tr>
+                                <td>
+                                    <a href="${path }/notice/"></a>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                     <script>
