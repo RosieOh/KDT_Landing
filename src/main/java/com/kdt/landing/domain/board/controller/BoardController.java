@@ -5,8 +5,10 @@ import com.kdt.landing.domain.board.entity.Board;
 import com.kdt.landing.domain.board.service.BoardService;
 import com.kdt.landing.domain.file.dto.FileDTO;
 import com.kdt.landing.domain.file.service.FileService;
+import com.kdt.landing.domain.member.dto.MemberJoinDTO;
 import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.repository.MemberRepository;
+import com.kdt.landing.domain.member.service.MemberService;
 import com.kdt.landing.global.util.MD5Generator;
 import jakarta.validation.Valid;
 import lombok.Getter;
@@ -39,6 +41,7 @@ public class BoardController {
     @Value("${upload.path}")
     private String uploadPath;
 
+    private final MemberService memberService;
     private final MemberRepository memberRepository;
     private final BoardService boardService;
     private final FileService fileService;
@@ -72,14 +75,15 @@ public class BoardController {
     @GetMapping("/register")
     public String registerForm(Model model, Principal principal) {
         model.addAttribute("principal", principal);
-        log.info("==========================================================");
-        String email = principal.getName();
-        log.info(email);
-        log.info("==========================================================");
-        Member member = memberRepository.findByMid(email);
-        String name = (member != null) ? member.getName() : "Unknown";
-        log.info("니는 뭐냐? :" + name);
-        model.addAttribute("name", name);
+
+        String id = principal.getName();
+//        MemberJoinDTO memberJoinDTO = memberService.findByFid(id);
+//        String id = principal.getName();
+        log.info("==========================================================principal" + principal);
+        log.info("==========================================================principal.getName()" + principal.getName());
+//        MemberJoinDTO memberJoinDTO = memberService.findByFid(id);
+//        log.info("==========================================================name" + name);
+//        model.addAttribute("name", name);
         return "notice/register";
     }
 

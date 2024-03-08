@@ -4,13 +4,17 @@ import com.kdt.landing.domain.member.dto.MemberJoinDTO;
 import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.global.cosntant.Role;
+import com.kdt.landing.global.cosntant.Status;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Log4j2
 @Service
@@ -24,20 +28,6 @@ public class MemberServiceImpl implements MemberService{
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public void join(MemberJoinDTO memberJoinDTO) {
-        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + memberJoinDTO);
-        // Member 엔티티를 생성할 때 ID는 자동으로 생성되도록 변경
-        log.info("MemberServiceㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + memberJoinDTO);
-        // Member 엔티티를 생성할 때 ID는 자동으로 생성되도록 변경
-        memberJoinDTO.setPw(passwordEncoder.encode(memberJoinDTO.getPw()));
-        memberJoinDTO.setRole(Role.STUDENT); // 기본 역할 설정
-        Member newMember = modelMapper.map(memberJoinDTO, Member.class);
-        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" + newMember);
-        memberRepository.save(newMember);
-    }
-
-
-    @Override
     public void createAdminMember() {
         // 이미 존재하는 회원인지 확인
         if (!memberRepository.existsByEmail("admin@naver.com")) {
@@ -47,8 +37,6 @@ public class MemberServiceImpl implements MemberService{
                     .name("Admin")
                     .nickname("관리자")
                     .email("admin@naver.com")
-                    .active(1)
-                    .roleSet(Collections.singleton(Role.ADMIN))
                     .role(Role.ADMIN)
                     .build();
 
@@ -61,17 +49,8 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public Member existByEmail(String email) {
-        return memberRepository.existsMemberByEmail(email);
-    }
-
-    @Override
-    public void changePw(Member member) {
-        // 회원 비밀번호 변경
-        Member existingMember = memberRepository.findById(member.getId())
-                .orElseThrow(() -> new IllegalArgumentException("해당하는 회원을 찾을 수 없습니다."));
-        existingMember.changePassword(passwordEncoder.encode(member.getPw()));
-        memberRepository.save(existingMember);
+    public boolean existByEmail(String email) {
+        return memberRepository.existsByEmail(email);
     }
 
     @Override
@@ -80,10 +59,103 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public boolean findEmail(String email) {
-        boolean pass = true;
-        int cnt = 0;
-        Member member = memberRepository.existsMemberByEmail(email);
-        return false;
+    public List<MemberJoinDTO> memberList() {
+        List<Member> memberList = memberRepository.findAll();
+        List<MemberJoinDTO> memberJoinDTOList = memberList.stream().map(
+                member -> modelMapper.map(member,MemberJoinDTO.class))
+                .collect(Collectors.toList());
+        return memberJoinDTOList;
     }
+
+    @Override
+    public MemberJoinDTO getEmail(String email) {
+        Member member = memberRepository.getEmail(email);
+        MemberJoinDTO memberJoinDTO = modelMapper.map(member, MemberJoinDTO.class);
+        return memberJoinDTO;
+    }
+
+    @Override
+    public void memberInsert(MemberJoinDTO memberJoinDTO) {
+        String password = passwordEncoder.encode(memberJoinDTO.getPw());
+        memberJoinDTO.setPw(password);
+        memberJoinDTO.setRole(Role.STUDENT);
+        memberJoinDTO.setStatus(Status.ACTIVE);
+        Member member = modelMapper.map(memberJoinDTO, Member.class);
+        memberRepository.save(member);
+    }
+
+    @Override
+    public Member LoginEmail(String email) {
+        Member member = memberRepository.getEmail(email);
+        return member;
+    }
+
+    @Override
+    public void memberUpdate(MemberJoinDTO memberJoinDTO) {
+        Optional<Member> member = memberRepository.getMember(memberJoinDTO.getEmail());
+        Member member1 = member.orElseThrow();
+        member1.change(memberJoinDTO);
+        memberRepository.save(member1);
+    }
+
+    @Override
+    public void stateUpdate(MemberJoinDTO memberJoinDTO) {
+        Optional<Member> member = memberRepository.getMember(memberJoinDTO.getEmail());
+        Member member1 = member.orElseThrow();
+        member1.stateUpdate(memberJoinDTO);
+        memberRepository.save(member1);
+    }
+
+    @Override
+    public void roleUpdate(MemberJoinDTO memberJoinDTO) {
+        Optional<Member> member = memberRepository.getMember(memberJoinDTO.getEmail());
+        Member member1 = member.orElseThrow();
+        member1.roleUpdate(memberJoinDTO);
+        memberRepository.save(member1);
+    }
+
+    @Override
+    public void memberDelete(Long id) {
+        memberRepository.deleteById(id);
+    }
+
+    @Override
+    public int loginPro(String email) {
+        int pass = 0;
+        Member member = memberRepository.getEmail(email);
+        LocalDateTime localDateTime = LocalDateTime.now().minusDays(30); // 현재 시점에서 30일 동안 반응이 없으면 휴면
+        if (localDateTime.isAfter(member.getLoginAt())) {
+            member.setStatus(Status.REST);
+            memberRepository.save(member);
+            pass = 2;
+        } else {
+            if (member.getStatus().equals(Status.ACTIVE)) {
+                member.setLoginAt(LocalDateTime.now());
+                memberRepository.save(member);
+                pass = 2;
+            } else if (member.getStatus().equals(Status.REST)) {
+                pass = 2;
+            } else if (member.getStatus().equals(Status.OUT)) {
+                pass = 3;
+            }
+        }
+        return pass;
+    }
+
+    @Override
+    public boolean idCheck(String email) {
+        boolean pass = true;
+        int cnt = memberRepository.countByEmail(email);
+        if(cnt > 0) pass = false;
+        return pass;
+    }
+
+    @Override
+    public void memberChangePw(MemberJoinDTO memberJoinDTO) {
+        String password = passwordEncoder.encode(memberJoinDTO.getPw());
+        memberJoinDTO.setPw(password);
+        Member member = modelMapper.map(memberJoinDTO, Member.class);
+        memberRepository.save(member);
+    }
+
 }

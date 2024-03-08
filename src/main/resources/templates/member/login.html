@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,14 +14,21 @@
 
     <div class="login-wrapper" style="margin: 0 auto; padding-top: 100px; min-height: 70vh;">
         <h2 style="text-align: center;">Login</h2>
-        <form th:action="@{/member/loginPro}" method="post" id="login-form">
+        <form th:action="@{/loginPro}" method="post" id="login-form">
             <input type="text" name="email" placeholder= "이메일을 입력해주세요" autocomplete="off" required style="background-color: #F8F8F8;">
-            <input type="password"  name="password" placeholder="비밀번호를 입력해주세요" autocomplete="off" required style="background-color: #F8F8F8;">
+            <input type="password"  name="pw" placeholder="비밀번호를 입력해주세요" autocomplete="off" required style="background-color: #F8F8F8;">
+            <div th:if="${param.error}">
+                <p style="color:red">아이디 또는 비밀번호가 올바르지 않거나 <br> 가입이 되지 않았습니다.</p>
+            </div>
+            <div th:if="${param.authError}">
+                <p style="color:blue">토큰 정보가 만료되었습니다. 토큰을 갱신하시기 바랍니다.</p>
+            </div>
             <label for="remember-check">
                 <input type="checkbox" id="remember-check">아이디 저장하기
             </label>
+            <button type="submit" class="login-btn">로그인</button>
             <input type="submit" value="Login">
-                <p class="d-flex justify-content-center mt-3"> 회원이 아니신가요? &nbsp; <a th:href="@{/templates/member/join}" class="text-secondary"> 회원가입하기 </a></p>
+                <p class="d-flex justify-content-center mt-3"> 회원이 아니신가요? &nbsp; <a th:href="@{/member/join}" class="text-secondary"> 회원가입하기 </a></p>
         </form>
     </div>
 
