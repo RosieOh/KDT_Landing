@@ -55,11 +55,22 @@
                         </tr>
                         </thead>
                         <tbody>
+<<<<<<< HEAD:src/main/resources/templates/notice/list.jsp
                         <c:forEach>
                             <tr>
                                 <td>
                                     <a href="${path }/notice/"></a>
                                 </td>
+=======
+                        <c:forEach var="noti" items="${noticeList }" varStatus="status">
+                            <tr>
+                                <td>
+                                    <a href="${path }/notice/detail.do?no=${noti.no }" class="al">${noti.title }</a>
+                                </td>
+                                <fmt:parseDate value="${noti.resdate}" pattern="yyyy-MM-dd" var="formattedDate" />
+                                <td class="has-text-centered"><fmt:formatDate value="${formattedDate }" pattern="yyyy.MM.dd"/></td>
+                                <td class="has-text-centered">관리자</td>
+>>>>>>> 2a0a4ad007487b2bb2ef28ef650d0ad6374ad147:src/main/webapp/WEB-INF/view/notice/list.jsp
                             </tr>
                         </c:forEach>
                         </tbody>
