@@ -23,7 +23,7 @@
               가장 먼저 알려드릴게요.
             </p>
           </div>
-          <form th:action="@{/apply/register}" method="post" onclick="return agree(this)">
+          <form th:action="@{/apply/register}" method="post" >
             <div class="field">
               <label class="label">이름 <em>*</em> </label>
               <div class="control">
@@ -102,6 +102,7 @@
               <button
                       type="submit"
                       class=" button is-link has-text-weight-medium is-medium"
+                      onclick="return agree(this)"
               >
                 사전 예약 신청
               </button>
