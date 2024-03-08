@@ -35,7 +35,16 @@ public class HomeController {
         }
         model.addAttribute("member", member);
         memberService.createAdminMember(); // 관리자 회원 생성 메서드 호출
-        return "main/index";
+        return "/index";
     }
 
+    @GetMapping("/subSign")
+    public String subSign(Model model) {
+        return "main/sign/subSign";
+    }
+
+    @GetMapping("/fullStack")
+    public String fullStack(Model model) {
+        return "sub/fullstack";
+    }
 }
