@@ -1220,11 +1220,11 @@ Caused by: java.sql.SQLException: (conn=63) Cannot change column 'member_id': us
 2024-02-28 10:14:52.671 INFO  [http-nio-8083-exec-1] [o.a.c.c.C.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-02-28 10:14:52.671 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
 2024-02-28 10:14:52.672 INFO  [http-nio-8083-exec-1] [o.s.web.servlet.DispatcherServlet] - Completed initialization in 1 ms
-2024-02-28 10:15:08.933 INFO  [http-nio-8083-exec-10] [c.k.l.d.apply.controller.ApplyController] - ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡapplyDTOApplyDTO(no=null, name=12, age=12, tel=12, email=12, comment=12, subject=FullStack, regDate=null, modDate=null)
+2024-02-28 10:15:08.933 INFO  [http-nio-8083-exec-10] [c.k.l.d.apply.controller.ApplyController] - ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡapplyDTOApplyDTO(no=null, name=12, age=12, tel=12, email=12, comment=12, course=FullStack, regDate=null, modDate=null)
 2024-02-28 10:15:08.945 INFO  [http-nio-8083-exec-10] [c.k.l.d.apply.service.ApplyServiceImpl] - ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡApplyServiceImpl
-2024-02-28 10:15:13.716 INFO  [http-nio-8083-exec-4] [c.k.l.d.apply.controller.ApplyController] - ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡapplyDTOApplyDTO(no=null, name=12, age=12, tel=12, email=12, comment=12, subject=FullStack, regDate=null, modDate=null)
+2024-02-28 10:15:13.716 INFO  [http-nio-8083-exec-4] [c.k.l.d.apply.controller.ApplyController] - ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡapplyDTOApplyDTO(no=null, name=12, age=12, tel=12, email=12, comment=12, course=FullStack, regDate=null, modDate=null)
 2024-02-28 10:15:13.717 INFO  [http-nio-8083-exec-4] [c.k.l.d.apply.service.ApplyServiceImpl] - ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡApplyServiceImpl
-2024-02-28 10:15:43.595 INFO  [http-nio-8083-exec-2] [c.k.l.d.apply.controller.ApplyController] - ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡapplyDTOApplyDTO(no=null, name=12, age=12, tel=12, email=12, comment=12, subject=FullStack, regDate=null, modDate=null)
+2024-02-28 10:15:43.595 INFO  [http-nio-8083-exec-2] [c.k.l.d.apply.controller.ApplyController] - ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡapplyDTOApplyDTO(no=null, name=12, age=12, tel=12, email=12, comment=12, course=FullStack, regDate=null, modDate=null)
 2024-02-28 10:15:43.596 INFO  [http-nio-8083-exec-2] [c.k.l.d.apply.service.ApplyServiceImpl] - ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡApplyServiceImpl
 2024-02-28 10:50:19.910 INFO  [File Watcher] [o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener] - Restarting due to 6 class path changes (0 additions, 6 deletions, 0 modifications)
 2024-02-28 10:50:20.231 INFO  [Thread-6] [o.apache.coyote.http11.Http11NioProtocol] - Pausing ProtocolHandler ["http-nio-8083"]
@@ -1919,7 +1919,11 @@ Caused by: java.sql.SQLException: (conn=114) Cannot change column 'id': used in 
 2024-02-29 09:18:13.129 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@1ff11617
 2024-02-29 09:18:13.245 INFO  [restartedMain] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
 2024-02-29 09:18:13.273 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduApplyController' method 
-com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController#applyList(Model)
+<<<<<<< HEAD
+com.kdt.landing.domain.course.controller.SubjectController#applyList(Model)
+=======
+com.kdt.landing.domain.subject.controller.SubjectController#applyList(Model)
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 to {GET [/apply/list]}: There is already 'applyController' bean method
 com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 2024-02-29 09:18:13.274 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
@@ -1931,7 +1935,11 @@ com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
 2024-02-29 09:18:13.308 ERROR [restartedMain] [o.springframework.boot.SpringApplication] - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduApplyController' method 
-com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController#applyList(Model)
+<<<<<<< HEAD
+com.kdt.landing.domain.course.controller.SubjectController#applyList(Model)
+=======
+com.kdt.landing.domain.subject.controller.SubjectController#applyList(Model)
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 to {GET [/apply/list]}: There is already 'applyController' bean method
 com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
@@ -1957,7 +1965,11 @@ com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'eduApplyController' method 
-com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController#applyList(Model)
+<<<<<<< HEAD
+com.kdt.landing.domain.course.controller.SubjectController#applyList(Model)
+=======
+com.kdt.landing.domain.subject.controller.SubjectController#applyList(Model)
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 to {GET [/apply/list]}: There is already 'applyController' bean method
 com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:667)
@@ -2009,7 +2021,11 @@ com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 2024-02-29 09:18:46.465 INFO  [restartedMain] [o.s.s.web.DefaultSecurityFilterChain] - Will not secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@1ff11617
 2024-02-29 09:18:46.579 INFO  [restartedMain] [o.s.b.a.w.s.WelcomePageHandlerMapping] - Adding welcome page template: index
 2024-02-29 09:18:46.611 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduApplyController' method 
-com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController#applyList(Model)
+<<<<<<< HEAD
+com.kdt.landing.domain.course.controller.SubjectController#applyList(Model)
+=======
+com.kdt.landing.domain.subject.controller.SubjectController#applyList(Model)
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 to {GET [/apply/list]}: There is already 'applyController' bean method
 com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 2024-02-29 09:18:46.612 INFO  [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
@@ -2021,7 +2037,11 @@ com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
 2024-02-29 09:18:46.639 ERROR [restartedMain] [o.springframework.boot.SpringApplication] - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'eduApplyController' method 
-com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController#applyList(Model)
+<<<<<<< HEAD
+com.kdt.landing.domain.course.controller.SubjectController#applyList(Model)
+=======
+com.kdt.landing.domain.subject.controller.SubjectController#applyList(Model)
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 to {GET [/apply/list]}: There is already 'applyController' bean method
 com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
@@ -2047,7 +2067,11 @@ com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'eduApplyController' method 
-com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController#applyList(Model)
+<<<<<<< HEAD
+com.kdt.landing.domain.course.controller.SubjectController#applyList(Model)
+=======
+com.kdt.landing.domain.subject.controller.SubjectController#applyList(Model)
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 to {GET [/apply/list]}: There is already 'applyController' bean method
 com.kdt.landing.domain.apply.controller.ApplyController#applyList(Model) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:667)
@@ -2432,7 +2456,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.course.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.subject.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -2484,7 +2512,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.course.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.subject.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -2568,7 +2600,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.course.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.subject.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -2688,7 +2724,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.course.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.subject.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -2807,7 +2847,11 @@ Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Faile
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:187)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:119)
 	... 86 common frames omitted
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.course.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.subject.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -2843,7 +2887,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.course.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.subject.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -2879,7 +2927,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.course.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.subject.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -2915,7 +2967,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.course.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.subject.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_BigDataController]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -2951,7 +3007,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackServiceImpl' for bean class [com.kdt.landing.domain.Sub_PM.service.Sub_PMServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_FullStack.service.Sub_FullStackServiceImpl]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackServiceImpl' for bean class [com.kdt.landing.domain.Sub_PM.service.Sub_PMServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.course.service.SubjectServiceImpl]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackServiceImpl' for bean class [com.kdt.landing.domain.Sub_PM.service.Sub_PMServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.subject.service.SubjectServiceImpl]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -3684,7 +3744,11 @@ jakarta.servlet.ServletException: JSP file [&#47;WEB-INF&#47;view&#47;member&#47
 2024-02-29 12:41:19.279 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 21776 (C:\Users\user\Desktop\first_proj\0229\rosieoh\02291225\KDT_Landing\build\classes\java\main started by user in C:\Users\user\Desktop\first_proj\0229\rosieoh\02291225\KDT_Landing)
 2024-02-29 12:41:19.279 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
 2024-02-29 12:41:19.541 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-29 12:41:19.585 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'sub_FullStackRepository' defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot register bean definition [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] for bean 'sub_FullStackRepository' since there is already [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.Sub_FullStack.repository.Sub_FullStackRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] bound.
+<<<<<<< HEAD
+2024-02-29 12:41:19.585 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'sub_FullStackRepository' defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot register bean definition [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] for bean 'sub_FullStackRepository' since there is already [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.course.repository.SubjectRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] bound.
+=======
+2024-02-29 12:41:19.585 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'sub_FullStackRepository' defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot register bean definition [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] for bean 'sub_FullStackRepository' since there is already [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.subject.repository.SubjectRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] bound.
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 2024-02-29 12:41:19.591 INFO  [restartedMain] [o.s.b.a.l.ConditionEvaluationReportLogger] - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
@@ -3696,7 +3760,11 @@ APPLICATION FAILED TO START
 
 Description:
 
-The bean 'sub_FullStackRepository', defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration, could not be registered. A bean with that name has already been defined in com.kdt.landing.domain.Sub_FullStack.repository.Sub_FullStackRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration and overriding is disabled.
+<<<<<<< HEAD
+The bean 'sub_FullStackRepository', defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration, could not be registered. A bean with that name has already been defined in com.kdt.landing.domain.course.repository.SubjectRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration and overriding is disabled.
+=======
+The bean 'sub_FullStackRepository', defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration, could not be registered. A bean with that name has already been defined in com.kdt.landing.domain.subject.repository.SubjectRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration and overriding is disabled.
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 
 Action:
 
@@ -3705,7 +3773,11 @@ Consider renaming one of the beans or enabling overriding by setting spring.main
 2024-02-29 12:41:21.073 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 21776 (C:\Users\user\Desktop\first_proj\0229\rosieoh\02291225\KDT_Landing\build\classes\java\main started by user in C:\Users\user\Desktop\first_proj\0229\rosieoh\02291225\KDT_Landing)
 2024-02-29 12:41:21.073 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
 2024-02-29 12:41:21.188 INFO  [restartedMain] [o.s.d.r.c.RepositoryConfigurationDelegate] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-29 12:41:21.206 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'sub_FullStackRepository' defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot register bean definition [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] for bean 'sub_FullStackRepository' since there is already [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.Sub_FullStack.repository.Sub_FullStackRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] bound.
+<<<<<<< HEAD
+2024-02-29 12:41:21.206 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'sub_FullStackRepository' defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot register bean definition [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] for bean 'sub_FullStackRepository' since there is already [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.course.repository.SubjectRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] bound.
+=======
+2024-02-29 12:41:21.206 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'sub_FullStackRepository' defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot register bean definition [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] for bean 'sub_FullStackRepository' since there is already [Root bean: class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodNames=null; destroyMethodNames=null; defined in com.kdt.landing.domain.subject.repository.SubjectRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration] bound.
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 2024-02-29 12:41:21.207 INFO  [restartedMain] [o.s.b.a.l.ConditionEvaluationReportLogger] - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
@@ -3717,7 +3789,11 @@ APPLICATION FAILED TO START
 
 Description:
 
-The bean 'sub_FullStackRepository', defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration, could not be registered. A bean with that name has already been defined in com.kdt.landing.domain.Sub_FullStack.repository.Sub_FullStackRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration and overriding is disabled.
+<<<<<<< HEAD
+The bean 'sub_FullStackRepository', defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration, could not be registered. A bean with that name has already been defined in com.kdt.landing.domain.course.repository.SubjectRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration and overriding is disabled.
+=======
+The bean 'sub_FullStackRepository', defined in com.kdt.landing.domain.Sub_PM.repository.Sub_PMRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration, could not be registered. A bean with that name has already been defined in com.kdt.landing.domain.subject.repository.SubjectRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration and overriding is disabled.
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 
 Action:
 
@@ -3809,7 +3885,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.Sub_FullStack.controller.Sub_FullStackController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_FullStackController]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.course.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_FullStackController]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackController' for bean class [com.kdt.landing.domain.subject.controller.SubjectController] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_BigData.controller.Sub_FullStackController]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -3845,7 +3925,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackServiceImpl' for bean class [com.kdt.landing.domain.Sub_PM.service.Sub_FullStackServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_FullStack.service.Sub_FullStackServiceImpl]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackServiceImpl' for bean class [com.kdt.landing.domain.Sub_PM.service.Sub_FullStackServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.course.service.SubjectServiceImpl]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackServiceImpl' for bean class [com.kdt.landing.domain.Sub_PM.service.Sub_FullStackServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.subject.service.SubjectServiceImpl]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -3881,7 +3965,11 @@ org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse 
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackServiceImpl' for bean class [com.kdt.landing.domain.Sub_PM.service.Sub_FullStackServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.Sub_FullStack.service.Sub_FullStackServiceImpl]
+<<<<<<< HEAD
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackServiceImpl' for bean class [com.kdt.landing.domain.Sub_PM.service.Sub_FullStackServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.course.service.SubjectServiceImpl]
+=======
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'sub_FullStackServiceImpl' for bean class [com.kdt.landing.domain.Sub_PM.service.Sub_FullStackServiceImpl] conflicts with existing, non-compatible bean definition of same name and class [com.kdt.landing.domain.subject.service.SubjectServiceImpl]
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349)
 	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287)
 	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
@@ -3913,8 +4001,13 @@ Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionExcep
 2024-02-29 13:37:24.358 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Start completed.
 2024-02-29 13:37:24.371 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000025: MariaDB103Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2024-02-29 13:37:24.372 WARN  [restartedMain] [org.hibernate.orm.deprecation] - HHH90000026: MariaDB103Dialect has been deprecated; use org.hibernate.dialect.MariaDBDialect instead
-2024-02-29 13:37:24.482 ERROR [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Failed to initialize JPA EntityManagerFactory: The [com.kdt.landing.domain.Sub_FullStack.entity.Sub_FullStack] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
-2024-02-29 13:37:24.483 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: The [com.kdt.landing.domain.Sub_FullStack.entity.Sub_FullStack] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+<<<<<<< HEAD
+2024-02-29 13:37:24.482 ERROR [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Failed to initialize JPA EntityManagerFactory: The [com.kdt.landing.domain.course.entity.Subject] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+2024-02-29 13:37:24.483 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: The [com.kdt.landing.domain.course.entity.Subject] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+=======
+2024-02-29 13:37:24.482 ERROR [restartedMain] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Failed to initialize JPA EntityManagerFactory: The [com.kdt.landing.domain.subject.entity.Subject] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+2024-02-29 13:37:24.483 WARN  [restartedMain] [o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: The [com.kdt.landing.domain.subject.entity.Subject] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 2024-02-29 13:37:24.483 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown initiated...
 2024-02-29 13:37:24.487 INFO  [restartedMain] [com.zaxxer.hikari.HikariDataSource] - HikariPool-1 - Shutdown completed.
 2024-02-29 13:37:24.489 INFO  [restartedMain] [o.apache.catalina.core.StandardService] - Stopping service [Tomcat]
@@ -3922,7 +4015,11 @@ Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionExcep
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
 2024-02-29 13:37:24.518 ERROR [restartedMain] [o.springframework.boot.SpringApplication] - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: The [com.kdt.landing.domain.Sub_FullStack.entity.Sub_FullStack] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+<<<<<<< HEAD
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: The [com.kdt.landing.domain.course.entity.Subject] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+=======
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: The [com.kdt.landing.domain.subject.entity.Subject] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
@@ -3945,7 +4042,11 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.hibernate.DuplicateMappingException: The [com.kdt.landing.domain.Sub_FullStack.entity.Sub_FullStack] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+<<<<<<< HEAD
+Caused by: org.hibernate.DuplicateMappingException: The [com.kdt.landing.domain.course.entity.Subject] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+=======
+Caused by: org.hibernate.DuplicateMappingException: The [com.kdt.landing.domain.subject.entity.Subject] and [com.kdt.landing.domain.Sub_PM.entity.Sub_FullStack] entities share the same JPA entity name: [Sub_FullStack], which is not allowed
+>>>>>>> a3db3090785c12e836864b3b3da2178081566b4d
 	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.addEntityBinding(InFlightMetadataCollectorImpl.java:347)
 	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:238)
 	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:417)
