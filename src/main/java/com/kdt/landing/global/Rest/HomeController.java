@@ -39,7 +39,12 @@ public class HomeController {
     }
 
     @GetMapping("/subSign")
-    public String homesu(Model model) {
+    public String subSign(Model model) {
         return "main/sign/subSign";
+    }
+
+    @GetMapping("/fullStack")
+    public String fullStack(Model model) {
+        return "sub/fullstack";
     }
 }
