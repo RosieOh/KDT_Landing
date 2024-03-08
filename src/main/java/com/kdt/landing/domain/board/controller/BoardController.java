@@ -5,8 +5,12 @@ import com.kdt.landing.domain.board.entity.Board;
 import com.kdt.landing.domain.board.service.BoardService;
 import com.kdt.landing.domain.file.dto.FileDTO;
 import com.kdt.landing.domain.file.service.FileService;
+import com.kdt.landing.domain.member.dto.MemberJoinDTO;
 import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.repository.MemberRepository;
+import com.kdt.landing.domain.member.service.MemberService;
+import com.kdt.landing.global.cosntant.BoardType;
+import com.kdt.landing.global.cosntant.Subject;
 import com.kdt.landing.global.util.MD5Generator;
 import jakarta.validation.Valid;
 import lombok.Getter;
@@ -15,7 +19,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
+import org.springframework.http.HttpRequest;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,6 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.security.Principal;
 import java.util.List;
@@ -38,6 +46,7 @@ public class BoardController {
     @Value("${upload.path}")
     private String uploadPath;
 
+    private final MemberService memberService;
     private final MemberRepository memberRepository;
     private final BoardService boardService;
     private final FileService fileService;
@@ -46,25 +55,39 @@ public class BoardController {
     public String noticeListAll(Model model, Principal principal) {
         String boardType = "NOTICE";
         List<BoardDTO> boardList = boardService.findByBoardType(boardType);
-        if(principal != null) {
-            model.addAttribute("username", principal.getName());
-        }
         model.addAttribute("boardList", boardList);
+        String email = principal.getName();
+        Member member = memberRepository.findByEmail(email);
+        model.addAttribute("member", member);
         model.addAttribute("principal", principal);
         return "notice/list";
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    @GetMapping("/read")
+    public String  readNotice(Long id, Model model) {
+        BoardDTO boardDTO = boardService.findById(id);
+        FileDTO fileDTO = fileService.getFile(boardDTO.getFileId());
+        log.info(boardDTO.toString());
+        log.info(fileDTO.toString());
+        model.addAttribute("fileList", fileDTO);
+        model.addAttribute("boardList", boardDTO);
+        return "notice/view";
+    }
+
+
     @GetMapping("/register")
     public String registerForm(Model model, Principal principal) {
-        model.addAttribute("principal", principal);
-        String id = principal.getName();
-        Optional<Member> member = memberRepository.findById(Long.valueOf(id));
-        model.addAttribute("writer", "admin");
+        String email = principal.getName();
+        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
+        log.info("=================================optionalMember : " + optionalMember);
+        if (optionalMember.isPresent()) {
+            Member member = optionalMember.get();
+            String name = member.getName();
+            model.addAttribute("name", name);
+        }
         return "notice/register";
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     @PostMapping("/register")
     public String noticeRegister(@Valid BoardDTO boardDTO,
                                  BindingResult bindingResult,
