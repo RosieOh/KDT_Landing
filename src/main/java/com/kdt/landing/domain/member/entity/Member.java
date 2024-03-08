@@ -1,11 +1,18 @@
 package com.kdt.landing.domain.member.entity;
 
+import com.kdt.landing.domain.member.dto.MemberJoinDTO;
 import com.kdt.landing.global.cosntant.BaseEntity;
 import com.kdt.landing.global.cosntant.Role;
+import com.kdt.landing.global.cosntant.Status;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 
+import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -35,7 +42,13 @@ public class Member extends BaseEntity {
     @Column(unique = true, nullable = true)
     private String email;
 
-    private int active;
+    private String tel;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;      //회원 활동상태
+
+    @CreatedDate
+    private LocalDateTime loginAt;  //최종 로그인시간
 
     @ElementCollection(fetch = FetchType.LAZY)
     @Builder.Default
@@ -45,28 +58,17 @@ public class Member extends BaseEntity {
     @Builder.Default
     private Role role = Role.STUDENT; // 디폴트로 USER 권한을 갖도록 초기화
 
-    @Builder
-    public Member(Long id, String pw, String name, String nickname, String email) {
-        this.id = id;
-        this.pw = pw;
-        this.name = name;
-        this.nickname = nickname;
-        this.email = email;
+    public void change(MemberJoinDTO memberJoinDTO) {
+        this.tel = memberJoinDTO.getTel();
     }
 
-    public void changePassword(String pw) {
-        this.pw = pw;
+
+
+    public void stateUpdate(MemberJoinDTO memberJoinDTO) {
+        this.status = memberJoinDTO.getStatus();
     }
 
-    public void changeEmail(String email) {
-        this.email = email;
-    }
-
-    public void addRole(Role role) {
-        this.roleSet.add(role);
-    }
-
-    public void clearRoles() {
-        this.roleSet.clear();
+    public void roleUpdate(MemberJoinDTO memberJoinDTO) {
+        this.role = memberJoinDTO.getRole();
     }
 }
