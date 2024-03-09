@@ -1,27 +1,19 @@
 package com.kdt.landing.domain.board.controller;
 
 import com.kdt.landing.domain.board.dto.BoardDTO;
-import com.kdt.landing.domain.board.entity.Board;
 import com.kdt.landing.domain.board.service.BoardService;
 import com.kdt.landing.domain.file.dto.FileDTO;
 import com.kdt.landing.domain.file.service.FileService;
-import com.kdt.landing.domain.member.dto.MemberJoinDTO;
 import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.domain.member.service.MemberService;
-import com.kdt.landing.global.cosntant.BoardType;
 import com.kdt.landing.global.util.MD5Generator;
 import jakarta.validation.Valid;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
-import org.springframework.http.HttpRequest;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.security.Principal;
 import java.util.List;
@@ -40,7 +31,7 @@ import java.util.Optional;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/notice")
-public class BoardController {
+public class NoticeController {
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -50,28 +41,47 @@ public class BoardController {
     private final BoardService boardService;
     private final FileService fileService;
 
-    @GetMapping("/list")
+    @GetMapping(value = {"/list", "/"})
     public String noticeListAll(Model model, Principal principal) {
         String boardType = "NOTICE";
         List<BoardDTO> boardList = boardService.findByBoardType(boardType);
         model.addAttribute("boardList", boardList);
         String email = principal.getName();
-        Member member = memberRepository.findByEmail(email);
-        model.addAttribute("member", member);
+        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
+        log.info("=================================optionalMember : " + optionalMember);
+        if (optionalMember.isPresent()) {
+            Member member = optionalMember.get();
+            String name = member.getName();
+            model.addAttribute("name", name);
+        }
         model.addAttribute("principal", principal);
         return "notice/list";
     }
 
     @GetMapping("/read")
-    public String  readNotice(Long id, Model model) {
-        BoardDTO boardDTO = boardService.findById(id);
-        FileDTO fileDTO = fileService.getFile(boardDTO.getFileId());
-        log.info(boardDTO.toString());
-        log.info(fileDTO.toString());
-        model.addAttribute("fileList", fileDTO);
-        model.addAttribute("boardList", boardDTO);
+    public String readNotice(Long id, Model model, Principal principal) {
+        if (id != null) {
+            BoardDTO boardDTO = boardService.findById(id);
+            if (boardDTO != null) {
+                FileDTO fileDTO = fileService.getFile(boardDTO.getFileId());
+                String email = principal.getName();
+                Optional<Member> optionalMember = memberRepository.findByEmail2(email);
+                log.info("=================================optionalMember : " + optionalMember);
+                if (optionalMember.isPresent()) {
+                    Member member = optionalMember.get();
+                    String name = member.getName();
+                    model.addAttribute("name", name);
+                }
+                model.addAttribute("principal", principal);
+                model.addAttribute("fileList", fileDTO);
+                model.addAttribute("boardList", boardDTO);
+            } else {
+                log.info("fileDTO" + fileService);
+            }
+        }
         return "notice/view";
     }
+
 
 
     @GetMapping("/register")
@@ -92,12 +102,6 @@ public class BoardController {
                                  BindingResult bindingResult,
                                  RedirectAttributes redirectAttributes,
                                  @RequestParam("file") MultipartFile files) {
-        log.info("board POST register.......");
-        log.info("이름 어디 갔노" + boardDTO.getWriter());
-        if (bindingResult.hasErrors()) {
-            log.info("has errors..........");
-            redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
-        }
         try {
             String originFilename = files.getOriginalFilename();
             String filename = new MD5Generator(originFilename).toString();
@@ -130,27 +134,96 @@ public class BoardController {
         return "redirect:/notice/list";
     }
 
+//    @GetMapping("/modify")
+//    public String modifyForm(Long id, Model model, Principal principal) {
+//        BoardDTO boardDTO = boardService.findById(id);
+//        model.addAttribute("boardDTO", boardDTO);
+//        String email = principal.getName();
+//        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
+//        log.info("=================================optionalMember : " + optionalMember);
+//        // Optional 객체가 비어 있는지 확인하고 처리
+//        if (optionalMember.isPresent()) {
+//            Member member = optionalMember.get();
+//            String name = member.getName();
+//            model.addAttribute("name", name);
+//        }
+//        return "notice/edit";
+//    }
+
     @GetMapping("/modify")
-    public String modifyForm(Long id, Model model) {
-        BoardDTO boardDTO = boardService.findById(id);
+    public String noticeEditForm(Model model, Long id) {
+        BoardDTO boardDTO = boardService.getBoard(id);
         model.addAttribute("boardDTO", boardDTO);
-        return "notice/modify";
+        return "notice/edit";
     }
 
     @PostMapping("/modify")
-    public String modify(@Valid BoardDTO boardDTO,
-                         BindingResult bindingResult,
-                         RedirectAttributes redirectAttributes) {
-        if(bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
-            redirectAttributes.addFlashAttribute("id", boardDTO.getId());
-        }
-
+    public String noticeEdit(BoardDTO boardDTO){
+//        boardDTO.setId(id); // BoardDTO에 id 설정
+        Long id = boardDTO.getId();
         boardService.modify(boardDTO);
-        redirectAttributes.addFlashAttribute("result", "modified");
-        redirectAttributes.addAttribute("id", boardDTO.getId());
-        return "redirect:/notice/read";
+        return "redirect:/notice/read?id="+id;
     }
+
+
+
+//    @PostMapping("/modify")
+//    public String modify(@Valid BoardDTO boardDTO,
+//                         BindingResult bindingResult,
+//                         RedirectAttributes redirectAttributes) {
+//        if(bindingResult.hasErrors()) {
+//            redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
+//            redirectAttributes.addFlashAttribute("id", boardDTO.getId());
+//        }
+//
+//        boardService.modify(boardDTO);
+//        redirectAttributes.addFlashAttribute("result", "modified");
+//        redirectAttributes.addAttribute("id", boardDTO.getId());
+//        return "redirect:/notice/read";
+//    }
+
+//    @PostMapping("/modify/{id}")
+//    public String modify(@Valid BoardDTO boardDTO,
+//                         BindingResult bindingResult,
+//                         RedirectAttributes redirectAttributes) {
+//        if (boardDTO == null) {
+//            // boardDTO가 null이면 처리할 작업 수행
+//            // 예를 들어 오류 메시지를 추가하고 다른 경로로 리디렉션할 수 있습니다.
+//            return "redirect:/error-page"; // 오류 페이지로 리디렉션
+//        }
+//
+//        if(bindingResult.hasErrors()) {
+//            redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
+//            redirectAttributes.addFlashAttribute("id", boardDTO.getId());
+//        }
+//
+//        boardService.modify(boardDTO);
+//        redirectAttributes.addFlashAttribute("result", "modified");
+//        redirectAttributes.addAttribute("id", boardDTO.getId());
+//        return "redirect:/notice/read";
+//    }
+
+//    @PostMapping("/modify")
+//    public String modify(@PathVariable("id") Long id, BoardDTO boardDTO) {
+//        BoardDTO boardDTO1 = boardService.findById(id);
+//        boardDTO1.setTitle(boardDTO.getTitle());
+//        boardDTO1.setContent(boardDTO.getContent());
+//        boardDTO1.setFileId(boardDTO.getFileId());
+//        boardService.register(boardDTO1);
+//        return "redirect:/notice/list";
+//    }
+
+//    @PostMapping("/modify")
+//    public String modify(@PathVariable("id") Long id, BoardDTO boardDTO) {
+//        BoardDTO boardDTO1 = boardService.findById(id);
+//        boardDTO1.setTitle(boardDTO.getTitle());
+//        boardDTO1.setContent(boardDTO.getContent());
+//        boardDTO1.setFileId(boardDTO.getFileId());
+//        boardService.register(boardDTO1);
+//        return "redirect:/notice/list";
+//    }
+
+
 
     @RequestMapping(value = "/remove", method = {RequestMethod.GET, RequestMethod.POST})
     public String remove(Long id, RedirectAttributes redirectAttributes) {

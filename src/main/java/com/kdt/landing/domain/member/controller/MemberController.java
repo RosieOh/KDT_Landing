@@ -1,13 +1,10 @@
 package com.kdt.landing.domain.member.controller;
 
 import com.kdt.landing.domain.member.dto.MemberJoinDTO;
-import com.kdt.landing.domain.member.entity.Member;
-import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.domain.member.service.MemberService;
 import com.kdt.landing.global.cosntant.Status;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
@@ -18,11 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.security.Principal;
-import java.util.Objects;
 
 @Log4j2
 @Controller
@@ -49,7 +43,6 @@ public class MemberController {
 
     @GetMapping("status")
     public String status(Model model, Principal principal) {
-        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡstatusㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 
         String email = principal.getName();
         int pass = memberService.loginPro(email);

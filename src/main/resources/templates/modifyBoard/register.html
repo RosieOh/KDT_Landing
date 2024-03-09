@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
-                    <h3> 공지사항 </h3>
+                    <h3> 수정 요청 </h3>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
         <div class="container" data-aos="fade-up">
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="pricing-item featured" style="padding:0;">
-                    <form th:action="@{/notice/register}" method="post" enctype="multipart/form-data">
+                    <form th:action="@{/modifyBoard/register}" method="post" enctype="multipart/form-data">
                         <div class="col-12">
                             <div class="card w-100">
                                 <div class="card-body">
@@ -74,7 +74,7 @@
                                             </tbody>
                                             <div class="input-group mb-3">
                                                 <select name="boardType" id="boardType">
-                                                    <option value="NOTICE" th:selected="${boardType == 'NOTICE'}">공지사항</option>
+                                                    <option value="MODIFY" th:selected="${boardType == 'MODIFY'}">수정 요청</option>
                                                 </select>
                                             </div>
                                             <div class="input-group mb-3">

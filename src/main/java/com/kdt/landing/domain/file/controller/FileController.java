@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 @Log4j2
 @RequiredArgsConstructor
 public class FileController {
-    private static final String FILE_DIRECTORY = System.getProperty("user.dir") + "\\files";
+    private static final String FILE_DIRECTORY = System.getProperty("user.dir") + "/files";
 
     @GetMapping("/notice/{fileName}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName) throws Exception {

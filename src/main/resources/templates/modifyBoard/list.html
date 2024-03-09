@@ -47,14 +47,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
-                <h3>공지사항</h3>
+                <h3>수정요청</h3>
             </div>
         </div>
     </div>
 </section>
 
 <div class="row mt-3">
-    <form th:action="@{/notice/list}" method="get" class="col-md-8 offset-md-2">
+    <form th:action="@{/modifyBoard/list}" method="get" class="col-md-8 offset-md-2">
     </form>
 </div>
 
@@ -75,8 +75,8 @@
                     <tbody>
                     <tr th:each="board : ${boardList}">
                         <td th:text="${board.id}"></td>
-                        <td><a th:href="|@{/notice/read(id=${board.id})}|" class="text-decoration-none">[[${board.title}]]</a></td>
-                        <td th:text="${board.writer}"></td>
+                        <td style="justify-content: center"><a th:href="|@{/modifyBoard/read(id=${board.id})}|" class="text-decoration-none">[[${board.title}]]</a></td>
+                        <td th:text="${name}"></td>
                         <td th:text="${#temporals.format(board.regDate, 'yyyy-MM-dd')}"></td>
                     </tr>
                     </tbody>
@@ -90,7 +90,7 @@
             </div>
         </div>
         <div class="btn-group mt-3">
-            <button type="button" class="btn btn-primary" onclick="location.href='/notice/register'">Add to POST</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='/modifyBoard/register'">Add to POST</button>
         </div>
     </div>
 </div>

@@ -6,6 +6,7 @@ import com.kdt.landing.domain.file.dto.FileDTO;
 import com.kdt.landing.domain.file.service.FileService;
 import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.repository.MemberRepository;
+import com.kdt.landing.domain.member.service.MemberService;
 import com.kdt.landing.global.util.MD5Generator;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,61 +30,79 @@ import java.util.Optional;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/modify")
+@RequestMapping("/modifyBoard")
 public class ModifyBoardController {
 
     @Value("${upload.path}")
     private String uploadPath;
 
+    private final MemberService memberService;
     private final MemberRepository memberRepository;
     private final BoardService boardService;
     private final FileService fileService;
 
-    @GetMapping("/list")
-    public String modifyListAll(Model model, Principal principal) {
+    @GetMapping(value = {"/list", "/"})
+    public String noticeListAll(Model model, Principal principal) {
         String boardType = "MODIFY";
         List<BoardDTO> boardList = boardService.findByBoardType(boardType);
-        if(principal != null) {
-            model.addAttribute("username", principal.getName());
-        }
         model.addAttribute("boardList", boardList);
-        String id = principal.getName();
-        Optional<Member> member = memberRepository.findById(Long.valueOf(id));
-        model.addAttribute("member", member);
+        String email = principal.getName();
+        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
+        log.info("=================================optionalMember : " + optionalMember);
+        if (optionalMember.isPresent()) {
+            Member member = optionalMember.get();
+            String name = member.getName();
+            model.addAttribute("name", name);
+        }
         model.addAttribute("principal", principal);
-        return "modifyboard/list";
+        return "modifyBoard/list";
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
+    @GetMapping("/read")
+    public String  readModifyBoard(Long id, Model model, Principal principal) {
+        BoardDTO boardDTO = boardService.findById(id);
+        FileDTO fileDTO = fileService.getFile(boardDTO.getFileId());
+        String email = principal.getName();
+        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
+        log.info("=================================optionalMember : " + optionalMember);
+        if (optionalMember.isPresent()) {
+            Member member = optionalMember.get();
+            String name = member.getName();
+            model.addAttribute("name", name);
+        }
+        model.addAttribute("principal", principal);
+        model.addAttribute("fileList", fileDTO);
+        model.addAttribute("boardList", boardDTO);
+        return "modifyBoard/view";
+    }
+
+
     @GetMapping("/register")
-    public String modifyRegisterForm(Model model, Principal principal) {
-        model.addAttribute("principal", principal);
-        String id = principal.getName();
-        Optional<Member> member = memberRepository.findById(Long.valueOf(id));
-        model.addAttribute("writer", "admin");
-        return "modifyboard/register";
+    public String registerForm(Model model, Principal principal) {
+        String email = principal.getName();
+        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
+        log.info("=================================optionalMember : " + optionalMember);
+        if (optionalMember.isPresent()) {
+            Member member = optionalMember.get();
+            String name = member.getName();
+            model.addAttribute("name", name);
+        }
+        return "modifyBoard/register";
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN', 'MANAGER')")
     @PostMapping("/register")
-    public String modifyRegister(@Valid BoardDTO boardDTO,
+    public String noticeRegister(@Valid BoardDTO boardDTO,
                                  BindingResult bindingResult,
                                  RedirectAttributes redirectAttributes,
                                  @RequestParam("file") MultipartFile files) {
-        log.info("board POST register.......");
-        log.info("이름 어디 갔노" + boardDTO.getWriter());
-        if (bindingResult.hasErrors()) {
-            log.info("has errors..........");
-            redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
-        }
         try {
             String originFilename = files.getOriginalFilename();
             String filename = new MD5Generator(originFilename).toString();
             String savePath = System.getProperty("user.dir") + "/files/";
             log.info("어디로 가니?  " + savePath);
-            if(!new File(savePath).exists()) {
+            if(!new java.io.File(savePath).exists()) {
                 try {
-                    new File(savePath).mkdirs();
+                    new java.io.File(savePath).mkdirs();
                 }
                 catch (Exception e) {
                     e.printStackTrace();
@@ -106,20 +124,28 @@ public class ModifyBoardController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "redirect:/modifyboard/list";
+        return "redirect:/modifyBoard/list";
     }
 
     @GetMapping("/modify")
-    public String modifyForm(Long id, Model model) {
+    public String modifyForm(Long id, Model model, Principal principal) {
         BoardDTO boardDTO = boardService.findById(id);
         model.addAttribute("boardDTO", boardDTO);
-        return "modifyboard/modify";
+        String email = principal.getName();
+        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
+        log.info("=================================optionalMember : " + optionalMember);
+        if (optionalMember.isPresent()) {
+            Member member = optionalMember.get();
+            String name = member.getName();
+            model.addAttribute("name", name);
+        }
+        return "notice/edit";
     }
 
     @PostMapping("/modify")
-    public String modifyBoard(@Valid BoardDTO boardDTO,
-                              BindingResult bindingResult,
-                              RedirectAttributes redirectAttributes) {
+    public String modify(@Valid BoardDTO boardDTO,
+                         BindingResult bindingResult,
+                         RedirectAttributes redirectAttributes) {
         if(bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
             redirectAttributes.addFlashAttribute("id", boardDTO.getId());
@@ -127,8 +153,8 @@ public class ModifyBoardController {
 
         boardService.modify(boardDTO);
         redirectAttributes.addFlashAttribute("result", "modified");
-        redirectAttributes.addFlashAttribute("id", boardDTO.getId());
-        return "redirect/modifyboard/read";
+        redirectAttributes.addAttribute("id", boardDTO.getId());
+        return "redirect:/modifyBoard/read";
     }
 
     @RequestMapping(value = "/remove", method = {RequestMethod.GET, RequestMethod.POST})
@@ -136,7 +162,7 @@ public class ModifyBoardController {
         log.info("remove post.. " + id);
         boardService.remove(id);
         redirectAttributes.addFlashAttribute("result", "removed");
-        return "redirect:/modify/list";
+        return "redirect:/modifyBoard/list";
     }
 
     private void removeFiles(List<String> files) {

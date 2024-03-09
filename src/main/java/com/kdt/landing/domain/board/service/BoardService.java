@@ -17,5 +17,7 @@ public interface BoardService {
 
     public void remove(Long id);
 
+    public BoardDTO getBoard(Long id);
+
     public List<BoardDTO> findByBoardType(String boardType);
 }

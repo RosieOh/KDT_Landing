@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <title>공지사항</title>
+    <title>수정 요청 게시판</title>
     <th:block th:replace="~{include/head :: head}"></th:block>
 
 </head>
@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
-                    <h3> 공지사항 </h3>
+                    <h3> 수정 요청 </h3>
                 </div>
             </div>
         </div>
@@ -43,13 +43,12 @@
                                                         <tr>
                                                             <td>작성자 | </td>
                                                             <td>
-                                                                <input type="text" class="form-control" th:value="${boardList.writer}" readonly>
+                                                                <input type="text" class="form-control" th:value="*{name}" readonly>
                                                             </td>
                                                             <td>작성일 | </td>
                                                             <td>
                                                                 <input type="text" class="form-control" th:value="${#temporals.format(boardList.regDate, 'yyyy-MM-dd HH:mm:ss')}" readonly>
                                                             </td>
-                                                            <!--                                                            <td>조회수 | &lt;!&ndash;<span th:text="${dto.cnt}"></span>&ndash;&gt;</td>-->
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -65,15 +64,15 @@
 
                                         <div class="card-text mt-4" th:if="${boardList.fileId}">
                                             <strong>첨부파일 : </strong>
-                                            <a th:href="@{'/download/' + ${boardList.fileId}}">[[${fileList.originFilename}]]</a>
+                                            <a th:href="@{'/download/' + ${boardList.fileId}}">[[${fileList.originFileName}]]</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div style="width: 100%; margin-top: 30px;">
-                                <button class="btn btn-light btn-lg" style="width:200px; float: right; background-color: #0d42ff; font-weight: bold; color: #fff;"><a th:href="@{/notice/list}" style="color: #fff;">목록</a></button>
-                                <button class="btn btn-light btn-lg" style="width:200px; float: right; border-color: #000000; font-weight: bold; margin-left: 10px; margin-right: 10px; "><a th:href="@{/notice/remove(id=${boardList.id})}">삭제</a></button>
-                                <button class="btn btn-dark btn-lg" style="width:200px; float: right; background-color: #4f5665; font-weight: bold; "><a class="button" th:href="@{/notice/modify(id=${boardList.id})}" style="color: #fff;">수정</a></button>
+                                <button class="btn btn-light btn-lg" style="width:200px; float: right; background-color: #0d42ff; font-weight: bold; color: #fff;"><a th:href="@{/modifyBoard/list}" style="color: #fff;">목록</a></button>
+                                <button class="btn btn-light btn-lg" style="width:200px; float: right; border-color: #000000; font-weight: bold; margin-left: 10px; margin-right: 10px; "><a th:href="@{/modifyBoard/remove(id=${boardList.id})}">삭제</a></button>
+                                <button class="btn btn-dark btn-lg" style="width:200px; float: right; background-color: #4f5665; font-weight: bold; "><a class="button" th:href="@{/modifyBoard/modify(id=${boardList.id})}" style="color: #fff;">수정</a></button>
                             </div>
                         </section>
                     </div>

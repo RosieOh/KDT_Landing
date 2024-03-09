@@ -75,8 +75,8 @@
                     <tbody>
                     <tr th:each="board : ${boardList}">
                         <td th:text="${board.id}"></td>
-                        <td><a th:href="|@{/notice/read(id=${board.id})}|" class="text-decoration-none">[[${board.title}]]</a></td>
-                        <td th:text="${board.writer}"></td>
+                        <td style="justify-content: center"><a th:href="|@{/notice/read(id=${board.id})}|" class="text-decoration-none">[[${board.title}]]</a></td>
+                        <td th:text="${name}"></td>
                         <td th:text="${#temporals.format(board.regDate, 'yyyy-MM-dd')}"></td>
                     </tr>
                     </tbody>
