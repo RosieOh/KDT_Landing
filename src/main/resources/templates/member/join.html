@@ -16,6 +16,16 @@
 
 <th:block th:replace="~{include/header :: header}"></th:block>
 
+<section class="page-title" style="padding-top: 60px; ">
+    <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
+        <ul class="mr-5">
+            <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
+            <li><a th:href="@{/member/join}">회원가입</a></li>
+        </ul>
+        <p class="title has-text-centered mt-1 mb-2">회원가입</p>
+    </nav>
+</section>
+
 
 <form th:action="@{/member/joinPro}" method="post" th:object="${memberJoinDTO}" th:class="form-horizontal" id="joinForm">
     <div class="member">
@@ -25,8 +35,8 @@
 
         <!-- 2. 필드 -->
 
-        <div class="form-outline mb-4">
-            <label class="form-label blind" for="email">이메일</label>
+        <div class="field">
+            <b>이메일</b>
             <input type="email" name="email" id="email" placeholder="이메일" class="form-control" style="background-color: white;"  required>
             <input type="hidden" id="emailCK" name="emailCK" value="no">
             <button type="button" onclick="PostEmail()" id="PostEmailbtn" class="btn1" style="width: 160px; margin-top: 10px; margin-left: 0"> 인증번호 보내기 </button>
@@ -51,14 +61,14 @@
 
         <div class="field">
             <b>이름</b>
-            <input type="text" name="name" id="name" placeholder="이름" class="input" minlength="2" maxlength="8" required />
+            <input type="text" name="name" id="name" placeholder="이름" class="form-control" minlength="2" maxlength="8" required />
         </div>
 
         <!-- 3. 필드(생년월일) -->
         <div class="field birth">
             <b>생년월일</b>
             <div>
-                <input type="number" placeholder="년(4자)">
+                <input type="number" class="form-control" placeholder="년(4자)">
                 <select>
                     <option value="">월</option>
                     <option value="">1월</option>
@@ -74,7 +84,7 @@
                     <option value="">11월</option>
                     <option value="">12월</option>
                 </select>
-                <input type="number" placeholder="일">
+                <input type="number" class="form-control" placeholder="일">
             </div>
         </div>
 
@@ -83,13 +93,11 @@
             <select>
                 <option value="">대한민국 +82</option>
             </select>
-            <div>
-                <input type="tel" placeholder="전화번호 입력">
-        </div>
+            <input type="tel" name="tel" class="form-control" placeholder="전화번호 입력">
 
         <!-- 6. 가입하기 버튼 -->
         <button type="submit" class="signin__btn" style="margin-top: 50px" >회원가입</button>
-        <p class="d-flex justify-content-center mt-3"> 이미 회원이신가요? &nbsp; <a th:href="@{/templates/member/login}" class="text-secondary"> 로그인하기 </a></p>
+        <p class="d-flex justify-content-center mt-3"> 이미 회원이신가요? &nbsp; <a th:href="@{/member/login}" class="text-secondary"> 로그인하기 </a></p>
     </div>
     </div>
 </form>

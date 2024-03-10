@@ -42,7 +42,7 @@ public class ModifyBoardController {
     private final FileService fileService;
 
     @GetMapping(value = {"/list", "/"})
-    public String noticeListAll(Model model, Principal principal) {
+    public String modifyBoardList(Model model, Principal principal) {
         String boardType = "MODIFY";
         List<BoardDTO> boardList = boardService.findByBoardType(boardType);
         model.addAttribute("boardList", boardList);
@@ -59,22 +59,29 @@ public class ModifyBoardController {
     }
 
     @GetMapping("/read")
-    public String  readModifyBoard(Long id, Model model, Principal principal) {
-        BoardDTO boardDTO = boardService.findById(id);
-        FileDTO fileDTO = fileService.getFile(boardDTO.getFileId());
-        String email = principal.getName();
-        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
-        log.info("=================================optionalMember : " + optionalMember);
-        if (optionalMember.isPresent()) {
-            Member member = optionalMember.get();
-            String name = member.getName();
-            model.addAttribute("name", name);
+    public String readModifyBoard(Long id, Model model, Principal principal) {
+        if (id != null) {
+            BoardDTO boardDTO = boardService.findById(id);
+            if (boardDTO != null) {
+                FileDTO fileDTO = fileService.getFile(boardDTO.getFileId());
+                String email = principal.getName();
+                Optional<Member> optionalMember = memberRepository.findByEmail2(email);
+                log.info("=================================optionalMember : " + optionalMember);
+                if (optionalMember.isPresent()) {
+                    Member member = optionalMember.get();
+                    String name = member.getName();
+                    model.addAttribute("name", name);
+                }
+                model.addAttribute("principal", principal);
+                model.addAttribute("fileList", fileDTO);
+                model.addAttribute("boardList", boardDTO);
+            } else {
+                log.info("fileDTO" + fileService);
+            }
         }
-        model.addAttribute("principal", principal);
-        model.addAttribute("fileList", fileDTO);
-        model.addAttribute("boardList", boardDTO);
-        return "modifyBoard/view";
+        return "notice/view";
     }
+
 
 
     @GetMapping("/register")
@@ -91,9 +98,10 @@ public class ModifyBoardController {
     }
 
     @PostMapping("/register")
-    public String noticeRegister(@Valid BoardDTO boardDTO,
+    public String modifyBoardRegister(@Valid BoardDTO boardDTO,
                                  BindingResult bindingResult,
                                  RedirectAttributes redirectAttributes,
+                                 Model model,
                                  @RequestParam("file") MultipartFile files) {
         try {
             String originFilename = files.getOriginalFilename();
@@ -124,37 +132,26 @@ public class ModifyBoardController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "redirect:/modifyBoard/list";
+        model.addAttribute("message", "수정 요청 글 작성이 완료되었습니다.");
+        model.addAttribute("searchUrl", "/modifyBoard/list");
+        return "modifyBoard/message";
     }
 
     @GetMapping("/modify")
-    public String modifyForm(Long id, Model model, Principal principal) {
-        BoardDTO boardDTO = boardService.findById(id);
+    public String modifyBoardEditForm(Model model, Long id) {
+        BoardDTO boardDTO = boardService.getBoard(id);
         model.addAttribute("boardDTO", boardDTO);
-        String email = principal.getName();
-        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
-        log.info("=================================optionalMember : " + optionalMember);
-        if (optionalMember.isPresent()) {
-            Member member = optionalMember.get();
-            String name = member.getName();
-            model.addAttribute("name", name);
-        }
-        return "notice/edit";
+        return "modifyBoard/edit";
     }
 
-    @PostMapping("/modify")
-    public String modify(@Valid BoardDTO boardDTO,
-                         BindingResult bindingResult,
-                         RedirectAttributes redirectAttributes) {
-        if(bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
-            redirectAttributes.addFlashAttribute("id", boardDTO.getId());
-        }
-
-        boardService.modify(boardDTO);
-        redirectAttributes.addFlashAttribute("result", "modified");
-        redirectAttributes.addAttribute("id", boardDTO.getId());
-        return "redirect:/modifyBoard/read";
+    @PostMapping("/modify/{id}")
+    public String modifyBoardEdit(@PathVariable("id") Long id, @ModelAttribute("boardDTO") BoardDTO boardDTO){
+        BoardDTO boardDTO1 = boardService.getBoard(id);
+        boardDTO1.setTitle(boardDTO.getTitle());
+        boardDTO1.setContent(boardDTO.getContent());
+        boardDTO1.setFileId(boardDTO.getFileId());
+        boardService.modify(boardDTO1); // 수정된 boardDTO1을 전달해야 합니다.
+        return "redirect:/modifyBoard/read?id="+id;
     }
 
     @RequestMapping(value = "/remove", method = {RequestMethod.GET, RequestMethod.POST})

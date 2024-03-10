@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +26,7 @@ import java.security.Principal;
 public class MemberController {
 
     private final MemberService memberService;
-    private final BCryptPasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     @GetMapping("login")
     public String Login(Model model){
@@ -38,7 +39,7 @@ public class MemberController {
         if(authentication != null) {
             new SecurityContextLogoutHandler().logout(request, response, authentication);
         }
-        return "/member/active";
+        return "member/active";
     }
 
     @GetMapping("status")
@@ -49,19 +50,19 @@ public class MemberController {
         if (pass == 1) {
             model.addAttribute("msg", "환영합니다! 로그인 되었습니다!");
             model.addAttribute("url", "/");
-            return "/alert";
+            return "member/alert";
         } else if(pass == 2) {
             model.addAttribute("msg", "해당 계정은 휴면계정입니다. 휴면을 해제해주세요.");
             model.addAttribute("url","/active");
-            return "/alert";
+            return "member/alert";
         } else if (pass == 3) {
             model.addAttribute("msg", "해당 계정은 탈퇴한 계정입니다.");
             model.addAttribute("url","/logout");
-            return "/alert";
+            return "member/alert";
         } else {
             model.addAttribute("msg", "로그인 정보가 맞지 않습니다.");
             model.addAttribute("url", "/member/login");
-            return "/alert";
+            return "member/alert";
         }
     }
 
@@ -75,7 +76,7 @@ public class MemberController {
         memberService.memberInsert(memberJoinDTO);
         model.addAttribute("msg", "천재IT교육센터에 오신 것을 환영합니다!");
         model.addAttribute("url", "/");
-        return "/alert";
+        return "member/alert";
     }
 
     @PostMapping("idCheckPro")

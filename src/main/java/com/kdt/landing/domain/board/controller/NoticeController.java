@@ -101,6 +101,7 @@ public class NoticeController {
     public String noticeRegister(@Valid BoardDTO boardDTO,
                                  BindingResult bindingResult,
                                  RedirectAttributes redirectAttributes,
+                                 Model model,
                                  @RequestParam("file") MultipartFile files) {
         try {
             String originFilename = files.getOriginalFilename();
@@ -131,24 +132,10 @@ public class NoticeController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "redirect:/notice/list";
+        model.addAttribute("message", "글 작성이 완료되었습니다.");
+        model.addAttribute("searchUrl", "/notice/list");
+        return "notice/message";
     }
-
-//    @GetMapping("/modify")
-//    public String modifyForm(Long id, Model model, Principal principal) {
-//        BoardDTO boardDTO = boardService.findById(id);
-//        model.addAttribute("boardDTO", boardDTO);
-//        String email = principal.getName();
-//        Optional<Member> optionalMember = memberRepository.findByEmail2(email);
-//        log.info("=================================optionalMember : " + optionalMember);
-//        // Optional 객체가 비어 있는지 확인하고 처리
-//        if (optionalMember.isPresent()) {
-//            Member member = optionalMember.get();
-//            String name = member.getName();
-//            model.addAttribute("name", name);
-//        }
-//        return "notice/edit";
-//    }
 
     @GetMapping("/modify")
     public String noticeEditForm(Model model, Long id) {
@@ -157,73 +144,15 @@ public class NoticeController {
         return "notice/edit";
     }
 
-    @PostMapping("/modify")
-    public String noticeEdit(BoardDTO boardDTO){
-//        boardDTO.setId(id); // BoardDTO에 id 설정
-        Long id = boardDTO.getId();
-        boardService.modify(boardDTO);
+    @PostMapping("/modify/{id}")
+    public String noticeEdit(@PathVariable("id") Long id, BoardDTO boardDTO){
+        BoardDTO boardDTO1 = boardService.getBoard(id);
+        boardDTO1.setTitle(boardDTO.getTitle());
+        boardDTO1.setContent(boardDTO.getContent());
+//        boardDTO1.setFileId(boardDTO.getFileId());
+        boardService.modify(boardDTO1);
         return "redirect:/notice/read?id="+id;
     }
-
-
-
-//    @PostMapping("/modify")
-//    public String modify(@Valid BoardDTO boardDTO,
-//                         BindingResult bindingResult,
-//                         RedirectAttributes redirectAttributes) {
-//        if(bindingResult.hasErrors()) {
-//            redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
-//            redirectAttributes.addFlashAttribute("id", boardDTO.getId());
-//        }
-//
-//        boardService.modify(boardDTO);
-//        redirectAttributes.addFlashAttribute("result", "modified");
-//        redirectAttributes.addAttribute("id", boardDTO.getId());
-//        return "redirect:/notice/read";
-//    }
-
-//    @PostMapping("/modify/{id}")
-//    public String modify(@Valid BoardDTO boardDTO,
-//                         BindingResult bindingResult,
-//                         RedirectAttributes redirectAttributes) {
-//        if (boardDTO == null) {
-//            // boardDTO가 null이면 처리할 작업 수행
-//            // 예를 들어 오류 메시지를 추가하고 다른 경로로 리디렉션할 수 있습니다.
-//            return "redirect:/error-page"; // 오류 페이지로 리디렉션
-//        }
-//
-//        if(bindingResult.hasErrors()) {
-//            redirectAttributes.addFlashAttribute("errors", bindingResult.getAllErrors());
-//            redirectAttributes.addFlashAttribute("id", boardDTO.getId());
-//        }
-//
-//        boardService.modify(boardDTO);
-//        redirectAttributes.addFlashAttribute("result", "modified");
-//        redirectAttributes.addAttribute("id", boardDTO.getId());
-//        return "redirect:/notice/read";
-//    }
-
-//    @PostMapping("/modify")
-//    public String modify(@PathVariable("id") Long id, BoardDTO boardDTO) {
-//        BoardDTO boardDTO1 = boardService.findById(id);
-//        boardDTO1.setTitle(boardDTO.getTitle());
-//        boardDTO1.setContent(boardDTO.getContent());
-//        boardDTO1.setFileId(boardDTO.getFileId());
-//        boardService.register(boardDTO1);
-//        return "redirect:/notice/list";
-//    }
-
-//    @PostMapping("/modify")
-//    public String modify(@PathVariable("id") Long id, BoardDTO boardDTO) {
-//        BoardDTO boardDTO1 = boardService.findById(id);
-//        boardDTO1.setTitle(boardDTO.getTitle());
-//        boardDTO1.setContent(boardDTO.getContent());
-//        boardDTO1.setFileId(boardDTO.getFileId());
-//        boardService.register(boardDTO1);
-//        return "redirect:/notice/list";
-//    }
-
-
 
     @RequestMapping(value = "/remove", method = {RequestMethod.GET, RequestMethod.POST})
     public String remove(Long id, RedirectAttributes redirectAttributes) {

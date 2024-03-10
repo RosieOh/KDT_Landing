@@ -11,20 +11,30 @@
     />
     <title>천재IT교육센터</title>
     <th:block th:replace="include/head :: head"></th:block>
+    <script th:src="@{../static/js/carousel.js}"></script>
   </head>
   <body>
     <th:block th:replace="include/header :: header"></th:block>
     <div class="main">
       <!-- banner -->
       <section class="hero is-info is-medium is-bold" id="banner">
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h4 class="title_1">천재IT교육센터</h4>
-            <br />
-            <h1 class="title">에듀테크 PM 교육과정</h1>
-            <button type="button" id="ban_btn" class="button">사전예약</button>
+<!--        <div class="hero-body">-->
+<!--          <div class="container has-text-centered">-->
+<!--            <h4 class="title_1">천재IT교육센터</h4>-->
+<!--            <br />-->
+<!--            <h1 class="title">에듀테크 PM 교육과정</h1>-->
+<!--            <button type="button" id="ban_btn" class="button">사전예약</button>-->
+<!--          </div>-->
+<!--        </div>-->
+        <div class="carousel-wrapper">
+          <div class="carousel">
+            <img src="" alt="">
+            <img src="" alt="">
+            <img src="" alt="">
           </div>
         </div>
+        <button class="prev" type="button">prev</button>
+        <button class="next" type="button">next</button>
       </section>
 
       <!--     Section 1 - 카드 -->
@@ -366,6 +376,13 @@
           </div>
         </div>
       </section>
+      <script th:inline="javascript">
+        (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+
+        ChannelIO('boot', {
+          "pluginKey": "34651b20-72e7-44f6-8d20-d1197b3dc59c"
+        });
+      </script>
     </div>
     <th:block th:replace="main/sign/sign :: sign"></th:block>
     <th:block th:replace="include/footer :: footer"></th:block>

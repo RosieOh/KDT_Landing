@@ -8,6 +8,7 @@ import com.kdt.landing.global.cosntant.Status;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -74,12 +75,6 @@ public class MemberServiceImpl implements MemberService{
         return memberJoinDTO;
     }
 
-//    @Override
-//    public MemberJoinDTO getName(String name) {
-//        Member member = memberRepository.getName(name);
-//        MemberJoinDTO memberJoinDTO = modelMapper.map(member, MemberJoinDTO.class);
-//        return memberJoinDTO;
-//    }
 
     @Override
     public void memberInsert(MemberJoinDTO memberJoinDTO) {

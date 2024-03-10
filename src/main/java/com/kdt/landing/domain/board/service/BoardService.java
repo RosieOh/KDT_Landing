@@ -9,7 +9,11 @@ public interface BoardService {
 
     public BoardDTO findById(Long id);
 
+
     public List<BoardDTO> findAll(BoardDTO boardDTO);
+
+    // test
+    public List<Board> boardList();
 
     public void register(BoardDTO boardDTO);
 

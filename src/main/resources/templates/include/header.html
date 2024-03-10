@@ -1,8 +1,7 @@
 <!doctype html>
 <html
   xmlns:th="http://www.thymeleaf.org"
-  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
->
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
   <body>
     <th:block th:fragment="header">
       <nav id="navbar" class="navbar main-nav box_shadow_in">
@@ -64,24 +63,29 @@
             </li>
           </th:block>
           <th:block sec:authorize="isAuthenticated()">
-            <!--                <li class="navbar-item" th:if="${member != null}">-->
-            <!--                            <span class="nav-link text-white">-->
-            <!--                                <span th:text="${#authentication.principal.name}"></span>님 환영합니다!-->
-            <!--                            </span>-->
-            <!--                </li>-->
-            <li class="navbar-item">
-              <form th:action="@{/logout}" method="post">
-                <a href="#" onclick="this.closest('form').submit();" class="nav-link">로그아웃</a>
-              </form>
-            </li>
-            <li class="navbar-item">
-              <th:block sec:authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_ADMIN')">
-                <a th:href="@{/modifyBoard/list}" class="nav-link">수정요청</a>
-              </th:block>
-              <th:block sec:authorize="hasAuthority('ROLE_STUDENT')">
-                <a th:href="@{/notice/list}" class="nav-link">공지사항</a>
-              </th:block>
-            </li>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Account
+              </a>
+              <div class="navbar-dropdown">
+                <th:block sec:authorize="hasAnyAuthority('ADMIN')">
+                  <a class="navbar-item" th:href="@{/modifyBoard/list}">
+                    수정요청
+                  </a>
+                </th:block>
+                <th:block sec:authorize="hasAnyAuthority('MANAGER', 'ADMIN', 'STUDENT')">
+                  <a class="navbar-item" th:href="@{/notice/list}">
+                    공지사항
+                  </a>
+                </th:block>
+                <th:block sec:authorize="isAuthenticated()">
+                  <form th:action="@{/logout}" method="post">
+                    <a href="#" onclick="this.closest('form').submit();" class="navbar-item">로그아웃</a>
+                  </form>
+                </th:block>
+              </div>
+            </div>
           </th:block>
           </ul>
         </div>

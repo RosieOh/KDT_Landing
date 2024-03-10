@@ -10,6 +10,7 @@
 @import url("ImportCSS/sign.css");
 @import url("ImportCSS/subSign.css");
 @import url("ImportCSS/subject.css");
+@import url("ImportCSS/board.css");
 
 :root {
   --c-main: #757afd;

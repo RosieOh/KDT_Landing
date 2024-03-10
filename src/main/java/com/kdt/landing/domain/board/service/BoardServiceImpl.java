@@ -1,11 +1,9 @@
 package com.kdt.landing.domain.board.service;
 
 
-import com.kdt.landing.domain.apply.entity.Apply;
 import com.kdt.landing.domain.board.dto.BoardDTO;
 import com.kdt.landing.domain.board.entity.Board;
 import com.kdt.landing.domain.board.repository.BoardRepository;
-import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.global.cosntant.BoardType;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -73,6 +71,11 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public List<Board> boardList() {
+        return boardRepository.findAll();
+    }
+
+    @Override
     public List<BoardDTO> findByBoardType(String boardType) {
         List<Board> lst = boardRepository.findByBoardType(boardType);
 
@@ -107,18 +110,20 @@ public class BoardServiceImpl implements BoardService {
 //        boardRepository.save(board);
 //    }
 
-//    @Override
-//    public void modify(BoardDTO boardDTO) {
-//        Board board = modelMapper.map(boardDTO, Board.class);
-//        board.change(boardDTO.getTitle(), boardDTO.getContent());
-//        boardRepository.save(board);
-//    }
-
     @Override
     public void modify(BoardDTO boardDTO) {
         Board board = modelMapper.map(boardDTO, Board.class);
+        board.change(boardDTO.getTitle(), boardDTO.getContent());
         boardRepository.save(board);
     }
+
+//    @Override
+//    public void modify(BoardDTO boardDTO, String title, String content) {
+////        Board board = modelMapper.map(boardDTO, Board.class);
+//        boardDTO.setTitle(title);
+//        boardDTO.setContent(content);
+//        this.boardRepository.save(boardDTO);
+//    }
 
     @Override
     public BoardDTO getBoard(Long id ) {
@@ -127,6 +132,7 @@ public class BoardServiceImpl implements BoardService {
         BoardDTO boardDTO = modelMapper.map(board, BoardDTO.class);
         return boardDTO;
     }
+
 
 
     @Override

@@ -17,14 +17,14 @@
 <main>
     <th:block th:replace="~{include/header :: header}"></th:block>
 
-    <section class="page-title" style="background: linear-gradient(to right, #71AEE8, #77E9CE); padding: 100px 0;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2 text-center">
-                    <h3> 수정 요청 </h3>
-                </div>
-            </div>
-        </div>
+    <section class="page-title" style="padding: 100px 0;">
+        <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
+            <ul class="mr-5">
+                <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
+                <li><a th:href="@{/modifyBoard/list}">수정요청</a></li>
+            </ul>
+            <p class="title has-text-centered mt-1 mb-2">수정요청</p>
+        </nav>
     </section>
 
     <section id="pricing" class="pricing" style="padding-top: 100px;">
