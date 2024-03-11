@@ -48,14 +48,13 @@ public class ModifyBoardController {
         model.addAttribute("boardList", boardList);
         String email = principal.getName();
         Optional<Member> optionalMember = memberRepository.findByEmail2(email);
-        log.info("=================================optionalMember : " + optionalMember);
         if (optionalMember.isPresent()) {
             Member member = optionalMember.get();
             String name = member.getName();
             model.addAttribute("name", name);
         }
         model.addAttribute("principal", principal);
-        return "modifyBoard/list";
+        return "admin/modifyBoard/list";
     }
 
     @GetMapping("/read")
@@ -66,7 +65,6 @@ public class ModifyBoardController {
                 FileDTO fileDTO = fileService.getFile(boardDTO.getFileId());
                 String email = principal.getName();
                 Optional<Member> optionalMember = memberRepository.findByEmail2(email);
-                log.info("=================================optionalMember : " + optionalMember);
                 if (optionalMember.isPresent()) {
                     Member member = optionalMember.get();
                     String name = member.getName();
@@ -79,7 +77,7 @@ public class ModifyBoardController {
                 log.info("fileDTO" + fileService);
             }
         }
-        return "notice/view";
+        return "admin/modifyBoard/view";
     }
 
 
@@ -88,13 +86,12 @@ public class ModifyBoardController {
     public String registerForm(Model model, Principal principal) {
         String email = principal.getName();
         Optional<Member> optionalMember = memberRepository.findByEmail2(email);
-        log.info("=================================optionalMember : " + optionalMember);
         if (optionalMember.isPresent()) {
             Member member = optionalMember.get();
             String name = member.getName();
             model.addAttribute("name", name);
         }
-        return "modifyBoard/register";
+        return "admin/modifyBoard/register";
     }
 
     @PostMapping("/register")
@@ -134,14 +131,14 @@ public class ModifyBoardController {
         }
         model.addAttribute("message", "수정 요청 글 작성이 완료되었습니다.");
         model.addAttribute("searchUrl", "/modifyBoard/list");
-        return "modifyBoard/message";
+        return "admin/modifyBoard/message";
     }
 
     @GetMapping("/modify")
     public String modifyBoardEditForm(Model model, Long id) {
         BoardDTO boardDTO = boardService.getBoard(id);
         model.addAttribute("boardDTO", boardDTO);
-        return "modifyBoard/edit";
+        return "admin/modifyBoard/edit";
     }
 
     @PostMapping("/modify/{id}")
@@ -159,7 +156,7 @@ public class ModifyBoardController {
         log.info("remove post.. " + id);
         boardService.remove(id);
         redirectAttributes.addFlashAttribute("result", "removed");
-        return "redirect:/modifyBoard/list";
+        return "redirect:/admin/modifyBoard/list";
     }
 
     private void removeFiles(List<String> files) {

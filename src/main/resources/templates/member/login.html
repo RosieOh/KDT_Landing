@@ -13,7 +13,7 @@
     <th:block th:replace="~{include/header :: header}"></th:block>
 
     <section class="page-title" style="padding-top: 60px; ">
-        <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
+        <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9; height: 150px;" aria-label="breadcrumbs">
             <ul class="mr-5">
                 <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
                 <li><a th:href="@{/member/login}">로그인</a></li>
@@ -36,7 +36,6 @@
             <label for="remember-check">
                 <input type="checkbox" id="remember-check">아이디 저장하기
             </label>
-            <button type="submit" class="login-btn">로그인</button>
             <input type="submit" value="Login">
                 <p class="d-flex justify-content-center mt-3"> 회원이 아니신가요? &nbsp; <a th:href="@{/member/join}" class="text-secondary"> 회원가입하기 </a></p>
         </form>

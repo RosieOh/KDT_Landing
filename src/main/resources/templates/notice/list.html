@@ -18,7 +18,8 @@
         .table1 {
             font-size: 1.25rem;
             border-top: 2px solid #dee2e6;
-            border-bottom: 1px solid #dbdbdb;;
+            border-bottom: 1px solid #dbdbdb;
+            width: 100%; /* 표의 전체 너비를 100%로 설정 */
         }
         .table1 th {
             white-space: nowrap;
@@ -32,10 +33,10 @@
         }
 
         .item1 { width:6%; }
-        .item2 { width:64%; }
-        .item3 { width:10%; }
-        .item4 { width:10%; }
-        .item5 { width:10%; }
+        .item2 { width:44%; }
+        .item3 { width:20%; }
+        .item4 { width:20%; }
+        .item5 { width:20%; }
     </style>
 
 </head>
@@ -44,7 +45,7 @@
 <th:block th:replace="~{include/header :: header}"></th:block>
 
 <section class="page-title" style="padding-top: 60px; ">
-    <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
+    <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4 breadcrumb_1" aria-label="breadcrumbs">
         <ul class="mr-5">
             <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
             <li><a th:href="@{/notice/list}">공지사항</a></li>
@@ -72,10 +73,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="board : ${boardList}">
+                    <tr th:each="board : ${boardList}" style="text-align: center;">
                         <td th:text="${board.id}"></td>
                         <td style="text-align: center"><a th:href="|@{/notice/read(id=${board.id})}|" class="text-decoration-none">[[${board.title}]]</a></td>
-                        <td th:text="${name}"></td>
+                        <td th:text="${board.writer}"></td>
                         <td th:text="${#temporals.format(board.regDate, 'yyyy-MM-dd')}"></td>
                     </tr>
                     </tbody>
@@ -89,7 +90,7 @@
             </div>
         </div>
         <div class="btn-group mt-3">
-            <button type="button" class="btn btn-primary" onclick="location.href='/notice/register'"> 작성하기 </button>
+            <button type="button" class="button is-block" onclick="location.href='/notice/register'"> 작성하기 </button>
         </div>
     </div>
 </div>

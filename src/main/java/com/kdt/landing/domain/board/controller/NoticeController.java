@@ -48,7 +48,6 @@ public class NoticeController {
         model.addAttribute("boardList", boardList);
         String email = principal.getName();
         Optional<Member> optionalMember = memberRepository.findByEmail2(email);
-        log.info("=================================optionalMember : " + optionalMember);
         if (optionalMember.isPresent()) {
             Member member = optionalMember.get();
             String name = member.getName();
@@ -66,7 +65,6 @@ public class NoticeController {
                 FileDTO fileDTO = fileService.getFile(boardDTO.getFileId());
                 String email = principal.getName();
                 Optional<Member> optionalMember = memberRepository.findByEmail2(email);
-                log.info("=================================optionalMember : " + optionalMember);
                 if (optionalMember.isPresent()) {
                     Member member = optionalMember.get();
                     String name = member.getName();
@@ -88,7 +86,6 @@ public class NoticeController {
     public String registerForm(Model model, Principal principal) {
         String email = principal.getName();
         Optional<Member> optionalMember = memberRepository.findByEmail2(email);
-        log.info("=================================optionalMember : " + optionalMember);
         if (optionalMember.isPresent()) {
             Member member = optionalMember.get();
             String name = member.getName();
@@ -107,7 +104,6 @@ public class NoticeController {
             String originFilename = files.getOriginalFilename();
             String filename = new MD5Generator(originFilename).toString();
             String savePath = System.getProperty("user.dir") + "/files/";
-            log.info("어디로 가니?  " + savePath);
             if(!new java.io.File(savePath).exists()) {
                 try {
                     new java.io.File(savePath).mkdirs();

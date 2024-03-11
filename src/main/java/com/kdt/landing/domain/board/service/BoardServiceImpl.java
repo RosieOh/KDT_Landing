@@ -62,7 +62,6 @@ public class BoardServiceImpl implements BoardService {
                     .title(boardDTO.getTitle())
                     .content(boardDTO.getContent())
                     .boardType(boardDTO.getBoardType())
-                    .writer(boardDTO.getWriter())
                     .fileId(boardDTO.getFileId())
                     .build();
             boardDTOList.add(boardDTO);
@@ -102,14 +101,6 @@ public class BoardServiceImpl implements BoardService {
         boardRepository.save(board);
     }
 
-//    @Override
-//    public void modify(BoardDTO boardDTO) {
-//        Optional<Board> result = boardRepository.findById(boardDTO.getId());
-//        Board board = result.orElseThrow();
-//        board.change(boardDTO.getTitle(), boardDTO.getContent());
-//        boardRepository.save(board);
-//    }
-
     @Override
     public void modify(BoardDTO boardDTO) {
         Board board = modelMapper.map(boardDTO, Board.class);
@@ -117,13 +108,6 @@ public class BoardServiceImpl implements BoardService {
         boardRepository.save(board);
     }
 
-//    @Override
-//    public void modify(BoardDTO boardDTO, String title, String content) {
-////        Board board = modelMapper.map(boardDTO, Board.class);
-//        boardDTO.setTitle(title);
-//        boardDTO.setContent(content);
-//        this.boardRepository.save(boardDTO);
-//    }
 
     @Override
     public BoardDTO getBoard(Long id ) {

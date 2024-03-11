@@ -17,7 +17,7 @@
 <th:block th:replace="~{include/header :: header}"></th:block>
 
 <section class="page-title" style="padding-top: 60px; ">
-    <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
+    <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9; height: 150px;" aria-label="breadcrumbs">
         <ul class="mr-5">
             <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
             <li><a th:href="@{/member/join}">회원가입</a></li>
@@ -56,7 +56,7 @@
 
         <div class="field">
             <b>비밀번호 재확인</b>
-            <input class="userpw-confirm" name="pw" id="pw2" type="password">
+            <input class="userpw-confirm" name="pw2" id="pw2" type="password">
         </div>
 
         <div class="field">
@@ -96,8 +96,7 @@
             <input type="tel" name="tel" class="form-control" placeholder="전화번호 입력">
 
         <!-- 6. 가입하기 버튼 -->
-        <button type="submit" class="signin__btn" style="margin-top: 50px" >회원가입</button>
-        <p class="d-flex justify-content-center mt-3"> 이미 회원이신가요? &nbsp; <a th:href="@{/member/login}" class="text-secondary"> 로그인하기 </a></p>
+        <button type="submit" class="button is-block is-fullwidth" >회원가입</button>
     </div>
     </div>
 </form>

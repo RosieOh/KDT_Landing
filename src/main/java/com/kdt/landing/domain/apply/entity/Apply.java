@@ -29,7 +29,7 @@ public class Apply extends BaseEntity {
     private String email;                   //신청자 이메일
 
     @Enumerated(EnumType.STRING)
-    private Course course;              //신청자 과목
+    private Course course;             //신청자 과목
 
 
 

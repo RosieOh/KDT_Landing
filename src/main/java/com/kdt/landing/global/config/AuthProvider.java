@@ -31,14 +31,11 @@ public class AuthProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String email = (String) authentication.getPrincipal();
-        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡemailㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ"+ email);
         String pw = (String) authentication.getCredentials();
-        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡpwㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ"+ pw);
 
         PasswordEncoder passwordEncoder = memberService.passwordEncoder();
         UsernamePasswordAuthenticationToken token;
         Member memberToken = memberService.LoginEmail(email);
-        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡmemberTokenㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ"+ memberToken);
 
         if(memberToken != null && passwordEncoder.matches(pw, memberToken.getPw())) {
             List<GrantedAuthority> roles = new ArrayList<>();

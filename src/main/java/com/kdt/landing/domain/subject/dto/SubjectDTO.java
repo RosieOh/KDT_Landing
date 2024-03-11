@@ -1,6 +1,9 @@
 package com.kdt.landing.domain.subject.dto;
 
+import com.kdt.landing.global.cosntant.Course;
 import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,8 +17,8 @@ public class SubjectDTO {
 
     private Long no;
 
-    @Column(length = 20)
-    private String subject;                            //신청 과목
+    @Enumerated(EnumType.STRING)
+    private Course course;                            //신청 과목
 
     @Column(length = 20)
     private String name;                              //신청자 이름
@@ -45,7 +48,7 @@ public class SubjectDTO {
     private String workup;                          // 국민취업제도 참여 경험
 
     @Column(length = 25)
-    private boolean kdt_process;                    // KDT 과정 수강이력
+    private String kdt_process;                    // KDT 과정 수강이력
 
     @Column(length = 100)
     private String coding_experience;               // 코딩 경험 여부

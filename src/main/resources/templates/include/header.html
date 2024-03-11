@@ -16,8 +16,8 @@
               data-hidden="true"
               data-target="navigation"
             >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
+              <span aria-hidden="true"> <a class="navbar-link is-arrowless" th:href="@{/}">홈</a></span>
+              <span aria-hidden="true"><a class="navbar-link is-arrowless" th:href="@{/subSign}">교육신청</a></span>
               <span aria-hidden="true"></span>
             </button>
           </div>
@@ -34,7 +34,7 @@
               </li>
               <li class="navbar-item">
                 <a class="navbar-link is-arrowless" th:href="@{/fullStack}"
-                  >AI,데이터 과정</a
+                  >AI·데이터 과정</a
                 >
               </li>
 
@@ -69,7 +69,13 @@
                 Account
               </a>
               <div class="navbar-dropdown">
-                <th:block sec:authorize="hasAnyAuthority('ADMIN')">
+                <th:block sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')">
+                  <a class="navbar-item" th:href="@{/admin_subject/list}">
+                    과정 별 신청 현황
+                  </a>
+                  <a class="navbar-item" th:href="@{/apply/list}">
+                    사전 신청 현황
+                  </a>
                   <a class="navbar-item" th:href="@{/modifyBoard/list}">
                     수정요청
                   </a>

@@ -34,9 +34,6 @@ public class MemberJoinDTO {
     private String code;
 
     @NotBlank(message = "**")
-    private String nickname;
-
-    @NotBlank(message = "**")
     private String tel;
 
     @Enumerated(EnumType.STRING)
@@ -48,6 +45,4 @@ public class MemberJoinDTO {
     @Column(nullable = true)
     private LocalDateTime loginAt;  //최종 로그인시간
 
-    private String nowPassword;
-    private String passwordConfirm;
 }
