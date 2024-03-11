@@ -20,11 +20,10 @@ public class HomeController {
 
 
 
-    //jsp index
     @GetMapping("/")
     public String home(Principal principal,Model model) {
         memberService.createAdminMember(); // 관리자 회원 생성 메서드 호출
-        return "/index";
+        return "index";
     }
 
     @GetMapping("/subSign")
