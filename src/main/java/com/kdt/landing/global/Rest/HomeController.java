@@ -54,4 +54,8 @@ public class HomeController {
     public String pm(Model model) {
         return "sub/pm";
     }
+    @GetMapping("/ww")
+    public String ww(Model model) {
+        return "sub/ww";
+    }
 }
