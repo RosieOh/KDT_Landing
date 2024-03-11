@@ -50,7 +50,7 @@ function Insubreset(){
     function submitForm() {
     // 폼 데이터를 직렬화하여 서버에 전송
     $.ajax({
-        url: "${path}/member/joinPro",
+        url: "/member/joinPro",
         type: "POST",
         data: $("#joinForm").serialize(), // 폼 데이터 직렬화
         success: function(response) {
@@ -58,7 +58,7 @@ function Insubreset(){
             alert("회원가입이 완료되었습니다.");
             // 회원가입이 성공하면 다음 동작을 수행
             // 예) 로그인 페이지로 이동
-            window.location.href = "${path}/member/login";
+            window.location.href = "/member/login";
         },
         error: function(xhr, status, error) {
             // 서버로부터의 오류 처리

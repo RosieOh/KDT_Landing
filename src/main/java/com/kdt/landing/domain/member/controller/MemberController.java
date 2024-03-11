@@ -1,20 +1,23 @@
 package com.kdt.landing.domain.member.controller;
 
 import com.kdt.landing.domain.member.dto.MemberJoinDTO;
-import com.kdt.landing.domain.member.entity.Member;
-import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.domain.member.service.MemberService;
-import jakarta.validation.Valid;
+import com.kdt.landing.global.cosntant.Status;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.security.Principal;
-import java.util.Objects;
 
 @Log4j2
 @Controller
@@ -23,75 +26,83 @@ import java.util.Objects;
 public class MemberController {
 
     private final MemberService memberService;
-    private final MemberRepository memberRepository;
-
-    private final BCryptPasswordEncoder passwordEncoder;
-
+    private final PasswordEncoder passwordEncoder;
 
     @GetMapping("login")
-    public String login(Model model, Principal principal) {
-        model.addAttribute("memberJoinDTO", new MemberJoinDTO());
-        return "member/login/login";
+    public String Login(Model model){
+        return "member/login";
     }
 
-    @GetMapping("loginFail")
-    public String loginFail(Model model) {
-        model.addAttribute("msg", "로그인 실패! 다시 시도해 주세요!");
-        model.addAttribute("url", "login");
-        return "member/login/login";
+    @GetMapping("active")
+    public String active(Model model, HttpServletRequest request, HttpServletResponse response) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication != null) {
+            new SecurityContextLogoutHandler().logout(request, response, authentication);
+        }
+        return "member/active";
+    }
+
+    @GetMapping("status")
+    public String status(Model model, Principal principal) {
+
+        String email = principal.getName();
+        int pass = memberService.loginPro(email);
+        if (pass == 1) {
+            model.addAttribute("msg", "환영합니다! 로그인 되었습니다!");
+            model.addAttribute("url", "/");
+            return "member/alert";
+        } else if(pass == 2) {
+            model.addAttribute("msg", "해당 계정은 휴면계정입니다. 휴면을 해제해주세요.");
+            model.addAttribute("url","/active");
+            return "member/alert";
+        } else if (pass == 3) {
+            model.addAttribute("msg", "해당 계정은 탈퇴한 계정입니다.");
+            model.addAttribute("url","/logout");
+            return "member/alert";
+        } else {
+            model.addAttribute("msg", "로그인 정보가 맞지 않습니다.");
+            model.addAttribute("url", "/member/login");
+            return "member/alert";
+        }
     }
 
     @GetMapping("join")
-    public String join(Model model) {
-        model.addAttribute("memberJoinDTO", new MemberJoinDTO());
-        return "member/join/join";
+    public String joinForm(Model model) {
+        return "member/join";
     }
 
     @PostMapping("joinPro")
-    public String joinPOST(@Valid MemberJoinDTO memberJoinDTO, BindingResult bindingResult, Model model) {
-        log.info("==============================================================================");
-        log.info(memberJoinDTO);
-//        String id = String.valueOf(memberJoinDTO.getId());
-        String email = memberJoinDTO.getEmail();
-        log.info("==============================================================================");
-//        log.info("나와라!! " + id);
-        Member existEmail = memberService.existByEmail(email);
-        log.info("==============================================================================");
-        log.info("나와라!! " + existEmail);
-
-        if (existEmail != null) {
-            bindingResult
-                    .rejectValue("email", "error.email", "사용이 불가한 이메일입니다.");
-        }
-
-        if (!Objects.equals(memberJoinDTO.getPasswordConfirm(), memberJoinDTO.getPw())) {
-            bindingResult.rejectValue("passwordConfirm", "error.passwordConfirm", "비밀번호와 비밀번호 확인이 다릅니다.");
-        }
-
-        if (bindingResult.hasErrors()) {
-            System.out.println("error" + bindingResult.hasErrors());
-            System.out.println("e" + bindingResult.getFieldError().getDefaultMessage());
-            model.addAttribute("error", bindingResult.hasErrors());
-            model.addAttribute("memberJoinDTO", memberJoinDTO);
-            return "member/login";
-        }
-        log.info("==============================================================================email" + email);
-        log.info("==============================================================================memberJoinDTO" + memberJoinDTO);
-
-        memberService.join(memberJoinDTO);
-        return "redirect:login";
+    public String join(Model model, MemberJoinDTO memberJoinDTO) {
+        memberService.memberInsert(memberJoinDTO);
+        model.addAttribute("msg", "천재IT교육센터에 오신 것을 환영합니다!");
+        model.addAttribute("url", "/");
+        return "member/alert";
     }
 
+    @PostMapping("idCheckPro")
+    public ResponseEntity idCheck(@RequestBody MemberJoinDTO memberJoinDTO) throws Exception {
+        String email = memberJoinDTO.getEmail();
+        boolean result = memberService.idCheck(email);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 
-    @PostMapping("/emailCheck")
-    @ResponseBody
-    public boolean emailCheckAjax(@RequestParam("email") String email) {
-        Member member = memberService.existByEmail(email);
-        if(member!=null) {
-            return false;
-        } else {
-            return true;
-        }
+    @GetMapping("remove")
+    public String remove(String email, Model model) {
+        MemberJoinDTO memberJoinDTO = memberService.getEmail(email);
+        memberJoinDTO.setStatus(Status.OUT);
+        memberService.memberUpdate(memberJoinDTO);
+        model.addAttribute("msg", "지금까지 감사합니다.");
+        model.addAttribute("url", "/logout");
+        return "/alert";
+    }
+
+    @PostMapping("changePw")
+    public String changePassword(Model model, String pw, String email) {
+        MemberJoinDTO memberJoinDTO = memberService.getEmail(email);
+        memberJoinDTO.setPw(pw);
+        memberService.memberChangePw(memberJoinDTO);
+        model.addAttribute("url", 2);
+        return "/alert";
     }
 
 
