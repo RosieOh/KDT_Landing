@@ -9,13 +9,19 @@ public interface BoardService {
 
     public BoardDTO findById(Long id);
 
+
     public List<BoardDTO> findAll(BoardDTO boardDTO);
+
+    // test
+    public List<Board> boardList();
 
     public void register(BoardDTO boardDTO);
 
     public void modify(BoardDTO boardDTO);
 
     public void remove(Long id);
+
+    public BoardDTO getBoard(Long id);
 
     public List<BoardDTO> findByBoardType(String boardType);
 }

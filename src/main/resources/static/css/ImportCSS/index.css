@@ -139,6 +139,10 @@
   flex-direction: column;
 }
 
+.ft_wrap_hole {
+  display: flex;
+}
+
 .ft_wrap2 {
   width: 1200px;
   padding: 40px 0px;
