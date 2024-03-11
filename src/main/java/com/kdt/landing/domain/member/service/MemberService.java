@@ -6,7 +6,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
+import java.util.List;
+
 public interface MemberService {
+
+    public List<MemberJoinDTO> memberList();
 
     public List<MemberJoinDTO> memberList();
     public PasswordEncoder passwordEncoder();
