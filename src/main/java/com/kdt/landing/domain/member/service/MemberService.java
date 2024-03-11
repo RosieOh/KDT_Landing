@@ -6,12 +6,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
+import java.util.List;
+
 public interface MemberService {
+
+    public List<MemberJoinDTO> memberList();
 
     public List<MemberJoinDTO> memberList();
     public PasswordEncoder passwordEncoder();
     public MemberJoinDTO getEmail(String email);
-//    public MemberJoinDTO getName(String name);
     public void memberInsert(MemberJoinDTO memberJoinDTO);
     public Member LoginEmail(String email);
     public void memberUpdate(MemberJoinDTO memberJoinDTO);
