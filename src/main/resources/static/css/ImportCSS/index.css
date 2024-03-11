@@ -3,13 +3,6 @@
   position: fixed;
   top: 0;
 }
-.container_bottom {
-  margin-bottom: 10rem;
-}
-
-.container_bottom {
-  margin-bottom: 10rem;
-}
 
 .border1 {
   box-shadow: 2px 2px 10px 1px gray;
@@ -22,16 +15,20 @@
 /* index.test */
 
 .small_title {
+  font-weight: bold;
   text-align: left;
   padding-bottom: 15px;
-  color: var(--c-main3);
+  color: var(--c-sub);
+}
+.small_title_2 {
+  text-align: center;
+  padding-bottom: 15px;
+  font-weight: bold;
+  color: var(--c-sub);
 }
 
 .title_sub_1 {
   text-align: left;
-}
-
-.title_sub_2 {
 }
 
 .card-image {
@@ -45,35 +42,31 @@
 }
 
 .course_button {
-  background-color: var(--c-main);
+  background-color: var(--c-sub);
   width: 100%;
-  padding: 1rem 1rem;
+  padding: 1rem 1.5rem;
   color: var(--c-white);
   border: none;
   border-radius: 15px;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 .course_button:hover {
   background-color: var(--c-hover);
   color: var(--c-white);
 }
-.small_title_2 {
-  text-align: center;
-  padding-bottom: 15px;
-  color: var(--c-main3);
-}
 
 .font_strong {
-  color: var(--c-main3);
+  color: var(--c-main);
 }
 
 .benefits_title {
-  color: var(--c-main3);
+  color: var(--c-main);
   font-size: 1.25em;
   font-weight: bold;
   border-width: 0 0 1px;
-  border-color: var(--c-main3);
+  border-color: var(--c-main);
   border-style: solid;
   padding-bottom: 0.5rem;
 }
@@ -112,126 +105,38 @@
   height: auto;
 }
 
+.media-left_2 {
+  margin: 0;
+  width: 60px;
+  height: 60px;
+}
+
 /* 푸터 구역 스타일 */
 
 .ft {
-  clear: both;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 192px;
-  text-align: left;
-  box-shadow: 0px -10px 30px #ccc;
   background: #172538;
-}
-
-.ft::after {
-  content: "";
-  display: block;
-  width: 100%;
-  clear: both;
+  padding: 2rem;
 }
 
 .ft_wrap {
-  clear: both;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1152px;
   width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 30px;
-  padding-top: 46px;
 }
 
-.ft_link {
-  clear: both;
-  width: 1200px;
-  margin: 0 auto;
+@media screen and (max-width: 700px) {
+  .ft_wrap {
+    flex-direction: column;
+  }
 }
 
-.ft_link::after {
-  content: "";
-  display: block;
-  width: 100%;
-  clear: both;
-}
-
-.fnb {
-  float: left;
-}
-
-.fnb a {
-  color: #f1f1f1;
-}
-
-.fnb::after {
-  content: "";
-  display: block;
-  width: 100%;
-  clear: both;
-}
-
-.fnb li {
-  float: left;
-}
-
-.fnb li::after {
-  content: " |";
-  color: #f1f1f1;
-  padding: 0 10px;
-}
-
-.fnb li:last-child::after {
-  content: "";
-}
-
-.snb {
-  float: right;
-}
-
-.snb::after {
-  content: "";
-  display: block;
-  width: 100%;
-  clear: both;
-}
-
-.snb li {
-  float: left;
-  margin-left: 14px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.snb li a {
-  display: block;
-  width: 50px;
-  height: 34px;
-  border-radius: 20px;
-  font-size: 22px;
-  color: #f1f1f1;
-}
-
-.snb li a:hover {
-  color: #a2aec7;
-}
-
-.locate {
-  float: left;
-}
-
-.snb li.locate {
-  background-image: none;
-  width: 200px;
-  height: 34px;
-  margin-top: 0;
-  line-height: 48px;
-}
-
-.snb li.locate option {
-  display: block;
-  height: 48px;
-  line-height: 48px;
-  min-height: 48px;
-}
-#sel {
-  height: 40px;
-  width: 200px;
+.ft_wrap_text {
+  display: flex;
+  flex-direction: column;
 }
 
 .ft_wrap_hole {
@@ -239,7 +144,6 @@
 }
 
 .ft_wrap2 {
-  clear: both;
   width: 1200px;
   padding: 40px 0px;
   padding-left: 200px;
@@ -255,29 +159,27 @@
 }
 
 .copyright span {
-  color: #f1f1f1;
+  color: var(--c-white);
 }
 
 .cp {
   font-size: 12px;
-  color: #f1f1f1;
+  color: var(--c-white);
   line-height: 20px;
   margin-top: 10px;
   text-align: left;
 }
 
-.cp_1 {
+.cp_img {
   align-self: flex-end;
   padding-bottom: 15px;
 }
 
 .ft_logo {
-  width: 139px;
-  height: 31px;
-}
-
-.last_container {
-  padding-bottom: 10rem;
+  width: 200px;
+  height: 50px;
+  background-color: var(--c-white);
+  margin-top: 4rem;
 }
 
 /* gotop */
@@ -295,5 +197,10 @@
 }
 
 .gotop:hover {
-  background-color: var(--c-main);
+  background-color: var(--c-sub);
+}
+
+/* nav burger */
+
+.logo_img {
 }

@@ -4,22 +4,19 @@
   xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
   <body>
     <th:block th:fragment="header">
-      <nav id="navbar" class="navbar main-nav box_shadow_in">
-        <div class="container">
+
+      <nav id="navbar" class="navbar main-nav">
+        <div class="container back_white">
           <div class="navbar-brand ml-0">
-            <a class="navbar-item" href="index.html">
-              <h2 class="has-text-black">고용노동부 마크</h2>
+            <a class="navbar-item" href="https://www.moel.go.kr/">
+              <img th:src="@{/picture/common/고용노동부logo.png}" alt="고용노동부 logo">
             </a>
-            <button
-              role="button"
-              class="navbar-burger burger"
-              data-hidden="true"
-              data-target="navigation"
-            >
-              <span aria-hidden="true"> <a class="navbar-link is-arrowless" th:href="@{/}">홈</a></span>
-              <span aria-hidden="true"><a class="navbar-link is-arrowless" th:href="@{/subSign}">교육신청</a></span>
-              <span aria-hidden="true"></span>
-            </button>
+            <a class="navbar-item logo_img" href="https://www.chunjae.co.kr/">
+              <img th:src="@{/picture/common/천재교육logo.png}" alt="천재교육 logo">
+            </a>
+            <a class="navbar-item" href="https://chunjaetext.co.kr/">
+              <img th:src="@{/picture/common/천재교과서logo.png}" alt="천재교과서 logo">
+            </a>
           </div>
 
           <div class="navbar-menu mr-0" id="navigation">
@@ -28,75 +25,82 @@
                 <a class="navbar-link is-arrowless" th:href="@{/}">홈</a>
               </li>
               <li class="navbar-item">
-                <a class="navbar-link is-arrowless" th:href="@{/subSign}"
-                  >교육신청</a
-                >
-              </li>
-              <li class="navbar-item">
-                <a class="navbar-link is-arrowless" th:href="@{/fullStack}"
-                  >AI·데이터 과정</a
+                <a class="navbar-link is-arrowless" th:href="@{/bigdata}"
+                >AI·데이터 과정</a
                 >
               </li>
 
               <li class="navbar-item">
                 <a class="navbar-link is-arrowless" th:href="@{/fullStack}"
-                  >풀스택 과정</a
+                >풀스택 과정</a
                 >
               </li>
 
               <li class="navbar-item">
-                <a class="navbar-link is-arrowless" th:href="@{/fullStack}"
-                  >PM 과정</a
+                <a class="navbar-link is-arrowless" th:href="@{/pm}"
+                >PM 과정</a
                 >
               </li>
               <li class="navbar-item">
                 <a class="navbar-link is-arrowless" href="#">천재IT Blog</a>
               </li>
+              <th:block sec:authorize="isAnonymous()">
+                <li class="navbar-item">
+                  <a th:href="@{/member/login}" class="navbar-link is-arrowless">로그인</a>
+                </li>
+              </th:block>
+              <th:block sec:authorize="isAuthenticated()">
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    Account</a>
+                  <div class="navbar-dropdown">
+                    <ul>
+                      <th:block sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')">
+                        <li class="navbar-item">
+                          <a class="navbar-link is-arrowless" th:href="@{/admin_subject/list}">
+                            과정 별 신청 현황
+                          </a>
+                        </li>
+                        <li class="navbar-item">
+                          <a class="navbar-link is-arrowless" th:href="@{/admin/apply/list}">
+                            사전 신청 현황
+                          </a>
+                        </li>
+                        <li class="navbar-item">
+                          <a class="navbar-link is-arrowless" th:href="@{/admin/apply/list}">
+                            사전 신청 현황
+                          </a>
+                        </li>
+                        <li class="navbar-item">
+                          <a class="navbar-link is-arrowless" th:href="@{/admin/modifyBoard/list}">
+                            수정요청
+                          </a>
+                        </li>
+                      </th:block>
+                      <th:block sec:authorize="isAuthenticated()">
+                        <li class="navbar-item">
+                          <a class="navbar-link is-arrowless" th:href="@{/notice/list}">
+                            공지사항
+                          </a>
+                        </li>
+                        <li class="navbar-item">
+                          <a class="navbar-link is-arrowless" th:href="@{/logout}">
+                            로그아웃
+                          </a>
+                        </li>
+                      </th:block>
+                    </ul>
+                  </div>
+                </div>
+              </th:block>
+              <!-- <form th:action="@{/logout}" method="post">
+                <a href="#" onclick="this.closest('form').submit();" class="navbar-item">로그아웃</a>
+              </form> -->
+
             </ul>
           </div>
-          <th:block sec:authorize="isAnonymous()">
-            <li class="navbar-item">
-              <a class="nav-link text-white add-button" th:href="@{/member/join}">회원가입</a>
-            </li>
-            <li class="navbar-item">
-              <a th:href="@{/member/login}" class="nav-link text-white add-button">로그인</a>
-            </li>
-          </th:block>
-          <th:block sec:authorize="isAuthenticated()">
-
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                Account
-              </a>
-              <div class="navbar-dropdown">
-                <th:block sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')">
-                  <a class="navbar-item" th:href="@{/admin_subject/list}">
-                    과정 별 신청 현황
-                  </a>
-                  <a class="navbar-item" th:href="@{/apply/list}">
-                    사전 신청 현황
-                  </a>
-                  <a class="navbar-item" th:href="@{/modifyBoard/list}">
-                    수정요청
-                  </a>
-                </th:block>
-                <th:block sec:authorize="hasAnyAuthority('MANAGER', 'ADMIN', 'STUDENT')">
-                  <a class="navbar-item" th:href="@{/notice/list}">
-                    공지사항
-                  </a>
-                </th:block>
-                <th:block sec:authorize="isAuthenticated()">
-                  <form th:action="@{/logout}" method="post">
-                    <a href="#" onclick="this.closest('form').submit();" class="navbar-item">로그아웃</a>
-                  </form>
-                </th:block>
-              </div>
-            </div>
-          </th:block>
-          </ul>
-        </div>
         </div>
       </nav>
-    </th:block>
+      </th:block>
   </body>
 </html>
