@@ -1,9 +1,5 @@
 /* 신청 양식 폼 */
 
-.main {
-  background-color: var(--c-lightgray);
-  height: auto;
-}
 .subSign_form {
   position: relative;
   left: 50%;
@@ -23,7 +19,7 @@
 }
 
 .subSign_form strong {
-  color: var(--c-check);
+  color: var(--c-main);
 }
 
 @media screen and (max-width: 815px) {
@@ -54,7 +50,7 @@
 }
 
 .subSign_form em {
-  color: var(--c-check);
+  color: var(--c-main);
   font-weight: bold;
   font-style: normal;
   margin-left: 3px;
@@ -78,7 +74,7 @@
 }
 
 .agree {
-  border: 1px solid var(--c-card_back);
+  border: 1px solid var(--c-back_lightgray);
   color: var(--c-black);
   display: inline-block;
   background-color: var(--c-white);
@@ -102,7 +98,7 @@
 }
 
 .paper:hover {
-  color: var(--c-check);
+  color: var(--c-hover);
   cursor: pointer;
 }
 
@@ -111,17 +107,17 @@
   height: 80px;
 }
 .paper a {
-  color: var(--c-gray);
+  color: var(--c-back_gray);
 }
 .paper h5 {
   font-size: 14px;
-  color: var(--c-gray);
+  color: var(--c-back_gray);
   font-weight: bold;
 }
 
 .agree a {
   color: var(--c-black);
-  background-color: none;
+  background-color: transparent;
   font-size: 16px;
   float: right;
 }
@@ -167,7 +163,7 @@ label {
 
 [type="radio"] {
   appearance: none;
-  border: max(2px, 0.1em) solid gray;
+  border: max(2px, 0.1em) solid var(--c-back_gray);
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
@@ -176,7 +172,7 @@ label {
 }
 
 [type="radio"]:checked {
-  border: 0.4em solid var(--c-check);
+  border: 0.4em solid var(--c-sub);
 }
 
 [type="radio"]:focus-visible {
@@ -185,12 +181,12 @@ label {
 }
 
 [type="radio"]:hover {
-  box-shadow: 0 0 0 max(4px, 0.2em) var(--c-text_hover);
+  box-shadow: 0 0 0 max(4px, 0.2em) var(--c-back_lightgray);
   cursor: pointer;
 }
 
 [type="radio"]:disabled {
-  background-color: var(--c-text_hover);
+  background-color: var(--c-back_gray);
   box-shadow: none;
   opacity: 0.7;
   cursor: not-allowed;
@@ -203,7 +199,7 @@ label {
 
 [type="checkbox"] {
   appearance: none;
-  border: max(2px, 0.1em) solid gray;
+  border: max(2px, 0.1em) solid var(--c-back_gray);
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
@@ -211,7 +207,7 @@ label {
 }
 
 [type="checkbox"]:checked {
-  border: 0.4em solid var(--c-check);
+  border: 0.4em solid var(--c-main);
 }
 
 [type="checkbox"]:focus-visible {
@@ -220,12 +216,12 @@ label {
 }
 
 [type="checkbox"]:hover {
-  box-shadow: 0 0 0 max(4px, 0.2em) var(--c-text_hover);
+  box-shadow: 0 0 0 max(4px, 0.2em) var(--c-back_lightgray);
   cursor: pointer;
 }
 
 [type="checkbox"]:disabled {
-  background-color: var(--c-text_hover);
+  background-color: var(--c-back_gray);
   box-shadow: none;
   opacity: 0.7;
   cursor: not-allowed;
@@ -259,7 +255,7 @@ label {
 .textCount {
   text-align: right;
   padding-right: 0.5rem;
-  color: var(--c-gray);
+  color: var(--c-back_gray);
 }
 
 .sign_list_chek {
@@ -272,7 +268,7 @@ label {
 }
 
 .agree_button {
-  background-color: var(--c-main2);
+  background-color: var(--c-sub);
   padding: 1rem 1.5rem;
   color: var(--c-white);
   border: none;
