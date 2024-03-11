@@ -4,29 +4,34 @@
         xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 >
 <head>
-  <meta charset="UTF-8" />
-  <meta
-          content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
-          name="viewport"
-  />
-  <title>bigdata 랜딩페이지</title>
-  <th:block th:replace="include/head :: head"></th:block>
+    <meta charset="UTF-8" />
+    <meta
+            content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+            name="viewport"
+    />
+    <title>풀스택 페이지</title>
+    <th:block th:replace="include/head :: head"></th:block>
 </head>
-  <body>
-  <th:block th:replace="include/header :: header"></th:block>
-    <div class="main">
-      <section class="container">
-
-        <!-- 상단배너 start -->
-        <section class="banner" id="banner">
-          <div class="banner_box">
-            <h4 class="font_white">2024 커리큘럼 전면 리뉴얼!</h4>
-            <h1 class="banner_title title_white_big" >Learn by Doing Project <br>
-              에듀테크 AI·데이터 개발자 과정 8기 모집</h1>
-            <div class="banner_btn">
-              <a th:href="@{subSign}" class="course_button">접수하기>></a>
+<body>
+<th:block th:replace="include/header :: header"></th:block>
+<div class="main2">
+    <section class="container">
+        <!-- 풀스택 상단배너 start -->
+        <section class="hero is-bold bannerImg" id="banner">
+            <div class="hero-body">
+                <h4 class="title_white title_sub_1 bannerTitle">2024 커리큘럼 전면 리뉴얼!</h4>
+                <h4 class="title_white_big title_sub_1 bannerSub" >Learn by Doing Project</h4>
+                <h1 class="title_white title_sub_1 bannerSub2">에듀테크 Java 풀스택 개발자 과정 6기 모집</h1>
+                <div class="buttons">
+                    <button class="button is-yellow">
+                        접수하기 >
+                    </button>
+                </div>
             </div>
-        </div>
+
+            <div class="bannerImg">
+                <img th:src="@{/picture/fullStack/banner_fullstack.png}" alt="풀스택 배너 이미지">
+            </div>
         </section>
         <!-- 풀스택 상단배너 end -->
 
@@ -112,40 +117,30 @@
         </script>
         <!--     Section 1 - 카드 -->
         <section class="container container_bottom">
-          <div class="hero-body flex_between">
-            <div class="">
-              <h4 class="small_title">REVIEW</h4>
-              <h1 class="title_white_big title_sub_1">
-                우수 교육생 천재그룹 채용까지<br />
-                실제 수료생분들이 추천합니다.
-              </h1>
-              <h4 class="font_white title_sub_1">1기, 2기 수료생 전원<b>인턴 100%</b> 1기, 2기 90%이상 <b>직원 전환!</b><br>
-              <b>6개월 REAL REVIEW로</b>빅데이터 과정 미리보기
-              </h4>
-              <div class="banner_btn">
-                <button class="button">
-                  수강후기 보러가기 >
-                </button>
-              </div>
-            </div>
-            <div class="slide slide_wrap">
-              <div class="slide_item">
-                <img th:src="@{/picture/bigdata/bigex_1.png}" alt="bigdata후기_1">
-              </div>
-              <div class="slide_item">
-                <img th:src="@{/picture/bigdata/bigex_2.png}" alt="bigdata후기_2">
-              </div>
-                <div class="slide_item">
-                  <img th:src="@{/picture/bigdata/bigex_3.png}" alt="bigdata후기_3">
+            <div class="hero-body flex1">
+                <div class="container has-text-centered">
+                    <h4 class="small_title">REVIEW</h4>
+                    <h1 class="title_white_big title_sub_1">
+                        6개월 전 취준 고민을 했던<br />
+                        선배 수료생의 생생한 후기로<br />
+                        Java 풀스택 과정 미리보기
+                    </h1>
+                    <h4 class="title_white title_sub_1">1기, 2기 수료생 <b>90% 이상 인턴 전환</b><br>
+                        <b>후기가 증명하는</b> 천재IT교육센터 풀스택 개발자 과정
+                    </h4>
+                    <div class="buttons">
+                        <button class="button is-yellow mb-6">
+                            수강후기 보러가기 >
+                        </button>
+                    </div>
                 </div>
-                <div class="slide_item">
-                  <img th:src="@{/picture/bigdata/bigex_4.png}" alt="bigdata후기_4">
+                <div id="" class="">
+                    <img class="" th:src="@{/picture/fullStack/후기_1.png}">
+                    <img class="" th:src="@{/picture/fullStack/후기_2.png}">
+                    <img class="" th:src="@{/picture/fullStack/후기_3.png}">
+                    <img class="" th:src="@{/picture/fullStack/후기_4.png}">
                 </div>
-                <div class="slide_prev_button slide_button">◀</div>
-                <div class="slide_next_button slide_button">▶</div>
-              <ul class="slide_pagination"></ul>
             </div>
-          </div>
         </section>
 
         <!-- 모집 안내 start -->
@@ -622,28 +617,43 @@
                         />
                     </article>
                 </div>
-              </div>
-              <div class="is-12 post-img">
-                <div class="flex_between">
-                  <article class="columns is-multiline">
-                    <div class="column is-12 post-img">
-                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
-                    </div>
-                  </article>
-                  <article class="columns is-multiline">
-                    <div class="column is-12 post-img">
-                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+            </div>
+        </section>
+        <!-- 포트폴리오 end -->
 
-                    </div>
-                  </article>
+        <!-- 현직자 멘토링 start -->
+        <section class="container container_bottom">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h4 class="small_title_2">MEMTORING</h4>
+                    <h1 class="title_white title_sub_2">천재IT교육센터의 인텐시브 러닝 시스템</h1>
+                    <h2 class="title_white_big">POINT 03 현직자의 멘토링<br/> </h2>
+                    <p class="subtitle_white text_center">현직자 멘토의 집중 멘토링으로 실무자의 시각에서 프로젝트를 회고할 수 있어요!<br/>
+                        현직자 멘토링과 네트워킹 데이를 통해 커리어 고민을 나누고 성장의 기회를 잡으세요
+                    </p>
                 </div>
-                <article class="columns is-multiline">
-                  <div class="column is-12 post-img">
-                    <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
-
-                  </div>
-                </article>
-              </div>
+            </div>
+            <div class="columns is-multiline">
+                <div class="column post is-6">
+                    <article class="columns is-multiline">
+                        <div class="column is-12 post-img">
+                            <img
+                                    src="https://cdn.emk.dev/templates/post-img.png"
+                                    alt="Featured Image"
+                            />
+                        </div>
+                    </article>
+                </div>
+                <div class="column post is-6">
+                    <article class="columns is-multiline">
+                        <div class="column is-12 post-img">
+                            <img
+                                    src="https://cdn.emk.dev/templates/post-img.png"
+                                    alt="Featured Image"
+                            />
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
         <!-- 현직자 멘토링 end -->
@@ -656,30 +666,45 @@
                     <h2 class="title_white_big">천재IT교육센터의 교육시설</h2>
                     <p class="subtitle_white text_left">교육에만 몰두할 수 있어요!</p>
                 </div>
-              </div>
-              <div class="is-12 post-img">
-                <div class="flex_between">
-                  <article class="columns is-multiline">
-                    <div class="column is-12 post-img">
-                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
-
+            </div>
+            <div class="columns is-multiline">
+                <div class="Ladder">
+                    <div class="Ladder_1 radius2">
+                        <article class="columns is-multiline ">
+                            <img
+                                    th:src="@{/picture/fullStack/강의실_1.jpg}"
+                                    alt="Featured Image" class="radius2"
+                            />
+                        </article>
                     </div>
-                  </article>
-                  <article class="columns is-multiline">
-                    <div class="column is-12 post-img">
-                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
-
+                    <div class="Ladder_2 radius2">
+                        <article class="columns is-multilin">
+                            <img
+                                    th:src="@{/picture/fullStack/라운지.jpg}"
+                                    alt="Featured Image" class="radius2"
+                            />
+                        </article>
                     </div>
                 </div>
-                <article class="columns is-multiline">
-                  <div class="column is-12 post-img">
-                    <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
-
-                  </div>
-                </article>
-              </div>
+                <div class="Ladder">
+                    <div class="Ladder_3 radius2">
+                        <article class="columns is-multiline ">
+                            <img
+                                    th:src="@{/picture/fullStack/강의실_2.jpg}"
+                                    alt="Featured Image" class="radius2"
+                            />
+                        </article>
+                    </div>
+                    <div class="Ladder_4 radius2">
+                        <article class="columns is-multiline ">
+                            <img
+                                    th:src="@{/picture/fullStack/세미나실.jpg}"
+                                    alt="Featured Image" class="radius2"
+                            />
+                        </article>
+                    </div>
+                </div>
             </div>
-          </div>
         </section>
         <!-- 교육시설 end -->
 
