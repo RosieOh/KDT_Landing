@@ -26,7 +26,6 @@ public class HomeController {
 
 
     //jsp index
-    @GetMapping("/")
     public String home(Principal principal,Model model) {
         Optional<Member> member = Optional.of(new Member());
         if (principal != null) {
@@ -46,5 +45,13 @@ public class HomeController {
     @GetMapping("/fullStack")
     public String fullStack(Model model) {
         return "sub/fullstack";
+    }
+    @GetMapping("/bigdata")
+    public String bigdata(Model model) {
+        return "sub/bigdata";
+    }
+    @GetMapping("/pm")
+    public String pm(Model model) {
+        return "sub/pm";
     }
 }
