@@ -1,6 +1,7 @@
 package com.kdt.landing.domain.member.dto;
 
 import com.kdt.landing.global.cosntant.Role;
+import com.kdt.landing.global.cosntant.Status;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -9,6 +10,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.ColumnDefault;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -31,11 +34,15 @@ public class MemberJoinDTO {
     private String code;
 
     @NotBlank(message = "**")
-    private String nickname;
+    private String tel;
 
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    private String nowPassword;
-    private String passwordConfirm;
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    @Column(nullable = true)
+    private LocalDateTime loginAt;  //최종 로그인시간
+
 }

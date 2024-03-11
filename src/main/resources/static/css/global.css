@@ -10,6 +10,8 @@
 @import url("ImportCSS/sign.css");
 @import url("ImportCSS/subSign.css");
 @import url("ImportCSS/subject.css");
+@import url("ImportCSS/board.css");
+@import url("ImportCSS/breadcrumb.css");
 
 :root {
   --c-main: rgba(85, 59, 243, 1);
