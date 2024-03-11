@@ -1,3 +1,4 @@
+
 package com.kdt.landing.domain.home;
 
 import com.kdt.landing.domain.member.repository.MemberRepository;
@@ -20,16 +21,17 @@ public class HomeController {
 
 
 
-    //jsp index
+    @GetMapping("/")
     public String home(Principal principal,Model model) {
         memberService.createAdminMember(); // 관리자 회원 생성 메서드 호출
-        return "/index";
+        return "index";
     }
 
     @GetMapping("/subSign")
     public String subSign(Model model) {
         return "main/sign/subSign";
     }
+
 
     @GetMapping("/java")
     public String fullStack(Model model) {
