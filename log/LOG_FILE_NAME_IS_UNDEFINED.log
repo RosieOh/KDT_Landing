@@ -3383,6 +3383,7 @@ Caused by: org.thymeleaf.exceptions.TemplateInputException: Error resolving temp
 2024-03-12 02:17:06.411 INFO  [SpringApplicationShutdownHook] [o.s.o.j.LocalContainerEntityManagerFactoryBean] - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-12 02:17:06.411 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-3 - Shutdown initiated...
 2024-03-12 02:17:06.413 INFO  [SpringApplicationShutdownHook] [com.zaxxer.hikari.HikariDataSource] - HikariPool-3 - Shutdown completed.
+<<<<<<< HEAD
 2024-03-12 08:27:06.458 INFO  [background-preinit] [o.h.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.1.Final
 2024-03-12 08:27:06.502 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - Starting KdtApplication using Java 17.0.10 with PID 22104 (C:\Users\user\Desktop\0312\KDT_Landing\build\classes\java\main started by user in C:\Users\user\Desktop\0312\KDT_Landing)
 2024-03-12 08:27:06.502 INFO  [restartedMain] [com.kdt.landing.KdtApplication] - The following 1 profile is active: "local"
@@ -9711,3 +9712,5 @@ java.lang.IllegalArgumentException: The given id must not be null
 2024-03-12 09:07:57.312 WARN  [http-nio-8080-exec-3] [o.t.s.p.AbstractStandardFragmentInsertionTagProcessor] - [THYMELEAF][http-nio-8080-exec-3][sub/pm] Deprecated unwrapped fragment expression "sub/sub_inclulde/eduplace :: eduplace" found in template sub/pm, line 783, col 19. Please use the complete syntax of fragment expressions instead ("~{sub/sub_inclulde/eduplace :: eduplace}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
 2024-03-12 09:07:57.314 WARN  [http-nio-8080-exec-3] [o.t.s.p.AbstractStandardFragmentInsertionTagProcessor] - [THYMELEAF][http-nio-8080-exec-3][sub/pm] Deprecated unwrapped fragment expression "sub/sub_inclulde/digital_tran :: digital_tran" found in template sub/pm, line 785, col 11. Please use the complete syntax of fragment expressions instead ("~{sub/sub_inclulde/digital_tran :: digital_tran}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
 2024-03-12 09:07:57.315 WARN  [http-nio-8080-exec-3] [o.t.s.p.AbstractStandardFragmentInsertionTagProcessor] - [THYMELEAF][http-nio-8080-exec-3][sub/pm] Deprecated unwrapped fragment expression "include/footer :: footer" found in template sub/pm, line 790, col 15. Please use the complete syntax of fragment expressions instead ("~{include/footer :: footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+=======
+>>>>>>> fc2a0da35bbcf6cc1a4b1e3333de8cebbf40fa48
