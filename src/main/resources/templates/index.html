@@ -78,7 +78,6 @@
                 </h4>
               </div>
               <a th:href="@{subSign}" class="button width">접수하기</a>
-
             </div>
           </div>
           <div class="column text_center radius border1">
@@ -112,16 +111,16 @@
               에서<br />
               새로운 커리어 전환점을 찾았어요!!
             </h1>
-            <p class="text_center">
+            <h4 class="text_center">
               2023년 <b>수료생 111명 인턴 전환!</b>
               <br />
               천재IT교육센터에서 2024년 새로운 커리어를 준비하세요
-            </p>
+            </h4>
           </div>
         </div>
         <div class="columns features">
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="column text_center radius border1 index_ex">
+            <div class="">
               <img
                 class="radius2"
                 th:src="@{/picture/common/blog_1.jpg}"
@@ -129,8 +128,8 @@
               />
             </div>
           </div>
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="column text_center radius border1 index_ex">
+            <div class="">
               <img
                 class="radius2"
                 th:src="@{/picture/common/blog_2.jpg}"
@@ -138,8 +137,8 @@
               />
             </div>
           </div>
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="column text_center radius border1 index_ex">
+            <div class="">
               <img
                 class="radius2"
                 th:src="@{/picture/common/blog_3.png}"
@@ -157,7 +156,7 @@
             <h4 class="title_1 small_title">BENEFITS</h4>
             <h1 class="title_big title_sub_1">IT직무 취준이 처음이세요?</h1>
             <h4 class="title_sub_1">
-              떠먹여주는 &nbsp;<b>갓생취업루틴!</b>
+              떠먹여주는 <b>갓생취업루틴!</b>
               <br />
               교육에만 몰입하세요!
             </h4>
@@ -369,13 +368,6 @@
           </div>
         </div>
       </section>
-      <script th:inline="javascript">
-        (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
-
-        ChannelIO('boot', {
-          "pluginKey": "ebc8aaee-afda-484d-a633-5d8a0dff7fb3"
-        });
-      </script>
     </div>
     <th:block th:replace="main/sign/sign :: sign"></th:block>
     <th:block th:replace="include/footer :: footer"></th:block>
