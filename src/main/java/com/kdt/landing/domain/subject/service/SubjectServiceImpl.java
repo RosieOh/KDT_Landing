@@ -40,15 +40,15 @@ public class SubjectServiceImpl implements SubjectService {
     @Override
     public SubjectDTO findById(Long no) throws Exception {
         Optional<Subject> subFullStack = subFullStackRepository.findById(no);
-        // passencoder 다시 뺴줘야함
+
         SubjectDTO subFullStackDTO = modelMapper.map(subFullStack, SubjectDTO.class);
         return subFullStackDTO;
     }
 
     @Override
     public void register(SubjectDTO subFullStackDTO) throws Exception {
-        String emailEn = passwordEncoder.encode(subFullStackDTO.getEmail());
-        String telEn = passwordEncoder.encode(subFullStackDTO.getTel());
+        String emailEn = subFullStackDTO.getEmail();
+        String telEn = subFullStackDTO.getTel();
         subFullStackDTO.setEmail(emailEn);
         subFullStackDTO.setTel(telEn);
         Subject subFullStack = modelMapper.map(subFullStackDTO, Subject.class);
