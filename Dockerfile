@@ -1,15 +1,11 @@
 # 기본 이미지 선택
-FROM some-base-image
+FROM openjdk:17.0.2-jdk-slim-buster AS builder
 
-# 작업 디렉토리 설정
-# 이거 확인 해봐야합니다!
-WORKDIR /usr/src/app/
+# `JAR_FILE` 이라는 이름으로 build 한 jar 파일을 지정합니다.
+ARG JAR_FILE=./build/libs/*.jar
 
-# ARG 속성 추가 - 여러번 사용되는 문자열이나 숫자 등을 변수로 만들어주는 속성
-ARG JAR_PATH=./build/libs
+# 지정한 jar 파일을 app.jar 라는 이름으로 Docker Container에 추가합니다.
+ADD ${JAR_FILE} app.jar
 
-# 로컬 빌드 경로에서 JAR 파일을 이미지로 복사
-COPY ./build/libs/kdt-0.0.1-SNAPSHOT.jar ./build/libs/kdt-0.0.1-SNAPSHOT.jar
-
-# 애플리케이션 실행 명령어 설정
-CMD ["java","-jar","./build/libs/kdt-0.0.1-SNAPSHOT.jar"]
+# app.jar 파일을 실행합니다.
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]

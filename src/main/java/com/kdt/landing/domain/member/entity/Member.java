@@ -23,21 +23,26 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(exclude = "roleSet")
-//@ToString(exclude = "roleSet")
 public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;     // 기본키
+
+    private String oauth2Id;
+
+    private String provider;
+
+    private String providerId;
 
     @Column(nullable = false)
     private String pw;
 
     @Column(nullable = true)
-    private String name;
+    private String name;      // 유저 이름
 
     @Column(unique = true, nullable = true)
-    private String email;
+    private String email;       // 유저가 사용하는 이메일
 
     private String tel;
 
@@ -47,7 +52,7 @@ public class Member extends BaseEntity {
     @CreatedDate
     private LocalDateTime loginAt;  //최종 로그인시간
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     @Builder.Default
     private Set<Role> roleSet = new HashSet<>();
 
@@ -67,5 +72,15 @@ public class Member extends BaseEntity {
 
     public void roleUpdate(MemberJoinDTO memberJoinDTO) {
         this.role = memberJoinDTO.getRole();
+    }
+
+    @Builder
+    public Member(String oauth2Id, String email, String pw, String name, String provider, String providerId) {
+        this.oauth2Id = oauth2Id;
+        this.name = name;
+        this.pw = pw;
+        this.email = email;
+        this.provider = provider;
+        this.providerId = providerId;
     }
 }
