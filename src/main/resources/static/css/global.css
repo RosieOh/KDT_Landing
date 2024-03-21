@@ -1,17 +1,13 @@
 @charset "UTF-8";
 /* abc 순으로 기입 */
-@import url("ImportCSS/apply.css");
-@import url("ImportCSS/bulma.css");
-@import url("ImportCSS/faq.css");
+@import url("ImportCSS/main.css");
 @import url("ImportCSS/font.css");
-@import url("ImportCSS/index.css");
-@import url("ImportCSS/member.css");
-@import url("ImportCSS/modify.css");
-@import url("ImportCSS/sign.css");
-@import url("ImportCSS/subSign.css");
 @import url("ImportCSS/subject.css");
 @import url("ImportCSS/board.css");
-@import url("ImportCSS/breadcrumb.css");
+@import url("ImportCSS/tablet.css");
+@import url("ImportCSS/mobile.css");
+@import url("ImportCSS/header.css");
+@import url("ImportCSS/mobile/main_mobile.css");
 
 :root {
   --c-main: rgba(85, 59, 243, 1);
@@ -31,56 +27,85 @@
   --border_radius: 30px;
 }
 
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
 /* 공통 사항 */
 
+* {
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, p, blockquote, label {
+  margin: 0px;
+  padding: 0px;
+}
+
+button, input, select, textarea {
+  /* margin: 0; */
+}
+
+html,
+body {
+  color: var(--c-black);
+  background-color: var(--c-white);
+  font-family: Pretendard;
+  box-sizing: border-box;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+body {
+  height: auto;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--c-black);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+input, textarea {
+  box-shadow: inset 0 0.0625em 0.125em rgba(10,10,10,.05);
+  width: 100%;
+  border-color: var(--c-back_gray);
+  border-radius: 4px;
+  padding: 0 10px;
+  margin: 0;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 .red {
   border: 1px red solid;
 }
 
-.main {
-  background-color: var(--c-back_black);
-  padding-top: 4rem;
-}
-.main2 {
-  background-color: var(--c-white);
-  padding-top: 4rem;
-}
-.main3 {
-  background-color: var(--c-back_lightgray);
-  padding-top: 4rem;
+.blue {
+  border: 1px blue solid;
 }
 
-.container {
-  background-color: var(--c-back_black);
-}
-
-.container_reverse {
-  background-color: var(--c-white);
-  position: relative;
-  width: 100vw;
-}
-
-.container_bottom {
-  margin-bottom: 10rem;
-}
-
-.last_container {
-  padding-bottom: 20rem;
-}
-
-/*.container {*/
-/*  margin: 0.5rem auto;*/
-/*}*/
-
-.hero-body .container {
-  padding: 0.5rem;
-  margin-bottom: 3rem;
-  max-width: 100%;
+.zxc {
+  width: 100%;
+  height: 100%;
 }
 
 .radius {
   border-radius: 20px;
   margin: 0 0.5rem;
+  padding: 1rem;
 }
 
 .radius1 {
@@ -89,6 +114,11 @@
 
 .radius2 {
   border-radius: 20px;
+  height: 410px;
+}
+
+.radius2_blog {
+  margin: 1rem;
 }
 
 .inline_block {
@@ -133,13 +163,14 @@
   display: flex;
   justify-content: center;
 }
+
 .flex_column {
   display: flex;
   flex-direction: column;
 }
 
 .width {
-  width: 100%;
+  width: 400px;
 }
 .width_vw {
   width: 100vw;
@@ -153,7 +184,7 @@
   width: 33.33%;
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1399px) {
   .width_50 {
     width: 100%;
   }
@@ -166,27 +197,55 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.75rem;
   }
 
   .flex_between {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.75rem;
   }
 
   .flex_center {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.75rem;
+  }
+
+  .radius {
+    border-radius: 20px;
+    margin: 0 0.5rem;
+    padding: 1rem;
+  }
+
+  .radius1 {
+    border-radius: 10px;
+  }
+
+  .radius2 {
+    border-radius: 20px;
+    height: 410px;
   }
 }
 
-@media screen and (max-width: 1023px) {
-  .change_width {
-    width: 100%;
+@media screen and (max-width: 1280px) {
+  .radius {
+    border-radius: 20px;
+
+    padding: 1rem;
+  }
+
+  .radius1 {
+    border-radius: 10px;
+  }
+
+  .radius2 {
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+  }
+  img {
+    height: auto;
+    max-width: 100%;
   }
 }
 
@@ -212,6 +271,10 @@
 .margin_top_6r {
   margin-top: 6rem;
 }
+
+.ml_1 {
+  margin-left: 1rem;
+}
 .mr_05 {
   margin-right: 0.5rem;
   border-radius: 10px;
@@ -230,6 +293,10 @@
   border: 1px solid var(--c-back_gray);
 }
 
+.text_left {
+  text-align: left;
+}
+
 .text_center {
   text-align: center;
 }
@@ -237,3 +304,6 @@
 .text_right {
   text-align: right;
 }
+
+
+

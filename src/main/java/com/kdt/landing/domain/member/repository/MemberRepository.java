@@ -10,10 +10,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.text.html.Option;
 import java.util.Optional;
 
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long> {
+
+    public Optional<Member> findByOauth2Id(String oauth2Id);
+    public Optional<Member> findByName(String name);
 
     @EntityGraph(attributePaths = "roleSet")
     @Query("select m from Member m where m.email = :email")
