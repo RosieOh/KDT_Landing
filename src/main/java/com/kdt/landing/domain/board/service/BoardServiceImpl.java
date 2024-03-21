@@ -62,7 +62,6 @@ public class BoardServiceImpl implements BoardService {
                     .title(boardDTO.getTitle())
                     .content(boardDTO.getContent())
                     .boardType(boardDTO.getBoardType())
-                    .writer(boardDTO.getWriter())
                     .fileId(boardDTO.getFileId())
                     .build();
             boardDTOList.add(boardDTO);
@@ -71,13 +70,18 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardDTO> findByBoardType(String boardType) {
-        List<Board> boardList = boardRepository.findByBoardType(boardType);
+    public List<Board> boardList() {
+        return boardRepository.findAll();
+    }
 
-        if (boardList != null && !boardList.isEmpty()) {
-            List<BoardDTO> boardDTOList = boardList.stream().map(board -> modelMapper.map(board, BoardDTO.class))
+    @Override
+    public List<BoardDTO> findByBoardType(String boardType) {
+        List<Board> lst = boardRepository.findByBoardType(boardType);
+
+        if (lst != null && !lst.isEmpty()) {
+            List<BoardDTO> boardList = lst.stream().map(board -> modelMapper.map(board, BoardDTO.class))
                     .collect(Collectors.toList());
-            return boardDTOList;
+            return boardList;
         } else {
             return Collections.emptyList();
         }
@@ -99,11 +103,21 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public void modify(BoardDTO boardDTO) {
-        Optional<Board> result = boardRepository.findById(boardDTO.getId());
-        Board board = result.orElseThrow();
+        Board board = modelMapper.map(boardDTO, Board.class);
         board.change(boardDTO.getTitle(), boardDTO.getContent());
         boardRepository.save(board);
     }
+
+
+    @Override
+    public BoardDTO getBoard(Long id ) {
+        Optional<Board> result = boardRepository.findById(id);
+        Board board = result.orElseThrow();
+        BoardDTO boardDTO = modelMapper.map(board, BoardDTO.class);
+        return boardDTO;
+    }
+
+
 
     @Override
     public void remove(Long id) {

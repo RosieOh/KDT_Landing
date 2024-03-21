@@ -8,6 +8,7 @@ import com.kdt.landing.global.cosntant.Status;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,19 +26,20 @@ public class MemberServiceImpl implements MemberService{
 
     private final MemberRepository memberRepository;
 
-    private final PasswordEncoder passwordEncoder;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public void createAdminMember() {
         // 이미 존재하는 회원인지 확인
-        if (!memberRepository.existsByEmail("admin@naver.com")) {
+        if (!memberRepository.existsByEmail("admin@chunjaeIT.co.kr")) {
             // 관리자 계정 생성 및 초기 설정
             Member admin = Member.builder()
                     .pw(passwordEncoder.encode("1234"))
-                    .name("Admin")
-                    .nickname("관리자")
-                    .email("admin@naver.com")
+                    .name("관리자")
+                    .email("admin@chunjaeIT.co.kr")
                     .role(Role.ADMIN)
+                    .status(Status.ACTIVE)
+                    .tel("02-3282-8589")
                     .build();
 
             memberRepository.save(admin);
@@ -74,12 +76,6 @@ public class MemberServiceImpl implements MemberService{
         return memberJoinDTO;
     }
 
-//    @Override
-//    public MemberJoinDTO getName(String name) {
-//        Member member = memberRepository.getName(name);
-//        MemberJoinDTO memberJoinDTO = modelMapper.map(member, MemberJoinDTO.class);
-//        return memberJoinDTO;
-//    }
 
     @Override
     public void memberInsert(MemberJoinDTO memberJoinDTO) {

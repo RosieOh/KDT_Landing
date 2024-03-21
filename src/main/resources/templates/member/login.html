@@ -2,7 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+            content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+            name="viewport"
+    />
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Topic Listing Bootstrap 5 Template</title>
@@ -12,7 +15,17 @@
 <body style="min-height: 100vh;">
     <th:block th:replace="~{include/header :: header}"></th:block>
 
-    <div class="login-wrapper" style="margin: 0 auto; padding-top: 100px; min-height: 70vh;">
+    <section class="page-title">
+        <nav class="breadcrumb_1" aria-label="breadcrumbs">
+            <ul class="breadcrumb_1_road">
+                <li><a class="breadcrumb_1_road_a" th:href="@{/}"><i class="breadcrumb_1_road_home"></i>홈</a></li>
+                <li><a class="breadcrumb_1_road_a" th:href="@{/member/login}">로그인</a></li>
+            </ul>
+            <p class="breadcrumb_1_road_title">로그인</p>
+        </nav>
+    </section>
+
+    <div class="login-wrapper" style="margin: 0 auto; padding-top: 50px; min-height: 70vh;">
         <h2 style="text-align: center;">Login</h2>
         <form th:action="@{/loginPro}" method="post" id="login-form">
             <input type="text" name="email" placeholder= "이메일을 입력해주세요" autocomplete="off" required style="background-color: #F8F8F8;">
@@ -26,8 +39,10 @@
             <label for="remember-check">
                 <input type="checkbox" id="remember-check">아이디 저장하기
             </label>
-            <button type="submit" class="login-btn">로그인</button>
             <input type="submit" value="Login">
+            <div class="kakao_login">
+                <a th:href="@{/oauth2/authorization/kakao}"><img th:src="@{/picture/kakao_login_medium_wide.png}" alt="" class="kakao_login_img"></a>
+            </div>
                 <p class="d-flex justify-content-center mt-3"> 회원이 아니신가요? &nbsp; <a th:href="@{/member/join}" class="text-secondary"> 회원가입하기 </a></p>
         </form>
     </div>

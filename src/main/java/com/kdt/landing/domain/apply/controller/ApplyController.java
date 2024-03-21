@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -23,11 +24,20 @@ public class ApplyController {
     private final ApplyService applyService;
 
     //리스트
-    @GetMapping("/list")
+    @GetMapping(value = {"/list", "/"})
     public String applyList(Model model) throws Exception{
         List<ApplyDTO> applyDTOList = applyService.findAll();
         model.addAttribute("applyDTOList", applyDTOList);
-        return "apply/list";
+        return "admin/apply/list";
+    }
+
+    // 조회
+    @GetMapping("/read")
+    @ResponseBody
+    public String readApply(Long no, Model model) throws Exception {
+        ApplyDTO applyDTO = applyService.findById(no);
+        model.addAttribute("applyList", applyDTO);
+        return "sign/bigdata/view";
     }
 
     //등록
@@ -35,7 +45,7 @@ public class ApplyController {
     public String applyRegister(Model model, ApplyDTO applyDTO, Course course, HttpServletRequest request) throws Exception{
         applyDTO.setCourse(course);
         applyService.register(applyDTO);
-        return "redirect:/";
+        return "/main/sign/complete_apply";
     }
 
     //상태변경

@@ -1,13 +1,10 @@
 package com.kdt.landing.domain.member.controller;
 
 import com.kdt.landing.domain.member.dto.MemberJoinDTO;
-import com.kdt.landing.domain.member.entity.Member;
-import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.domain.member.service.MemberService;
 import com.kdt.landing.global.cosntant.Status;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
@@ -15,14 +12,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.security.Principal;
-import java.util.Objects;
 
 @Log4j2
 @Controller
@@ -32,6 +27,11 @@ public class MemberController {
 
     private final MemberService memberService;
     private final BCryptPasswordEncoder passwordEncoder;
+
+    @GetMapping("loginForm")
+    public String home() {
+        return "member/loginForm";
+    }
 
     @GetMapping("login")
     public String Login(Model model){
@@ -44,31 +44,30 @@ public class MemberController {
         if(authentication != null) {
             new SecurityContextLogoutHandler().logout(request, response, authentication);
         }
-        return "/member/active";
+        return "member/active";
     }
 
     @GetMapping("status")
     public String status(Model model, Principal principal) {
-        log.info("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡstatusㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 
         String email = principal.getName();
         int pass = memberService.loginPro(email);
         if (pass == 1) {
             model.addAttribute("msg", "환영합니다! 로그인 되었습니다!");
             model.addAttribute("url", "/");
-            return "/alert";
+            return "member/alert";
         } else if(pass == 2) {
             model.addAttribute("msg", "해당 계정은 휴면계정입니다. 휴면을 해제해주세요.");
             model.addAttribute("url","/active");
-            return "/alert";
+            return "member/alert";
         } else if (pass == 3) {
             model.addAttribute("msg", "해당 계정은 탈퇴한 계정입니다.");
             model.addAttribute("url","/logout");
-            return "/alert";
+            return "member/alert";
         } else {
             model.addAttribute("msg", "로그인 정보가 맞지 않습니다.");
             model.addAttribute("url", "/member/login");
-            return "/alert";
+            return "member/alert";
         }
     }
 
@@ -82,7 +81,7 @@ public class MemberController {
         memberService.memberInsert(memberJoinDTO);
         model.addAttribute("msg", "천재IT교육센터에 오신 것을 환영합니다!");
         model.addAttribute("url", "/");
-        return "/alert";
+        return "member/alert";
     }
 
     @PostMapping("idCheckPro")

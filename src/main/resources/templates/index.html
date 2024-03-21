@@ -6,19 +6,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta
-      content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
-      name="viewport"
+            content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+            name="viewport"
     />
     <title>천재IT교육센터</title>
-    <th:block th:replace="include/head :: head"></th:block>
+    <th:block th:replace="~{include/head :: head}"></th:block>
   </head>
   <body>
-    <th:block th:replace="include/header :: header"></th:block>
-    <div class="main">
+    <th:block th:replace="~{include/header :: header}"></th:block>
+    <div class="main2">
       <!-- banner -->
-      <section class="hero is-info is-medium is-bold" id="banner">
-        <div class="hero-body">
-          <div class="container has-text-centered">
+      <section class="index_banner_3" id="banner">
+        <div class="title-body">
+          <div class="container back_none">
             <h4 class="title_1">천재IT교육센터</h4>
             <br />
             <h1 class="title">에듀테크 PM 교육과정</h1>
@@ -28,28 +28,28 @@
       </section>
 
       <!--     Section 1 - 카드 -->
-      <section class="container container_bottom">
-        <div class="hero-body">
-          <div class="container has-text-centered">
+      <section class="container container_bottom back_white container_mb">
+        <div class="title-body">
+          <div class="container has-text-centered back_white">
             <h4 class="title_1 small_title">Education</h4>
-            <h1 class="title title_sub_1">
+            <h1 class="title_big title_sub_1">
               기업에서 직접 운영하는 탄탄한 부트캠프, <br />
               찾으셨나요?
             </h1>
-            <h4 class="title_1 title_sub_1">
-              대한민국 1위 교육 출판 전문 기업 (주)천재교육에서
+            <h4 class="title_sub_1">
+              <b>대한민국 1위 교육 출판 전문 기업 (주)천재교육</b>에서
               <br />
               직접 운영하는 K-디지털 트레이닝 교육기관 천재IT교육센터입니다.
             </h4>
           </div>
         </div>
-        <div class="columns features">
-          <div class="column text_center radius border1">
+        <div class="columns features features_1 radius1_cur_re" >
+          <div class="column text_center border1 radius1_cur radius1_cur_re">
             <div class="card-image has-text-centered">
               <img
                 class="radius2"
                 th:src="@{/picture/common/index_Big.jpg}"
-                alt="BigData 배너 이미지"
+                alt=""
               />
             </div>
             <div class="card-content">
@@ -58,15 +58,16 @@
                   에듀테크 AI, 빅데이터 개발자 <br />교육과정
                 </h4>
               </div>
-              <button class="course_button">접수하기</button>
+              <a th:href="@{subSign}" class="button width">접수하기</a>
+
             </div>
           </div>
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="column text_center border1 radius1_cur radius1_cur_re">
+            <div class="card-image">
               <img
                 class="radius2"
                 th:src="@{/picture/common/index_Full.jpg}"
-                alt="FullStack 배너 이미지"
+                alt=""
               />
             </div>
             <div class="card-content">
@@ -75,15 +76,15 @@
                   에듀테크 JAVA 풀스택 개발자 <br />교육과정
                 </h4>
               </div>
-              <button class="course_button">접수하기</button>
+              <a th:href="@{subSign}" class="button width">접수하기</a>
             </div>
           </div>
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="column text_center border1 radius1_cur radius1_cur_re">
+            <div class="card-image">
               <img
                 class="radius2"
                 th:src="@{/picture/common/index_PM.jpg}"
-                alt="PM 배너 이미지"
+                alt=""
               />
             </div>
             <div class="card-content">
@@ -92,75 +93,69 @@
                   에듀테크 PM(콘텐츠 기획자) <br />교육과정
                 </h4>
               </div>
-              <button class="course_button">접수하기</button>
+              <a th:href="@{subSign}" class="button width">접수하기</a>
+
             </div>
           </div>
         </div>
       </section>
 
       <!-- Section 2  -->
-      <section class="container container_bottom">
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h4 class="title_1 small_title_2">REVIEW</h4>
-            <h1 class="title_2">
+      <section class="container container_bottom back_white">
+        <div class="title-body text_center">
+          <div class="container back_white">
+            <h4 class="small_title_2">REVIEW</h4>
+            <h1 class="title_big">
               수료생 111명은 이미 "<strong class="font_strong">천재</strong>"
               에서<br />
               새로운 커리어 전환점을 찾았어요!!
             </h1>
-            <br />
-            <p class="subtitle_">
+            <h4 class="text_center">
               2023년 <b>수료생 111명 인턴 전환!</b>
               <br />
               천재IT교육센터에서 2024년 새로운 커리어를 준비하세요
-            </p>
+            </h4>
           </div>
         </div>
         <div class="columns features">
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="review_image">
               <img
-                class="radius2"
+                class="index_ex"
                 th:src="@{/picture/common/blog_1.jpg}"
-                alt="블로그 이미지 1"
+                alt=""
               />
-            </div>
           </div>
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="review_image">
               <img
-                class="radius2"
+                class="index_ex"
                 th:src="@{/picture/common/blog_2.jpg}"
-                alt="블로그 이미지 2"
+                alt=""
               />
-            </div>
           </div>
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="review_image">
               <img
-                class="radius2"
+                class="index_ex"
                 th:src="@{/picture/common/blog_3.png}"
-                alt="블로그 이미지 3"
+                alt=""
               />
-            </div>
           </div>
         </div>
       </section>
 
       <!-- Section 3  -->
-      <section class="container container_bottom">
-        <div class="hero-body">
-          <div class="container has-text-centered">
+      <section class="container container_bottom back_white">
+        <div class="title-body">
+          <div class="container has-text-centered back_white">
             <h4 class="title_1 small_title">BENEFITS</h4>
-            <h1 class="title title_sub_1">IT직무 취준이 처음이세요?</h1>
-            <p class="title_1 title_sub_1">
-              떠먹여주는 &nbsp;<b>갓생취업루틴!</b>
+            <h1 class="title_big title_sub_1">IT직무 취준이 처음이세요?</h1>
+            <h4 class="title_sub_1">
+              떠먹여주는 <b>갓생취업루틴!</b>
               <br />
               교육에만 몰입하세요!
-            </p>
+            </h4>
           </div>
         </div>
-        <div class="columns is-multiline">
+        <div class="is-multiline">
           <div class="column is-one-third multiline_box_1">
             <article class="notification media has-background-white">
               <div class="media-content">
@@ -169,7 +164,7 @@
                   <br />
                   <p class="benefit_sub">
                     전액 국비지원으로 교육비 0원, <br />
-                    PC 및 교재 지원, 식사 제공
+                    PC 및 교재 지원
                   </p>
                 </div>
                 <div class="index_figure">
@@ -204,7 +199,7 @@
             <article class="notification has-background-white media">
               <div class="media-content">
                 <div class="content">
-                  <h1 class="title is-size-4 width">오프라인 몰입도 100%</h1>
+                  <h1 class="title">오프라인 몰입도 100%</h1>
                   <br />
                   <p class="benefit_sub">
                     09:00 ~ 21:00 무료 개방되는
@@ -224,7 +219,7 @@
             <article class="notification has-background-white media">
               <div class="media-content">
                 <div class="content">
-                  <h1 class="title is-size-4">현직자의 현장강의</h1>
+                  <h1 class="title">현직자의 현장강의</h1>
                   <br />
                   <p class="benefit_sub">
                     현직 실무자의 현장강의로
@@ -244,7 +239,7 @@
             <article class="notification has-background-white media">
               <div class="media-content">
                 <div class="content">
-                  <h1 class="title is-size-4">나를 위한 6개월</h1>
+                  <h1 class="title">나를 위한 6개월</h1>
                   <br />
                   <p class="benefit_sub">
                     3개월, 4개월만에
@@ -266,7 +261,7 @@
             <article class="notification has-background-white media">
               <div class="media-content">
                 <div class="content">
-                  <h1 class="title is-size-4">실무 프로젝트 10개</h1>
+                  <h1 class="title">실무 프로젝트 10개</h1>
                   <br />
                   <p class="benefit_sub">
                     약 10개의 실무 프로젝트로
@@ -286,21 +281,22 @@
       </section>
 
       <!-- Section 4  -->
-      <section class="container container_bottom">
-        <div class="hero-body">
-          <div class="container has-text-centered">
+      <section class="container container_bottom back_white">
+        <div class="title-body">
+          <div class="container has-text-centered back_white">
             <h4 class="title_1 small_title">BENEFITS</h4>
-            <h1 class="title title_sub_1">
+            <h1 class="title_big title_sub_1">
               새로운 커리어 전환점, 천재IT교육센터와 함께 하세요.
             </h1>
-            <p class="title_1 title_sub_1">신청 및 개강 안내</p>
+            <h4 class="title_sub_1">신청 및 개강 안내</h4>
           </div>
         </div>
-        <div class="columns is-multiline">
-          <div class="container">
-            <div class="columns">
+        <div class="is-multiline_3">
+          <div class="container_1">
+            <div class="columns_1">
+
               <!-- 신청 기간 -->
-              <div class="column">
+              <div class="column columns_width">
                 <h4 class="benefits_title">신청 기간</h4>
                 <div class="benefits_sub">
                   <figure class="media-left">
@@ -310,12 +306,12 @@
                     />
                   </figure>
                   <div class="benefits_sub_in">
-                    2024년 03월 05일 ~ 2024년 04월 19일
+                    2024년 03월 13일 ~ 2024년 04월 19일
                   </div>
                 </div>
               </div>
               <!-- 지원 방법 -->
-              <div class="column">
+              <div class="column columns_width">
                 <h4 class="benefits_title">지원 방법</h4>
                 <div class="benefits_sub">
                   <figure class="media-left">
@@ -332,8 +328,8 @@
                 </div>
               </div>
             </div>
-            <div class="columns">
-              <div class="column">
+            <div class="columns_1">
+              <div class="column columns_width">
                 <h4 class="benefits_title">교육 기간</h4>
                 <div class="benefits_sub">
                   <figure class="media-left">
@@ -347,7 +343,7 @@
                   </div>
                 </div>
               </div>
-              <div class="column">
+              <div class="column columns_width">
                 <h4 class="benefits_title">참여 대상</h4>
                 <div class="benefits_sub">
                   <figure class="media-left">
@@ -366,8 +362,48 @@
           </div>
         </div>
       </section>
-    </div>
-    <th:block th:replace="main/sign/sign :: sign"></th:block>
-    <th:block th:replace="include/footer :: footer"></th:block>
+      
+      <section class="container container_bottom back_white">
+        <div id="map" style="width: 600px; height: 400px;"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf4e48d397124f04812bf416d553111c"></script>
+        <script th:inline="javascript">
+          var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                  mapOption = {
+                    center: new kakao.maps.LatLng(37.4786643, 126.8863597), // 지도의 중심좌표
+                    level: 2 // 지도의 확대 레벨
+                  };
+
+          var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+          var mapTypeControl = new kakao.maps.MapTypeControl();
+          map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+          // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성
+          var zoomControl = new kakao.maps.ZoomControl();
+          map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+          var iwContent = '<div style="padding:5px; text-align:center;">천재IT교육센터</div>',
+                  iwPosition = new kakao.maps.LatLng(37.4786643, 126.8863597),
+                  iwRemoveable = true;
+
+          // 마커가 표시될 위치입니다
+          var markerPosition  = new kakao.maps.LatLng(37.4786643, 126.8863597);
+
+          // 마커를 생성합니다
+          var marker = new kakao.maps.Marker({
+            position: markerPosition
+          });
+
+          // 인포윈도우 생성
+          var infowindow = new kakao.maps.InfoWindow({
+            map: map,
+            position : iwPosition,
+            content : iwContent,
+            removable : iwRemoveable
+          });
+        </script>
+      </section>
+      <!-- ======================================================================-->
+    <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
+    <th:block th:replace="~{include/footer :: footer}"></th:block>
   </body>
 </html>

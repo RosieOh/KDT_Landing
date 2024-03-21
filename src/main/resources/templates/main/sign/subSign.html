@@ -3,14 +3,17 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>천재IT교육센터</title>
+    <meta
+            content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+            name="viewport"
+    />
+    <title>교육신청 폼</title>
     <th:block th:replace="include/head :: head" ></th:block>
 </head>
 <body>
 <th:block th:replace="include/header :: header" ></th:block>
-<div class="main" id="banner">
-    <section class="container">
+<div class="main3" id="banner">
+    <section class="container back_lightgray">
         <div class="subSign_form">
             <div class="subSign_title">
                 <h1>교육 신청</h1>
@@ -32,13 +35,13 @@
                 <br>
                 </p>
             </div>
-            <form action="" method="post">
+            <form th:action="@{/subject/register}" method="post">
                 <div class="field">
                     <label class="label">교육과정<em>*</em></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="course" checked/><span>풀스택(java)</span></label>
-                        <label><input class="" type="radio" name="course" /><span>빅데이터</span></label>
-                        <label><input class="" type="radio" name="course" /><span>PM</span></label>
+                        <label><input class="" type="radio" name="course" value="FULLSTACK" /><span>풀스택(java)</span></label>
+                        <label><input class="" type="radio" name="course" value="BIGDATA" /><span>빅데이터</span></label>
+                        <label><input class="" type="radio" name="course" value="PM" /><span>PM</span></label>
                     </div>
                 </div>
                 <div class="field">
@@ -50,9 +53,9 @@
                 <div class="field">
                     <label class="label">연령대<em>*</em></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="age" checked/><span>10대 ~ 20대</span></label>
-                        <label><input class="" type="radio" name="age" /><span>20대 ~ 30대</span></label>
-                        <label><input class="" type="radio" name="age" /><span>30대 ~ 40대</span></label>
+                        <label><input class="" type="radio" name="age" value="10대~20대" /><span>10대 ~ 20대</span></label>
+                        <label><input class="" type="radio" name="age" value="20대~30대"/><span>20대 ~ 30대</span></label>
+                        <label><input class="" type="radio" name="age" value="30대~40대"/><span>30대 ~ 40대</span></label>
                     </div>
                 </div>
                 <div class="field">
@@ -70,20 +73,20 @@
                 <div class="field">
                     <label class="label">추천 전형 여부를 체크해주세요.<em>*</em></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="recomment" checked/><span>비해당</span></label>
-                        <label><input class="" type="radio" name="recomment" checked/><span>대학교 취업지원센터</span></label>
-                        <label><input class="" type="radio" name="recomment" checked/><span>학과장 및 사범대학</span></label>
+                        <label><input class="" type="radio" name="recomment" value="비해당" /><span>비해당</span></label>
+                        <label><input class="" type="radio" name="recomment" value="대학교 취업지원센터" /><span>대학교 취업지원센터</span></label>
+                        <label><input class="" type="radio" name="recomment" value="학과장 및 사범대학" /><span>학과장 및 사범대학</span></label>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">최종학력을 체크해주세요.<em>*</em></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="degree" checked/><span>고등학교 졸업</span></label>
-                        <label><input class="" type="radio" name="degree" /><span>대학교 졸업 예정</span></label>
-                        <label><input class="" type="radio" name="degree" /><span>대학교 졸업</span></label>
-                        <label><input class="" type="radio" name="degree" /><span>대학원 졸업 예정</span></label>
-                        <label><input class="" type="radio" name="degree" /><span>대학원 졸업</span></label>
-                        <label><input class="" type="radio" name="degree" /><span>기타</span></label>
+                        <label><input class="" type="radio" name="degree" value="고등학교 졸업" /><span>고등학교 졸업</span></label>
+                        <label><input class="" type="radio" name="degree" value="대학교 졸업 예정" /><span>대학교 졸업 예정</span></label>
+                        <label><input class="" type="radio" name="degree" value="대학교 졸업" /><span>대학교 졸업</span></label>
+                        <label><input class="" type="radio" name="degree" value="대학원 졸업 예정" /><span>대학원 졸업 예정</span></label>
+                        <label><input class="" type="radio" name="degree" value="대학원 졸업" /><span>대학원 졸업</span></label>
+                        <label><input class="" type="radio" name="degree" value="기타" /><span>기타</span></label>
                     </div>
                 </div>
                 <div class="field">
@@ -97,35 +100,35 @@
                 <div class="field">
                     <label class="label">국민내일배움카드를 소지하고 계신가요?<em>*</em><p>*내일배움카드 없이도 접수는 가능하지만, 교육 시작일 전까지 국민내일배움카드 발급 및 수령 완료해야 합니다.</p></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="studen_card" checked/><span>예</span></label>
-                        <label><input class="" type="radio" name="studen_card" /><span>아니오</span></label>
-                        <label><input class="" type="radio" name="studen_card" /><span>발급 받는 중이에요.</span></label>
+                        <label><input class="" type="radio" name="studen_card" value="예" /><span>예</span></label>
+                        <label><input class="" type="radio" name="studen_card" value="아니오" /><span>아니오</span></label>
+                        <label><input class="" type="radio" name="studen_card" value="발급 받는 중이에요." /><span>발급 받는 중이에요.</span></label>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">국민취업지원제도 참여 경험이 있으신가요?<em>*</em></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="workup" checked/><span>2년 이내 참여한 적 있어요.</span></label>
-                        <label><input class="" type="radio" name="workup" /><span>참여 중이에요</span></label>
-                        <label><input class="" type="radio" name="workup" /><span>신청 중이에요</span></label>
-                        <label><input class="" type="radio" name="workup" /><span>참여한 적 없어요</span></label>
+                        <label><input class="" type="radio" name="workup" value="2년 이내 참여한 적 있어요." /><span>2년 이내 참여한 적 있어요.</span></label>
+                        <label><input class="" type="radio" name="workup" value="참여 중이에요." /><span>참여 중이에요</span></label>
+                        <label><input class="" type="radio" name="workup" value="신청 중이에요" /><span>신청 중이에요</span></label>
+                        <label><input class="" type="radio" name="workup" value="참여한 적 없어요" /><span>참여한 적 없어요</span></label>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">기존 K-Digital Training 과정을 수강하신 적이 있으신가요?<em>*</em><p>*K-Digital Training 과정은 5년간 1번 지원받을 수 있으므로, 교육비 전액의 자부담이 발생할 수 있습니다.</p></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="kdt_process" checked/><span>예</span></label>
-                        <label><input class="" type="radio" name="kdt_process" /><span>아니오</span></label>
+                        <label><input class="" type="radio" name="kdt_process" value="예" /><span>예</span></label>
+                        <label><input class="" type="radio" name="kdt_process" value="아니오" /><span>아니오</span></label>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">코딩 경험 여부를 알려주세요.<em>*</em><p>*코딩 공부 경험시간을 포함한 경험을 입력해주세요.</p></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" checked/><span>없음</span></label>
-                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" /><span>1년 미만</span></label>
-                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" /><span>1 ~ 3년</span></label>
-                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" /><span>3년 이상</span></label>
-                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=false" /><span>기타</span><input class="label_input" type="text" name="coding_experience_text" disabled/></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="없음" /><span>없음</span></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="1년 미만" /><span>1년 미만</span></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="1 ~ 3년" /><span>1 ~ 3년</span></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="3년 이상" /><span>3년 이상</span></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=false" value="기타" /><span>기타</span><input class="label_input" type="text" name="coding_experience_text" disabled/></label>
                     </div>
                 </div>
                 <div class="field">
@@ -261,7 +264,7 @@
                 <div class="text_center">
                     <button
                             type="submit"
-                            class="agree_button is-link has-text-weight-medium is-medium"
+                            class="agree_button"
                             onclick="return agree(this)"
                     >
                         지원서 신청

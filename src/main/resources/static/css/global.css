@@ -1,54 +1,309 @@
 @charset "UTF-8";
 /* abc 순으로 기입 */
-@import url("ImportCSS/apply.css");
-@import url("ImportCSS/bulma.css");
-@import url("ImportCSS/faq.css");
+@import url("ImportCSS/main.css");
 @import url("ImportCSS/font.css");
-@import url("ImportCSS/index.css");
-@import url("ImportCSS/member.css");
-@import url("ImportCSS/modify.css");
-@import url("ImportCSS/sign.css");
-@import url("ImportCSS/subSign.css");
 @import url("ImportCSS/subject.css");
+@import url("ImportCSS/board.css");
+@import url("ImportCSS/tablet.css");
+@import url("ImportCSS/mobile.css");
+@import url("ImportCSS/header.css");
+@import url("ImportCSS/mobile/main_mobile.css");
 
 :root {
-  --c-main: #757afd;
-  --c-main2: #485fc7;
-  --c-main3: #553bf3;
-  --c-card_back: #888888e0;
-  --c-card_border: #dddddde0;
-  --c-black: black;
+  --c-main: rgba(85, 59, 243, 1);
+  --c-sub: rgba(118, 123, 255, 1);
+  --c-sub2: #d8d9ff;
+  --c-sub3: rgba(118, 123, 255, 0.4);
+  --c-hover: #402eb8;
+  --c-back_lightgray: rgba(221, 221, 221, 1);
+  --c-back_black: rgba(41, 41, 41, 1);
+  --c-back_darkgray: rgba(74, 74, 74, 1);
+  --c-back_gray: rgba(136, 136, 136, 1);
+  --c-black: rgba(51, 51, 51, 1);
+  --c-black_2: rgba(41, 41, 41, 1);
   --c-white: white;
-  --c-hover: #5f64d7;
-  --c-text_hover: lightgray;
-  --c-main_back: #292929;
+  --c-white_2: rgba(248, 248, 248, 1);
+  --c-white_ob: rgba(255, 255, 255, 0.3);
   --border_radius: 30px;
-  --c-gray: gray;
-  --c-check: #6574ff;
-  --c-button: #485fc7;
-  --c-lightgray: #f8f8f8;
-  --c-darkgray: #616161fc;
 }
 
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
 /* 공통 사항 */
+
+* {
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, p, blockquote, label {
+  margin: 0px;
+  padding: 0px;
+}
+
+button, input, select, textarea {
+  /* margin: 0; */
+}
+
+html,
+body {
+  color: var(--c-black);
+  background-color: var(--c-white);
+  font-family: Pretendard;
+  box-sizing: border-box;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+body {
+  height: auto;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--c-black);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+input, textarea {
+  box-shadow: inset 0 0.0625em 0.125em rgba(10,10,10,.05);
+  width: 100%;
+  border-color: var(--c-back_gray);
+  border-radius: 4px;
+  padding: 0 10px;
+  margin: 0;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.red {
+  border: 1px red solid;
+}
+
+.blue {
+  border: 1px blue solid;
+}
+
+.zxc {
+  width: 100%;
+  height: 100%;
+}
+
 .radius {
   border-radius: 20px;
   margin: 0 0.5rem;
+  padding: 1rem;
+}
+
+.radius1 {
+  border-radius: 10px;
 }
 
 .radius2 {
   border-radius: 20px;
+  height: 410px;
+}
+
+.radius2_blog {
+  margin: 1rem;
+}
+
+.inline_block {
+  display: flex;
+}
+
+.back_black {
+  background-color: var(--c-back_black);
 }
 
 .back_lightgray {
-  background-color: var(--c-lightgray);
+  background-color: var(--c-back_lightgray);
+}
+
+.back_gray {
+  background-color: var(--c-back_gray);
 }
 
 .back_darkgray {
-  background-color: var(--c-darkgray);
+  background-color: var(--c-back_darkgray);
 }
-@media screen and (max-width: 1023px) {
-  .change_width {
+
+.back_white {
+  background-color: var(--c-white) !important;
+}
+
+.back_none {
+  background-color: transparent;
+}
+
+.flex_around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.width {
+  width: 400px;
+}
+.width_vw {
+  width: 100vw;
+}
+
+.width_50 {
+  width: 50%;
+}
+
+.width_33 {
+  width: 33.33%;
+}
+
+@media screen and (max-width: 1399px) {
+  .width_50 {
     width: 100%;
   }
+
+  .width_33 {
+    width: 100%;
+  }
+
+  .flex_around {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .flex_between {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .flex_center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .radius {
+    border-radius: 20px;
+    margin: 0 0.5rem;
+    padding: 1rem;
+  }
+
+  .radius1 {
+    border-radius: 10px;
+  }
+
+  .radius2 {
+    border-radius: 20px;
+    height: 410px;
+  }
 }
+
+@media screen and (max-width: 1280px) {
+  .radius {
+    border-radius: 20px;
+
+    padding: 1rem;
+  }
+
+  .radius1 {
+    border-radius: 10px;
+  }
+
+  .radius2 {
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+.font_white {
+  color: var(--c-white);
+}
+
+.font_main_1 {
+  color: var(--c-main);
+}
+
+.font_gray {
+  color: var(--c-back_gray);
+}
+.font_darkgray {
+  color: var(--c-back_darkgray);
+}
+
+.font_weight_700 {
+  font-weight: 700;
+}
+
+.margin_top_6r {
+  margin-top: 6rem;
+}
+
+.ml_1 {
+  margin-left: 1rem;
+}
+.mr_05 {
+  margin-right: 0.5rem;
+  border-radius: 10px;
+}
+.mt_8 {
+  margin-top: 8rem;
+}
+
+.border_dashed {
+  border-color: var(--c-back_lightgray);
+  border-style: dashed;
+  border-width: 0 0 1px;
+}
+
+.border_gray {
+  border: 1px solid var(--c-back_gray);
+}
+
+.text_left {
+  text-align: left;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+}
+
+
+
