@@ -18,7 +18,8 @@
         .table1 {
             font-size: 1.25rem;
             border-top: 2px solid #dee2e6;
-            border-bottom: 1px solid #dbdbdb;;
+            border-bottom: 1px solid #dbdbdb;
+            width: 100%; /* 표의 전체 너비를 100%로 설정 */
         }
         .table1 th {
             white-space: nowrap;
@@ -32,10 +33,10 @@
         }
 
         .item1 { width:6%; }
-        .item2 { width:64%; }
-        .item3 { width:10%; }
-        .item4 { width:10%; }
-        .item5 { width:10%; }
+        .item2 { width:44%; }
+        .item3 { width:20%; }
+        .item4 { width:20%; }
+        .item5 { width:20%; }
     </style>
 
 </head>
@@ -43,14 +44,14 @@
 
 <th:block th:replace="~{include/header :: header}"></th:block>
 
-<section class="page-title" style="background: linear-gradient(to right, #71AEE8, #77E9CE); padding: 100px 0;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
-                <h3>공지사항</h3>
-            </div>
-        </div>
-    </div>
+<section class="page-title" style="padding-top: 60px; ">
+    <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4 breadcrumb_1" aria-label="breadcrumbs">
+        <ul class="mr-5">
+            <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
+            <li><a th:href="@{/notice/list}">공지사항</a></li>
+        </ul>
+        <p class="title has-text-centered mt-1 mb-2">공지사항</p>
+    </nav>
 </section>
 
 <div class="row mt-3">
@@ -62,7 +63,6 @@
     <div class="col-md-8 offset-md-2">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">공지사항</h5>
                 <table class="table1 is-centered is-fullwidth" id="myTable1" >
                     <thead>
                     <tr>
@@ -73,9 +73,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="board : ${boardList}">
-                        <td th:text="${board.id}"></td>
-                        <td><a th:href="|@{/notice/read(id=${board.id})}|" class="text-decoration-none">[[${board.title}]]</a></td>
+                    <tr th:each="board, num : ${boardList}" style="text-align: center;">
+<!--                        <td th:text="${board.id}"></td>-->
+                        <td th:text="${num.count}"></td>
+                        <td style="text-align: center"><a th:href="|@{/notice/read(id=${board.id})}|" class="text-decoration-none">[[${board.title}]]</a></td>
                         <td th:text="${board.writer}"></td>
                         <td th:text="${#temporals.format(board.regDate, 'yyyy-MM-dd')}"></td>
                     </tr>
@@ -90,7 +91,7 @@
             </div>
         </div>
         <div class="btn-group mt-3">
-            <button type="button" class="btn btn-primary" onclick="location.href='/notice/register'">Add to POST</button>
+            <button type="button" class="button is-block" onclick="location.href='/notice/register'"> 작성하기 </button>
         </div>
     </div>
 </div>
