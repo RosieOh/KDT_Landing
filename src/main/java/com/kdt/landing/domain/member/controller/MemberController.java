@@ -28,11 +28,6 @@ public class MemberController {
     private final MemberService memberService;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    @GetMapping("loginForm")
-    public String home() {
-        return "member/loginForm";
-    }
-
     @GetMapping("login")
     public String Login(Model model){
         return "member/login";
