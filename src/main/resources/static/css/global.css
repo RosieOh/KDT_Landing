@@ -62,9 +62,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
 }
+
 p {
   font-weight: normal;
 }
+
 li{
   list-style: none;
 }
@@ -228,6 +230,9 @@ textarea:hover, input:hover, select:hover {
   color: var(--c-back_darkgray);
 }
 
+.font_black {
+  color: var(--c-black);
+}
 .font_weight_700 {
   font-weight: 700;
 }

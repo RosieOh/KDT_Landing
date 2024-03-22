@@ -43,6 +43,45 @@
 
 /* 공통 end */
 
+/* 메인 start */
+.image_absolute_28 {
+    position: absolute;
+    top: 0;
+    left: 10em;
+    width: 17em;
+    z-index: -1;
+}
+.image_absolute_29 {
+    position: absolute;
+    top: -29em;
+    left: -45em;
+    width: 19em;
+    z-index: 0;
+}
+.image_absolute_30 {
+    position: absolute;
+    top: -4em;
+    left: -20em;
+    width: 10em;
+    z-index: 2;
+}
+.image_absolute_31 {
+    position: absolute;
+    top: 10em;
+    left: -45em;
+    width: 11em;
+}
+.image_absolute_32 {
+    position: absolute;
+    top: 5em;
+    left: 18em;
+    width: 13em;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+/* 메인 end */
+
 /* 풀스택 start */
 
 .image_absolute_2 {
@@ -397,6 +436,28 @@
         left: 5em;
         width: 13em;
     }
+
+    .image_absolute_28 {
+        top: 1em;
+        left: 9em;
+        width: 12em;
+    }
+
+    .image_absolute_30 {
+        top: -3em;
+        left: -14em;
+        width: 9em;
+    }
+    .image_absolute_31 {
+       display: none;
+    }
+    .image_absolute_32 {
+        top: 6em;
+        left: 14em;
+        width: 9em;
+    }
+
+
 }
 
 @media (max-width:812px) {
@@ -470,5 +531,38 @@
         top: 4em;
         left: 6em;
         width: 8em;
+    }
+
+    .image_absolute_28 {
+        top: 2em;
+        left: 6em;
+        width: 9em;
+    }
+    .image_absolute_29 {
+        top: -26em;
+        left: -14em;
+    }
+    .image_absolute_30 {
+        top: -1em;
+        left: -7em;
+        width: 6em;
+    }
+    .image_absolute_32 {
+        top: 5em;
+        left: 9.5em;
+        width: 6em;
+    }
+
+}
+
+@media (max-width:469px) {
+    .image_absolute_9 {
+        top: 6em
+    }
+}
+@media (max-width:423px) {
+    .image_absolute_9 {
+        left: 1em;
+        top: 9.5em;
     }
 }
