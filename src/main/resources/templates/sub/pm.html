@@ -14,104 +14,81 @@
   </head>
   <body>
     <th:block th:replace="include/header :: header"></th:block>
-    <div class="main">
-      <section class="container">
+    <div class="main back_black">
+
         <!-- 상단배너 start -->
         <section class="banner pmbanner" id="banner">
+          <section class="container">
           <div class="banner_box">
-            <h4 class="font_white">2024 커리큘럼 전면 리뉴얼!</h4>
+            <h4 class="title_sub font_white">2024 커리큘럼 전면 리뉴얼!</h4>
             <h1 class="banner_title title_white_big">
               Learn by Doing Project <br />
               에듀테크 PM 과정 6기 모집
             </h1>
             <div class="banner_btn">
-                <a th:href="@{subSign}" class="course_button">접수하기 ></a>
+              <a th:href="@{subSign}" class="button">접수하기 ></a>
             </div>
           </div>
+          </section>
         </section>
         <!-- 상단배너 end -->
 
-        <!-- 모집 카드 start -->
-        <section class="container container_bottom">
-          <div class="hero-body">
-            <div class="tile is-ancestor has-text-centered">
-              <div class="tile is-parent">
-                <article class="tile is-child box box_color border_ra">
-                  <p class="titleCard font_white">모집기간</p>
-                  <p class="subtitleCard font_white">
-                    <b>모집</b>
-                    <br />
-                    2023.03.13 ~ 2024.04.19
-                    <br />
-                    <br />
-                    <b>합격자 발표</b>
-                    <br />
-                    인터뷰 이후 일주일 이내
-                  </p>
-                </article>
-              </div>
-              <div class="tile is-parent">
-                <article class="tile is-child box box_color border_ra">
-                  <p class="titleCard font_white">교육기간</p>
-                  <p class="subtitleCard font_white">
-                    <b>교육</b>
-                    <br />
-                    2023.04.24 ~ 2024.10.28
-                    <br />
-                    (약 6개월)
-                  </p>
-                </article>
-              </div>
-              <div class="tile is-parent">
-                <article class="tile is-child box box_color border_ra">
-                  <p class="titleCard font_white">참여대상</p>
-                  <ul class="subtitleCard">
-                    <li>국민 내일배움카드 <br />보유 혹은 발급 가능한 자</li>
-                  </ul>
-                  <ul class="subtitleCard">
-                    <li>K-Digital Traning <br />수강 이력이 없는 자</li>
-                  </ul>
-                  <ul class="subtitleCard">
-                    <li>정보통신 및 이공계,<br />교육 관련 전공자 우대</li>
-                  </ul>
-                </article>
-              </div>
-              <div class="tile is-parent">
-                <article class="tile is-child box box_color border_ra">
-                  <p class="titleCard font_white">지원방법</p>
-                  <p class="subtitleCard font_white">
-                    <b>서류 심사</b>
-                    <br />
-                    신청폼 작성
-                    <br />
-                    <br />
-                    <b>면접 심사</b>
-                    <br />
-                    AI 비대면 인터뷰
-                    <br />
-                    <br />
-                    <b>합격자 발표</b>
-                    <br />
-                    문자 개별 통보
-                    <br />
-                  </p>
-                </article>
-              </div>
-            </div>
+      <!-- 모집 카드 start -->
+      <section class="container container_bottom">
+        <div class="recru_content">
+          <div class="recru_wrap">
+            <article class="recru_card">
+              <p class="titleCard font_white">모집기간</p>
+              <ul class="subtitleCard font_white li_disc">
+                <li><b>모집</b><br>2023.03.13 ~ 2024.04.19</li>
+                <br>
+                <br>
+                <li><b>합격자 발표</b><br> 인터뷰 이후 일주일 이내</li>
+              </ul>
+            </article>
+            <article class="recru_card">
+              <p class="titleCard font_white">교육기간</p>
+              <ul class="subtitleCard font_white li_disc">
+                <li><b>교육</b><br>2023.04.24 ~ 2024.10.28</li>
+              </ul>
+            </article>
           </div>
-        </section>
-        <!-- 모집 카드 end -->
+          <div class="recru_wrap">
+            <article class="recru_card">
+              <p class="titleCard font_white">참여대상</p>
+              <ul class="subtitleCard font_white li_disc">
+                <li>국민 내일배움카드 <br>보유 혹은 발급 가능한 자</li>
+                <br>
+                <li>K-Digital Traning <br>수강 이력이 없는 자</li>
+                <br>
+                <li>정보통신 및 이공계,<br>교육 관련 전공자 우대</li>
+              </ul>
+            </article>
+            <article class="recru_card">
+              <p class="titleCard font_white">지원방법</p>
+              <ul class="subtitleCard font_white li_disc">
+                <li><b>서류 심사</b><br>신청폼 작성</li>
+                <br>
+                <li><b>면접 심사</b><br>AI 비대면 인터뷰</li>
+                <br>
+                <li><b>합격자 발표</b><br>문자 개별 통보</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- 모집 카드 end -->
 
         <!-- REVIEW start -->
         <section class="container container_bottom">
-          <div class="hero-body flex_between">
+          <div class="title-body flex_between">
             <div class="">
               <h4 class="small_title">REVIEW</h4>
-              <h1 class="title_white_big title_sub_1">
+              <h1 class="title_white_big">
                 우수 교육생에서<br />
                 천재교육그룹 직원까지!
               </h1>
-              <h4 class="font_white title_sub_1">
+              <h4 class="title_sub">
                 PM 1기, 2기 <b> 수료생 전원 인턴 100%</b><br />
                 PM 1기 <b>100% 직원 전환 성공!</b><br>
                 이제는 현직자가 되어버린 수료생의 리얼한 리뷰로 PM 과정 미리보기
@@ -141,338 +118,276 @@
         </section>
         <!-- REVIEW end -->
 
-        <!-- 모집 안내 start -->
-        <section class="container container_bottom">
-          <div class="mb-6 pb-3 columns is-multiline">
-            <div
-              class="is-12 is-6-desktop mx-auto has-text-centered"
-              id="infoFullTitle"
-            >
-              <h2
-                class="font_white mb-4 is-size-1 is-size-3-mobile has-text-weight-bold white"
-              >
-                모집 안내
-              </h2>
-              <p class="font_white" id="infoFull_subtitle">모집개요</p>
-            </div>
-          </div>
-          <div class="columns is-multiline card_center cardFull">
-            <div class="column is-12 is-6-desktop">
-              <div class="mb-6 is-flex">
-                <div class="iconBox">
-                  <div class="iconCard text_center">
-                    <p class="iconP"><i class="fas fa-file"></i></p>
-                    <p class="font_white">모집분야</p>
-                  </div>
-                </div>
-                <div class="ml-3 in_box">
-                  <ul>
-                    <li class="iconIntro">
-                      PM(서비스/콘텐츠 기획자) 교육 과정
-                    </li>
-                  </ul>
+      <!-- 모집 안내 start -->
+      <div class="image_absolute_wrap"><img th:src="@{/ico/ico-orange arrow.png}" alt="image crown" class="image_absolute_1"/></div>
+      <section class="container container_bottom">
+        <div class="title-body text_center">
+          <h1 class="title_white_big">모집 안내</h1>
+          <h4 class="title_sub">모집개요</h4>
+        </div>
+        <div class="cardFull">
+          <div class="card_wrap">
+            <div class="card_box">
+              <div class="iconBox">
+                <div class="iconCard">
+                  <p class="iconP"><img alt="ico-recruit" th:src="@{/ico/ico-recruit.png}"></p>
+                  <p class="font_white">모집분야</p>
                 </div>
               </div>
-              <div class="mb-6 is-flex">
-                <div class="iconBox">
-                  <div class="iconCard text_center">
-                    <p class="iconP"><i class="fas fa-laptop-code"></i></p>
-                    <p class="font_white">교육기간</p>
-                  </div>
-                </div>
-                <div class="ml-3 in_box">
-                  <ul>
-                    <li class="iconIntro">
-                      2024.04.24 ~ 2024.10.28
-                      <br />
-                      09:00 ~ 18:00 (총 960시간)
-                    </li>
-                    <br />
-                  </ul>
-                </div>
-              </div>
-              <div class="mb-6 is-flex">
-                <div class="iconBox">
-                  <div class="iconCard text_center">
-                    <p class="iconP"><i class="fas fa-building"></i></p>
-                    <p class="font_white">교육형태 및 장소</p>
-                  </div>
-                </div>
-                <div class="ml-3 in_box">
-                  <ul>
-                    <li class="iconIntro">
-                      오프라인 교육<br />
-                      서울 금천구 디지털로9길 23 <br />
-                      마리오아울렛2관 11층 천재IT교육센터<br />
-                    </li>
-                  </ul>
-                </div>
+              <div class="in_box">
+                <ul>
+                  <li>PM(서비스/콘텐츠 기획자) 교육 과정</li>
+                </ul>
               </div>
             </div>
-            <div class="column is-12 is-6-desktop">
-              <div class="mb-6 is-flex">
-                <div class="iconBox">
-                  <div class="iconCard text_center">
-                    <p class="iconP"><i class="fas fa-users"></i></p>
-                    <p class="font_white">모집인원</p>
-                  </div>
-                </div>
-                <div class="ml-3 in_box">
-                  <ul>
-                    <li class="iconIntro">각 과정별 20명</li>
-                    <br /><br />
-                  </ul>
+            <div class="card_box">
+              <div class="iconBox">
+                <div class="iconCard">
+                  <p class="iconP"><img alt="ico-recruit2" th:src="@{/ico/ico-recruit2.png}"></p>
+                  <p class="font_white">교육기간</p>
                 </div>
               </div>
-              <div class="mb-6 is-flex">
-                <div class="iconBox">
-                  <div class="iconCard text_center">
-                    <p class="iconP"><i class="fas fa-calendar-alt"></i></p>
-                    <p class="font_white">모집기간</p>
-                  </div>
-                </div>
-                <div class="ml-3 in_box">
-                  <ul>
-                    <li class="iconIntro">2024.03.13 ~ 2024.04.19</li>
-                    <br /><br />
-                  </ul>
-                </div>
-              </div>
-              <div class="mb-6 is-flex">
-                <div class="iconBox">
-                  <div class="iconCard text_center">
-                    <p class="iconP"><i class="fas fa-clipboard-list"></i></p>
-                    <p class="font_white">지원자격</p>
-                  </div>
-                </div>
-                <div class="ml-3 in_box">
-                  <ul>
-                    <li class="iconIntro">
-                      국민내일배움카드 보유 혹은 발급 가능한 자
-                    </li>
-                    <li class="iconIntro">
-                      K-Digital Traning 수강 이력이 없는 자
-                    </li>
+              <div class="in_box">
+                <ul>
+                  <li>2024.04.23 ~ 2024.10.29
                     <br />
-                  </ul>
+                    09:00 ~ 18:00 (총 960시간)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card_box">
+              <div class="iconBox">
+                <div class="iconCard">
+                  <p class="iconP"><img alt="ico-recruit3" th:src="@{/ico/ico-recruit3.png}"></p>
+                  <p class="font_white">교육형태 및 장소</p>
                 </div>
+              </div>
+              <div class="in_box">
+                <ul>
+                  <li>오프라인 교육<br>서울 금천구 디지털로9길 23<br>마리오아울렛2관 11층 천재IT교육센터</li>
+                </ul>
               </div>
             </div>
           </div>
-        </section>
-        <!-- 모집 안내 end -->
-
-        <!-- BENEFITS start  -->
-        <section class="container container_bottom">
-          <div class="hero-body">
-            <div class="container has-text-centered">
-              <h4 class="small_title">BENEFITS</h4>
-              <h1 class="title_white_big title_sub_1">
-                PM 취업준비가 처음이세요?<img
-                      th:src="@{/ico/benefit_0.png}"
-                      alt="ico benefit_0"
-              />
-              </h1>
-
-              <h4 class="font_white title_sub_1">
-                떠먹여주는 <b>갓생취업루틴!</b><br />
-                교육에만 몰입하세요!
-              </h4>
+          <div class="card_wrap">
+            <div class="card_box">
+              <div class="iconBox">
+                <div class="iconCard">
+                  <p class="iconP"><img alt="ico-recruit4" th:src="@{/ico/ico-recruit4.png}"></p>
+                  <p class="font_white">모집인원</p>
+                </div>
+              </div>
+              <div class="in_box">
+                <ul>
+                  <li>각 과정별 20명</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card_box">
+              <div class="iconBox">
+                <div class="iconCard">
+                  <p class="iconP"><img alt="ico-recruit5" th:src="@{/ico/ico-recruit5.png}"></p>
+                  <p class="font_white">모집기간</p>
+                </div>
+              </div>
+              <div class="in_box">
+                <ul>
+                  <li>2024.03.13 ~ 2024.04.19</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card_box">
+              <div class="iconBox">
+                <div class="iconCard">
+                  <p class="iconP"><img alt="ico-recruit6" th:src="@{/ico/ico-recruit6.png}"></p>
+                  <p class="font_white">지원자격</p>
+                </div>
+              </div>
+              <div class="in_box">
+                <ul>
+                  <li>국민내일배움카드 보유 혹은 발급 가능한 자</li>
+                  <li>K-Digital Traning 수강 이력이 없는 자</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="columns is-multiline">
-            <div class="column is-one-third multiline_box_1">
-              <article class="back_black notification border_gray">
-                <div class="media-content">
-                  <div class="">
-                    <h1 class="font_white benefit_title">자기부담금 0원</h1>
-                    <br />
-                    <p class="benefit_sub font_white">
-                      전액 국비지원으로 교육비 0원, <br />
-                      PC 및 교재 지원
-                    </p>
-                  </div>
-                  <div class="index_figure">
-                    <figure class="media-left">
-                      <img th:src="@{/ico/benefit_1.png}" alt="ico benefit_1" />
-                    </figure>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third multiline_box_1">
-              <article class="back_black notification border_gray">
-                <div class="media-content">
-                  <div class="">
-                    <h1 class="font_white benefit_title">2023년 인턴 111명</h1>
-                    <br />
-                    <p class="benefit_sub font_white">
-                      내부 평가 결과에 따른
-                      <br />
-                      인턴 및 직원 전환 기회 제공
-                    </p>
-                  </div>
-                  <div class="index_figure">
-                    <figure class="media-left">
-                      <img th:src="@{/ico/benefit_2.png}" alt="ico benefit_2" />
-                    </figure>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third multiline_box_1">
-              <article class="back_black notification border_gray">
-                <div class="media-content">
-                  <div class="">
-                    <h1 class="font_white benefit_title">오프라인 몰입도 100%</h1>
-                    <br />
-                    <p class="benefit_sub font_white">
-                      09:00 ~ 21:00 무료 개방되는
-                      <br />
-                      교육시설에서 오프라인 교육으로 완전 몰입
-                    </p>
-                  </div>
-                  <div class="index_figure">
-                    <figure class="media-left">
-                      <img th:src="@{/ico/benefit_3.png}" alt="ico benefit_3" />
-                    </figure>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third multiline_box_1">
-              <article class="back_black notification border_gray">
-                <div class="media-content">
-                  <div class="">
-                    <h1 class="font_white benefit_title">현직자의 현장강의</h1>
-                    <br />
-                    <p class="benefit_sub font_white">
-                      현직 실무자의 현장강의로
-                      <br />
-                      실무에 필요한 내용만 전략적으로 학습
-                    </p>
-                  </div>
-                  <div class="index_figure">
-                    <figure class="media-left">
-                      <img th:src="@{/ico/benefit_4.png}" alt="ico benefit_4" />
-                    </figure>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third multiline_box_1">
-              <article class="back_black notification border_gray">
-                <div class="media-content">
-                  <div class="">
-                    <h1 class="font_white benefit_title">나를 위한 6개월</h1>
-                    <br />
-                    <p class="benefit_sub font_white">
-                      3개월, 4개월만에
-                      <br />
-                      현업 투입 가능한 PM가 된다?
-                      <br />
-                      진짜 PM이 되기 위한 충분한 투자
-                    </p>
-                  </div>
-                  <div class="index_figure">
-                    <figure class="media-left">
-                      <img th:src="@{/ico/benefit_5.png}" alt="ico benefit_5" />
-                    </figure>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <div class="column is-one-third multiline_box_1">
-              <article class="back_black notification border_gray">
-                <div class="media-content">
-                  <div class="">
-                    <h1 class="font_white benefit_title">실무 프로젝트 10개</h1>
-                    <br />
-                    <p class="benefit_sub font_white">
-                      약 10개의 실무 프로젝트로
-                      <br />
-                      6개월 뒤 탄탄해진 포트폴리오
-                    </p>
-                  </div>
-                  <div class="index_figure">
-                    <figure class="media-left">
-                      <img th:src="@{/ico/benefit_6.png}" alt="ico benefit_6" />
-                    </figure>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-        <!-- BENEFITS end  -->
-
-<!--        &lt;!&ndash; PM 이런 길 start &ndash;&gt;-->
-<!--        <section class="container container_bottom">-->
-<!--          <div class="hero-body">-->
-<!--            <div class="container has-text-centered">-->
-<!--              <h4 class="small_title_2">TALENT</h4>-->
-<!--              <h1 class="title_white_big">-->
-<!--                에듀테크 PM은 이런 길로 나아갈 수 있어요-->
-<!--              </h1>-->
-<!--              <p class="subtitle_white text_center">-->
-<!--                천재IT교육센터의 에튜테크 PM에게는 인문학적 감수성이 꼭-->
-<!--                필요합니다.-->
-<!--              </p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="columns flex_around">-->
-<!--            <div class="column post is-6">-->
-<!--              <article class="columns is-multiline">-->
-<!--                <div class="column is-12 post-img">-->
-<!--                  <img-->
-<!--                    th:src="@{/picture/pm/pmport_9.png}"-->
-<!--                    alt="pm 포트폴리오3"-->
-<!--                    class="border_ra_2"-->
-<!--                  />-->
-<!--                </div>-->
-<!--              </article>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <br /><br />-->
-<!--          <div class="columns is-multiline">-->
-<!--            <div class="column post is-6">-->
-<!--              <article class="columns is-multiline">-->
-<!--                <div class="column is-12 post-img">-->
-<!--                  <img-->
-<!--                    th:src="@{/picture/pm/pmport_9.png}"-->
-<!--                    alt="pm 포트폴리오3"-->
-<!--                    class="border_ra_2"-->
-<!--                  />-->
-<!--                </div>-->
-<!--              </article>-->
-<!--            </div>-->
-<!--            <div class="column post is-6">-->
-<!--              <article class="columns is-multiline">-->
-<!--                <div class="column is-12 post-img">-->
-<!--                  <img-->
-<!--                    th:src="@{/picture/pm/pmport_9.png}"-->
-<!--                    alt="pm 포트폴리오3"-->
-<!--                    class="border_ra_2"-->
-<!--                  />-->
-<!--                </div>-->
-<!--              </article>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </section>-->
-<!--        &lt;!&ndash; PM 이런 길 end &ndash;&gt;-->
-<!--        -->
+        </div>
       </section>
+      <!-- 모집 안내 end -->
+
+
+      <!-- BENEFITS start  -->
+      <section class="container container_bottom">
+        <div class="title-body">
+          <img th:src="@{/picture/bigdata/img-underline_pink.png}" alt="img-underline_pink" class="image_absolute_16"/>
+          <h4 class="small_title">BENEFITS</h4>
+          <h1 class="title_white_big">
+            PM 취업준비가 처음이세요?<img
+                  th:src="@{/ico/benefit_0.png}"
+                  alt="ico benefit_0"
+          />
+          </h1>
+          <h4 class="title_sub">
+            떠먹여주는 <b>갓생취업루틴!</b><br />
+            교육에만 몰입하세요!
+          </h4>
+        </div>
+        <div class="benefit_wrap">
+          <article class="notification">
+            <div class="media-content">
+              <div class="">
+                <h1 class="benefit_title">0원</h1>
+                <br />
+                <p class="benefit_sub">
+                  전액 국비지원으로 교육비 0원, <br />
+                  PC 및 교재 지원
+                </p>
+              </div>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_1.png}" alt="ico benefit_1" />
+              </div>
+            </div>
+          </article>
+          <article class="notification">
+            <div class="media-content">
+              <div class="">
+                <h1 class="benefit_title">2023년 인턴 111명</h1>
+                <br />
+                <p class="benefit_sub">
+                  내부 평가 결과에 따른
+                  <br />
+                  인턴 및 직원 전환 기회 제공
+                </p>
+              </div>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_2.png}" alt="ico benefit_2" />
+              </div>
+            </div>
+          </article>
+
+          <article class="notification">
+            <div class="media-content">
+              <div class="">
+                <h1 class="benefit_title">오프라인 몰입도 100%</h1>
+                <br />
+                <p class="benefit_sub">
+                  09:00 ~ 21:00 무료 개방되는
+                  <br />
+                  교육시설에서 오프라인 교육으로 완전 몰입
+                </p>
+              </div>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_3.png}" alt="ico benefit_3" />
+              </div>
+            </div>
+          </article>
+
+          <article class="notification">
+            <div class="media-content">
+              <div class="">
+                <h1 class="benefit_title">현직자의 현장강의</h1>
+                <br />
+                <p class="benefit_sub">
+                  현직 실무자의 현장강의로
+                  <br />
+                  실무에 필요한 내용만 전략적으로 학습
+                </p>
+              </div>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_4.png}" alt="ico benefit_4" />
+              </div>
+            </div>
+          </article>
+
+          <article class="notification">
+            <div class="media-content">
+              <div class="">
+                <h1 class="benefit_title">나를 위한 6개월</h1>
+                <br />
+                <p class="benefit_sub">
+                  3개월, 4개월만에
+                  <br />
+                  현업 투입 가능한 PM가 된다?
+                  <br />
+                  진짜 PM이 되기 위한 충분한 투자
+                </p>
+              </div>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_5.png}" alt="ico benefit_5" />
+              </div>
+            </div>
+          </article>
+          <article class="notification">
+            <div class="media-content">
+              <div class="">
+                <h1 class="benefit_title">실무 프로젝트 10개</h1>
+                <br />
+                <p class="benefit_sub">
+                  약 10개의 실무 프로젝트로
+                  <br />
+                  6개월 뒤 탄탄해진 포트폴리오
+                </p>
+              </div>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_6.png}" alt="ico benefit_6" />
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- BENEFITS end  -->
+
+      <!-- PM 이런길 start -->
+      <div class="image_absolute_wrap"><img th:src="@{/picture/pm/pm_excla.png}" alt="image 느낌표" class="image_absolute_24"/></div>
+        <section class="container container_bottom">
+          <div class="title-body text_center">
+            <h4 class="small_title">TALENT</h4>
+            <h1 class="title_white_big">
+              에듀테크 PM은 이런 길로 나아갈 수 있어요
+            </h1>
+            <h4 class="title_sub">
+              천재IT교육센터의 에튜테크 PM에게는 인문학적 감수성이 꼭
+              필요합니다.
+            </h4>
+          </div>
+          <div class="pm_road_wrap">
+            <div class="pm_road_image">
+              <img
+                th:src="@{/picture/pm/pm_road_1.png}"
+                alt="pm 목표1"
+                class=""
+              />
+            </div>
+            <div class="pm_road_box">
+              <div class="pm_road_image_2">
+                <img
+                  th:src="@{/picture/pm/pm_road_2.png}"
+                  alt="pm 목표2"
+                  class=""
+                />
+              </div>
+              <div class="pm_road_image_2">
+                <img
+                  th:src="@{/picture/pm/pm_road_3.png}"
+                  alt="pm 목표3"
+                  class=""
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      <div class="image_absolute_wrap"><img th:src="@{/picture/pm/ico-blue_arrow.png}" alt="image blue_arrow" class="image_absolute_25"/></div>
+      <div class="image_absolute_wrap"><img th:src="@{/picture/pm/ico-blue_arrow2.png}" alt="image blue_arrow2" class="image_absolute_26"/></div>
+      <!-- PM 이런길 end -->
 
       <!-- 자가진단표 start -->
-      <div class="container_reverse">
-        <section class="container_reverse">
-          <div class="hero-body">
-            <div class="container_reverse has-text-centered">
-              <h4 class="small_title_2">자가진단표</h4>
-              <h1 class="title_big">에듀테크 PM 진단표</h1>
-            </div>
+      <div class="image_absolute_wrap"><img th:src="@{/picture/pm/self_ico_check.png}" alt="self_ico_check" class="image_absolute_22"/></div>
+        <section class="container_vw back_white_2">
+           <div class="title-body text_center">
+            <h4 class="small_title">자가진단표</h4>
+            <h1 class="title_big">에듀테크 PM 진단표</h1>
           </div>
-          <div class="talent_wrap">
+          <div class="pm_self_wrap">
             <div class="talent_wrap_3">
               <div class="talent_3">
                 <div class="index_figure_3">
@@ -562,185 +477,158 @@
             </div>
           </div>
         </section>
-      </div>
+      <div class="image_absolute_wrap"><img th:src="@{/picture/pm/self_ico_crown.png}" alt="self_ico_crown" class="image_absolute_23"/></div>
       <!-- 자가진단표 end -->
 
-      <section class="container">
         <!-- 커리큘럼 start -->
         <section class="container container_bottom">
-          <div class="hero-body">
+          <div class="title-body">
             <div class="container has-text-centered">
               <h4 class="title_1 small_title">CURRICULUM</h4>
-              <h1 class="title_white_big title_sub_1">2024년 최신 커리큘럼</h1>
-              <h4 class="font_white title_sub_1">
+              <h1 class="title_white_big">2024년 최신 커리큘럼</h1>
+              <h4 class="title_sub">
                 <b>전문가 + 현직자 피드백을 보완한</b><br />
                 최신 커리큘럼을 소개합니다.
               </h4>
             </div>
           </div>
-          <div class="flex_column">
-            <div class="flex_between">
-              <article class="notification_3 width_33">
-                <div class="">
+            <div class="curri_pm_full">
+              <article class="curri_pm_box">
                   <div class="curri_pm">
-                    <p class="titleCard_2 font_white">서비스 기획</p>
+                    <p class="titleCard_2 ">서비스 기획</p>
                     <ul class="benefit_sub_3">
-                      <li class="font_white">JIRA 활용 WBS 관리</li>
-                      <li class="font_white">피그마 활용 Front 기획</li>
-                      <li class="font_white">GA4 데이터 분석</li>
-                      <li class="font_white">UI/UX 기초 및 실전<br /><br /></li>
+                      <li>JIRA 활용 WBS 관리</li>
+                      <li>피그마 활용 Front 기획</li>
+                      <li>GA4 데이터 분석</li>
+                      <li>UI/UX 기초 및 실전<br /><br /></li>
                     </ul>
                   </div>
-                  <div class="figure_wrap">
-                    <div class="index_figure_4">
-                      <figure class="media-left_2 flex_between_ico">
+                  <div class="pm_image_wrap">
                         <img
                           th:src="@{/picture/pm/skill/pmskill_1.png}"
                           alt="pmskill_1"
-                          class="mr_05"
+                          class="pm_image"
                         />
                         <img
                           th:src="@{/picture/pm/skill/pmskill_2.png}"
                           alt="pmskill_2"
-                          class="mr_05"
+                          class="pm_image"
                         />
                         <img
                           th:src="@{/picture/pm/skill/pmskill_3.png}"
                           alt="pmskill_3"
-                          class="mr_05"
+                          class="pm_image"
                         />
-                      </figure>
-                    </div>
-                    <div class="index_figure_4">
-                      <figure class="media-left_2 flex_between_ico"></figure>
-                    </div>
                   </div>
-                </div>
               </article>
-              <article class="notification_3 width_33">
+              <article class="curri_pm_box">
                 <div class="">
                   <div class="curri_pm">
-                    <p class="titleCard_2 font_white">데이터 기반 사고</p>
+                    <p class="titleCard_2 ">데이터 기반 사고</p>
                     <ul class="benefit_sub_3">
-                      <li class="font_white">
+                      <li>
                         파이썬을 활용한 데이터 분석 및 시각화
                       </li>
-                      <li class="font_white">실제 데이터 분석 프로젝트 진행</li>
-                      <li class="font_white">HTML, CSS, JavaScript 핵심개념</li>
-                      <li class="font_white">
+                      <li>실제 데이터 분석 프로젝트 진행</li>
+                      <li>HTML, CSS, JavaScript 핵심개념</li>
+                      <li>
                         django와 Vue를 활용한 웹사이트 제작<br /><br />
                       </li>
                     </ul>
                   </div>
-                  <div class="figure_wrap">
-                    <div class="index_figure_4">
-                      <figure class="media-left_2 flex_between_ico">
-                        <img
-                          th:src="@{/picture/pm/skill/pmskill_4.png}"
-                          alt="pmskill_4"
-                          class="mr_05"
-                        />
+                  <div class="pm_image_wrap">
                         <img
                           th:src="@{/picture/pm/skill/pmskill_5.png}"
                           alt="pmskill_5"
-                          class="mr_05"
+                          class="pm_image"
                         />
                         <img
                           th:src="@{/picture/pm/skill/pmskill_6.png}"
                           alt="pmskill_6"
-                          class="mr_05"
+                          class="pm_image"
                         />
-                      </figure>
-                    </div>
-                    <div class="index_figure_4">
-                      <figure class="media-left_2 flex_between_ico">
+                        <img
+                          th:src="@{/picture/pm/skill/pmskill_4.png}"
+                          alt="pmskill_4"
+                          class="pm_image"
+                        />
                         <img
                           th:src="@{/picture/pm/skill/pmskill_7.png}"
                           alt="pmskill_7"
+                          class="pm_image"
                         />
-                      </figure>
-                    </div>
                   </div>
                 </div>
               </article>
-              <article class="notification_3 width_33">
+              <article class="curri_pm_box">
                 <div class="">
                   <div class="curri_pm">
-                    <p class="titleCard_2 font_white">컨텐츠 기획</p>
+                    <p class="titleCard_2 ">컨텐츠 기획</p>
                     <ul class="benefit_sub_3">
-                      <li class="font_white">에듀테크에 대한 이해</li>
-                      <li class="font_white">
+                      <li>에듀테크에 대한 이해</li>
+                      <li>
                         천재교과서 밀크티 분석 및 콘텐츠 설계
                       </li>
-                      <li class="font_white">AI 기술에 대한 이해</li>
-                      <li class="font_white">
+                      <li>AI 기술에 대한 이해</li>
+                      <li>
                         밀크 T, OSMO, Meta Quest3 분석을<br />
                         통한 AI프로젝트 기획
                       </li>
                     </ul>
                   </div>
-                  <div class="figure_wrap">
-                    <div class="index_figure_4">
-                      <figure class="media-left_2 flex_between_ico">
-                        <img
-                          th:src="@{/picture/pm/skill/pmskill_8.png}"
-                          alt="pmskill_8"
-                          class="mr_05"
-                        />
-                        <img
-                          th:src="@{/picture/pm/skill/pmskill_9.png}"
-                          alt="pmskill_9"
-                          class="mr_05"
-                        />
-                      </figure>
-                    </div>
-                    <div class="index_figure_4">
-                      <figure class="media-left_2 flex_between_ico">
-                        <img
-                          th:src="@{/picture/pm/skill/pmskill_10.png}"
-                          alt="pmskill_10"
-                          class="mr_05"
-                        />
-                      </figure>
-                    </div>
+                  <div class="pm_image_wrap">
+                    <img
+                            th:src="@{/picture/pm/skill/pmskill_9.png}"
+                            alt="pmskill_9"
+                            class="pm_image"
+                    />
+                    <img
+                      th:src="@{/picture/pm/skill/pmskill_8.png}"
+                      alt="pmskill_8"
+                      class="pm_image"
+                    />
+
+                    <img
+                      th:src="@{/picture/pm/skill/pmskill_10.png}"
+                      alt="pmskill_10"
+                      class="pm_image"
+                    />
                   </div>
                 </div>
               </article>
             </div>
-            <div class="flex_center margin_top_6r">
-              <img
-                      th:src="@{/picture/pm/green_arrow.png}"
-                      alt="아래 초록 화살표"
-                      style="width: 100vw"
-              />
-              <article class="notification_3 width_33">
-                <div class="">
+            <div class="curri_pm_full_2">
+              <article class="curri_pm_box">
                   <div class="curri_pm">
-                    <p class="titleCard_3 font_white">
+                    <p class="titleCard_3 ">
                       천재그룹 연계 종합프로젝트 진행
                     </p>
                     <ul class="benefit_sub_3">
-                      <li class="font_white">
+                      <li>
                         천재교육 사내 멘토단의 프로젝트 주제 수령
                       </li>
-                      <li class="font_white">프로젝트 멘토링 실시</li>
-                      <li class="font_white">
+                      <li>프로젝트 멘토링 실시</li>
+                      <li>
                         최종발표회에서 현업 재직자분들의 피드백 시간
                       </li>
                     </ul>
                   </div>
-                </div>
               </article>
             </div>
-          </div>
         </section>
+      <div class="image_absolute_wrap"><img th:src="@{/ico/ico-plus.png}" alt="ico-plus" class="image_absolute_17"/></div>
+      <div class="image_absolute_wrap"><img th:src="@{/ico/ico-plus.png}" alt="ico-plus" class="image_absolute_18"/></div>
+      <div class="image_absolute_wrap"><img th:src="@{/picture/pm/img-green_arrow.png}" alt="green_arrow" class="image_absolute_19"/></div>
+      <div class="image_absolute_wrap"><img th:src="@{/picture/pm/img-green_arrow2.png}" alt="green_arrow" class="image_absolute_20"/></div>
+      <div class="image_absolute_wrap"><img th:src="@{/picture/pm/img-green_arrow3.png}" alt="green_arrow" class="image_absolute_21"/></div>
         <!-- 커리큘럼 end -->
+
 
         <!-- 포트폴리오 start -->
         <section class="container container_bottom">
-          <div class="hero-body">
+          <div class="title-body">
             <div class="container has-text-centered">
-              <h4 class="small_title_2">MEMTORING</h4>
+              <h4 class="small_title">MEMTORING</h4>
               <h2 class="title_white_big">프로젝트 결과물을 확인하세요!</h2>
             </div>
           </div>
@@ -933,7 +821,6 @@
         <th:block
           th:replace="sub/sub_inclulde/digital_tran :: digital_tran"
         ></th:block>
-      </section>
     </div>
     <script th:src="@{/static/js/slide.js}"></script>
     <th:block th:replace="include/footer :: footer"></th:block>

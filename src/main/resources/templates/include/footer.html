@@ -2,25 +2,34 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <body>
     <th:block th:fragment="footer">
-      <div class="bottom_banner back_lightgray">
-        <div class="flex_between bottom_banner_wrap">
-        <div class="bottom_banner_text">
-
-          전액 무료로 교육·인턴·직원 전환까지 <strong class="font_strong">한번에 해결하고 싶다면?</strong><img
-                th:src="@{/picture/common/footer.png}"
-                alt="ico benefit_0"
-        />
-        </div>
-        <div class="bottom_banner_btn">
-          <a th:href="@{/subSign}" class="button bottom_btn">지금 지원하기 ></a>
-        </div>
-        </div>
+      <a href="#banner" class="gotop" id="gotop">▲</a>
+      <div class="bottom_banner">
+        <section class="container">
+          <div class="bottom_banner_wrap">
+            <div class="bottom_banner_text">
+              전액 무료로 교육·인턴·직원 전환까지&nbsp<strong class="font_strong">한번에 해결하고 싶다면?</strong>
+              <div class="bottom_banner_image">
+                <img
+                      th:src="@{/picture/common/footer.png}"
+                      alt="ico benefit_0"
+                />
+              </div>
+            </div>
+            <div class="bottom_banner_btn">
+              <a th:href="@{/subSign}" class="bottom_btn">지금 지원하기 ></a>
+            </div>
+          </div>
+        </section>
       </div>
       <footer class="ft" id="ft">
+        <section class="container">
         <div class="ft_wrap">
           <div class="ft_wrap_text">
             <p class="copyright ">
-              <span>(주)천재교육 &nbsp;|&nbsp; 서울특별시 디지털로 9길 23 마리오아울렛2관 11층 천재IT교육센터</span>
+              <span>(주)천재교육 &nbsp;|&nbsp; 대표: 강희철, 최정민</span>
+            </p>
+            <p class="copyright ">
+              <span>사업자등록번호: 119-81-19350 &nbsp;|&nbsp; 서울특별시 디지털로 9길 23 마리오아울렛2관 11층 천재IT교육센터</span>
             </p>
             <p class="copyright">
               <span>접수 문의 · 사이트 이용 문의 : 02-3282-8589 &nbsp;|&nbsp;  이메일 : genia@chunjae.co.kr</span>
@@ -30,17 +39,21 @@
               COPYRIGHT 2023 Chunjae EDUCATION INC. ALL RIGHTS RESERVED.
             </p>
           </div>
-          <div class="cp_img"><img class="ft_logo" th:src="@{/picture/common/chunjaelogo.png}" alt="천재교육 logo"></div>
+          <div class="cp_img_wrap">
+            <a href="https://www.chunjae.co.kr/" class="cp_img"><img class="ft_logo" th:src="@{/picture/common/chunjaelogo.png}" alt="천재교육 logo"></a>
+            <a href="https://chunjaetext.co.kr/" class="cp_img"><img class="ft_logo" th:src="@{/picture/common/chunjaebooklogo.png}" alt="천재교과서 logo"></a>
+            <a href="https://www.moel.go.kr/" class="cp_img"><img class="ft_logo" th:src="@{/picture/common/worksenterlogo.png}" alt="고용노동부 logo"></a>
+          </div>
         </div>
-        <a href="#banner" class="gotop" id="gotop">▲</a>
-        <script th:inline="javascript">
-          (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
-
-          ChannelIO('boot', {
-            "pluginKey": "ebc8aaee-afda-484d-a633-5d8a0dff7fb3"
-          });
-        </script>
+        </section>
       </footer>
+      <script th:inline="javascript">
+        (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+
+        ChannelIO('boot', {
+          "pluginKey": "ebc8aaee-afda-484d-a633-5d8a0dff7fb3"
+        });
+      </script>
     </th:block>
   </body>
 </html>

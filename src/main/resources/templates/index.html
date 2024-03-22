@@ -10,15 +10,15 @@
             name="viewport"
     />
     <title>천재IT교육센터</title>
-    <th:block th:replace="include/head :: head"></th:block>
+    <th:block th:replace="~{include/head :: head}"></th:block>
   </head>
   <body>
-    <th:block th:replace="include/header :: header"></th:block>
+    <th:block th:replace="~{include/header :: header}"></th:block>
     <div class="main2">
       <!-- banner -->
-      <section class="hero is-info is-medium is-bold index_banner_3" id="banner">
-        <div class="hero-body">
-          <div class="container has-text-centered back_none">
+      <section class="hero is-info index_banner_3" id="banner">
+        <div class="title-body">
+          <div class="container back_none">
             <h4 class="title_1">천재IT교육센터</h4>
             <br />
             <h1 class="title">에듀테크 PM 교육과정</h1>
@@ -29,14 +29,14 @@
 
       <!--     Section 1 - 카드 -->
       <section class="container container_bottom back_white">
-        <div class="hero-body">
+        <div class="title-body">
           <div class="container has-text-centered back_white">
             <h4 class="title_1 small_title">Education</h4>
-            <h1 class="title_big title_sub_1">
+            <h1 class="title_big ">
               기업에서 직접 운영하는 탄탄한 부트캠프, <br />
               찾으셨나요?
             </h1>
-            <h4 class="title_sub_1">
+            <h4 class="">
               <b>대한민국 1위 교육 출판 전문 기업 (주)천재교육</b>에서
               <br />
               직접 운영하는 K-디지털 트레이닝 교육기관 천재IT교육센터입니다.
@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+            <div class="card-image">
               <img
                 class="radius2"
                 th:src="@{/picture/common/index_Full.jpg}"
@@ -102,9 +102,9 @@
 
       <!-- Section 2  -->
       <section class="container container_bottom back_white">
-        <div class="hero-body">
+        <div class="title-body">
           <div class="container has-text-centered back_white">
-            <h4 class="small_title_2">REVIEW</h4>
+            <h4 class="small_title">REVIEW</h4>
             <h1 class="title_big">
               수료생 111명은 이미 "<strong class="font_strong">천재</strong>"
               에서<br />
@@ -150,11 +150,11 @@
 
       <!-- Section 3  -->
       <section class="container container_bottom back_white">
-        <div class="hero-body">
+        <div class="title-body">
           <div class="container has-text-centered back_white">
             <h4 class="title_1 small_title">BENEFITS</h4>
-            <h1 class="title_big title_sub_1">IT직무 취준이 처음이세요?</h1>
-            <h4 class="title_sub_1">
+            <h1 class="title_big ">IT직무 취준이 처음이세요?</h1>
+            <h4 class="">
               떠먹여주는 <b>갓생취업루틴!</b>
               <br />
               교육에만 몰입하세요!
@@ -288,13 +288,13 @@
 
       <!-- Section 4  -->
       <section class="container container_bottom back_white">
-        <div class="hero-body">
+        <div class="title-body">
           <div class="container has-text-centered back_white">
             <h4 class="title_1 small_title">BENEFITS</h4>
-            <h1 class="title_big title_sub_1">
+            <h1 class="title_big ">
               새로운 커리어 전환점, 천재IT교육센터와 함께 하세요.
             </h1>
-            <h4 class="title_sub_1">신청 및 개강 안내</h4>
+            <h4 class="">신청 및 개강 안내</h4>
           </div>
         </div>
         <div class="columns is-multiline">
@@ -368,7 +368,7 @@
         </div>
       </section>
     </div>
-    <th:block th:replace="main/sign/sign :: sign"></th:block>
-    <th:block th:replace="include/footer :: footer"></th:block>
+    <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
+    <th:block th:replace="~{include/footer :: footer}"></th:block>
   </body>
 </html>
