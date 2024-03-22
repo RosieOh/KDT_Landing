@@ -26,7 +26,7 @@ import java.security.Principal;
 public class MemberController {
 
     private final MemberService memberService;
-    private final PasswordEncoder passwordEncoder;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @GetMapping("login")
     public String Login(Model model){

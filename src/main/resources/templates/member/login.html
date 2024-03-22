@@ -15,13 +15,13 @@
 <body style="min-height: 100vh;">
     <th:block th:replace="~{include/header :: header}"></th:block>
 
-    <section class="page-title" style="padding-top: 60px; ">
-        <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9; height: 150px;" aria-label="breadcrumbs">
-            <ul class="mr-5">
-                <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
-                <li><a th:href="@{/member/login}">로그인</a></li>
+    <section class="page-title">
+        <nav class="breadcrumb_1" aria-label="breadcrumbs">
+            <ul class="breadcrumb_1_road">
+                <li><a class="breadcrumb_1_road_a" th:href="@{/}"><i class="breadcrumb_1_road_home"></i>홈</a></li>
+                <li><a class="breadcrumb_1_road_a" th:href="@{/member/login}">로그인</a></li>
             </ul>
-            <p class="title has-text-centered mt-1 mb-2">로그인</p>
+            <p class="breadcrumb_1_road_title">로그인</p>
         </nav>
     </section>
 
@@ -40,6 +40,9 @@
                 <input type="checkbox" id="remember-check">아이디 저장하기
             </label>
             <input type="submit" value="Login">
+            <div class="kakao_login">
+                <a th:href="@{/oauth2/authorization/kakao}"><img th:src="@{/picture/kakao_login_medium_wide.png}" alt="" class="kakao_login_img"></a>
+            </div>
                 <p class="d-flex justify-content-center mt-3"> 회원이 아니신가요? &nbsp; <a th:href="@{/member/join}" class="text-secondary"> 회원가입하기 </a></p>
         </form>
     </div>
