@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
     <title>수정요청</title>
     <th:block th:replace="~{include/head :: head}"></th:block>
 
@@ -17,80 +17,68 @@
 <main>
     <th:block th:replace="~{include/header :: header}"></th:block>
 
-    <section class="page-title" style="padding-top: 60px; ">
-        <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4 breadcrumb_1" aria-label="breadcrumbs">
-            <ul class="mr-5">
-                <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
-                <li><a th:href="@{/modifyBoard/list}">수정요청</a></li>
+    <section class="page-title">
+        <nav class="breadcrumb_1" aria-label="breadcrumbs">
+            <ul class="breadcrumb_1_road">
+                <li><a class="breadcrumb_1_road_a" th:href="@{/}"><i class="breadcrumb_1_road_home"></i>홈</a></li>
+                <li><a class="breadcrumb_1_road_a" th:href="@{/modifyBoard/list}">수정요청</a></li>
             </ul>
-            <p class="title has-text-centered mt-1 mb-2">수정요청</p>
+            <p class="breadcrumb_1_road_title">수정요청</p>
         </nav>
     </section>
 
-    <section id="pricing" class="pricing" style="padding-top: 100px;">
-        <div class="container back_white" data-aos="fade-up" style="width: 70%; margin: 0 auto; padding-top: 100px; min-height: 70vh;">
+    <section id="pricing" class="pricing" style="padding-top: 100px; min-height: 70vh;">
+        <div class="container back_white" data-aos="fade-up">
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="pricing-item featured" style="padding:0;">
-                    <form th:action="@{/modifyBoard/modify/{id}(id=${boardDTO.id})}" method="post">
-                        <div class="col-12" >
-                            <div class="card w-100">
-                                <div class="card-body">
-                                    <div class="table-responsive project-list">
-                                        <table class="table project-table table-centered table-nowrap" style="border: none;">
-                                            <tbody>
-                                            <tr>
-                                            </tr>
-                                            <tr>
-                                                <td style="border: none;">
-                                                    <div id="editor">
-                                                        <textarea class="input"  style="width: 1320px; height: 500px;" id="content" type="text" th:utext="${boardDTO.content}" required th:name="content" placeholder="내용"></textarea>
-                                                    </div>
-                                                    <script th:inline="javascript">
-                                                        const Editor = toastui.Editor;
-                                                        const textarea = document.querySelector('#myTextarea');
+                    <form th:action="@{/modifyBoard/modify/{id}(id=${boardDTO.id})}" method="post" enctype="multipart/form-data">
+                        <div class="table-responsive">
+                            <div class="input-group mb-3" hidden>
+                                <select name="boardType" id="boardType">
+                                    <option value="MODIFY" th:selected="${boardType == 'MODIFY'}">수정 요청</option>
+                                </select>
+                            </div>
+                            <table class="board_detail" style="width: 100%;">
+                                <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 100px;">작성자</th>
+                                    <td style="width: 35%;">[[${boardDTO.writer}]]</td>
+                                    <th scope="row" style="width: 100px;">첨부파일</th>
+                                    <td><input style="border: none; padding-top: 10px;" type="file" class="form-control" th:field="${boardDTO.fileId}" name="fileId"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">제목</th>
+                                    <td colspan="3"><input style="border: none;" type="text" id="title" name="title" th:field="*{boardDTO.title}" placeholder="제목을 입력하세요" class="form-control" required></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">내용</th>
+                                    <td colspan="3">
+                                        <textarea name="content" id="myTextarea" rows="8" maxlength="1000" class="form-control" th:field="*{boardDTO.content}" style="height: 200px; border: 1px solid #cbcbcb" required></textarea>
+                                        <script th:inline="javascript">
+                                            const Editor = toastui.Editor;
+                                            const textarea = document.querySelector('#myTextarea');
 
-                                                        // 숨겨진 textarea 대신에 에디터를 생성할 div 요소를 만듭니다.
-                                                        const editorDiv = document.createElement('div');
-                                                        editorDiv.id = 'editor';
-                                                        textarea.parentNode.insertBefore(editorDiv, textarea);
-                                                        textarea.style.display = 'none';  // 숨겨진 textarea
+                                            // 숨겨진 textarea 대신에 에디터를 생성할 div 요소를 만듭니다.
+                                            const editorDiv = document.createElement('div');
+                                            editorDiv.id = 'editor';
+                                            textarea.parentNode.insertBefore(editorDiv, textarea);
+                                            textarea.style.display = 'none'; // 숨겨진 textarea
 
-                                                        const editor = new Editor({
-                                                            el: editorDiv,
-                                                            height: '500px',
-                                                            initialEditType: 'markdown',
-                                                            previewStyle: 'vertical',
-                                                            initialValue: textarea.value  // 초기값을 textarea의 값으로 설정
-                                                        });
+                                            const editor = new Editor({
+                                                el: editorDiv,
+                                                height: '500px',
+                                                initialEditType: 'markdown',
+                                                previewStyle: 'vertical',
+                                                initialValue: textarea.value // 초기값을 textarea의 값으로 설정
+                                            });
 
-                                                        // 에디터의 내용이 변경될 때마다 textarea에 값을 업데이트합니다.
-                                                        editor.on('change', () => {
-                                                            textarea.value = editor.getMarkdown();
-                                                        });
-                                                    </script>
-                                                </td>
-                                            </tbody>
-                                            <div class="input-group mb-3">
-                                                <select name="boardType" id="boardType">
-                                                    <option value="MODIFY" th:selected="${boardType == 'MODIFY'}">수정 요청</option>
-                                                </select>
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">작성자 | </span>
-                                                <input type="text" class="form-control"  th:value="${boardDTO.writer}" readonly>
-                                            </div>
-
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">첨부파일 | </span>
-                                                <input type="file" class="form-control" name="file">
-                                            </div>
-
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">제목 | </span>
-                                                <input type="text" style="width: 500px; height: 40px;" class="form-control" th:field="*{boardDTO.title}">
-                                            </div>
-
-                                            <hr/>
+                                            // 에디터의 내용이 변경될 때마다 textarea에 값을 업데이트합니다.
+                                            editor.on('change', () => {
+                                                textarea.value = editor.getMarkdown();
+                                            });
+                                        </script>
+                                    </td>
+                                </tr>
 
 
                                             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -211,12 +199,9 @@
                                             </script>
                                         </table>
                                     </div>
-                                </div>
                                 <div class="btn_group">
                                     <input type="submit" value="수정하기" class="btn btn-primary" />
                                 </div>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>

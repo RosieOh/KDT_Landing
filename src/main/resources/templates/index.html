@@ -14,35 +14,36 @@
   </head>
   <body>
     <th:block th:replace="~{include/header :: header}"></th:block>
-    <div class="main2">
+    <div class="main">
       <!-- banner -->
-      <section class="index_banner_3" id="banner">
-        <div class="title-body">
-          <div class="container back_none">
-            <h4 class="title_1">천재IT교육센터</h4>
-            <br />
-            <h1 class="title">에듀테크 PM 교육과정</h1>
-            <button type="button" id="ban_btn" class="button">사전예약</button>
+      <section class="banner" id="banner">
+        <section class="container">
+          <div class="banner_box">
+            <h4 class="title_sub">천재IT교육센터</h4>
+            <h1 class="banner_title title_big">에듀테크 교육과정</h1>
+            <div class="banner_btn">
+              <button type="button" id="ban_btn" class="button">사전예약신청 ></button>
+            </div>
           </div>
-        </div>
+        </section>
       </section>
 
       <!--     Section 1 - 카드 -->
-      <section class="container container_bottom back_white container_mb">
+      <section class="container container_bottom">
         <div class="title-body">
-          <div class="container has-text-centered back_white">
-            <h4 class="title_1 small_title">Education</h4>
-            <h1 class="title_big title_sub_1">
-              기업에서 직접 운영하는 탄탄한 부트캠프, <br />
-              찾으셨나요?
-            </h1>
-            <h4 class="title_sub_1">
-              <b>대한민국 1위 교육 출판 전문 기업 (주)천재교육</b>에서
-              <br />
-              직접 운영하는 K-디지털 트레이닝 교육기관 천재IT교육센터입니다.
-            </h4>
-          </div>
+          <img th:src="@{/picture/common/img-orange_circle_2.png}" alt="주황색 동그라미 이미지" class="image_absolute_28"/>
+          <h4 class="small_title">EDUCATION</h4>
+          <h1 class="title_big">
+            기업에서 직접 운영하는 탄탄한 부트캠프, <br />
+            찾으셨나요?
+          </h1>
+          <h4 class="title_sub">
+            <b>대한민국 1위 교육 출판 전문 기업 (주)천재교육</b>에서
+            <br />
+            직접 운영하는 K-디지털 트레이닝 교육기관 천재IT교육센터입니다.
+          </h4>
         </div>
+
         <div class="columns features features_1 radius1_cur_re" >
           <div class="column text_center border1 radius1_cur radius1_cur_re">
             <div class="card-image has-text-centered">
@@ -99,23 +100,25 @@
           </div>
         </div>
       </section>
+      <div class="image_absolute_wrap"><img th:src="@{/picture/common/img-blue_paint.png}" alt="blue_paint" class="image_absolute_29"/></div>
+
 
       <!-- Section 2  -->
+      <div class="image_absolute_wrap"><img th:src="@{/picture/common/img-pink_crown.png}" alt="pink_crown" class="image_absolute_30"/></div>
       <section class="container container_bottom back_white">
         <div class="title-body text_center">
-          <div class="container back_white">
-            <h4 class="small_title_2">REVIEW</h4>
-            <h1 class="title_big">
-              수료생 111명은 이미 "<strong class="font_strong">천재</strong>"
-              에서<br />
-              새로운 커리어 전환점을 찾았어요!!
-            </h1>
-            <h4 class="text_center">
-              2023년 <b>수료생 111명 인턴 전환!</b>
-              <br />
-              천재IT교육센터에서 2024년 새로운 커리어를 준비하세요
-            </h4>
-          </div>
+          <h4 class="small_title">REVIEW</h4>
+          <h1 class="title_big">
+            수료생 111명은 이미 "<strong class="font_strong">천재</strong>"
+            에서<br />
+            새로운 커리어 전환점을 찾았어요!!
+          </h1>
+          <h4 class="title_sub">
+            2023년 <b>수료생 111명 인턴 전환!</b>
+          </h4>
+          <h4 class="title_sub">
+            천재IT교육센터에서 2024년 새로운 커리어를 준비하세요
+          </h4>
         </div>
         <div class="columns features">
           <div class="review_image">
@@ -142,185 +145,203 @@
         </div>
       </section>
 
-      <!-- Section 3  -->
-      <section class="container container_bottom back_white">
+      <!-- BENEFITS start  -->
+      <section class="container container_bottom">
         <div class="title-body">
-          <div class="container has-text-centered back_white">
-            <h4 class="title_1 small_title">BENEFITS</h4>
-            <h1 class="title_big title_sub_1">IT직무 취준이 처음이세요?</h1>
-            <h4 class="title_sub_1">
-              떠먹여주는 <b>갓생취업루틴!</b>
-              <br />
-              교육에만 몰입하세요!
-            </h4>
-          </div>
+          <img th:src="@{/picture/fullstack/img-underline.png}" alt="img-underline" class="image_absolute_2"/>
+          <h4 class="small_title">BENEFITS</h4>
+          <h1 class="title_big">
+            IT직무 취준이 처음이세요?<img
+                  th:src="@{/ico/benefit_0.png}"
+                  alt="ico benefit_0"
+          />
+          </h1>
+          <h4 class="title_sub">
+            떠먹여주는 <b>갓생취업루틴!</b><br />
+            교육에만 몰입하세요!
+          </h4>
         </div>
-        <div class="is-multiline">
-          <div class="column is-one-third multiline_box_1">
-            <article class="notification media has-background-white">
-              <div class="media-content">
-                <div class="content">
-                  <h1 class="title is-size-4">0원</h1>
-                  <br />
-                  <p class="benefit_sub">
-                    전액 국비지원으로 교육비 0원, <br />
-                    PC 및 교재 지원
-                  </p>
-                </div>
-                <div class="index_figure">
-                  <figure class="media-left">
-                    <img th:src="@{/ico/benefit_1.png}" alt="ico benefit_1" />
-                  </figure>
-                </div>
+        <div class="benefit_wrap">
+          <article class="notification">
+            <div class="benefit_content">
+              <div class="">
+                <h1 class="benefit_title font_black">0원</h1>
+                <br />
+                <p class="benefit_sub font_black">
+                  전액 국비지원으로 교육비 0원, <br />
+                  PC 및 교재 지원
+                </p>
               </div>
-            </article>
-          </div>
-          <div class="column is-one-third multiline_box_1">
-            <article class="notification has-background-white media">
-              <div class="media-content">
-                <div class="content">
-                  <h1 class="title is-size-4">2023년 인턴 111명</h1>
-                  <br />
-                  <p class="benefit_sub">
-                    내부 평가 결과에 따른
-                    <br />
-                    인턴 및 직원 전환 기회 제공
-                  </p>
-                </div>
-                <div class="index_figure">
-                  <figure class="media-left">
-                    <img th:src="@{/ico/benefit_2.png}" alt="ico benefit_2" />
-                  </figure>
-                </div>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_1.png}" alt="ico benefit_1" />
               </div>
-            </article>
-          </div>
-          <div class="column is-one-third multiline_box_1">
-            <article class="notification has-background-white media">
-              <div class="media-content">
-                <div class="content">
-                  <h1 class="title">오프라인 몰입도 100%</h1>
+            </div>
+          </article>
+          <article class="notification">
+            <div class="benefit_content">
+              <div class="">
+                <h1 class="benefit_title font_black">2023년 인턴 111명</h1>
+                <br />
+                <p class="benefit_sub font_black">
+                  내부 평가 결과에 따른
                   <br />
-                  <p class="benefit_sub">
-                    09:00 ~ 21:00 무료 개방되는
-                    <br />
-                    교육시설에서 오프라인 교육으로 완전 몰입
-                  </p>
-                </div>
-                <div class="index_figure">
-                  <figure class="media-left">
-                    <img th:src="@{/ico/benefit_3.png}" alt="ico benefit_3" />
-                  </figure>
-                </div>
+                  인턴 및 직원 전환 기회 제공
+                </p>
               </div>
-            </article>
-          </div>
-          <div class="column is-one-third multiline_box_1">
-            <article class="notification has-background-white media">
-              <div class="media-content">
-                <div class="content">
-                  <h1 class="title">현직자의 현장강의</h1>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_2.png}" alt="ico benefit_2" />
+              </div>
+            </div>
+          </article>
+
+          <article class="notification">
+            <div class="benefit_content">
+              <div class="">
+                <h1 class="benefit_title font_black">오프라인 몰입도 100%</h1>
+                <br />
+                <p class="benefit_sub font_black">
+                  09:00 ~ 21:00 무료 개방되는
                   <br />
-                  <p class="benefit_sub">
-                    현직 실무자의 현장강의로
-                    <br />
-                    실무에 필요한 내용만 전략적으로 학습
-                  </p>
-                </div>
-                <div class="index_figure">
-                  <figure class="media-left">
-                    <img th:src="@{/ico/benefit_4.png}" alt="ico benefit_4" />
-                  </figure>
-                </div>
+                  교육시설에서 오프라인 교육으로 완전 몰입
+                </p>
               </div>
-            </article>
-          </div>
-          <div class="column is-one-third multiline_box_1">
-            <article class="notification has-background-white media">
-              <div class="media-content">
-                <div class="content">
-                  <h1 class="title">나를 위한 6개월</h1>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_3.png}" alt="ico benefit_3" />
+              </div>
+            </div>
+          </article>
+
+          <article class="notification">
+            <div class="benefit_content">
+              <div class="">
+                <h1 class="benefit_title font_black">현직자의 현장강의</h1>
+                <br />
+                <p class="benefit_sub font_black">
+                  현직 실무자의 현장강의로
                   <br />
-                  <p class="benefit_sub">
-                    3개월, 4개월만에
-                    <br />
-                    현업 투입 가능한 개발자가 된다?
-                    <br />
-                    진짜 개발자가 되기 위한 충분한 투자
-                  </p>
-                </div>
-                <div class="index_figure">
-                  <figure class="media-left">
-                    <img th:src="@{/ico/benefit_5.png}" alt="ico benefit_5" />
-                  </figure>
-                </div>
+                  실무에 필요한 내용만 전략적으로 학습
+                </p>
               </div>
-            </article>
-          </div>
-          <div class="column is-one-third multiline_box_1">
-            <article class="notification has-background-white media">
-              <div class="media-content">
-                <div class="content">
-                  <h1 class="title">실무 프로젝트 10개</h1>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_4.png}" alt="ico benefit_4" />
+              </div>
+            </div>
+          </article>
+
+          <article class="notification">
+            <div class="benefit_content">
+              <div class="">
+                <h1 class="benefit_title font_black">나를 위한 6개월</h1>
+                <br />
+                <p class="benefit_sub font_black">
+                  3개월, 4개월만에
                   <br />
-                  <p class="benefit_sub">
-                    약 10개의 실무 프로젝트로
-                    <br />
-                    6개월 뒤 탄탄해진 포트폴리오
-                  </p>
-                </div>
-                <div class="index_figure">
-                  <figure class="media-left">
-                    <img th:src="@{/ico/benefit_6.png}" alt="ico benefit_6" />
-                  </figure>
-                </div>
+                  현업 투입 가능한 개발자가 된다?
+                  <br />
+                  진짜 개발자가 되기 위한 충분한 투자
+                </p>
               </div>
-            </article>
-          </div>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_5.png}" alt="ico benefit_5" />
+              </div>
+            </div>
+          </article>
+          <article class="notification">
+            <div class="benefit_content">
+              <div class="">
+                <h1 class="benefit_title font_black">실무 프로젝트 5개</h1>
+                <br />
+                <p class="benefit_sub font_black">
+                  에듀테크 서비스와 관련된 약 4개의 미니 프로젝트와
+                  <br />
+                  종합프로젝트로 총 5개의 프로젝트 진행!
+                </p>
+              </div>
+              <div class="index_figure">
+                <img th:src="@{/ico/benefit_6.png}" alt="ico benefit_6" />
+              </div>
+            </div>
+          </article>
         </div>
       </section>
+      <!-- BENEFITS end  -->
+
 
       <!-- Section 4  -->
-      <section class="container container_bottom back_white">
+      <div class="image_absolute_wrap"><img th:src="@{/picture/common/ico-blue_arrow_down.png}" alt="blue_arrow_down" class="image_absolute_31"/></div>
+      <section class="container container_bottom">
         <div class="title-body">
-          <div class="container has-text-centered back_white">
-            <h4 class="title_1 small_title">BENEFITS</h4>
-            <h1 class="title_big title_sub_1">
-              새로운 커리어 전환점, 천재IT교육센터와 함께 하세요.
-            </h1>
-            <h4 class="title_sub_1">신청 및 개강 안내</h4>
-          </div>
+          <img th:src="@{/picture/common/img-underline_green.png}" alt="underline_green" class="image_absolute_32"/>
+          <h4 class="small_title">INFOMATION</h4>
+          <h1 class="title_big">
+            새로운 커리어 전환점, 천재IT교육센터와 함께 하세요.<img
+                  th:src="@{/ico/ico-star.png}"
+                  alt="star"
+          />
+          </h1>
+          <h4 class="title_sub">
+            신청 및 개강 안내
+          </h4>
         </div>
-        <div class="is-multiline_3">
-          <div class="container_1">
-            <div class="columns_1">
 
-              <!-- 신청 기간 -->
-              <div class="column columns_width">
-                <h4 class="benefits_title">신청 기간</h4>
-                <div class="benefits_sub">
-                  <figure class="media-left">
+          <div class="info_content">
+              <div class="info_wrap">
+                <div class="info_wrap_in">
+                <h4 class="info_title">신청 기간</h4>
+                <div class="info_sub">
+                  <div class="info_image">
                     <img
                       th:src="@{/ico/infomation_1.png}"
                       alt="ico infomation_1"
                     />
-                  </figure>
-                  <div class="benefits_sub_in">
+                  </div>
+                  <div class="info_sub_in">
                     2024년 03월 13일 ~ 2024년 04월 19일
                   </div>
                 </div>
-              </div>
-              <!-- 지원 방법 -->
-              <div class="column columns_width">
-                <h4 class="benefits_title">지원 방법</h4>
-                <div class="benefits_sub">
-                  <figure class="media-left">
+                </div>
+                <div class="info_wrap_in">
+                  <h4 class="info_title">참여 대상</h4>
+                  <div class="info_sub">
+                    <div class="info_image">
+                      <img
+                              th:src="@{/ico/infomation_4.png}"
+                              alt="ico infomation_4"
+                      />
+                    </div>
+                    <div class="info_sub_in">
+                      1. 국민내일배움카드 보유 혹은 발급 가능한 자<br />2.
+                      K-Digital Training 수강 이력이 없는 자
+                      <br><br>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            <div class="info_wrap">
+              <div class="info_wrap_in">
+                <h4 class="info_title">교육 기간</h4>
+                <div class="info_sub">
+                  <div class="info_image">
                     <img
-                      th:src="@{/ico/infomation_2.png}"
-                      alt="ico infomation_2"
+                            th:src="@{/ico/infomation_3.png}"
+                            alt="ico infomation_3"
                     />
-                  </figure>
-                  <div class="benefits_sub_in">
+                  </div>
+                  <div class="info_sub_in">
+                    2024년 04월 23일 ~ 2024년 10월 29일
+                  </div>
+                </div>
+              </div>
+              <div class="info_wrap_in">
+                <h4 class="info_title">지원 방법</h4>
+                <div class="info_sub">
+                  <div class="info_image">
+                    <img
+                            th:src="@{/ico/infomation_2.png}"
+                            alt="ico infomation_2"
+                    />
+                  </div>
+                  <div class="info_sub_in">
                     1. 서류 심사 : 신청폼 작성<br />
                     2. 면접 심사 : 대면 혹은 비대면 인터뷰 진행<br />
                     3. 합격자 발표 : 개별 통보
@@ -328,80 +349,9 @@
                 </div>
               </div>
             </div>
-            <div class="columns_1">
-              <div class="column columns_width">
-                <h4 class="benefits_title">교육 기간</h4>
-                <div class="benefits_sub">
-                  <figure class="media-left">
-                    <img
-                      th:src="@{/ico/infomation_3.png}"
-                      alt="ico infomation_3"
-                    />
-                  </figure>
-                  <div class="benefits_sub_in">
-                    2024년 04월 23일 ~ 2024년 10월 29일
-                  </div>
-                </div>
               </div>
-              <div class="column columns_width">
-                <h4 class="benefits_title">참여 대상</h4>
-                <div class="benefits_sub">
-                  <figure class="media-left">
-                    <img
-                      th:src="@{/ico/infomation_4.png}"
-                      alt="ico infomation_4"
-                    />
-                  </figure>
-                  <div class="benefits_sub_in">
-                    1. 국민내일배움카드 보유 혹은 발급 가능한 자<br />2.
-                    K-Digital Training 수강 이력이 없는 자
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
-      
-      <section class="container container_bottom back_white">
-        <div id="map" style="width: 600px; height: 400px;"></div>
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf4e48d397124f04812bf416d553111c"></script>
-        <script th:inline="javascript">
-          var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-                  mapOption = {
-                    center: new kakao.maps.LatLng(37.4786643, 126.8863597), // 지도의 중심좌표
-                    level: 2 // 지도의 확대 레벨
-                  };
-
-          var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-          var mapTypeControl = new kakao.maps.MapTypeControl();
-          map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-          // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성
-          var zoomControl = new kakao.maps.ZoomControl();
-          map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-          var iwContent = '<div style="padding:5px; text-align:center;">천재IT교육센터</div>',
-                  iwPosition = new kakao.maps.LatLng(37.4786643, 126.8863597),
-                  iwRemoveable = true;
-
-          // 마커가 표시될 위치입니다
-          var markerPosition  = new kakao.maps.LatLng(37.4786643, 126.8863597);
-
-          // 마커를 생성합니다
-          var marker = new kakao.maps.Marker({
-            position: markerPosition
-          });
-
-          // 인포윈도우 생성
-          var infowindow = new kakao.maps.InfoWindow({
-            map: map,
-            position : iwPosition,
-            content : iwContent,
-            removable : iwRemoveable
-          });
-        </script>
-      </section>
+    </div>
       <!-- ======================================================================-->
     <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
     <th:block th:replace="~{include/footer :: footer}"></th:block>

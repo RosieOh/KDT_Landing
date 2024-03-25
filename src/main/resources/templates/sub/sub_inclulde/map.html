@@ -1,0 +1,91 @@
+<!doctype html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <body>
+    <th:block th:fragment="map">
+
+      <!-- 지도 start -->
+        <section class="container container_bottom back_white">
+            <div id="map" style="width: 600px; height: 400px;"></div>
+            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf4e48d397124f04812bf416d553111c"></script>
+            <script th:inline="javascript">
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                    mapOption = {
+                        center: new kakao.maps.LatLng(37.4786643, 126.8863597), // 지도의 중심좌표
+                        level: 2 // 지도의 확대 레벨
+                    };
+
+                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+                var mapTypeControl = new kakao.maps.MapTypeControl();
+                map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+
+                // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성
+                var zoomControl = new kakao.maps.ZoomControl();
+                map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+
+                var iwContent = '<div style="padding:5px; text-align:center;">천재IT교육센터</div>',
+                    iwPosition = new kakao.maps.LatLng(37.4786643, 126.8863597),
+                    iwRemoveable = true;
+
+                // 마커가 표시될 위치입니다
+                var markerPosition  = new kakao.maps.LatLng(37.4786643, 126.8863597);
+
+                // 마커를 생성합니다
+                var marker = new kakao.maps.Marker({
+                    position: markerPosition
+                });
+
+                // 인포윈도우 생성
+                var infowindow = new kakao.maps.InfoWindow({
+                    map: map,
+                    position : iwPosition,
+                    content : iwContent,
+                    removable : iwRemoveable
+                });
+            </script>
+        </section>
+
+      <section class="container container_bottom">
+        <div class="title-body">
+          <h1 class="title_white_big">천재IT교육센터의 교육시설</h1>
+          <h4 class="title_white_sub">교육에만 몰두할 수 있어요!</h4>
+        </div>
+        <div class="Ladder_wrap">
+            <div class="Ladder_1">
+                <div class="Ladder_content">
+                  <p class="dt_btn absolute_right">강의실 01</p>
+                  <article class="">
+                    <img th:src="@{/picture/common/classroom_1.jpg}" alt="강의실 이미지1" class="Ladder_image_1"/>
+                  </article>
+                </div>
+                <div class="Ladder_content">
+                    <p class="dt_btn absolute_right">강의실 02</p>
+                    <article class="">
+                        <img th:src="@{/picture/common/classroom_2.jpg}" alt="강의실 이미지2" class="Ladder_image_2"/>
+                    </article>
+                </div>
+            </div>
+            <div class="Ladder_2">
+                <div class="Ladder_content">
+                  <p class="dt_btn absolute_right">라운지 공간</p>
+                  <article class="">
+                    <img th:src="@{/picture/common/lounge.jpg}" alt="라운지 이미지" class="Ladder_image_2"/>
+                  </article>
+                </div>
+                <div class="Ladder_content">
+                  <p class="dt_btn absolute_right">세미나실</p>
+                  <article class="">
+                    <img th:src="@{/picture/common/seminar.jpg}" alt="세미나 이미지" class="Ladder_image_1"/>
+                  </article>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- 지도 end -->
+
+    </th:block>
+  </body>
+</html>

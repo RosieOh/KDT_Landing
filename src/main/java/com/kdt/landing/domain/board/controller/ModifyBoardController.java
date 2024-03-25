@@ -16,16 +16,22 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.Principal;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Slf4j
 @Controller
@@ -142,12 +148,26 @@ public class ModifyBoardController {
     }
 
     @PostMapping("/modify/{id}")
-    public String modifyBoardEdit(@PathVariable("id") Long id, BoardDTO boardDTO){
+    public String modifyBoardEdit(@PathVariable("id") Long id, BoardDTO boardDTO, @RequestParam("file") MultipartFile file) {
         BoardDTO boardDTO1 = boardService.getBoard(id);
         boardDTO1.setTitle(boardDTO.getTitle());
         boardDTO1.setContent(boardDTO.getContent());
-        boardService.modify(boardDTO1); // 수정된 boardDTO1을 전달해야 합니다.
-        return "redirect:/modifyBoard/read?id="+id;
+
+        // 새 파일이 업로드된 경우에만 처리
+        if (!file.isEmpty()) {
+            // 이전 파일 삭제
+            List<String> filesToDelete = Arrays.asList(String.valueOf(boardDTO1.getFileId()));
+            removeFiles(filesToDelete);
+
+            // 새 파일 저장
+            String fileName = storeFile(file);
+
+            // 파일 ID 설정
+            boardDTO1.setFileId(Long.valueOf(fileName));
+        }
+
+        boardService.modify(boardDTO1); // 수정된 boardDTO1을 전달
+        return "redirect:/modifyBoard/read?id=" + id;
     }
 
     @RequestMapping(value = "/remove", method = {RequestMethod.GET, RequestMethod.POST})
@@ -172,6 +192,39 @@ public class ModifyBoardController {
             } catch (Exception e) {
                 log.error(e.getMessage());
             }
+        }
+    }
+
+
+    private String storeFile(MultipartFile file) {
+        // 저장할 디렉토리 경로 설정
+        String uploadDir = "/path/to/upload/directory";
+
+        // 디렉토리가 없으면 생성
+        Path uploadPath = Paths.get(uploadDir);
+        if (!Files.exists(uploadPath)) {
+            try {
+                Files.createDirectories(uploadPath);
+            } catch (IOException e) {
+                // 디렉토리 생성 실패 처리
+                e.printStackTrace();
+            }
+        }
+
+        // 파일명 생성 (중복 방지를 위해 유니크한 이름 사용)
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        String uniqueFileName = UUID.randomUUID().toString() + "_" + fileName;
+
+        try {
+            // 파일 저장
+            Path filePath = uploadPath.resolve(uniqueFileName);
+            Files.copy(file.getInputStream(), filePath);
+
+            return uniqueFileName; // 저장된 파일명 반환
+        } catch (IOException e) {
+            // 파일 저장 실패 처리
+            e.printStackTrace();
+            return null;
         }
     }
 }
