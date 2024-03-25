@@ -7,8 +7,6 @@
 @import url("ImportCSS/tablet.css");
 @import url("ImportCSS/image_absolute.css");
 @import url("ImportCSS/mobile.css");
-@import url("ImportCSS/header.css");
-@import url("ImportCSS/mobile/main_mobile.css");
 
 :root {
   --c-main: rgba(85, 59, 243, 1);
@@ -335,4 +333,12 @@ textarea:hover, input:hover, select:hover {
 
 .display_inline {
   display: inline-block;
+}
+
+.mt_5r{
+  margin-top: 5rem;
+}
+
+.img_h450 {
+  height: 450px;
 }

@@ -7,14 +7,57 @@
     <th:block th:fragment="map">
 
       <!-- 지도 start -->
-        <section class="container container_bottom back_white">
-            <div id="map" style="width: 600px; height: 400px;"></div>
+        <section class="container ">
+            <div class="title-body">
+                <h1 class="title_white_big">교육장소</h1>
+                <h4 class="title_white_sub">오시는길</h4>
+            </div>
+            <div class="map_box">
+            <div id="map" class="map">
+
+            </div>
+                <div class="map_content">
+                    <div class="map_text">
+                        <h4 class="map_btn">교육장소</h4>
+                        <p class="map_text_in">
+                            서울 금천구 디지털로9길 23 <br>마리오 아울렛 2관 11층 천재IT교육센터
+                        </p>
+                    </div>
+                     <div class="map_text">
+                        <h4 class="map_btn">상담문의</h4>
+                        <p class="map_text_in">
+                            전화 : 02-3282-8589
+                        </p>
+                     </div>
+                    <div class="map_text">
+                        <p>
+                            <img
+                                    th:src="@{/ico/kakao.png}"
+                                    alt="ico infomation_2"
+                                    class="map_icons"
+                            />
+                            카카오 상담/문의하기 ⬈
+                        </p>
+                    </div>
+                    <div class="map_text">
+                        <p>
+                            <img
+                                th:src="@{/ico/naver_blog.png}"
+                                alt="ico infomation_2"
+                                class="map_icons"
+                           />
+                            네이버 블로그 ⬈
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf4e48d397124f04812bf416d553111c"></script>
             <script th:inline="javascript">
                 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                     mapOption = {
                         center: new kakao.maps.LatLng(37.4786643, 126.8863597), // 지도의 중심좌표
-                        level: 2 // 지도의 확대 레벨
+                        level: 3 // 지도의 확대 레벨
                     };
 
                 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -25,7 +68,7 @@
                 var zoomControl = new kakao.maps.ZoomControl();
                 map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-                var iwContent = '<div style="padding:5px; text-align:center;">천재IT교육센터</div>',
+                var iwContent = '<div class="map_position">천재IT교육센터</div>',
                     iwPosition = new kakao.maps.LatLng(37.4786643, 126.8863597),
                     iwRemoveable = true;
 
@@ -46,44 +89,6 @@
                 });
             </script>
         </section>
-
-      <section class="container container_bottom">
-        <div class="title-body">
-          <h1 class="title_white_big">천재IT교육센터의 교육시설</h1>
-          <h4 class="title_white_sub">교육에만 몰두할 수 있어요!</h4>
-        </div>
-        <div class="Ladder_wrap">
-            <div class="Ladder_1">
-                <div class="Ladder_content">
-                  <p class="dt_btn absolute_right">강의실 01</p>
-                  <article class="">
-                    <img th:src="@{/picture/common/classroom_1.jpg}" alt="강의실 이미지1" class="Ladder_image_1"/>
-                  </article>
-                </div>
-                <div class="Ladder_content">
-                    <p class="dt_btn absolute_right">강의실 02</p>
-                    <article class="">
-                        <img th:src="@{/picture/common/classroom_2.jpg}" alt="강의실 이미지2" class="Ladder_image_2"/>
-                    </article>
-                </div>
-            </div>
-            <div class="Ladder_2">
-                <div class="Ladder_content">
-                  <p class="dt_btn absolute_right">라운지 공간</p>
-                  <article class="">
-                    <img th:src="@{/picture/common/lounge.jpg}" alt="라운지 이미지" class="Ladder_image_2"/>
-                  </article>
-                </div>
-                <div class="Ladder_content">
-                  <p class="dt_btn absolute_right">세미나실</p>
-                  <article class="">
-                    <img th:src="@{/picture/common/seminar.jpg}" alt="세미나 이미지" class="Ladder_image_1"/>
-                  </article>
-                </div>
-            </div>
-        </div>
-      </section>
-
       <!-- 지도 end -->
 
     </th:block>

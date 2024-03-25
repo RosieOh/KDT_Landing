@@ -110,6 +110,24 @@ function agree() {
     return false;
   }
 }
+
+// faq 열기 / 닫기
+
+$(document).ready(function () {
+  $(".faq ")
+      .off("click")
+      .on("click", function () {
+        $(this).find(".faq_wrap").slideToggle();
+
+        if ($(this).find(".toggle").hasClass("open")) {
+          $(this).find(".toggle").text("▼").removeClass("open");
+        } else {
+          $(this).find(".toggle").text("▲").addClass("open");
+        }
+      });
+});
+
+
 // 내용 열기/닫기 및 글자수 제한
 
 // 텍스트 열기/닫기

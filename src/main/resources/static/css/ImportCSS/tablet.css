@@ -113,10 +113,6 @@
         width: 600px;
         margin: 2em auto;
     }
-
-    .card-image {
-        width: 410px;
-    }
     .recru_wrap {
         height: auto;
     }
@@ -223,4 +219,7 @@
         height: 400px;
     }
 
+    .bottom_banner_text {
+        font-size: 18px;
+    }
 }

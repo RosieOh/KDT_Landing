@@ -35,10 +35,16 @@
 }
 .image_absolute_15 {
     position: absolute;
-    top: 30em;
+    top: 38em;
     left: -41em;
     width: 8em;
     z-index: 2;
+}
+.image_absolute_33 {
+    position: absolute;
+    top: 18em;
+    left: -48em;
+    width: 20em;
 }
 
 /* 공통 end */
@@ -83,6 +89,8 @@
 /* 메인 end */
 
 /* 풀스택 start */
+
+
 
 .image_absolute_2 {
     position: absolute;
@@ -178,6 +186,8 @@
     z-index: 1;
     opacity: 0.9;
 }
+
+
 
 /* 빅데이터 end */
 

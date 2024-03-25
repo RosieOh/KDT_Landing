@@ -56,6 +56,21 @@
   color: #209cee;
 }
 
+.card_btn {
+  background-color: var(--c-sub);
+  width: max-content;
+  padding: 1rem 7rem;
+  color: var(--c-white);
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card_btn:hover {
+  background-color: var(--c-hover);
+}
+
 .content {
   font-size: 3px;
 }
@@ -65,12 +80,12 @@
 }
 
 .card-content .content {
-  font-size: 14px;
-  margin: 1rem 1rem;
+  margin: 2rem 0;
 }
 .card-content .content h4 {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: bold;
+  line-height: 1.5;
 }
 .card {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
@@ -103,6 +118,7 @@
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
+  background-color: var(--c-white);
 }
 
 
@@ -1024,8 +1040,12 @@ p {
 
 .nav-dropdown_wrap {
   display: none;
+  padding: 0 0 0 20px;
+  margin: auto;
   position: absolute;
-  background-color: var(--c-white_2);
+  background-color: var(--c-white);
+  right: -21px;
+  border-radius: 20px;
 }
 
 .nav_link:hover {
@@ -1056,16 +1076,16 @@ p {
 
 }
 
-.buger_btn {
-display: none;
-width: 55px;
-height: 50px;
-background-color: var(--c-back_lightgray);
-border: none;
-cursor: pointer;
-position: absolute;
-right: 0;
-top: 0;
+.burger_btn {
+  display: none;
+  width: 12%;
+  background-color: var(--c-white);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1rem;
 }
 
 .burger {
@@ -1078,7 +1098,16 @@ top: 0;
 .bugger_link {
   width: 100%;
   padding: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 20px;
 }
+
+.bugger_link:hover {
+  background-color: var(--c-back_lightgray) ;
+  color: var(--c-main);
+}
+
 .bugger_wrap {
   position: sticky;
   top: 0;
@@ -1353,6 +1382,7 @@ box-shadow: inset -5px 0 1px var(--c-back_gray);
 .info_sub {
   display: flex;
   margin-top: 0.75rem;
+  font-size: 18px;
 }
 
 .info_sub_in {
@@ -1366,4 +1396,46 @@ box-shadow: inset -5px 0 1px var(--c-back_gray);
 .info_image {
   width: 64px;
   height: 64px;
+}
+
+.faq {
+  border: none;
+  background-color: var(--c-white);
+  padding: 5px 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.faq:hover {
+  cursor: pointer;
+}
+.faq a {
+  color: var(--c-black);
+  background-color: transparent;
+  float: left;
+  margin-right: 5px;
+}
+
+.faq_wrap {
+  display: none;
+  margin-top: 1.5rem;
+}
+
+.faq_text {
+  height: 80px;
+  padding: 0 2rem;
+}
+
+.faq_title {
+  color: var(--c-main);
+  font-size: 1.25em;
+  font-weight: bold;
+  border-width: 0 0 1px;
+  border-color: var(--c-main);
+  border-style: solid;
+  padding-bottom: 0.5rem;
+}
+
+.faq_content {
+  margin-bottom: 5rem;
 }

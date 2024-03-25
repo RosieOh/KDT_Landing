@@ -16,17 +16,253 @@
     <th:block th:replace="~{include/header :: header}"></th:block>
     <div class="main">
       <!-- banner -->
-      <section class="banner" id="banner">
-        <section class="container">
-          <div class="banner_box">
-            <h4 class="title_sub">천재IT교육센터</h4>
-            <h1 class="banner_title title_big">에듀테크 교육과정</h1>
-            <div class="banner_btn">
-              <button type="button" id="ban_btn" class="button">사전예약신청 ></button>
+<!--      <section class="banner" id="banner">-->
+<!--        <section class="container">-->
+<!--          <div class="banner_box">-->
+<!--            <h4 class="title_sub">천재IT교육센터</h4>-->
+<!--            <h1 class="banner_title title_big">에듀테크 교육과정</h1>-->
+<!--            <div class="banner_btn">-->
+<!--              <button type="button" id="ban_btn" class="button">사전예약신청 ></button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </section>-->
+<!--      </section>-->
+
+
+<!--      <div class="image_absolute_wrap">-->
+<!--        <div class="button_group">-->
+<!--          <div class="slide_index_prev_button slide_index_button">◀</div>-->
+<!--          <div class="slide_index_next_button slide_index_button">▶</div>-->
+<!--        </div>-->
+<!--      </div>-->
+        <div class="slide_index slide_index_wrap">
+          <div class="slide_index_item" >
+            <div class="banner">
+              <img th:src="@{/picture/common/index_banner_bigdata.png}" alt="bigdata banner" class="index_banner">
+              <div class="container">
+                <div class="banner_wrap">
+                  <div class="banner_box">
+                    <h4 class="title_white_sub">천재IT교육센터</h4>
+                    <h1 class="banner_title title_white_big">에듀테크 AI·데이터 개발자 교육과정</h1>
+                  </div>
+                  <div class="banner_image">
+                    <img th:src="@{/picture/common/index_banner_bigdata_image.png}" alt="bigdata index_image">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-      </section>
+          <div class="slide_index_item" >
+            <div class="banner">
+              <img th:src="@{/picture/common/index_fullstack_banner.png}" alt="bigdata banner" class="index_banner">
+              <div class="container">
+                <div class="banner_wrap">
+                  <div class="banner_box">
+                    <h4 class="title_white_sub">천재IT교육센터</h4>
+                    <h1 class="banner_title title_white_big">에듀테크 JAVA 풀스택 개발자 교육과정</h1>
+                  </div>
+                  <div class="banner_image">
+                    <img th:src="@{/picture/common/index_banner_full_image.png}" alt="bigdata index_image">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide_index_item" >
+            <div class="banner">
+              <img th:src="@{/picture/common/index_banner_pm.png}" alt="bigdata banner" class="index_banner">
+              <div class="container">
+                <div class="banner_wrap">
+                  <div class="banner_box">
+                    <h4 class="title_white_sub">천재IT교육센터</h4>
+                    <h1 class="banner_title title_white_big">에듀테크 프로덕트 매니저(PM) 교육과정</h1>
+                  </div>
+                  <div class="banner_image">
+                    <img th:src="@{/picture/common/index_banner_pm_image.png}" alt="bigdata index_image">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="slide_index_pagination"></ul>
+        </div>
+
+      <script>
+
+        const slide_index = document.querySelector(".slide_index");
+        let slide_indexWidth = slide_index.clientWidth;
+
+        const prevBtn_index = document.querySelector(".slide_index_prev_button");
+        const nextBtn_index = document.querySelector(".slide_index_next_button");
+
+        let slide_indexItems = document.querySelectorAll(".slide_index_item");
+        const maxslide_index = slide_indexItems.length;
+
+        let currslide_index = 1;
+
+        // 페이지네이션 생성
+        const pagination_index = document.querySelector(".slide_index_pagination_index");
+
+        for (let i = 0; i < maxslide_index; i++) {
+          if (i === 0) pagination_index.innerHTML += `<li class="active">•</li>`;
+          else pagination_index.innerHTML += `<li>•</li>`;
+        }
+
+        const pagination_indexItems_index = document.querySelectorAll(
+                ".slide_index_pagination_index > li",
+        );
+
+        // 무한 슬라이드를 위해 start, end 슬라이드 복사하기
+        const startslide_index = slide_indexItems[0];
+        const endslide_index = slide_indexItems[slide_indexItems.length - 1];
+        const startElem_index = document.createElement("div");
+        const endElem_index = document.createElement("div");
+
+        endslide_index.classList.forEach((c) => endElem_index.classList.add(c));
+        endElem_index.innerHTML = endslide_index.innerHTML;
+
+        startslide_index.classList.forEach((c) => startElem_index.classList.add(c));
+        startElem_index.innerHTML = startslide_index.innerHTML;
+
+        slide_indexItems[0].before(endElem_index);
+        slide_indexItems[slide_indexItems.length - 1].after(startElem_index);
+
+        slide_indexItems = document.querySelectorAll(".slide_index_item");
+        let offset_index = slide_indexWidth + currslide_index;
+        slide_indexItems.forEach((i) => {
+          i.setAttribute("style", `left: ${-offset_index}px`);
+        });
+
+        function nextMove_index() {
+          currslide_index++;
+          if (currslide_index <= maxslide_index) {
+            const offset_index = slide_indexWidth * currslide_index;
+            slide_indexItems.forEach((i) => {
+              i.setAttribute("style", `left: ${-offset_index}px`);
+            });
+            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+            pagination_indexItems_index[currslide_index - 1].classList.add("active");
+          } else {
+            currslide_index = 0;
+            let offset_index = slide_indexWidth * currslide_index;
+            slide_indexItems.forEach((i) => {
+              i.setAttribute("style", `transition: ${0}s; left: ${-offset_index}px`);
+            });
+            currslide_index++;
+            offset_index = slide_indexWidth * currslide_index;
+            setTimeout(() => {
+              slide_indexItems.forEach((i) => {
+                i.setAttribute("style", `transition: ${0.15}s; left: ${-offset_index}px`);
+              });
+            }, 0);
+            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+            pagination_indexItems_index[currslide_index - 1].classList.add("active");
+          }
+        }
+        function prevMove_index() {
+          currslide_index--;
+          if (currslide_index > 0) {
+            const offset_index = slide_indexWidth * currslide_index;
+            slide_indexItems.forEach((i) => {
+              i.setAttribute("style", `left: ${-offset_index}px`);
+            });
+            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+            pagination_indexItems_index[currslide_index - 1].classList.add("active");
+          } else {
+            currslide_index = maxslide_index + 1;
+            let offset_index = slide_indexWidth * currslide_index;
+            slide_indexItems.forEach((i) => {
+              i.setAttribute("style", `transition: ${0}s; left: ${-offset_index}px`);
+            });
+            currslide_index--;
+            offset_index = slide_indexWidth * currslide_index;
+            setTimeout(() => {
+              slide_indexItems.forEach((i) => {
+                i.setAttribute("style", `transition: ${0.15}s; left: ${-offset_index}px`);
+              });
+            }, 0);
+            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+            pagination_indexItems_index[currslide_index - 1].classList.add("active");
+          }
+        }
+
+        nextBtn_index.addEventListener("click", () => {
+          nextMove_index();
+        });
+        prevBtn_index.addEventListener("click", () => {
+          prevMove_index();
+        });
+
+        window.addEventListener("resize", () => {
+          slide_indexWidth = slide_index.clientWidth;
+        });
+
+        for (let i = 0; i < maxslide_index; i++) {
+          pagination_indexItems_index[i].addEventListener("click", () => {
+            currslide_index = i + 1;
+            const offset_index = slide_indexWidth * currslide_index;
+            slide_indexItems.forEach((i) => {
+              i.setAttribute("style", `left: ${-offset_index}px`);
+            });
+            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+            pagination_indexItems_index[currslide_index - 1].classList.add("active");
+          });
+        }
+
+        let startPoint_index = 0;
+        let endPoint_index = 0;
+
+        // PC 클릭 이벤트 (드래그)
+        slide_index.addEventListener("mousedown", (e) => {
+          startPoint_index = e.pageX; // 마우스 드래그 시작 위치 저장
+        });
+
+        slide_index.addEventListener("mouseup", (e) => {
+          endPoint_index = e.pageX; // 마우스 드래그 끝 위치 저장
+          if (startPoint_index < endPoint_index) {
+            // 마우스가 오른쪽으로 드래그 된 경우
+            prevMove_index();
+          } else if (startPoint_index > endPoint_index) {
+            // 마우스가 왼쪽으로 드래그 된 경우
+            nextMove_index();
+          }
+        });
+
+        // 모바일 터치 이벤트 (스와이프)
+        slide_index.addEventListener("touchstart", (e) => {
+          startPoint_index = e.touches[0].pageX; // 터치가 시작되는 위치 저장
+        });
+        slide_index.addEventListener("touchend", (e) => {
+          endPoint_index = e.changedTouches[0].pageX; // 터치가 끝나는 위치 저장
+          if (startPoint_index < endPoint_index) {
+            // 오른쪽으로 스와이프 된 경우
+            prevMove_index();
+          } else if (startPoint_index > endPoint_index) {
+            // 왼쪽으로 스와이프 된 경우
+            nextMove_index();
+          }
+        });
+
+        // 기본적으로 슬라이드 루프 시작하기
+        let loopInterval_index = setInterval(() => {
+          nextMove_index();
+        }, 4500);
+
+        // 슬라이드에 마우스가 올라간 경우 루프 멈추기
+        slide_index.addEventListener("mouseover", () => {
+          clearInterval(loopInterval_index);
+        });
+
+        // 슬라이드에서 마우스가 나온 경우 루프 재시작하기
+        slide_index.addEventListener("mouseout", () => {
+          loopInterval_index = setInterval(() => {
+            nextMove_index();
+          }, 4500);
+        });
+
+      </script>
+
+
 
       <!--     Section 1 - 카드 -->
       <section class="container container_bottom">
@@ -46,7 +282,7 @@
 
         <div class="columns features features_1 radius1_cur_re" >
           <div class="column text_center border1 radius1_cur radius1_cur_re">
-            <div class="card-image has-text-centered">
+            <div class="card-image">
               <img
                 class="radius2"
                 th:src="@{/picture/common/index_Big.jpg}"
@@ -56,10 +292,12 @@
             <div class="card-content">
               <div class="content">
                 <h4 class="course_title">
-                  에듀테크 AI, 빅데이터 개발자 <br />교육과정
+                  에듀테크 AI, 빅데이터 개발자</h4>
+                <h4 class="course_title">
+                  교육과정
                 </h4>
               </div>
-              <a th:href="@{subSign}" class="button width">접수하기</a>
+              <a th:href="@{subSign}" class="card_btn">접수하기</a>
 
             </div>
           </div>
@@ -74,10 +312,13 @@
             <div class="card-content">
               <div class="content">
                 <h4 class="course_title">
-                  에듀테크 JAVA 풀스택 개발자 <br />교육과정
+                  에듀테크 JAVA 풀스택 개발자
+                </h4>
+                <h4 class="course_title">
+                  교육과정
                 </h4>
               </div>
-              <a th:href="@{subSign}" class="button width">접수하기</a>
+              <a th:href="@{subSign}" class="card_btn">접수하기</a>
             </div>
           </div>
           <div class="column text_center border1 radius1_cur radius1_cur_re">
@@ -91,11 +332,13 @@
             <div class="card-content">
               <div class="content">
                 <h4 class="course_title">
-                  에듀테크 PM(콘텐츠 기획자) <br />교육과정
+                  에듀테크 PM(콘텐츠 기획자)
+                </h4>
+                <h4 class="course_title">
+                  교육과정
                 </h4>
               </div>
-              <a th:href="@{subSign}" class="button width">접수하기</a>
-
+              <a th:href="@{subSign}" class="card_btn">접수하기</a>
             </div>
           </div>
         </div>
@@ -350,6 +593,140 @@
               </div>
             </div>
               </div>
+      </section>
+
+
+      <section class="container">
+        <div class="title-body text_center">
+          <h1 class="title_big">F . A . Q
+          </h1>
+        </div>
+        <div class="faq_content">
+          <h4 class="faq_title">※ 지원 및 선발</h4>
+          <div class="faq">
+            <h4>
+              교육전 선수 지식이 필요할까요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>천재IT교육센터는 프로그래밍에 대한 기본 지식과 경험 순으로 교육생을 선발하지는 않습니다. <br> 다만 교육생의 사전 역량을 파악을 위해 '프로그래밍 경험과 역량'을 지원 절차 상 확인하는 점 참고 부탁드립니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq">
+            <h4>
+              개발 경력이 있는 사람도 지원이 가능한가요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>네, 지원 가능합니다.
+                  <br>하지만 천재IT교육센터의 교육 과정은 자기계발 등의 역량 강화를 위해 수강하려는 재직자 등은 선발에서 제외됩니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq">
+            <h4>
+              인터뷰는 어떤 방식으로 진행되나요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>지원서 내용을 바탕으로 비대면 면접을 진행합니다. 서류 통과자를 대상으로 실시하며, 서류 기반의  ‘지원자의 자질’과 ‘교육에 임하는 동기’ 등을 평가 기준으로 면접을 진행 예정입니다. </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq">
+            <h4>
+              최종 선발 인원은 몇 명인가요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>최종 선발 인원은 각 과정당 기수별 최대 20명입니다.<br>저희는 프로젝트 기반 과정으로 강사와의 ‘소통’을 중시합니다. 그렇기에 최대 인원 20명 이내로 제한하여 운영하고 있습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq">
+            <h4>
+              학교, 직장 등과 병행이 가능한가요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>풀타임 오프라인 과정입니다. 따라서 정해진 교육 시간 동안 오프라인 교육에 온전히 집중하는 것을 원칙으로 하기에, 병행이 불가합니다. <br>
+                  다만, 재직중이라도 개강일 전 퇴사 예정이시라면 지원에는 문제가 없습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="faq_content">
+          <h4 class="faq_title">※ 교육 프로그램</h4>
+          <div class="faq">
+            <h4>
+              아카데미 교육 참여 시, 전액 무료인가요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>
+                  k-digital Training 과정으로 전액 무료입니다. 여러분께서는 교육에만 집중하시면 됩니다. <br>
+                  *k-digital Training: 정부가 디지털 일자리 취업을 위한 교육기회를 제공하는 디지털 핵심 실무인재 양성사업으로 훈련 과정의 교육비용은 정부가 부담하고, 디지털 선도기업이 직접 훈련과정을 지원하는 사업
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq">
+            <h4>
+              교육 시간과 장소는 어떻게 되나요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>공식적인 교육 시간은 월~금 09:00~18:00 일정으로 진행합니다. <br>
+                  장소는 오프라인 교육장(가산디지털단지역, 마리오아울렛 2관 11층)이며 교육은 오프라인 공간에 모여 같이 학습하고 협업하는 방식으로 진행하고, 온라인 피드백을 동시에 진행합니다.
+                  <br> 공식적인 교육 시간 외에도 정해진 시간 내에 오프라인 교육장을 자유롭게 사용할 수 있습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq">
+            <h4>
+              실습할 장비는 지급하나요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>실습에 필요한 스펙의 PC와 교재 지합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq">
+            <h4>
+              수료의 기준이 어떻게 되나요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>총 6개월 과정으로, 총 학습 시간의 80%이상 수강완료 및 내부 기준 충족 시 ‘수료’ 가능합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq">
+            <h4>
+              수료 후 천재교육그룹에 입사할 기회가 있나요?
+              <a href="javascript:;" class="toggle">▼</a>
+            </h4>
+            <div class="faq_wrap">
+              <div class="faq_text">
+                <p>내부 평가를 거쳐 우수 수료생에 한해 인턴 전환 기회가 제공됩니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
       <!-- ======================================================================-->
