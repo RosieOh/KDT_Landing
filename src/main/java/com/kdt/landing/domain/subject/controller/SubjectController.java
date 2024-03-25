@@ -31,6 +31,27 @@ public class SubjectController {
         return "/sub/list";
     }
 
+    @GetMapping("/list/FullStack")
+    public String applySubjectFullStackList(Model model) throws Exception {
+        List<SubjectDTO> subjectDTOFullStackList = subFullStackService.getFullStackSubjects();
+        model.addAttribute("fullStackList", subjectDTOFullStackList);
+        return "/sub/list";
+    }
+
+    @GetMapping("/list/BigData")
+    public String applySubjectBigDataList(Model model) throws Exception {
+        List<SubjectDTO> subjectDTOBigDataList = subFullStackService.getBigDataSubjects();
+        model.addAttribute("bigDataList", subjectDTOBigDataList);
+        return "/sub/list";
+    }
+
+    @GetMapping("/list/PM")
+    public String applySubjectPMList(Model model) throws Exception {
+        List<SubjectDTO> subjectDTOPMList = subFullStackService.getPMSubjects();
+        model.addAttribute("pmList", subjectDTOPMList);
+        return "/sub/list";
+    }
+
     //등록
     @PostMapping("/register")
     public String applyRegister(Model model, Course course, SubjectDTO subDTO)throws Exception{

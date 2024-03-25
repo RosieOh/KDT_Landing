@@ -9,7 +9,6 @@
     <title>Topic Listing Bootstrap 5 Template</title>
     <th:block th:replace="~{include/head :: head}"></th:block>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
-
     <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
 </head>
 <body id="top">
@@ -17,13 +16,13 @@
 
 
 <main>
-    <section class="page-title" style="padding: 100px 0;">
-        <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4 breadcrumb_1" aria-label="breadcrumbs">
-            <ul class="mr-5">
-                <li><a th:href="@{/static}"><i class="xi-home is-size-3"></i>홈</a></li>
-                <li><a th:href="@{/modifyBoard/list}">수정요청</a></li>
+    <section class="page-title">
+        <nav class="breadcrumb_1" aria-label="breadcrumbs">
+            <ul class="breadcrumb_1_road">
+                <li><a class="breadcrumb_1_road_a" th:href="@{/}"><i class="breadcrumb_1_road_home"></i>홈</a></li>
+                <li><a class="breadcrumb_1_road_a" th:href="@{/modifyBoard/list}">수정요청</a></li>
             </ul>
-            <p class="title has-text-centered mt-1 mb-2">수정요청</p>
+            <p class="breadcrumb_1_road_title">수정요청</p>
         </nav>
     </section>
 
@@ -32,68 +31,58 @@
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="pricing-item featured" style="padding:0;">
                     <form th:action="@{/modifyBoard/register}" method="post" enctype="multipart/form-data">
-                        <div class="col-12">
-                            <div class="card w-100" >
-                                <div class="card-body">
-                                    <div class="table-responsive project-list">
-                                        <table class="table project-table table-centered table-nowrap" style="width: 50%; margin: 0 auto; padding-top: 100px; ">
-                                            <tbody>
-                                            <div class="input-group mb-3">
-                                                <select name="boardType" id="boardType">
-                                                    <option value="MODIFY" th:selected="${boardType == 'MODIFY'}">수정 요청</option>
-                                                </select>
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">작성자 | </span>
-                                                <input type="text" name="writer" class="form-control"  th:value="${name}" readonly>
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">첨부파일 | </span>
-                                                <input type="file" class="form-control" name="file">
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">제목 | </span>
-                                                <input type="text" id="title" name="title" placeholder="제목을 입력하세요" class="form-control" required>
-                                            </div>
-                                        </table>
-                                        <tr>
-                                            <td style="border: none;">
-                                                <div id="editor">
-                                                    <textarea name="content" id="myTextarea" rows="8" maxlength="1000" class="form-control" style="height: 200px; border: 1px solid #cbcbcb"></textarea>
-                                                </div>
-                                                <script>
-                                                    const Editor = toastui.Editor;
-                                                    const textarea = document.querySelector('#myTextarea');
-
-                                                    // 숨겨진 textarea 대신에 에디터를 생성할 div 요소를 만듭니다.
-                                                    const editorDiv = document.createElement('div');
-                                                    editorDiv.id = 'editor';
-                                                    textarea.parentNode.insertBefore(editorDiv, textarea);
-                                                    textarea.style.display = 'none';  // 숨겨진 textarea
-
-                                                    const editor = new Editor({
-                                                        el: editorDiv,
-                                                        height: '500px',
-                                                        initialEditType: 'markdown',
-                                                        previewStyle: 'vertical',
-                                                        initialValue: textarea.value  // 초기값을 textarea의 값으로 설정
-                                                    });
-
-                                                    // 에디터의 내용이 변경될 때마다 textarea에 값을 업데이트합니다.
-                                                    editor.on('change', () => {
-                                                        textarea.value = editor.getMarkdown();
-                                                    });
-                                                </script>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                        <div class="table-responsive">
+                            <div class="input-group mb-3" hidden>
+                                <select name="boardType" id="boardType">
+                                    <option value="MODIFY" th:selected="${boardType == 'MODIFY'}">수정 요청</option>
+                                </select>
                             </div>
-                            <div class="btn-group float-right mr-3" style="float:right;">
-                                <input type="submit" id="btn" class="btn btn-dark" style="height: 100%; " value="등록">
-                            </div>
+                            <table class="board_detail" style="width: 100%;">
+                                <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 100px;">작성자</th>
+                                    <td><input style="border: none;" type="text" name="writer" class="form-control" th:value="${name}" readonly></td>
+                                    <th scope="row" style="width: 100px;">첨부파일</th>
+                                    <td><input style="border: none; padding-top: 10px;" type="file" class="form-control" name="file"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">제목</th>
+                                    <td colspan="3"><input style="border: none;" type="text" id="title" name="title" placeholder="제목을 입력하세요" class="form-control" required></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">내용</th>
+                                    <td colspan="3">
+                                        <textarea name="content" id="myTextarea" rows="8" maxlength="1000" class="form-control" style="height: 200px; border: 1px solid #cbcbcb" required></textarea>
+                                        <script th:inline="javascript">
+                                            const Editor = toastui.Editor;
+                                            const textarea = document.querySelector('#myTextarea');
+
+                                            // 숨겨진 textarea 대신에 에디터를 생성할 div 요소를 만듭니다.
+                                            const editorDiv = document.createElement('div');
+                                            editorDiv.id = 'editor';
+                                            textarea.parentNode.insertBefore(editorDiv, textarea);
+                                            textarea.style.display = 'none'; // 숨겨진 textarea
+
+                                            const editor = new Editor({
+                                                el: editorDiv,
+                                                height: '500px',
+                                                initialEditType: 'markdown',
+                                                previewStyle: 'vertical',
+                                                initialValue: textarea.value // 초기값을 textarea의 값으로 설정
+                                            });
+
+                                            // 에디터의 내용이 변경될 때마다 textarea에 값을 업데이트합니다.
+                                            editor.on('change', () => {
+                                                textarea.value = editor.getMarkdown();
+                                            });
+                                        </script>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn-group mt-3" style="padding-bottom: 40px; padding-top: 50px;">
+                            <input type="submit" id="btn" class="course_button" value="등록">
                         </div>
                     </form>
                 </div>
@@ -110,10 +99,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-    </div><!-- layout fragment end -->
-
-
     <script th:inline="javascript">
 
         const errors = [[${errors}]]
@@ -180,7 +165,8 @@
             <div class="card-body">
                  <img src="/view/${link}" data-src="${uuid+"_"+fileName}" >
             </div>
-        </div><!-- card -->`
+        </div>
+        <!-- card -->`
 
             uploadResult.innerHTML += str
         }
