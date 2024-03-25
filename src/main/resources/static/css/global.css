@@ -335,3 +335,11 @@ textarea:hover, input:hover, select:hover {
 .display_inline {
   display: inline-block;
 }
+
+.mt_5r{
+  margin-top: 5rem;
+}
+
+.img_h450 {
+  height: 450px;
+}

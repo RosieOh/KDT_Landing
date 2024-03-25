@@ -17,20 +17,26 @@
     <div class="main back_black">
 
       <!-- 상단배너 start -->
-        <section class="banner fullbanner" id="banner">
-          <section class="container">
-          <div class="banner_box">
-            <h4 class="title_white_sub font_white">2024 커리큘럼 전면 리뉴얼!</h4>
-            <h1 class="banner_title title_white_big">
-              Learn by Doing Project <br />
-              에듀테크 Java 풀스택 개발자 과정 6기 모집
-            </h1>
-            <div class="banner_btn">
-              <a th:href="@{subSign}" class="button">접수하기 ></a>
+      <div class="image_absolute_wrap"><img th:src="@{/picture/bigdata/img-circle.png}" alt="image circle" class="image_absolute_33"/></div>
+      <section class="banner bigbanner" id="banner">
+        <section class="container">
+          <div class="banner_wrap">
+            <div class="banner_box">
+              <h4 class="title_white_sub">2024 커리큘럼 전면 리뉴얼!</h4>
+              <h1 class="banner_title title_white_big" >Learn by Doing Project <br />
+                에듀테크 Java 풀스택 개발자 과정 6기 모집
+              </h1>
+              <div class="banner_btn">
+                <a th:href="@{subSign}" class="button">접수하기 ></a>
+              </div>
+            </div>
+            <div class="banner_image">
+              <img th:src="@{/picture/fullstack/fullstack-banner.png}" alt="img-banner" class=""/>
             </div>
           </div>
         </section>
       </section>
+
         <!-- 상단배너 end -->
 
       <!-- 모집 카드 start -->
@@ -38,8 +44,8 @@
           <div class="recru_content">
             <div class="recru_wrap">
               <article class="recru_card">
-                <p class="titleCard font_white">모집기간</p>
-                <ul class="subtitleCard font_white li_disc">
+                <p class="titleCard">모집기간</p>
+                <ul class="subtitleCard li_disc">
                 <li><b>모집</b><br>2023.03.13 ~ 2024.04.19</li>
                   <br>
                   <br>
@@ -47,16 +53,16 @@
                 </ul>
               </article>
               <article class="recru_card">
-                <p class="titleCard font_white">교육기간</p>
-                <ul class="subtitleCard font_white li_disc">
+                <p class="titleCard">교육기간</p>
+                <ul class="subtitleCard li_disc">
                   <li><b>교육</b><br>2023.04.24 ~ 2024.10.28</li>
                 </ul>
               </article>
             </div>
             <div class="recru_wrap">
               <article class="recru_card">
-                <p class="titleCard font_white">참여대상</p>
-                <ul class="subtitleCard font_white li_disc">
+                <p class="titleCard">참여대상</p>
+                <ul class="subtitleCard li_disc">
                   <li>국민 내일배움카드 <br>보유 혹은 발급 가능한 자</li>
                   <br>
                   <li>K-Digital Traning <br>수강 이력이 없는 자</li>
@@ -65,8 +71,8 @@
                 </ul>
               </article>
               <article class="recru_card">
-                <p class="titleCard font_white">지원방법</p>
-                <ul class="subtitleCard font_white li_disc">
+                <p class="titleCard">지원방법</p>
+                <ul class="subtitleCard li_disc">
                   <li><b>서류 심사</b><br>신청폼 작성</li>
                   <br>
                   <li><b>면접 심사</b><br>AI 비대면 인터뷰</li>
@@ -97,6 +103,7 @@
                 <a th:href="@{subSign}" class="button">수강후기 보러가기 ></a>
               </div>
             </div>
+            <div class="review_image_wrap">
             <div class="slide slide_wrap">
               <div class="slide_item">
                 <img
@@ -126,12 +133,13 @@
               <div class="slide_next_button slide_button">▶</div>
               <ul class="slide_pagination"></ul>
             </div>
+            </div>
           </div>
         </section>
         <!-- REVIEW end -->
 
         <!-- 모집 안내 start -->
-      <div class="image_absolute_wrap"><img th:src="@{/ico/ico-orange arrow.png}" alt="image crown" class="image_absolute_1"/></div>
+      <div class="image_absolute_wrap"><img th:src="@{/ico/ico-orange_arrow.png}" alt="image crown" class="image_absolute_1"/></div>
         <section class="container container_bottom">
           <div class="title-body text_center">
             <h1 class="title_white_big">모집 안내</h1>
@@ -725,7 +733,9 @@
         <th:block
           th:replace="sub/sub_inclulde/digital_tran :: digital_tran"
         ></th:block>
+      <th:block th:replace="sub/sub_inclulde/map :: map"></th:block>
     </div>
+
     <script th:src="@{/static/js/slide.js}"></script>
     <th:block th:replace="include/footer :: footer"></th:block>
   </body>

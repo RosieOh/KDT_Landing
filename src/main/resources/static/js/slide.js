@@ -186,7 +186,7 @@ slide.addEventListener("touchend", (e) => {
 // 기본적으로 슬라이드 루프 시작하기
 let loopInterval = setInterval(() => {
   nextMove();
-}, 3000);
+}, 4500);
 
 // 슬라이드에 마우스가 올라간 경우 루프 멈추기
 slide.addEventListener("mouseover", () => {
@@ -197,8 +197,10 @@ slide.addEventListener("mouseover", () => {
 slide.addEventListener("mouseout", () => {
   loopInterval = setInterval(() => {
     nextMove();
-  }, 3000);
+  }, 4500);
 });
+
+
 
 const slide_a = document.querySelector(".slide_a");
 let slide_aWidth = slide_a.clientWidth;
@@ -357,7 +359,7 @@ slide_a.addEventListener("touchend", (e) => {
 // 기본적으로 슬라이드 루프 시작하기
 let loopInterval_a = setInterval(() => {
   nextMove_a();
-}, 3000);
+}, 4500);
 
 // 슬라이드에 마우스가 올라간 경우 루프 멈추기
 slide_a.addEventListener("mouseover", () => {
@@ -368,7 +370,7 @@ slide_a.addEventListener("mouseover", () => {
 slide_a.addEventListener("mouseout", () => {
   loopInterval_a = setInterval(() => {
     nextMove_a();
-  }, 3000);
+  }, 4500);
 });
 
 const slide_b = document.querySelector(".slide_b");
@@ -528,7 +530,7 @@ slide_b.addEventListener("touchend", (e) => {
 // 기본적으로 슬라이드 루프 시작하기
 let loopInterval_b = setInterval(() => {
   nextMove_b();
-}, 3000);
+}, 4500);
 
 // 슬라이드에 마우스가 올라간 경우 루프 멈추기
 slide_b.addEventListener("mouseover", () => {
@@ -539,7 +541,7 @@ slide_b.addEventListener("mouseover", () => {
 slide_b.addEventListener("mouseout", () => {
   loopInterval_b = setInterval(() => {
     nextMove_b();
-  }, 3000);
+  }, 4500);
 });
 
 const slide_d = document.querySelector(".slide_d");
@@ -699,7 +701,7 @@ slide_d.addEventListener("touchend", (e) => {
 // 기본적으로 슬라이드 루프 시작하기
 let loopInterval_d = setInterval(() => {
   nextMove_d();
-}, 3000);
+}, 4500);
 
 // 슬라이드에 마우스가 올라간 경우 루프 멈추기
 slide_d.addEventListener("mouseover", () => {
@@ -710,5 +712,5 @@ slide_d.addEventListener("mouseover", () => {
 slide_d.addEventListener("mouseout", () => {
   loopInterval_d = setInterval(() => {
     nextMove_d();
-  }, 3000);
+  }, 4500);
 });
