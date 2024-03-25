@@ -40,7 +40,6 @@ public class SubjectServiceImpl implements SubjectService {
     @Override
     public SubjectDTO findById(Long no) throws Exception {
         Optional<Subject> subFullStack = subFullStackRepository.findById(no);
-
         SubjectDTO subFullStackDTO = modelMapper.map(subFullStack, SubjectDTO.class);
         return subFullStackDTO;
     }
@@ -64,6 +63,43 @@ public class SubjectServiceImpl implements SubjectService {
     @Override
     public boolean emailCheck(String email) throws Exception {
         return false;
+    }
+
+    // 각 게시판 과정 마다 정렬 버튼 생성용
+    @Override
+    public List<SubjectDTO> getFullStackSubjects() {
+        List<Subject> subFullStackSortList = subFullStackRepository.findByFullStackSort("FULLSTACK");
+        return subFullStackSortList.stream()
+                .map(this::convertFullStackToDTO)
+                .collect(Collectors.toList());
+    }
+
+    private SubjectDTO convertFullStackToDTO(Subject subject) {
+        return modelMapper.map(subject, SubjectDTO.class);
+    }
+
+    @Override
+    public List<SubjectDTO> getPMSubjects() {
+        List<Subject> subPMSortList = subFullStackRepository.findByPMSort("PM");
+        return subPMSortList.stream()
+                .map(this::convertToPMDTO)
+                .collect(Collectors.toList());
+    }
+
+    private SubjectDTO convertToPMDTO(Subject subject) {
+        return modelMapper.map(subject, SubjectDTO.class);
+    }
+
+    @Override
+    public List<SubjectDTO> getBigDataSubjects() {
+        List<Subject> subBigDataSortList = subFullStackRepository.findByBigDataSort("BIGDATA");
+        return subBigDataSortList.stream()
+                .map(this::convertToBigDataDTO)
+                .collect(Collectors.toList());
+    }
+
+    private SubjectDTO convertToBigDataDTO(Subject subject) {
+        return modelMapper.map(subject, SubjectDTO.class);
     }
 
 }

@@ -14,47 +14,49 @@
     <link rel="stylesheet" th:href="@{../../../static/css/ImportCSS/board.css}">
 
 </head>
-<body id="top">
-<main>
-    <th:block th:replace="include/header :: header"></th:block>
-    <section class="page-title" style="padding-top: 60px; ">
-        <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4 breadcrumb_1"  aria-label="breadcrumbs">
-            <ul class="mr-5">
-                <li><a th:href="@{/static}"><i class="xi-home is-size-3"></i>홈</a></li>
-                <li><a th:href="@{/apply_sub/list}">과정 별 신청 현황</a></li>
+<body>
+<th:block th:replace="include/header :: header"></th:block>
+
+
+<main style="min-height: 70vh;">
+    <section class="page-title">
+        <nav class="breadcrumb_1" aria-label="breadcrumbs">
+            <ul class="breadcrumb_1_road">
+                <li><a class="breadcrumb_1_road_a" th:href="@{/}"><i class="breadcrumb_1_road_home"></i>홈</a></li>
+                <li><a class="breadcrumb_1_road_a" th:href="@{/apply_sub/list}">과정 별 신청 현황</a></li>
             </ul>
-            <p class="title has-text-centered mt-1 mb-2">과정 별 신청 현황</p>
+            <p class="breadcrumb_1_road_title">과정 별 신청 현황</p>
         </nav>
     </section>
 
     <div class="container back_white" style="padding-top: 40px;">
         <table class="board_detail">
             <colgroup>
-                <col width="15%"/>
+                <col width="20%"/>
                 <col width="35%"/>
-                <col width="15%"/>
+                <col width="20%"/>
                 <col width="35%"/>
-                <col width="15%"/>
+                <col width="20%"/>
                 <col width="35%"/>
-                <col width="15%"/>
+                <col width="20%"/>
                 <col width="35%"/>
             </colgroup>
             <tbody>
             <tr>
                 <th scope="row">글 번호</th>
                 <td th:text="${adminSubDTOList.no}"></td>
-                <th scope="row">코딩 경험 여부</th>
+                <th scope="row" class="subject_view_title">코딩 경험 여부</th>
                 <td th:text="${adminSubDTOList.coding_experience}"></td>
             </tr>
             <tr>
                 <th scope="row">성명</th>
                 <td th:text="${adminSubDTOList.name}"></td>
-                <th scope="row">신청일</th>
+                <th scope="row" class="subject_view_title">신청일</th>
                 <td th:text="${#temporals.format(adminSubDTOList.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
             </tr>
             <tr>
                 <th scope="row">과정명</th>
-                <td th:text="${adminSubDTOList.course}"></td>
+                  <td th:text="${adminSubDTOList.course}"></td>
                 <th scope="row">이메일</th>
                 <td th:text="${adminSubDTOList.email}"></td>
             </tr>
@@ -79,37 +81,30 @@
             <tr>
                 <th scope="row" >KDT 과정 수강 이력</th>
                 <td th:text="${adminSubDTOList.kdt_process}"></td>
-                <th scope="row">국민취업지원제도 참여 경험</th>
-                <td th:text="${adminSubDTOList.workup}"></td>
+                <th scope="row">참여 경로</th>
+                <td th:text="${adminSubDTOList.route}"></td>
             </tr>
             <tr>
-                <td colspan="4" class="view_text">
+                <th scope="row" >1번 문항</th>
+                <td colspan="3" class="view_text">
                     <p>[[${adminSubDTOList.paper1}]]</p>
-<!--                    <textarea title="내용" id="content1" name="contents" th:text="${adminSubDTOList.paper1}" readonly></textarea>-->
                 </td>
             </tr>
             <tr>
-                <td colspan="4" class="view_text">
+                <th scope="row" >2번 문항</th>
+                <td colspan="3" class="view_text">
                     <p>[[${adminSubDTOList.paper2}]]</p>
-<!--                    <textarea title="내용" id="content2" name="contents" th:text="${adminSubDTOList.paper2}" readonly></textarea>-->
                 </td>
             </tr>
             <tr>
-                <td colspan="4" class="view_text">
+                <th scope="row" >3번 문항</th>
+                <td colspan="3" class="view_text">
                     <p>[[${adminSubDTOList.paper3}]]</p>
-<!--                    <textarea title="내용" id="content3" name="contents" th:text="${adminSubDTOList.paper3}" readonly></textarea>-->
                 </td>
-            </tr>
-            <tr>
-                <td colspan="4" class="view_text">
-                    <p>[[${adminSubDTOList.route}]]</p>
-<!--                    <textarea title="내용" id="content4" name="contents" th:text="${adminSubDTOList.route}" readonly></textarea>-->
-                </td>
-            </tr>
             </tr>
             </tbody>
         </table>
-        <div class="btn-group mt-3" style="padding-bottom: 40px;">
+        <div class="btn-group mt-3 button_course_1">
             <a class="course_button" th:href="@{/adminSubject/list}" style="color: #fff; margin-top: 50px;">목록</a>
         </div>
 
@@ -128,7 +123,9 @@
     </div>
 </main>
 
-<th:block th:replace="include/footer :: footer"></th:block>
+<!-- ======= Footer ======= -->
+<th:block th:replace="~{include/footer :: footer}"></th:block>
+<!-- End Footer -->
 
 </body>
 </html>

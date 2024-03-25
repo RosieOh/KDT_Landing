@@ -15,4 +15,6 @@ public interface ApplyService {
     public boolean emailCheck(String email) throws Exception;
 
 
+
+
 }
