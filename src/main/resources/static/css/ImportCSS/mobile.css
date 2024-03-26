@@ -222,12 +222,10 @@
     .iconP img {
         width: 80%;
     }
+    .faq {
+        font-size: 14px;
+    }
 }
-
-
-
-
-
 
 
 @media (max-width:767px) {
@@ -315,7 +313,6 @@
         max-width: 358px;
         border-radius: 20px;
         height: auto;
-        margin: 1rem;
     }
 
     .radius1_cur_re {
@@ -394,7 +391,6 @@
         width: 100%;
         border-radius: 20px;
         height: auto;
-        margin: 1rem;
     }
 
     .multiline_box_1 {

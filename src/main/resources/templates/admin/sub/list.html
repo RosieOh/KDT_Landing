@@ -32,19 +32,22 @@
                 <table class="table1 is-centered is-fullwidth" id="myTable1" >
                     <thead>
                     <tr>
-                        <th class="item1" scope="col" style="text-align: center">번호</th>
-                        <th class="item2" scope="col" style="text-align: center">신청 과목</th>
-                        <th class="item3" scope="col" style="text-align: center">성명</th>
-                        <th class="item4" scope="col" style="text-align: center">이메일</th>
-                        <th class="item5" scope="col" style="text-align: center">전화번호</th>
-                        <th class="item6" scope="col" style="text-align: center">신청일자</th>
-
+                        <th class="item1" scope="col">번호</th>
+                        <th class="item2" scope="col">신청 과목</th>
+                        <th class="item3" scope="col">성명</th>
+                        <th class="item4" scope="col">이메일</th>
+                        <th class="item5" scope="col">전화번호</th>
+                        <th class="item6" scope="col">신청일자</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="subject, num : ${adminSubDTOList}">
                         <td class="item_td" th:text="${num.count}"></td>
-                        <td class="item_td" th:text="${subject.course}"></td>
+                        <td class="item_td" th:text="${subject.course}">
+                            <span th:if="${subject.course eq 'FULLSTACK'}">풀스택</span>
+                            <span th:if="${subject.course eq 'BIGDATA'}">빅데이터</span>
+                            <span th:if="${subject.course eq 'PM'}">PM</span>
+                        </td>
                         <td class="item_td"><a th:href="|@{/adminSubject/read(no=${subject.no})}|" class="text-decoration-none">[[${subject.name}]]</a></td>
                         <td class="item_td" th:text="${subject.email}"></td>
                         <td class="item_td" th:text="${subject.tel}"></td>

@@ -158,7 +158,7 @@ $(document).ready(function () {
     }
     if (content.length > 250) {
       $(this).val($(this).val().substring(0, 250));
-      alert("글자수는 500자까지 입력 가능합니다.");
+      alert("글자수는 250자까지 입력 가능합니다.");
     }
   });
 });
@@ -174,7 +174,7 @@ $(document).ready(function () {
     }
     if (content.length > 250) {
       $(this).val($(this).val().substring(0, 250));
-      alert("글자수는 500자까지 입력 가능합니다.");
+      alert("글자수는 250자까지 입력 가능합니다.");
     }
   });
 });
@@ -190,37 +190,8 @@ $(document).ready(function () {
     }
     if (content.length > 250) {
       $(this).val($(this).val().substring(0, 250));
-      alert("글자수는 500자까지 입력 가능합니다.");
+      alert("글자수는 250자까지 입력 가능합니다.");
     }
   });
-});
-
-// header burger
-(function () {
-  var burger = document.querySelector(".burger");
-  var menu = document.querySelector("#" + burger.dataset.target);
-  burger.addEventListener("click", function () {
-    burger.classList.toggle("is-active");
-    menu.classList.toggle("is-active");
-  });
-})();
-
-// carousel
-const prevButton = document.querySelector('.prev');
-const nextButton = document.querySelector('.next');
-
-let index = 0;
-
-prevButton.addEventListener('click', () => {
-  if (index === 0) return;
-  index -= 1;
-  carousel.style.transform= `translate3d(-${500 * index}px, 0, 0`;
-});
-
-nextButton.addEventListener('click', () => {
-  if (index === 2) return;
-  index += 1;
-
-  carousel.style.transform= `translate3d(-${500 * index}px, 0, 0`;
 });
 

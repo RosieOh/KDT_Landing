@@ -14,28 +14,188 @@
   </head>
   <body>
     <th:block th:replace="~{include/header :: header}"></th:block>
+
+    <script>
+      const slide_index = document.querySelector(".slide_index");
+      let slide_indexWidth = slide_index.clientWidth;
+      // let slide_indexWidth = 1400;
+      console.log(slide_index)
+      console.log(slide_indexWidth)
+
+      const prevBtn_index = document.querySelector(".slide_index_prev_button");
+      const nextBtn_index = document.querySelector(".slide_index_next_button");
+
+      let slide_indexItems = document.querySelectorAll(".slide_index_item");
+      const maxslide_index = slide_indexItems.length;
+
+      let currslide_index = 1;
+
+      // 페이지네이션 생성
+      const pagination_index = document.querySelector(".slide_index_pagination_index");
+
+      for (let i = 0; i < maxslide_index; i++) {
+        if (i === 0) pagination_index.innerHTML += `<li class="active">•</li>`;
+        else pagination_index.innerHTML += `<li>•</li>`;
+      }
+
+      const pagination_indexItems_index = document.querySelectorAll(
+              ".slide_index_pagination_index > li",
+      );
+
+      // 무한 슬라이드를 위해 start, end 슬라이드 복사하기
+      const startslide_index = slide_indexItems[0];
+      const endslide_index = slide_indexItems[slide_indexItems.length - 1];
+      const startElem_index = document.createElement("div");
+      const endElem_index = document.createElement("div");
+
+      endslide_index.classList.forEach((c) => endElem_index.classList.add(c));
+      endElem_index.innerHTML = endslide_index.innerHTML;
+
+      startslide_index.classList.forEach((c) => startElem_index.classList.add(c));
+      startElem_index.innerHTML = startslide_index.innerHTML;
+
+      slide_indexItems[0].before(endElem_index);
+      slide_indexItems[slide_indexItems.length - 1].after(startElem_index);
+
+      slide_indexItems = document.querySelectorAll(".slide_index_item");
+      let offset_index = slide_indexWidth + currslide_index;
+      slide_indexItems.forEach((i) => {
+        i.setAttribute("style", `left: ${-offset_index}px`);
+      });
+
+      function nextMove_index() {
+        currslide_index++;
+        if (currslide_index <= maxslide_index) {
+          const offset_index = slide_indexWidth * currslide_index;
+          slide_indexItems.forEach((i) => {
+            i.setAttribute("style", `left: ${-offset_index}px`);
+          });
+          pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+          pagination_indexItems_index[currslide_index - 1].classList.add("active");
+        } else {
+          currslide_index = 0;
+          let offset_index = slide_indexWidth * currslide_index;
+          slide_indexItems.forEach((i) => {
+            i.setAttribute("style", `transition: ${0}s; left: ${-offset_index}px`);
+          });
+          currslide_index++;
+          offset_index = slide_indexWidth * currslide_index;
+          setTimeout(() => {
+            slide_indexItems.forEach((i) => {
+              i.setAttribute("style", `transition: ${0.15}s; left: ${-offset_index}px`);
+            });
+          }, 0);
+          pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+          pagination_indexItems_index[currslide_index - 1].classList.add("active");
+        }
+        console.log(offset_index)
+
+      }
+
+      function prevMove_index() {
+        currslide_index--;
+        if (currslide_index > 0) {
+          const offset_index = slide_indexWidth * currslide_index;
+          slide_indexItems.forEach((i) => {
+            i.setAttribute("style", `left: ${-offset_index}px`);
+          });
+          pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+          pagination_indexItems_index[currslide_index - 1].classList.add("active");
+        } else {
+          currslide_index = maxslide_index + 1;
+          let offset_index = slide_indexWidth * currslide_index;
+          slide_indexItems.forEach((i) => {
+            i.setAttribute("style", `transition: ${0}s; left: ${-offset_index}px`);
+          });
+          currslide_index--;
+          offset_index = slide_indexWidth * currslide_index;
+          setTimeout(() => {
+            slide_indexItems.forEach((i) => {
+              i.setAttribute("style", `transition: ${0.15}s; left: ${-offset_index}px`);
+            });
+          }, 0);
+          pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+          pagination_indexItems_index[currslide_index - 1].classList.add("active");
+        }
+      }
+
+      nextBtn_index.addEventListener("click", () => {
+        nextMove_index();
+      });
+      prevBtn_index.addEventListener("click", () => {
+        prevMove_index();
+      });
+
+      window.addEventListener("resize", () => {
+        slide_indexWidth = slide_index.clientWidth;
+      });
+
+      for (let i = 0; i < maxslide_index; i++) {
+        pagination_indexItems_index[i].addEventListener("click", () => {
+          currslide_index = i + 1;
+          const offset_index = slide_indexWidth * currslide_index;
+          slide_indexItems.forEach((i) => {
+            i.setAttribute("style", `left: ${-offset_index}px`);
+          });
+          pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
+          pagination_indexItems_index[currslide_index - 1].classList.add("active");
+        });
+      }
+
+      let startPoint_index = 0;
+      let endPoint_index = 0;
+
+      // PC 클릭 이벤트 (드래그)
+      slide_index.addEventListener("mousedown", (e) => {
+        startPoint_index = e.pageX; // 마우스 드래그 시작 위치 저장
+      });
+
+      slide_index.addEventListener("mouseup", (e) => {
+        endPoint_index = e.pageX; // 마우스 드래그 끝 위치 저장
+        if (startPoint_index < endPoint_index) {
+          // 마우스가 오른쪽으로 드래그 된 경우
+          prevMove_index();
+        } else if (startPoint_index > endPoint_index) {
+          // 마우스가 왼쪽으로 드래그 된 경우
+          nextMove_index();
+        }
+      });
+
+      // 모바일 터치 이벤트 (스와이프)
+      slide_index.addEventListener("touchstart", (e) => {
+        startPoint_index = e.touches[0].pageX; // 터치가 시작되는 위치 저장
+      });
+      slide_index.addEventListener("touchend", (e) => {
+        endPoint_index = e.changedTouches[0].pageX; // 터치가 끝나는 위치 저장
+        if (startPoint_index < endPoint_index) {
+          // 오른쪽으로 스와이프 된 경우
+          prevMove_index();
+        } else if (startPoint_index > endPoint_index) {
+          // 왼쪽으로 스와이프 된 경우
+          nextMove_index();
+        }
+      });
+
+      // 기본적으로 슬라이드 루프 시작하기
+      let loopInterval_index = setInterval(() => {
+        nextMove_index();
+      }, 4500);
+
+      // 슬라이드에 마우스가 올라간 경우 루프 멈추기
+      slide_index.addEventListener("mouseover", () => {
+        clearInterval(loopInterval_index);
+      });
+
+      // 슬라이드에서 마우스가 나온 경우 루프 재시작하기
+      slide_index.addEventListener("mouseout", () => {
+        loopInterval_index = setInterval(() => {
+          nextMove_index();
+        }, 4500);
+      });
+
+    </script>
     <div class="main">
-      <!-- banner -->
-<!--      <section class="banner" id="banner">-->
-<!--        <section class="container">-->
-<!--          <div class="banner_box">-->
-<!--            <h4 class="title_sub">천재IT교육센터</h4>-->
-<!--            <h1 class="banner_title title_big">에듀테크 교육과정</h1>-->
-<!--            <div class="banner_btn">-->
-<!--              <button type="button" id="ban_btn" class="button">사전예약신청 ></button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </section>-->
-<!--      </section>-->
-
-
-<!--      <div class="image_absolute_wrap">-->
-<!--        <div class="button_group">-->
-<!--          <div class="slide_index_prev_button slide_index_button">◀</div>-->
-<!--          <div class="slide_index_next_button slide_index_button">▶</div>-->
-<!--        </div>-->
-<!--      </div>-->
-        <div class="slide_index slide_index_wrap">
+        <div class="slide_index slide_index_wrap" id="banner">
           <div class="slide_index_item" >
             <div class="banner">
               <img th:src="@{/picture/common/index_banner_bigdata.png}" alt="bigdata banner" class="index_banner">
@@ -84,183 +244,13 @@
               </div>
             </div>
           </div>
+          <div class="button_wrap">
+            <div class="slide_index_prev_button slide_button">◀</div>
+            <div class="slide_index_next_button slide_button">▶</div>
+          </div>
           <ul class="slide_index_pagination"></ul>
+
         </div>
-
-      <script>
-
-        const slide_index = document.querySelector(".slide_index");
-        let slide_indexWidth = slide_index.clientWidth;
-
-        const prevBtn_index = document.querySelector(".slide_index_prev_button");
-        const nextBtn_index = document.querySelector(".slide_index_next_button");
-
-        let slide_indexItems = document.querySelectorAll(".slide_index_item");
-        const maxslide_index = slide_indexItems.length;
-
-        let currslide_index = 1;
-
-        // 페이지네이션 생성
-        const pagination_index = document.querySelector(".slide_index_pagination_index");
-
-        for (let i = 0; i < maxslide_index; i++) {
-          if (i === 0) pagination_index.innerHTML += `<li class="active">•</li>`;
-          else pagination_index.innerHTML += `<li>•</li>`;
-        }
-
-        const pagination_indexItems_index = document.querySelectorAll(
-                ".slide_index_pagination_index > li",
-        );
-
-        // 무한 슬라이드를 위해 start, end 슬라이드 복사하기
-        const startslide_index = slide_indexItems[0];
-        const endslide_index = slide_indexItems[slide_indexItems.length - 1];
-        const startElem_index = document.createElement("div");
-        const endElem_index = document.createElement("div");
-
-        endslide_index.classList.forEach((c) => endElem_index.classList.add(c));
-        endElem_index.innerHTML = endslide_index.innerHTML;
-
-        startslide_index.classList.forEach((c) => startElem_index.classList.add(c));
-        startElem_index.innerHTML = startslide_index.innerHTML;
-
-        slide_indexItems[0].before(endElem_index);
-        slide_indexItems[slide_indexItems.length - 1].after(startElem_index);
-
-        slide_indexItems = document.querySelectorAll(".slide_index_item");
-        let offset_index = slide_indexWidth + currslide_index;
-        slide_indexItems.forEach((i) => {
-          i.setAttribute("style", `left: ${-offset_index}px`);
-        });
-
-        function nextMove_index() {
-          currslide_index++;
-          if (currslide_index <= maxslide_index) {
-            const offset_index = slide_indexWidth * currslide_index;
-            slide_indexItems.forEach((i) => {
-              i.setAttribute("style", `left: ${-offset_index}px`);
-            });
-            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
-            pagination_indexItems_index[currslide_index - 1].classList.add("active");
-          } else {
-            currslide_index = 0;
-            let offset_index = slide_indexWidth * currslide_index;
-            slide_indexItems.forEach((i) => {
-              i.setAttribute("style", `transition: ${0}s; left: ${-offset_index}px`);
-            });
-            currslide_index++;
-            offset_index = slide_indexWidth * currslide_index;
-            setTimeout(() => {
-              slide_indexItems.forEach((i) => {
-                i.setAttribute("style", `transition: ${0.15}s; left: ${-offset_index}px`);
-              });
-            }, 0);
-            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
-            pagination_indexItems_index[currslide_index - 1].classList.add("active");
-          }
-        }
-        function prevMove_index() {
-          currslide_index--;
-          if (currslide_index > 0) {
-            const offset_index = slide_indexWidth * currslide_index;
-            slide_indexItems.forEach((i) => {
-              i.setAttribute("style", `left: ${-offset_index}px`);
-            });
-            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
-            pagination_indexItems_index[currslide_index - 1].classList.add("active");
-          } else {
-            currslide_index = maxslide_index + 1;
-            let offset_index = slide_indexWidth * currslide_index;
-            slide_indexItems.forEach((i) => {
-              i.setAttribute("style", `transition: ${0}s; left: ${-offset_index}px`);
-            });
-            currslide_index--;
-            offset_index = slide_indexWidth * currslide_index;
-            setTimeout(() => {
-              slide_indexItems.forEach((i) => {
-                i.setAttribute("style", `transition: ${0.15}s; left: ${-offset_index}px`);
-              });
-            }, 0);
-            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
-            pagination_indexItems_index[currslide_index - 1].classList.add("active");
-          }
-        }
-
-        nextBtn_index.addEventListener("click", () => {
-          nextMove_index();
-        });
-        prevBtn_index.addEventListener("click", () => {
-          prevMove_index();
-        });
-
-        window.addEventListener("resize", () => {
-          slide_indexWidth = slide_index.clientWidth;
-        });
-
-        for (let i = 0; i < maxslide_index; i++) {
-          pagination_indexItems_index[i].addEventListener("click", () => {
-            currslide_index = i + 1;
-            const offset_index = slide_indexWidth * currslide_index;
-            slide_indexItems.forEach((i) => {
-              i.setAttribute("style", `left: ${-offset_index}px`);
-            });
-            pagination_indexItems_index.forEach((i) => i.classList.remove("active"));
-            pagination_indexItems_index[currslide_index - 1].classList.add("active");
-          });
-        }
-
-        let startPoint_index = 0;
-        let endPoint_index = 0;
-
-        // PC 클릭 이벤트 (드래그)
-        slide_index.addEventListener("mousedown", (e) => {
-          startPoint_index = e.pageX; // 마우스 드래그 시작 위치 저장
-        });
-
-        slide_index.addEventListener("mouseup", (e) => {
-          endPoint_index = e.pageX; // 마우스 드래그 끝 위치 저장
-          if (startPoint_index < endPoint_index) {
-            // 마우스가 오른쪽으로 드래그 된 경우
-            prevMove_index();
-          } else if (startPoint_index > endPoint_index) {
-            // 마우스가 왼쪽으로 드래그 된 경우
-            nextMove_index();
-          }
-        });
-
-        // 모바일 터치 이벤트 (스와이프)
-        slide_index.addEventListener("touchstart", (e) => {
-          startPoint_index = e.touches[0].pageX; // 터치가 시작되는 위치 저장
-        });
-        slide_index.addEventListener("touchend", (e) => {
-          endPoint_index = e.changedTouches[0].pageX; // 터치가 끝나는 위치 저장
-          if (startPoint_index < endPoint_index) {
-            // 오른쪽으로 스와이프 된 경우
-            prevMove_index();
-          } else if (startPoint_index > endPoint_index) {
-            // 왼쪽으로 스와이프 된 경우
-            nextMove_index();
-          }
-        });
-
-        // 기본적으로 슬라이드 루프 시작하기
-        let loopInterval_index = setInterval(() => {
-          nextMove_index();
-        }, 4500);
-
-        // 슬라이드에 마우스가 올라간 경우 루프 멈추기
-        slide_index.addEventListener("mouseover", () => {
-          clearInterval(loopInterval_index);
-        });
-
-        // 슬라이드에서 마우스가 나온 경우 루프 재시작하기
-        slide_index.addEventListener("mouseout", () => {
-          loopInterval_index = setInterval(() => {
-            nextMove_index();
-          }, 4500);
-        });
-
-      </script>
 
 
 
@@ -598,7 +588,9 @@
 
       <section class="container">
         <div class="title-body text_center">
-          <h1 class="title_big">F . A . Q
+          <h4 class="small_title">F.A.Q</h4>
+          <h1 class="title_big">
+            천재IT교육센터 F.A.Q
           </h1>
         </div>
         <div class="faq_content">

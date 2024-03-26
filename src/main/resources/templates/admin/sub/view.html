@@ -32,14 +32,10 @@
     <div class="container back_white" style="padding-top: 40px;">
         <table class="board_detail">
             <colgroup>
-                <col width="20%"/>
-                <col width="35%"/>
-                <col width="20%"/>
-                <col width="35%"/>
-                <col width="20%"/>
-                <col width="35%"/>
-                <col width="20%"/>
-                <col width="35%"/>
+                <col width="15%"/>
+                <col width="30%"/>
+                <col width="15%"/>
+                <col width="30%"/>
             </colgroup>
             <tbody>
             <tr>
@@ -56,15 +52,21 @@
             </tr>
             <tr>
                 <th scope="row">과정명</th>
-                  <td th:text="${adminSubDTOList.course}"></td>
-                <th scope="row">이메일</th>
-                <td th:text="${adminSubDTOList.email}"></td>
+<!--                 <td th:text="${adminSubDTOList.course}">-->
+                    <td>
+                     [[${adminSubDTOList.course}]]
+                      <span th:if="${adminSubDTOList.course eq 'FULLSTACK'}">풀스택</span>
+                      <span th:if="${adminSubDTOList.course eq 'BIGDATA'}">빅데이터</span>
+                      <span th:if="${adminSubDTOList.course eq 'PM'}">PM</span>
+                  </td>
+                <th scope="row">내일 배움 카드 여부</th>
+                <td th:text="${adminSubDTOList.studen_card}"></td>
             </tr>
             <tr>
                 <th scope="row">연락처</th>
                 <td th:text="${adminSubDTOList.tel}"></td>
-                <th scope="row">최종학력</th>
-                <td th:text="${adminSubDTOList.degree}"></td>
+                <th scope="row" >KDT 과정 수강 이력</th>
+                <td th:text="${adminSubDTOList.kdt_process}"></td>
             </tr>
             <tr>
                 <th scope="row">나이</th>
@@ -73,19 +75,20 @@
                 <td th:text="${adminSubDTOList.graduation_degree}"></td>
             </tr>
             <tr>
-                <th scope="row">내일 배움 카드 여부</th>
-                <td th:text="${adminSubDTOList.studen_card}"></td>
-                <th scope="row">국민취업지원제도 참여 경험</th>
+                <th scope="row">이메일</th>
+                <td th:text="${adminSubDTOList.email}"></td>
+                <th scope="row">국민취업지원제도</th>
                 <td th:text="${adminSubDTOList.workup}"></td>
             </tr>
             <tr>
-                <th scope="row" >KDT 과정 수강 이력</th>
-                <td th:text="${adminSubDTOList.kdt_process}"></td>
+                <th scope="row">최종학력</th>
+                <td th:text="${adminSubDTOList.degree}"></td>
+
                 <th scope="row">참여 경로</th>
                 <td th:text="${adminSubDTOList.route}"></td>
             </tr>
             <tr>
-                <th scope="row" >1번 문항</th>
+                <th scope="row">1번 문항</th>
                 <td colspan="3" class="view_text">
                     <p>[[${adminSubDTOList.paper1}]]</p>
                 </td>
@@ -97,7 +100,7 @@
                 </td>
             </tr>
             <tr>
-                <th scope="row" >3번 문항</th>
+                <th scope="row">3번 문항</th>
                 <td colspan="3" class="view_text">
                     <p>[[${adminSubDTOList.paper3}]]</p>
                 </td>
