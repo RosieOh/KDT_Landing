@@ -554,7 +554,7 @@
     }
     .image_absolute_30 {
         top: -1em;
-        left: -7em;
+        left: -6em;
         width: 6em;
     }
     .image_absolute_32 {
@@ -566,6 +566,9 @@
 }
 
 @media (max-width:469px) {
+    .image_absolute_24 {
+        display: none;
+    }
     .image_absolute_9 {
         top: 6em
     }
