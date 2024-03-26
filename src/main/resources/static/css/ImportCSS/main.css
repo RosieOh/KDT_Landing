@@ -118,6 +118,7 @@
   flex-wrap: nowrap;
   width: 100%;
   background-color: var(--c-white);
+  justify-content: space-between;
 }
 
 

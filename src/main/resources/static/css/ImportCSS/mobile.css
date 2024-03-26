@@ -225,6 +225,14 @@
     .faq {
         font-size: 14px;
     }
+    .sign_form {
+        width: 100%;
+        padding: 30px 50px 30px;
+    }
+
+    .sign_form p {
+        font-size: 14px;
+    }
 }
 
 
@@ -285,9 +293,7 @@
     .member{
         width: 100%;
     }
-    .sign_form {
-        width: 100%;
-    }
+
 
     .radius1_cur {
         border-radius: 20px;
