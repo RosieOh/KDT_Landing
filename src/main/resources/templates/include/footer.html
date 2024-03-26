@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <body>
     <th:block th:fragment="footer">
+      <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
       <a href="#banner" class="gotop" id="gotop">▲</a>
       <div class="bottom_banner">
         <section class="container">
@@ -16,7 +17,7 @@
               </div>
             </div>
             <div class="bottom_banner_btn">
-              <a th:href="@{/subSign_big}" class="bottom_btn">지금 지원하기 ></a>
+              <button type="button" class="bottom_btn" id="ban_btn">지금 지원하기 ></button>
             </div>
           </div>
         </section>
