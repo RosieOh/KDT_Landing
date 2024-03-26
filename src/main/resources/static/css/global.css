@@ -8,6 +8,12 @@
 @import url("ImportCSS/image_absolute.css");
 @import url("ImportCSS/mobile.css");
 @import url("ImportCSS/table.css");
+@import url("ImportCSS/kyojin.css");
+@import url("ImportCSS/kyojin_mobile.css");
+@import url("ImportCSS/kyojin_tablet.css");
+@import url("ImportCSS/taehoon.css");
+@import url("ImportCSS/taehoon_mobile.css");
+@import url("ImportCSS/taehoon_tablet.css");
 
 :root {
   --c-main: rgba(85, 59, 243, 1);

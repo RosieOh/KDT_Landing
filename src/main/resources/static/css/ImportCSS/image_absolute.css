@@ -2,49 +2,49 @@
 /* 공통 start */
 .image_absolute_wrap {
     position: relative;
-    max-width: 250px;
+    max-width: 280px;
     margin: 0 auto;
 }
 .image_absolute_1 {
     position: absolute;
-    top: 6em;
-    left: 15em;
-    width: 7em;
+    top: 6rem;
+    left: 15rem;
+    width: 7rem;
 }
 
 .image_absolute_5 {
     position: absolute;
-    bottom: -16em;
-    right: -26em;
-    width: 11em;
+    bottom: -16rem;
+    right: -26rem;
+    width: 11rem;
 }
 
 .image_absolute_8 {
     position: absolute;
-    top: -1em;
-    left: 10em;
-    width: 10em;
+    top: -1rem;
+    left: 10rem;
+    width: 10rem;
 }
 
 .image_absolute_14 {
     position: absolute;
-    top: 9em;
-    left: 48em;
-    width: 7em;
+    top: 9rem;
+    left: 48rem;
+    width: 7rem;
     z-index: 2;
 }
 .image_absolute_15 {
     position: absolute;
-    top: 38em;
-    left: -41em;
-    width: 8em;
+    top: 38rem;
+    left: -41rem;
+    width: 8rem;
     z-index: 2;
 }
 .image_absolute_33 {
     position: absolute;
-    top: 18em;
-    left: -48em;
-    width: 20em;
+    top: 18rem;
+    left: -48rem;
+    width: 20rem;
 }
 
 /* 공통 end */
@@ -53,35 +53,35 @@
 .image_absolute_28 {
     position: absolute;
     top: 0;
-    left: 10em;
-    width: 17em;
+    left: 10rem;
+    width: 17rem;
     z-index: -1;
 }
 .image_absolute_29 {
     position: absolute;
-    top: -29em;
-    left: -45em;
-    width: 19em;
+    top: -29rem;
+    left: -45rem;
+    width: 19rem;
     z-index: 0;
 }
 .image_absolute_30 {
     position: absolute;
-    top: -4em;
-    left: -20em;
-    width: 10em;
+    top: -4rem;
+    left: -20rem;
+    width: 10rem;
     z-index: 2;
 }
 .image_absolute_31 {
     position: absolute;
-    top: 10em;
-    left: -45em;
-    width: 11em;
+    top: 10rem;
+    left: -45rem;
+    width: 11rem;
 }
 .image_absolute_32 {
     position: absolute;
-    top: 5em;
-    left: 18em;
-    width: 13em;
+    top: 5rem;
+    left: 18rem;
+    width: 13rem;
     z-index: -1;
     opacity: 0.8;
 }
@@ -94,26 +94,26 @@
 
 .image_absolute_2 {
     position: absolute;
-    top: 7.5em;
-    left: 19em;
-    width: 15em;
+    top: 7.5rem;
+    left: 19rem;
+    width: 15rem;
     opacity: 0.9;
     z-index: -1;
 }
 
 .image_absolute_3 {
     position: absolute;
-    top: 18em;
-    right: -23em;
-    width: 6em;
+    top: 18rem;
+    right: -23rem;
+    width: 6rem;
     z-index: 2;
 }
 
 .image_absolute_4 {
     position: absolute;
-    bottom: 14em;
-    left: -30em;
-    width: 15em;
+    bottom: 14rem;
+    left: -30rem;
+    width: 15rem;
     z-index: 0;
     opacity: 0.8;
 }
@@ -121,17 +121,17 @@
 
 .image_absolute_6 {
     position: absolute;
-    top: 9em;
-    right: -34em;
-    width: 9em;
+    top: 9rem;
+    right: -34rem;
+    width: 9rem;
     z-index: 2;
 }
 
 .image_absolute_7 {
     position: absolute;
-    top: -17em;
-    left: 4em;
-    width: 5em;
+    top: -17rem;
+    left: 4rem;
+    width: 5rem;
     z-index: 1;
 }
 
@@ -142,47 +142,47 @@
 
 .image_absolute_9 {
     position: absolute;
-    top: 7.5em;
-    left: 36em;
-    width: 15em;
+    top: 7.5rem;
+    left: 36rem;
+    width: 15rem;
     z-index: -1;
     opacity: 0.9;
 }
 .image_absolute_10 {
     position: absolute;
-    top: 15em;
-    right: -36em;
-    width: 7em;
+    top: 15rem;
+    right: -36rem;
+    width: 7rem;
     z-index: 2;
 }
 
 .image_absolute_11 {
     position: absolute;
-    top: 5em;
-    left: -18em;
-    width: 3em;
+    top: 5rem;
+    left: -18rem;
+    width: 3rem;
     z-index: 2;
 }
 .image_absolute_12 {
     position: absolute;
-    top: 5em;
-    left: 32em;
-    width: 3em;
+    top: 5rem;
+    left: 32rem;
+    width: 3rem;
     z-index: 2;
 }
 .image_absolute_13 {
     position: absolute;
-    top: 9.5em;
-    left: -2em;
-    width: 20em;
+    top: 9.5rem;
+    left: -2rem;
+    width: 20rem;
     z-index: 2;
     opacity: 0.9;
 }
 .image_absolute_27 {
     position: absolute;
-    top: 5.5em;
-    left: 5em;
-    width: 16em;
+    top: 5.5rem;
+    left: 5rem;
+    width: 16rem;
     z-index: 1;
     opacity: 0.9;
 }
@@ -194,110 +194,110 @@
 /* PM start */
 .image_absolute_16 {
     position: absolute;
-    top: 7.5em;
-    left: 21.5em;
-    width: 14em;
+    top: 7.5rem;
+    left: 21.5rem;
+    width: 14rem;
     z-index: -1;
 }
 .image_absolute_17 {
     position: absolute;
-    top: -46em;
+    top: -46rem;
     left: -133px;
-    width: 3em;
+    width: 3rem;
     z-index: 1;
 }
 .image_absolute_18 {
     position: absolute;
-    top: -46em;
+    top: -46rem;
     left: 334px;
-    width: 3em;
+    width: 3rem;
     z-index: 1;
 }
 .image_absolute_19 {
     position: absolute;
-    top: -32em;
-    left: -23em;
-    width: 8em;
+    top: -32rem;
+    left: -23rem;
+    width: 8rem;
     z-index: 1;
 }
 .image_absolute_20 {
     position: absolute;
-    top: -32em;
-    left: 32em;
-    width: 8em;
+    top: -32rem;
+    left: 32rem;
+    width: 8rem;
     z-index: 1;
 }
 
 .image_absolute_21 {
     position: absolute;
-    top: -32em;
-    left: 4em;
-    width: 8em;
+    top: -32rem;
+    left: 4rem;
+    width: 8rem;
     z-index: 1;
 }
 .image_absolute_22 {
     position: absolute;
-    top: 2em;
-    left: 22em;
-    width: 6em;
+    top: 2rem;
+    left: 22rem;
+    width: 6rem;
     z-index: 2;
 }
 .image_absolute_23 {
     position: absolute;
-    top: -27em;
-    left: -23em;
-    width: 7em;
+    top: -27rem;
+    left: -23rem;
+    width: 7rem;
     z-index: 1;
 }
 .image_absolute_24 {
     position: absolute;
-    top: 3em;
-    left: 36.5em;
-    width: 4em;
+    top: 3rem;
+    left: 36.5rem;
+    width: 4rem;
 }
 .image_absolute_25 {
     position: absolute;
-    top: -46em;
-    left: -23em;
-    width: 10em;
+    top: -46rem;
+    left: -23rem;
+    width: 10rem;
     z-index: 2;
 }
 .image_absolute_26 {
     position: absolute;
-    top: -46em;
-    left: 29em;
-    width: 10em;
+    top: -46rem;
+    left: 29rem;
+    width: 10rem;
     z-index: 2;
 }
 
 /* PM end */
 
-
+/* 반응형 */
 
 @media (max-width:1399px) {
     .image_absolute_6 {
-        top: 30em;
-        right: -14em;
-        width: 7em;
+        top: 30rem;
+        right: -14rem;
+        width: 7rem;
     }
     .image_absolute_7 {
-        top: -18em;
-        left: -18em;
-        width: 5em;
+        top: -18rem;
+        left: -18rem;
+        width: 5rem;
     }
     .image_absolute_10 {
         display: none;
     }
 
     .image_absolute_14 {
-        top: 11em;
-        left: 21em;
-        width: 5em;
+        top: 11rem;
+        left: 21rem;
+        width: 5rem;
     }
     .image_absolute_15 {
-        top: 58em;
-        left: -11em;
-        width: 5em;
+        top: 58rem;
+        left: -11rem;
+        width: 5rem;
     }
 
     .image_absolute_17 {
@@ -315,267 +315,242 @@
         display: none;
     }
     .image_absolute_21 {
-        top: -35em
-    }
-}
-@media (max-width:993px) {
-    .image_absolute_3 {
-        top: 16em;
-        right: -3em;
+        top: -35rem
     }
 }
 
-@media (max-width:979px) {
+
+@media (max-width:1023px) {
+    .image_absolute_1 {
+        top: 5rem;
+        left: 13rem;
+        width: 6rem;
+    }
+    .image_absolute_2 {
+        left: 15rem;
+        width: 12rem;
+    }
+    .image_absolute_8 {
+        top: -0.5rem;
+        left: 8rem;
+        width: 8rem;
+    }
+    .image_absolute_9 {
+        left: 27rem;
+        width: 12rem;
+    }
+    .image_absolute_11 {
+
+        left: -12rem;
+        width: 2rem;
+    }
+    .image_absolute_12 {
+        left: 25rem;
+        width: 2rem;
+    }
+    .image_absolute_13 {
+        top: 8rem;
+        left: 0;
+        width: 13rem;
+    }
+    .image_absolute_16 {
+        left: 16.5rem;
+        width: 11rem;
+    }
+    .image_absolute_22 {
+        top: 2rem;
+        left: 18rem;
+        width: 5rem;
+    }
+    .image_absolute_24 {
+        left: 29rem;
+        width: 3rem;
+    }
+    .image_absolute_25 {
+        top: -36rem;
+        left: -9rem;
+        width: 8rem;
+    }
+
+    .image_absolute_26 {
+        top: -36rem;
+        left: 16rem;
+        width: 8rem;
+    }
+    .image_absolute_27 {
+        top: 5rem;
+        left: 5rem;
+        width: 13rem;
+    }
+
+    .image_absolute_28 {
+        top: 1rem;
+        left: 9rem;
+        width: 12rem;
+    }
+
+    .image_absolute_30 {
+        top: -3rem;
+        left: -14rem;
+        width: 9rem;
+    }
+    .image_absolute_31 {
+       display: none;
+    }
+    .image_absolute_32 {
+        top: 6rem;
+        left: 14rem;
+        width: 9rem;
+    }
+    .image_absolute_3 {
+        top: 16rem;
+        right: -3rem;
+    }
+
     .image_absolute_4 {
         display: none;
     }
     .image_absolute_5 {
         display: none;
     }
-}
-
-@media (max-width:849px) {
     .image_absolute_6 {
-        top: 30em;
-        right: -5em;
-        width: 5em;
+        top: 30rem;
+        right: -5rem;
+        width: 5rem;
     }
     .image_absolute_7 {
-        top: -17em;
-        left: -5em;
-        width: 4em;
+        top: -17rem;
+        left: -5rem;
+        width: 4rem;
     }
     .image_absolute_23 {
-        top: -8em;
-        left: -4em;
-        width: 3em;
+        top: -8rem;
+        left: -4rem;
+        width: 3rem;
     }
+
 }
+
 
 
 @media (max-width:767px) {
+    .image_absolute_1 {
+        top: 4rem;
+        left: 12rem;
+        width: 5rem;
+    }
+    .image_absolute_2 {
+        left: 10rem;
+        width: 8rem;
+    }
+    .image_absolute_8 {
+        top: 0;
+        left: 5rem;
+        width: 6rem;
+    }
+    .image_absolute_9 {
+        left: 18rem;
+        width: 7.5rem;
+    }
     .image_absolute_11 {
-        top: 4em;
-        left: -4.5em;
-        width: 2em;
+        top: 4rem;
+        left: -4rem;
+        width: 1rem;
     }
     .image_absolute_12 {
-        top: 4em;
-        left: 18em;
-        width: 2em;
+        top: 4rem;
+        left: 18.5rem;
+        width: 1rem;
     }
     .image_absolute_13 {
-        top: 6em;
-        left: 3em;
-        width: 9em;
+        top: 6rem;
+        left: 3rem;
+        width: 8rem;
+    }
+    .image_absolute_14 {
+        top: 9rem;
+        left: 16rem;
+        width: 4rem;
+    }
+    .image_absolute_15 {
+        top: 61rem;
+        left: -4rem;
+        width: 3rem;
+    }
+    .image_absolute_16 {
+        left: 11rem;
+        width: 7rem;
+    }
+    .image_absolute_22 {
+        top: 3rem;
+        left: 14.5rem;
+    }
+    .image_absolute_24 {
+        top: 3.5rem;
+        left: 21.5rem;
+        width: 2rem;
+    }
+    .image_absolute_25 {
+        top: -22rem;
+        left: 0;
+        width: 4rem;
+    }
+    .image_absolute_26 {
+        top: -22rem;
+        left: 12rem;
+        width: 4rem;
+    }
+    .image_absolute_27 {
+        top: 4rem;
+        left: 6rem;
+        width: 8rem;
+    }
+
+    .image_absolute_28 {
+        top: 2rem;
+        left: 6rem;
+        width: 9rem;
+    }
+    .image_absolute_29 {
+        top: -26rem;
+        left: -14rem;
+    }
+    .image_absolute_30 {
+        top: -1rem;
+        left: -6rem;
+        width: 6rem;
+    }
+    .image_absolute_32 {
+        top: 5rem;
+        left: 9.5rem;
+        width: 6rem;
+    }
+    .image_absolute_11 {
+        top: 4rem;
+        left: -4.5rem;
+        width: 2rem;
+    }
+    .image_absolute_12 {
+        top: 4rem;
+        left: 18rem;
+        width: 2rem;
+    }
+    .image_absolute_13 {
+        top: 6rem;
+        left: 3rem;
+        width: 9rem;
     }
     .image_absolute_17 {
         top: -1514px;
         left: 104px;
-        width: 2.5em;
+        width: 2.5rem;
     }
     .image_absolute_18 {
         top: -1047px;
         left: 104px;
-        width: 2.5em;
+        width: 2.5rem;
     }
     .image_absolute_21 {
-        top: -39em;
-    }
-
-}
-@media (max-width:1099px) {
-    .image_absolute_1 {
-        top: 5em;
-        left: 13em;
-        width: 6em;
-    }
-    .image_absolute_2 {
-        left: 15em;
-        width: 12em;
-    }
-    .image_absolute_8 {
-        top: -0.5em;
-        left: 8em;
-        width: 8em;
-    }
-    .image_absolute_9 {
-        left: 27em;
-        width: 12em;
-    }
-    .image_absolute_11 {
-
-        left: -12em;
-        width: 2em;
-    }
-    .image_absolute_12 {
-        left: 25em;
-        width: 2em;
-    }
-    .image_absolute_13 {
-        top: 8em;
-        left: 0;
-        width: 13em;
-    }
-    .image_absolute_16 {
-        left: 16.5em;
-        width: 11em;
-    }
-    .image_absolute_22 {
-        top: 2em;
-        left: 18em;
-        width: 5em;
-    }
-    .image_absolute_24 {
-        left: 29em;
-        width: 3em;
-    }
-    .image_absolute_25 {
-        top: -36em;
-        left: -9em;
-        width: 8em;
-    }
-
-    .image_absolute_26 {
-        top: -36em;
-        left: 16em;
-        width: 8em;
-    }
-    .image_absolute_27 {
-        top: 5em;
-        left: 5em;
-        width: 13em;
-    }
-
-    .image_absolute_28 {
-        top: 1em;
-        left: 9em;
-        width: 12em;
-    }
-
-    .image_absolute_30 {
-        top: -3em;
-        left: -14em;
-        width: 9em;
-    }
-    .image_absolute_31 {
-       display: none;
-    }
-    .image_absolute_32 {
-        top: 6em;
-        left: 14em;
-        width: 9em;
-    }
-
-
-}
-
-@media (max-width:812px) {
-    .image_absolute_1 {
-        top: 4em;
-        left: 12em;
-        width: 5em;
-    }
-    .image_absolute_2 {
-        left: 10em;
-        width: 8em;
-    }
-    .image_absolute_8 {
-        top: 0;
-        left: 5em;
-        width: 6em;
-    }
-    .image_absolute_9 {
-        left: 18em;
-        width: 7.5em;
-    }
-    .image_absolute_11 {
-        top: 4em;
-        left: -4em;
-        width: 1em;
-    }
-    .image_absolute_12 {
-        top: 4em;
-        left: 18.5em;
-        width: 1em;
-    }
-    .image_absolute_13 {
-        top: 6em;
-        left: 3em;
-        width: 8em;
-    }
-    .image_absolute_14 {
-        top: 9em;
-        left: 16em;
-        width: 4em;
-    }
-    .image_absolute_15 {
-        top: 61em;
-        left: -4em;
-        width: 3em;
-    }
-    .image_absolute_16 {
-        left: 11em;
-        width: 7em;
-    }
-    .image_absolute_22 {
-        top: 3em;
-        left: 14.5em;
-    }
-    .image_absolute_24 {
-        top: 3.5em;
-        left: 21.5em;
-        width: 2em;
-    }
-    .image_absolute_25 {
-        top: -22em;
-        left: 0;
-        width: 4em;
-    }
-    .image_absolute_26 {
-        top: -22em;
-        left: 12em;
-        width: 4em;
-    }
-    .image_absolute_27 {
-        top: 4em;
-        left: 6em;
-        width: 8em;
-    }
-
-    .image_absolute_28 {
-        top: 2em;
-        left: 6em;
-        width: 9em;
-    }
-    .image_absolute_29 {
-        top: -26em;
-        left: -14em;
-    }
-    .image_absolute_30 {
-        top: -1em;
-        left: -6em;
-        width: 6em;
-    }
-    .image_absolute_32 {
-        top: 5em;
-        left: 9.5em;
-        width: 6em;
-    }
-
-}
-
-@media (max-width:469px) {
-    .image_absolute_24 {
-        display: none;
-    }
-    .image_absolute_9 {
-        top: 6em
-    }
-}
-@media (max-width:423px) {
-    .image_absolute_9 {
-        left: 1em;
-        top: 9.5em;
+        top: -39rem;
     }
 }
