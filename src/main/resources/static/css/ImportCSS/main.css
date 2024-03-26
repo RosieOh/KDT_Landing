@@ -702,7 +702,7 @@ p {
 }
 
 [type="radio"]:checked {
-  border: 0.4em solid var(--c-sub);
+  border: 0.3rem solid var(--c-sub);
 }
 
 [type="radio"]:focus-visible {
@@ -966,6 +966,7 @@ p {
 #login-form > input::placeholder{
   color: #D2D2D2;
 }
+
 #login-form > input[type="submit"]{
   color: #fff;
   font-size: 16px;
@@ -975,10 +976,15 @@ p {
 
 #login-form > input[type="checkbox"]{
   display: none;
+  margin-right: 5px;
 }
+
 #login-form > label{
   color: #999999;
+  display: flex;
+  align-items: center;
 }
+
 #login-form input[type="checkbox"] + label{
   cursor: pointer;
   padding-left: 26px;
@@ -1418,12 +1424,13 @@ box-shadow: inset -5px 0 1px var(--c-back_gray);
 
 .faq_wrap {
   display: none;
-  margin-top: 1.5rem;
+  margin-top: 10px;
 }
 
 .faq_text {
-  height: 80px;
+  height: 130px;
   padding: 0 2rem;
+  line-height: 2;
 }
 
 .faq_title {
