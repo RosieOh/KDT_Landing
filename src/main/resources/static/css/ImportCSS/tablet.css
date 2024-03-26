@@ -1,11 +1,4 @@
 /* 타블렛 */
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1400px;
-    }
-
-}
-
 
 @media (max-width: 1399px) {
     .width_50 {
@@ -119,7 +112,11 @@
 }
 
 
-@media screen and (max-width: 1280px) {
+
+
+
+
+@media (max-width: 1023px) {
     .radius1_cur_re {
         width: 410px;
         margin: 0 auto;
@@ -139,12 +136,10 @@
     .index_ex{
         border-radius: 20px;
         height: auto;
-        margin: 1rem;
     }
 
     .features {
         width: auto;
-        padding: 5rem 0;
     }
 
     .review_image {
@@ -166,14 +161,6 @@
     .title {
         font-size: 1.5rem;
     }
-}
-
-
-
-
-
-
-@media (max-width:1099px) {
 
     .title_big {
         font-size: 34px;
@@ -222,4 +209,60 @@
     .bottom_banner_text {
         font-size: 18px;
     }
+
+    .cardFull{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card_wrap {
+        width: 80%;
+    }
+    .card_box {
+        margin: 0.5rem;
+    }
+    .in_box {
+        padding: 1rem 2rem;
+        font-size: 13px;
+    }
+    .talent_wrap_3 {
+        width: 350px;
+        height: 350px;
+    }
+
+    .talent_wrap {
+        height: 1000px;
+    }
+
+    .talent_1 {
+        width: 250px;
+    }
+    .talent_2 {
+        width: 350px;
+    }
+    .talent_content {
+        font-size: 80%;
+    }
+    .talent_subtitle {
+        margin: 1.5rem 0.5em 0 2em;
+    }
+
+    .talent_subtitle_2 {
+        margin: 0.5rem 0.5em 0 2em;
+    }
+    .talent_3 {
+        padding-left: 0.5em;
+        margin: 0.5rem 0;
+    }
+    .talent_subtitle_3 {
+        font-size: 67%;
+    }
+    .index_figure_3 {
+        width: 30px;
+    }
+    .pm_self_wrap {
+        height: 450px;
+        margin: 0;
+    }
+
 }
+

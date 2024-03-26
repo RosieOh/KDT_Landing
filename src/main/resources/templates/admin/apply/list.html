@@ -43,7 +43,11 @@
                     <tbody>
                     <tr th:each="applyDTO, num : ${applyDTOList}">
                         <td class="item_td" th:text="${num.count}"></td>
-                        <td class="item_td" th:text="${applyDTO.course}"></td>
+                        <td class="item_td" th:text="${applyDTO.course}">
+                            <span th:if="${applyDTO.course eq 'FULLSTACK'}">풀스택</span>
+                            <span th:if="${applyDTO.course eq 'BIGDATA'}">빅데이터</span>
+                            <span th:if="${applyDTO.course eq 'PM'}">PM</span>
+                        </td>
                         <td class="item_td" th:text="${applyDTO.name}"></td>
                         <td class="item_td" th:text="${applyDTO.tel}"></td>
                         <td class="item_td" th:text="${applyDTO.email}"></td>

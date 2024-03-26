@@ -8,6 +8,12 @@
 @import url("ImportCSS/image_absolute.css");
 @import url("ImportCSS/mobile.css");
 @import url("ImportCSS/table.css");
+@import url("ImportCSS/kyojin.css");
+@import url("ImportCSS/kyojin_mobile.css");
+@import url("ImportCSS/kyojin_tablet.css");
+@import url("ImportCSS/taehoon.css");
+@import url("ImportCSS/taehoon_mobile.css");
+@import url("ImportCSS/taehoon_tablet.css");
 @import url("ImportCSS/term.css");
 
 :root {
@@ -343,4 +349,9 @@ textarea:hover, input:hover, select:hover {
 
 .img_h450 {
   height: 450px;
+}
+
+.right_flex{
+  display: flex;
+  flex-direction: row-reverse;
 }

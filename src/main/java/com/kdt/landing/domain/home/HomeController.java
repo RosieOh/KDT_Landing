@@ -27,10 +27,21 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/subSign")
-    public String subSign(Model model) {
-        return "main/sign/subSign";
+    @GetMapping("/subSign_big")
+    public String subSign_big(Model model) {
+        return "main/sign/subSign_big";
     }
+
+    @GetMapping("/subSign_full")
+    public String subSign_full(Model model) {
+        return "main/sign/subSign_full";
+    }
+
+    @GetMapping("/subSign_pm")
+    public String subSign_pm(Model model) {
+        return "main/sign/subSign_pm";
+    }
+
 
 
     @GetMapping("/java")
