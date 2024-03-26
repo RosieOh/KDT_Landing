@@ -1,0 +1,60 @@
+/* 회원 약관 */
+.join_area .logo, .join_agree .logo, .join_finish .logo {
+    display:block;
+}
+
+.join_area .card {
+    border-radius:15px;}
+.join_area .no_check {
+    color:red;}
+.join_area .no_check {
+    color:red;
+}
+
+.join_area .info {
+    font-size:12px;
+}
+
+.join_area #msg {
+    font-size:14px;
+}
+
+
+.join_area .check_btn {
+    color: #fff;
+    background: var(--main);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.join_area #addr1, .join_area #addr2 {
+    margin-bottom:5px;
+}
+
+.join_area #postcode {
+    width:180px;;margin-right:20px;
+}
+
+.join_area input::-webkit-input-placeholder {
+    font-size:16px;
+}
+
+.join_area input:-ms-input-placeholder {
+    font-size:16px;
+}
+
+.join_agree label {
+    display:block;
+}
+
+.join_agree .agree_fr {
+    border:2px solid #eee;height:400px;overflow-y:auto;white-space:pre-wrap;padding:24px;
+}
+
+.join_agree_hole {
+    padding-top: 4rem;
+}
+
+

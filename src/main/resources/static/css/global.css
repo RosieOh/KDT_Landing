@@ -8,6 +8,7 @@
 @import url("ImportCSS/image_absolute.css");
 @import url("ImportCSS/mobile.css");
 @import url("ImportCSS/table.css");
+@import url("ImportCSS/term.css");
 
 :root {
   --c-main: rgba(85, 59, 243, 1);

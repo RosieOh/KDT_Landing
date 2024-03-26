@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>회원약관</title>
+    <th:block th:replace="include/head :: head" ></th:block>
+    <style>
+
+    </style>
+</head>
+<body>
+<th:block th:replace="include/header :: header" ></th:block>
+
+<section class="page-title">
+    <nav class="breadcrumb_1" aria-label="breadcrumbs">
+        <ul class="breadcrumb_1_road">
+            <li><a class="breadcrumb_1_road_a" th:href="@{/}"><i class="breadcrumb_1_road_home"></i>홈</a></li>
+            <li><a class="breadcrumb_1_road_a" th:href="@{/member/login}">로그인</a></li>
+        </ul>
+        <p class="breadcrumb_1_road_title">로그인</p>
+    </nav>
+</section>
+
+<section class="bg-image join_agree join_agree_hole">
+    <div class="mask align-items-center">
+        <div class="container h-100">
+            <div class="d-flex justify-content">
+                <th:block th:replace="member/terms/term1 :: term1"></th:block>
+                            </div>
+                            <div class="d-flex justify-content check_area ml-4 mt-3 mb-4">
+                                <input type="checkbox" id="ck_item1" name="ck_item" class="form-check-input me-2">
+                                <label class="form-check-label" for="ck_item1">약관에 동의</label>
+                            </div>
+
+                            <div class="d-flex justify-content">
+                                <th:block th:replace="member/terms/term2 :: term2"></th:block>
+                            </div>
+                            <div class="d-flex justify-content check_area ml-4 mt-3 mb-4">
+                                <input type="checkbox" id="ck_item2" name="ck_item2" class="form-check-input me-2">
+                                <label class="form-check-label" for="ck_item2">개인정보처리방침에 동의</label>
+                            </div>
+
+                            <div class="form-check d-flex justify-content-center mb-5">
+                                <input type="checkbox" id="allCheck" name="allCheck" class="mr-2" onclick="protocol()">
+                                <label for="allCheck" class="form-check-label">전체 약관에 동의</label>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <button type="button" id="in_btn1" class="btn1" style="width: 200px">다음 단계</button>
+                            </div>
+
+                            <script th:inline="javascript">
+                                let allcheck = document.getElementById("allCheck");
+                                let in_btn1 = document.getElementById("in_btn1");
+                                let ck_item1 = document.getElementById("ck_item1");
+                                let ck_item2 = document.getElementById("ck_item2");
+
+                                if( ck_item1.checked && ck_item2.checked) {
+                                    allcheck.checked == true
+                                }
+
+                                $("#in_btn1").click(function(){
+                                    if (ck_item1.checked && ck_item2.checked) {
+                                        location.href = "join";
+                                    } else {
+                                        alert("약관 및 개인정보처리 방침에 동의하지 않으셨습니다.");
+                                        return;
+                                    }
+                                })
+
+                                function protocol() {
+                                    if (allcheck.checked) {
+                                        ck_item1.checked = true;
+                                        ck_item2.checked = true;
+                                    } else {
+                                        ck_item1.checked = false;
+                                        ck_item2.checked = false;
+                                    }
+                                }
+
+                                function checkAll() {
+                                    if (ck_item1.checked && ck_item2.checked) {
+                                        allcheck.checked = true;
+                                    } else {
+                                        allcheck.checked = false;
+                                    }
+                                }
+
+                                ck_item1.addEventListener("change", checkAll);
+                                ck_item2.addEventListener("change", checkAll);
+
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= Footer ======= -->
+<th:block th:replace="~{include/footer :: footer}"></th:block>
+<!-- End Footer -->
+</body>
+</html>

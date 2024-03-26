@@ -28,6 +28,11 @@ public class MemberController {
     private final MemberService memberService;
     private final BCryptPasswordEncoder passwordEncoder;
 
+    @GetMapping("agree")
+    public String agree(Model model) {
+        return "member/agree";
+    }
+
     @GetMapping("login")
     public String Login(Model model){
         return "member/login";
