@@ -25,7 +25,6 @@
 
 
 .features {
-  padding: 5rem 0;
   display: flex;
 }
 
@@ -881,31 +880,6 @@ p {
   background-color: #fff;
 }
 
-.placehold-text{
-  display: block; /*span 으로 감싸서 크기영역을 블록요소로 만들어져야한다*/
-  position:relative;
-  /* border: 1px solid #000; */
-}
-
-.placehold-text:before{
-  position:absolute; /*before은 inline 요소이기 때문에 span으로 감싸줌 */
-  right : 20px;
-  top:13px;
-  pointer-events: none; /*자체가 가지고 있는 pointer event 를 없애준다 */
-}
-
-.userpw{
-  background:url(./images/images2/icon-01.png) no-repeat center right 15px;
-  background-size: 20px;
-  background-color: #fff;
-}
-
-.userpw-confirm{
-  background:url(./images/images2/icon-02.png) no-repeat center right 15px;
-  background-size: 20px;
-  background-color: #fff;
-}
-
 .member-footer {
   text-align: center;
   font-size: 12px;
@@ -1052,6 +1026,7 @@ p {
   background-color: var(--c-white);
   right: -21px;
   border-radius: 20px;
+  box-shadow: 0 4px 6px -3px gray;
 }
 
 .nav_link:hover {
@@ -1253,7 +1228,7 @@ box-shadow: inset -5px 0 1px var(--c-back_gray);
 .index_ex{
   border-radius: 20px;
   height: 410px;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 .index_ex:hover {
@@ -1293,7 +1268,6 @@ box-shadow: inset -5px 0 1px var(--c-back_gray);
   height: 150px;
   font-size: 1.25rem;
   padding: 1rem !important;
-  margin-top: 0.75rem !important;
   white-space: nowrap;
 }
 
@@ -1344,9 +1318,6 @@ box-shadow: inset -5px 0 1px var(--c-back_gray);
   padding: 1rem;
 }
 
-.page-title {
-  padding-top: 60px;
-}
 
 
 .border1 {
@@ -1428,7 +1399,7 @@ box-shadow: inset -5px 0 1px var(--c-back_gray);
 }
 
 .faq_text {
-  height: 130px;
+  height: auto;
   padding: 0 2rem;
   line-height: 2;
 }
