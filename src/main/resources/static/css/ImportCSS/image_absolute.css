@@ -1,10 +1,49 @@
-
-/* 공통 start */
 .image_absolute_wrap {
     position: relative;
     max-width: 280px;
     margin: 0 auto;
 }
+
+.image_banner {
+    position: absolute;
+    top: 8rem;
+    left: -15rem;
+    width: 24%;
+}
+.img-class1 {
+    position: absolute;
+    top: 6rem;
+    left: 50rem;
+    width: 6rem;
+    z-index: 2;
+}
+
+.img-class2 {
+    position: absolute;
+    top: 31rem;
+    left: -39rem;
+    width: 6rem;
+    z-index: 2;
+ }
+.six_img {
+    position: absolute;
+    top: -14rem;
+    left: 35rem;
+    width: 37rem;
+}
+
+.recru_img {
+    position: absolute;
+    top: 16rem;
+    left: 42rem;
+    width: 18rem;
+    opacity: 0.5;
+}
+
+
+
+/* 공통 start */
+
 .image_absolute_1 {
     position: absolute;
     top: 6rem;

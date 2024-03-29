@@ -1,1 +1,150 @@
 /* 교진  */
+
+.image_content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide_item {
+     animation: review_flow 30s linear infinite;
+ }
+@keyframes review_flow {
+    0% {
+        transform: translate(100%, 0);
+    }
+    100% {
+        transform: translate(-400%, 0);
+    }
+}
+
+.men_slide_item {
+    animation: mento_flow 30s linear infinite;
+
+}
+@keyframes mento_flow {
+    0% {
+        transform: translate(100%, 0);
+    }
+    100% {
+        transform: translate(-400%, 0);
+    }
+}
+
+.port_content {
+    color: var(--c-white);
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+
+.port_image {
+    width: 90%;
+}
+
+.map_box {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+
+.review_image_wrap {
+    display: flex;
+    justify-content: end;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+
+
+
+.slide {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 850px;
+    user-select: none;
+    height: 500px;
+}
+
+.slide_item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 0;
+    width: 450px;
+    height: 520px;
+    flex-shrink: 0;
+    transition: left 1s;
+    margin: 0 30px;
+}
+.slide_item img {
+    padding: 3rem 0;
+}
+
+
+.mentoring_wrap {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.men_slide {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 850px;
+    height: 450px;
+}
+
+.men_slide_item {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 0;
+    width: 450px;
+    height: 300px;
+    flex-shrink: 0;
+    transition: left 1s;
+    flex-direction: column;
+    margin: 60px 25px;
+}
+
+.men_text {
+    text-align: left;
+    color: var(--c-white);
+    margin-top: 10px;
+}
+
+.button_wrap {
+    display: flex;
+    justify-content: center;
+}
+
+
+.slide_pagination {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slide_pagination > li {
+    color: var(--c-sub2);
+    cursor: pointer;
+    font-size: 25px;
+}
+.slide_pagination > li.active {
+    /* 현재 슬라이드 색상은 투명도 없이 */
+    color: var(--c-main);
+}
