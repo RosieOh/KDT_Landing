@@ -95,32 +95,24 @@
 
           <div class="burger">
             <ul class="bugger_wrap">
-              <li class="bugger_link">
-                <a class="nav_link " th:href="@{/}">홈</a>
+              <li>
+                <a class="bugger_link" th:href="@{/}">홈</a>
               </li>
-              <li class="bugger_link">
-                <a class="nav_link " th:href="@{/data}"
-                >AI·데이터 과정</a
-                >
+              <li>
+                <a class="bugger_link " th:href="@{/data}">AI·데이터 과정</a>
               </li>
-
-              <li class="bugger_link">
-                <a class="nav_link " th:href="@{/java}"
-                >풀스택 과정</a
-                >
+              <li>
+                <a class="bugger_link " th:href="@{/java}">풀스택 과정</a>
               </li>
-
-              <li class="bugger_link">
-                <a class="nav_link " th:href="@{/pm}"
-                >PM 과정</a
-                >
+              <li>
+                <a class="bugger_link " th:href="@{/pm}">PM 과정</a>
               </li>
-              <li class="bugger_link">
-                <a class="nav_link " href="#">천재IT Blog</a>
-              </li>
+<!--              <li>-->
+<!--                <a class="bugger_link " href="#">천재IT Blog</a>-->
+<!--              </li>-->
               <th:block sec:authorize="isAnonymous()">
-                <li class="bugger_link">
-                  <a th:href="@{/member/login}" class="nav_link ">로그인</a>
+                <li>
+                  <a class="bugger_link " th:href="@{/member/login}">로그인</a>
                 </li>
               </th:block>
             </ul>

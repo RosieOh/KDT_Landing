@@ -67,7 +67,6 @@ function nextMove() {
     offset = slideWidth * currSlide;
     // 각 슬라이드 아이템의 left에 offset 적용
     setTimeout(() => {
-      // 각 슬라이드 아이템의 left에 offset 적용
       slideItems.forEach((i) => {
         // i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
         i.setAttribute("style", `transition: ${0.15}s; left: ${-offset}px`);
@@ -127,7 +126,7 @@ prevBtn.addEventListener("click", () => {
 
 // 브라우저 화면이 조정될 때 마다 slideWidth를 변경하기 위해
 window.addEventListener("resize", () => {
-  slideWidth = slide.clientWidth;
+  // slideWidth = slide.clientWidth;
 });
 
 // 각 페이지네이션 클릭 시 해당 슬라이드로 이동하기
@@ -137,7 +136,9 @@ for (let i = 0; i < maxSlide; i++) {
     // 클릭한 페이지네이션에 따라 현재 슬라이드 변경해주기(currSlide는 시작 위치가 1이기 때문에 + 1)
     currSlide = i + 1;
     // 슬라이드를 이동시키기 위한 offset 계산
-    const offset = slideWidth * currSlide;
+    // const offset = slideWidth * currSlide;
+
+    const offset = 10;
     // 각 슬라이드 아이템의 left에 offset 적용
     slideItems.forEach((i) => {
       i.setAttribute("style", `left: ${-offset}px`);
@@ -184,21 +185,24 @@ slide.addEventListener("touchend", (e) => {
 });
 
 // 기본적으로 슬라이드 루프 시작하기
-let loopInterval = setInterval(() => {
-  nextMove();
-}, 4500);
+
+// let loopInterval = setInterval(() => {
+//   nextMove();
+// }, 4500);
 
 // 슬라이드에 마우스가 올라간 경우 루프 멈추기
-slide.addEventListener("mouseover", () => {
-  clearInterval(loopInterval);
-});
+// slide.addEventListener("mouseover", () => {
+//   clearInterval(loopInterval);
+// });
 
 // 슬라이드에서 마우스가 나온 경우 루프 재시작하기
-slide.addEventListener("mouseout", () => {
-  loopInterval = setInterval(() => {
-    nextMove();
-  }, 4500);
-});
+// slide.addEventListener("mouseout", () => {
+//   loopInterval = setInterval(() => {
+//     nextMove();
+//   }, 4500);
+// });
+
+
 
 
 

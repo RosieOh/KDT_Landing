@@ -7,62 +7,12 @@
     <th:block th:fragment="procedure">
 
       <!-- 선발절차 start -->
-      <section class="container container_bottom">
-        <div class="title-body text_center">
-          <h1 class="title_white_big">선발절차</h1>
-        </div>
-        <div class="flex_center">
-          <div class="pick_change">
-            <div class="pick_image flex_column">
-              <img th:src="@{/picture/common/process_1.png}" alt="접수하기 이미지"/>
-              <a th:href="@{subSign}" class="button pick_image_btn">
-                접수하기
-              </a>
-            </div>
-            <div>
-              <div class="arrow_image">
-                <img th:src="@{/picture/common/process_arrow.png}" alt="화살표 이미지"/>
-              </div>
-            </div>
-            <div class="pick_image flex_column">
-              <img th:src="@{/picture/common/process_2.png}" alt="서류전형 이미지"/>
-              <p class="pick_content"><b>서류 전형</b></p>
-            </div>
-            <div>
-              <div class="arrow_image">
-                <img th:src="@{/picture/common/process_arrow.png}" alt="화살표 이미지"/>
-              </div>
-            </div>
-            <div class="pick_image flex_column">
-
-              <img th:src="@{/picture/common/process_3.png}" alt="인터뷰 이미지"/>
-              <p class="pick_content"><b>비대면/대면 인터뷰</b><br>서류 접수 후<br>3~4일 이내 개별 연락  </p>
-            </div>
-          </div>
-          <div class="pick_change">
-            <div>
-              <div class="arrow_image">
-                <img th:src="@{/picture/common/process_arrow.png}" alt="화살표 이미지"/>
-              </div>
-
-            </div>
-            <div class="pick_image flex_column">
-              <img th:src="@{/picture/common/process_4.png}" alt="합격자발표 이미지"/>
-              <p class="pick_content"><b>합격자 발표</b><br>인터뷰 후<br>3~4일 이내 개별 연락</p>
-            </div>
-            <div>
-              <div class="arrow_image">
-                <img th:src="@{/picture/common/process_arrow.png}" alt="화살표 이미지"/>
-              </div>
-            </div>
-            <div class="pick_image flex_column">
-              <img th:src="@{/picture/common/process_5.png}" alt="국민내일배움카드"/>
-              <p class="pick_content"><b>HRD-NET(hrd.co.kr)</b><br><b>국민내일배움카드</b><br><b>발급 및 수강신청</b></p>
-              <a th:href="@{subSign}" class="button pick_image_btn">
-                상세내용
-              </a>
-            </div>
-          </div>
+      <section class="container ">
+        <div class="image_content">
+          <picture>
+            <source srcset="../../../static/images/picture/common2/common2_mobile/procedure.png" media="(max-width: 450px)">
+            <img th:src="@{/picture/common2/procedure.png}" alt="">
+          </picture>
         </div>
       </section>
       <!-- 선발절차 end -->
