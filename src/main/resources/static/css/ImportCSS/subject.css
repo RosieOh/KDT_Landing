@@ -37,17 +37,8 @@
   min-height: 50vh;
 }
 
-.port_content {
-  color: var(--c-white);
-  width: 100%;
-  display: flex;
-  position: absolute;
-  bottom: 0;
-}
 
-.port_image {
-  margin: 0.25rem;
-}
+
 
 .bigdata_image {
   height: 220px;
@@ -471,9 +462,7 @@
   right: 10px;
 }
 
-.review_content {
-  padding: 3rem 0;
-}
+
 
 .reverse-columns {
   display: flex;
@@ -917,14 +906,6 @@
   cursor: pointer;
 }
 
-
-.review_image_wrap {
-  display: flex;
-  justify-content: end;
-  position: absolute;
-  right: 0;
-  z-index: -1;
-}
 
 .index_banner {
   width: 100%;

@@ -251,7 +251,6 @@ p {
   width: 100%;
   position: absolute;
   bottom: 0;
-  height: 90px;
 }
 
 .bottom_banner_text {
@@ -268,7 +267,7 @@ p {
 
 .bottom_btn {
   background-color:transparent;
-  padding: 2rem 5rem;
+  width: 100%;
   border: none;
   border-radius: 10px;
 }

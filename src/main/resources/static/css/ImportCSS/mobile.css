@@ -284,13 +284,7 @@
     .card_wrap {
         width: 100%;
     }
-    .bottom_banner_wrap {
-        flex-direction: column;
-        height: auto;
-    }
-    .bottom_banner_btn {
-        margin: 1rem 0;
-    }
+
     .info_sub_in {
         font-size: 13px;
     }

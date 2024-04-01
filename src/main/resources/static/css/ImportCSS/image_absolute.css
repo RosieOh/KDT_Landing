@@ -9,6 +9,7 @@
     top: 8rem;
     left: -15rem;
     width: 24%;
+    z-index: -1;
 }
 .img-class1 {
     position: absolute;
@@ -40,6 +41,12 @@
     opacity: 0.5;
 }
 
+.img-orange_arrow {
+    position: absolute;
+    top: -35rem;
+    left: -28rem;
+    width: 8rem;
+}
 
 
 /* 공통 start */
