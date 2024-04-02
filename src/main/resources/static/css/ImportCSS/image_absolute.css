@@ -1,10 +1,87 @@
-
-/* 공통 start */
 .image_absolute_wrap {
     position: relative;
     max-width: 280px;
     margin: 0 auto;
 }
+
+.image_absolute_wrap2 {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.image_banner {
+    position: absolute;
+    top: 8rem;
+    left: -15rem;
+    width: 24%;
+    z-index: -1;
+}
+.img-class1 {
+    position: absolute;
+    top: 6rem;
+    left: 50rem;
+    width: 6rem;
+    z-index: 2;
+}
+
+.img-class2 {
+    position: absolute;
+    top: 31rem;
+    left: -39rem;
+    width: 6rem;
+    z-index: 2;
+ }
+.six_img {
+    position: absolute;
+    top: -16rem;
+    left: 44rem;
+    width: 37rem;
+}
+
+.recru_img {
+    position: absolute;
+    top: 16rem;
+    left: 42rem;
+    width: 18rem;
+    opacity: 0.5;
+}
+
+.img-orange_arrow {
+    position: absolute;
+    top: 79%;
+    left: 0;
+    width: 100%;
+}
+
+.img-circle_harf {
+    position: absolute;
+    top: -19em;
+    left: 31rem;
+    width: 45rem;
+}
+
+
+@media (max-width:1399px) {
+    .img-orange_arrow {
+        display: none;
+    }
+    .img-circle_harf {
+        display: none;
+    }
+    .six_img {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+/* 공통 start */
+
 .image_absolute_1 {
     position: absolute;
     top: 6rem;

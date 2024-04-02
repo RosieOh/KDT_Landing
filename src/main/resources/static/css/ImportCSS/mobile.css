@@ -1,0 +1,312 @@
+/* 모바일 */
+
+@media (max-width:767px) {
+    .title_white_big {
+        color: var(--c-white);
+        margin-bottom: 1.25rem;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .title_big {
+        color: var(--c-black);
+        margin-bottom: 1.25rem;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .title_sub {
+        font-size: 14px;
+    }
+
+    .title_white_sub {
+        font-size: 14px;
+    }
+
+    .small_title {
+        font-size: 12px;;
+    }
+
+    .port_content {
+        font-size: 14px;
+    }
+
+    .pm_road_image {
+        width: 350px;
+    }
+
+    .pm_road_image_2 {
+        width: 190px;
+    }
+
+    .pm_road_box {
+        margin-top: 5em;
+    }
+
+    .six_image {
+        background-image: url("/static/images/picture/bigdata/six_small.png");
+        background-size: contain;
+    }
+
+    .Ladder_content {
+        width: 360px;
+    }
+
+
+    .bottom_banner_text {
+        font-size: 10px;
+    }
+    .bottom_btn {
+        font-size: 12px;
+    }
+    .ft_wrap {
+        flex-direction: column;
+    }
+    .bottom_banner_image {
+        max-width: 30px;
+    }
+    .navbar-menu {
+        display: none;
+    }
+    .burger_btn {
+        display: block;
+    }
+    .subSign_form {
+        width: 100%;
+        font-size: 90%;
+        padding: 7rem 1rem;
+    }
+
+    .subSign_form p {
+        font-size: 12px;
+    }
+    .notification {
+        width: 47%;
+    }
+    .subtitleCard {
+        padding: 0 30px;
+    }
+    .titleCard {
+        font-size: 14px;
+    }
+    .subtitleCard {
+        font-size: 14px;
+    }
+    .benefit_content {
+        padding: 1.5rem;
+    }
+
+    .map_content {
+        margin: 2rem 0;
+    }
+    .map_text {
+        margin: 0 0 2rem;
+    }
+
+    .cp_img_wrap {
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    .img_h450 {
+        height: 300px;
+    }
+    .slide_item {
+        height: 450px;
+    }
+    .slide_a_item {
+        height: 300px;
+    }
+    .slide_b_item {
+        height: 300px;
+    }
+    .slide_d_item {
+        height: 300px;
+    }
+    .slide_pagination {
+        bottom: 12%;
+    }
+    .banner_wrap {
+        flex-direction: column;
+    }
+    .banner_box {
+        padding: 3rem 0;
+    }
+    .banner_image {
+        padding: 0;
+    }
+    .banner_title {
+        font-size: 18px;
+    }
+    .button {
+        font-size: 14px;
+    }
+    .info_image {
+        width: 40px;
+        height: 40px;
+    }
+    .iconCard {
+        font-size: 14px;
+    }
+    .iconP img {
+        width: 80%;
+    }
+    .faq {
+        font-size: 14px;
+    }
+    .sign_form {
+        width: 100%;
+        padding: 30px 50px 30px;
+    }
+
+    .sign_form p {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width:767px) {
+
+    .notification .benefit_sub{
+        font-size: 14px;
+    }
+
+    .notification .benefit_title{
+        font-size: 16px;
+    }
+
+    .curri_img {
+        height: 100px;
+        padding: 0.5rem 1rem;
+    }
+    .curri_sub_text {
+        display: block;
+    }
+    .curri_content {
+        margin: 0 1rem;
+    }
+
+    .DTS_wrap {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .DTS_text p {
+        line-height: 1.5;
+        padding-left: 0.5rem;
+    }
+
+    .job {
+        width: 200px;
+        height: 200px;
+    }
+    .job_image img {
+        width: 100px;
+    }
+    .job_wrap {
+        height: 400px;
+    }
+
+    .job_subtitle {
+        font-size: 90%;
+    }
+
+    .pm_image {
+        max-width: 150px;
+        height: 50px;
+    }
+    .curri_pm_box {
+        width: 350px;
+        font-size: 85%;
+    }
+    .member{
+        width: 100%;
+    }
+    .radius1_cur {
+        border-radius: 20px;
+        margin: 1rem 7rem;
+        padding: 1rem;
+    }
+    .columns {
+        width: auto;
+        margin: 0;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .features {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .index_ex{
+        max-width: 358px;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .radius1_cur_re {
+        max-width: 100%;
+    }
+
+    .border1 {
+        box-shadow: 2px 2px 10px 1px var(--c-back_gray);
+    }
+
+    .review_image {
+        margin: 0 1rem;
+        width: auto;
+        height: auto;
+    }
+
+    .multiline_box_1 {
+        margin: 0;
+        padding: 1.5rem;
+        flex: none;
+        width: 33.3333%;
+    }
+
+    .is-multiline {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .title {
+        font-size: 1rem;
+    }
+    .card_wrap {
+        width: 100%;
+    }
+
+    .info_sub_in {
+        font-size: 13px;
+    }
+    .curri_full_box {
+        width: 100%;
+    }
+    .radius1_cur {
+        border-radius: 20px;
+        margin: 1rem 0.5rem;
+        padding: 1rem;
+    }
+
+    .index_ex{
+        width: 100%;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .multiline_box_1 {
+        margin: 0;
+        padding: 1.5rem;
+        flex: none;
+        width: 33.3333%;
+    }
+
+    .is-multiline {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
