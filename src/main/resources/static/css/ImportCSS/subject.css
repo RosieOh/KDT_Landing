@@ -815,27 +815,7 @@
 }
 
 
-.slide_button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  color: var(--c-white);
-  background-color: var(--c-main);
-  cursor: pointer;
-}
 
-.slide_prev_button {
-  left: 15rem;
-  top: 30rem;
-}
-.slide_next_button {
-  right: 15rem;
-  top: 30rem;
-}
 
 /* 페이지네이션 스타일 */
 

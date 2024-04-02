@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <body>
     <th:block th:fragment="footer">
+      <script th:src="@{/static/js/slick.js}"></script>
       <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
       <a href="#top" class="gotop" id="gotop">▲</a>
 
@@ -14,7 +15,7 @@
             </picture>
             <picture>
               <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner.png" media="(max-width: 450px)">
-              <img th:src="@{/picture/common2/bottom_banner2.png}" alt="" id="ban_btn">
+              <img th:src="@{/picture/common2/bottom_banner2.png}" alt="" id="ban_btn" class="bottom_banner_btn">
             </picture>
           </div>
 

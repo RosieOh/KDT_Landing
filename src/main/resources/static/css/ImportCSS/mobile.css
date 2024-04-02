@@ -95,13 +95,7 @@
     .benefit_content {
         padding: 1.5rem;
     }
-    .map_box {
-        flex-direction: column;
-    }
-    .map {
-        width: 100%;
-        height: 400px;
-    }
+
     .map_content {
         margin: 2rem 0;
     }

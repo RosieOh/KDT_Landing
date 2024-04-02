@@ -1,5 +1,5 @@
 .main {
-  padding: 70px 0;
+  padding: 70px 0 70px;
 }
 
 .container {
@@ -12,10 +12,23 @@
   max-width: 1400px;
 }
 
+.main .container:nth-child(1) {
+  opacity: 1;
+  margin: 0 auto 120px;
+}
+
 .main .container {
   opacity: 0;
-  margin: 85px auto 85px;
+  margin: 120px auto 120px;
 }
+
+.pm_self_back {
+  background-image: url("/static/images/picture/pm/pm_self_back.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 .ud_m {
   padding: 70px 0;
 }
@@ -260,10 +273,7 @@ p {
   font-size: 20px;
 }
 
-.bottom_banner_btn {
-  display: flex;
-  align-items: center;
-}
+
 
 .bottom_btn {
   background-color:transparent;
@@ -1023,10 +1033,13 @@ width: 2.5rem;
   white-space: nowrap;
   display: flex;
   align-items: center;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 18px;
 }
-
+.nav-content:hover {
+  color: var(--c-main);
+  font-weight: bold;
+}
 .nav-dropdown {
   display: block;
   color: var(--c-sub);

@@ -6,12 +6,10 @@
 >
 <head>
   <meta charset="UTF-8" />
-  <meta
-          content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
-          name="viewport"
-  />
+
   <title>pm 랜딩페이지</title>
   <th:block th:replace="include/head :: head"></th:block>
+
 </head>
 <body>
 <th:block th:replace="include/header :: header"></th:block>
@@ -74,18 +72,18 @@
     </div>
     <div class="review_image_wrap">
       <div class="width"></div>
-      <div class="slide slide_wrap">
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmex_1.png}" alt="pm후기_1">
+      <div class="slide slide_review_wrap" id="slide">
+        <div class="slide_review">
+          <img th:src="@{/picture/pm/pmex_1.png}" alt="pm후기_1" class="border10">
         </div>
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmex_2.png}" alt="pm후기_2">
+        <div class="slide_review">
+          <img th:src="@{/picture/pm/pmex_2.png}" alt="pm후기_2" class="border10">
         </div>
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmex_3.png}" alt="pm후기_3">
+        <div class="slide_review">
+          <img th:src="@{/picture/pm/pmex_3.png}" alt="pm후기_3" class="border10">
         </div>
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmex_4.png}" alt="pm후기_4">
+        <div class="slide_review">
+          <img th:src="@{/picture/pm/pmex_4.png}" alt="pm후기_4" class="border10">
         </div>
       </div>
     </div>
@@ -126,8 +124,8 @@
   <!-- pm 이런 길 end -->
 
   <!-- 자가진단표 start -->
-  <div class="back_white ud_m">
-  <section class="container">
+  <div class="back_white_2 ud_m">
+  <section class="container ">
     <div class="image_content">
       <picture>
         <source srcset="../../static/images/picture/pm/pm_mobile/self_pm.png" media="(max-width: 450px)">
@@ -136,6 +134,8 @@
     </div>
   </section>
   </div>
+  <div class="image_absolute_wrap2"><img th:src="@{/picture/pm/circle_harf.png}" alt="img-circle_harf" class="img-circle_harf"/></div>
+
   <!-- 자가진단표 end -->
 
   <!-- 커리큘럼 start -->
@@ -158,18 +158,18 @@
       </picture>
     </div>
     <div class="pm_port_wrap">
-      <div class="slide slide_wrap">
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmport_1.png}" alt="pm 포트폴리오">
+      <div class="men_slide pm_slide_wrap">
+        <div class="men_slide_item">
+          <img th:src="@{/picture/pm/pmport_1.png}" alt="pm 포트폴리오" class="border10">
         </div>
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmport_2.png}" alt="pm 포트폴리오">
+        <div class="men_slide_item">
+          <img th:src="@{/picture/pm/pmport_2.png}" alt="pm 포트폴리오" class="border10">
         </div>
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmport_3.png}" alt="pm 포트폴리오">
+        <div class="men_slide_item">
+          <img th:src="@{/picture/pm/pmport_3.png}" alt="pm 포트폴리오" class="border10">
         </div>
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmport_4.png}" alt="pm 포트폴리오">
+        <div class="men_slide_item">
+          <img th:src="@{/picture/pm/pmport_4.png}" alt="pm 포트폴리오" class="border10">
         </div>
       </div>
     </div>
@@ -180,18 +180,18 @@
       </picture>
     </div>
     <div class="pm_port_wrap">
-      <div class="slide slide_wrap">
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmport_5.png}" alt="pm 포트폴리오">
+      <div class="men_slide pm_slide_wrap">
+        <div class="men_slide_item">
+          <img th:src="@{/picture/pm/pmport_5.png}" alt="pm 포트폴리오" class="border10">
         </div>
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmport_6.png}" alt="pm 포트폴리오">
+        <div class="men_slide_item">
+          <img th:src="@{/picture/pm/pmport_6.png}" alt="pm 포트폴리오" class="border10">
         </div>
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmport_7.png}" alt="pm 포트폴리오">
+        <div class="men_slide_item">
+          <img th:src="@{/picture/pm/pmport_7.png}" alt="pm 포트폴리오" class="border10">
         </div>
-        <div class="slide_item">
-          <img th:src="@{/picture/pm/pmport_8.png}" alt="pm 포트폴리오">
+        <div class="men_slide_item">
+          <img th:src="@{/picture/pm/pmport_8.png}" alt="pm 포트폴리오" class="border10">
         </div>
       </div>
     </div>
@@ -200,15 +200,13 @@
         <source srcset="../../static/images/picture/pm/pm_mobile/port_pm3.png" media="(max-width: 450px)">
         <img th:src="@{/picture/pm/port_pm3.png}" alt="">
       </picture>
-      <img th:src="@{/picture/pm/ico-orange_arrow.png}" alt="img-orange_arrow" class="img-orange_arrow"/>
     </div>
-    <div class="pm_port_wrap">
-      <div class="pm_slide_item">
-      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오"/>
+      <div class="image_content">
+          <picture>
+            <source srcset="../../static/images/picture/pm/pm_mobile/benefit_pm.png" media="(max-width: 450px)">
+            <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오" class="border10">
+          </picture>
       </div>
-      <div class="image_absolute_wrap"><img th:src="@{/picture/pm/ico-orange_arrow.png}" alt="img-orange_arrow" class="img-orange_arrow"/></div>
-
-    </div>
   </section>
   <!-- 포트폴리오 end -->
 
@@ -223,7 +221,7 @@
   <th:block th:replace="sub/sub_inclulde/map :: map"></th:block>
 
 </div>
-<script th:src="@{/static/js/slide.js}"></script>
+<!--<script th:src="@{/static/js/slide.js}"></script>-->
 
 <th:block th:replace="include/footer :: footer"></th:block>
 

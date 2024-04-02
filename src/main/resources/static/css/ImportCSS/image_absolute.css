@@ -4,6 +4,12 @@
     margin: 0 auto;
 }
 
+.image_absolute_wrap2 {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
 .image_banner {
     position: absolute;
     top: 8rem;
@@ -28,8 +34,8 @@
  }
 .six_img {
     position: absolute;
-    top: -14rem;
-    left: 35rem;
+    top: -16rem;
+    left: 44rem;
     width: 37rem;
 }
 
@@ -43,10 +49,35 @@
 
 .img-orange_arrow {
     position: absolute;
-    top: -35rem;
-    left: -28rem;
-    width: 8rem;
+    top: 79%;
+    left: 0;
+    width: 100%;
 }
+
+.img-circle_harf {
+    position: absolute;
+    top: -19em;
+    left: 31rem;
+    width: 45rem;
+}
+
+
+@media (max-width:1399px) {
+    .img-orange_arrow {
+        display: none;
+    }
+    .img-circle_harf {
+        display: none;
+    }
+    .six_img {
+        display: none;
+    }
+}
+
+
+
+
+
 
 
 /* 공통 start */

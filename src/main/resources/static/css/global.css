@@ -57,6 +57,7 @@ body {
   font-family: Pretendard;
   font-size: 1em;
   line-height: 1.3;
+  overflow-x: hidden;
 }
 
 body {
@@ -85,7 +86,6 @@ a, button {
 img {
   height: auto;
   max-width: 100%;
-  border-radius: 10px;
 }
 
 input, textarea, select {
@@ -283,6 +283,10 @@ textarea:hover, input:hover, select:hover {
 
 .border_ra {
   border-radius: var(--border_radius);
+}
+
+.border10 {
+  border-radius: 10px;
 }
 
 .border_ra_2 {
