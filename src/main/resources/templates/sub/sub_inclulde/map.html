@@ -1,96 +1,96 @@
 <!doctype html>
 <html
-  xmlns:th="http://www.thymeleaf.org"
-  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 >
-  <body>
-    <th:block th:fragment="map">
+<body>
+<th:block th:fragment="map">
 
-      <!-- 지도 start -->
-        <section class="container ">
-            <div class="title-body">
-                <h1 class="title_white_big">교육장소</h1>
-                <h4 class="title_white_sub">오시는길</h4>
-            </div>
-            <div class="map_box">
+    <!-- 지도 start -->
+    <section class="container ">
+        <div class="title-body">
+            <h1 class="title_white_big">교육장소</h1>
+            <h4 class="title_white_sub">오시는길</h4>
+        </div>
+        <div class="map_box">
             <div id="map" class="map">
 
             </div>
-                <div class="map_content">
-                    <div class="map_text">
-                        <h4 class="map_btn">교육장소</h4>
-                        <p class="map_text_in">
-                            서울 금천구 디지털로9길 23 <br>마리오 아울렛 2관 11층 천재IT교육센터
-                        </p>
-                    </div>
-                     <div class="map_text">
-                        <h4 class="map_btn">상담문의</h4>
-                        <p class="map_text_in">
-                            전화 : 02-3282-8589
-                        </p>
-                     </div>
-                    <div class="map_text">
-                        <p>
-                            <img
-                                    th:src="@{/ico/kakao.png}"
-                                    alt="ico infomation_2"
-                                    class="map_icons"
-                            />
-                            카카오 상담/문의하기 ⬈
-                        </p>
-                    </div>
-                    <div class="map_text">
-                        <p>
-                            <img
+            <div class="map_content">
+                <div class="map_text">
+                    <h4 class="map_btn">교육장소</h4>
+                    <p class="map_text_in">
+                        서울 금천구 디지털로9길 23 <br>마리오 아울렛 2관 11층 천재IT교육센터
+                    </p>
+                </div>
+                <div class="map_text">
+                    <h4 class="map_btn">상담문의</h4>
+                    <p class="map_text_in">
+                        전화 : 02-3282-8589
+                    </p>
+                </div>
+                <div class="map_text">
+                    <p>
+                        <img
+                                th:src="@{/ico/kakao.png}"
+                                alt="ico infomation_2"
+                                class="map_icons"
+                        />
+                        카카오 상담/문의하기 ⬈
+                    </p>
+                </div>
+                <div class="map_text">
+                    <p>
+                        <img
                                 th:src="@{/ico/naver_blog.png}"
                                 alt="ico infomation_2"
                                 class="map_icons"
-                           />
-                            네이버 블로그 ⬈
-                        </p>
-                    </div>
+                        />
+                        네이버 블로그 ⬈
+                    </p>
                 </div>
             </div>
+        </div>
 
-            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf4e48d397124f04812bf416d553111c"></script>
-            <script th:inline="javascript">
-                var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-                    mapOption = {
-                        center: new kakao.maps.LatLng(37.4786643, 126.8863597), // 지도의 중심좌표
-                        level: 3 // 지도의 확대 레벨
-                    };
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf4e48d397124f04812bf416d553111c"></script>
+        <script th:inline="javascript">
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                mapOption = {
+                    center: new kakao.maps.LatLng(37.4786643, 126.8863597), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                };
 
-                var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-                var mapTypeControl = new kakao.maps.MapTypeControl();
-                map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+            var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+            var mapTypeControl = new kakao.maps.MapTypeControl();
+            map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
-                // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성
-                var zoomControl = new kakao.maps.ZoomControl();
-                map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+            // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성
+            var zoomControl = new kakao.maps.ZoomControl();
+            map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-                var iwContent = '<div class="map_position">천재IT교육센터</div>',
-                    iwPosition = new kakao.maps.LatLng(37.4786643, 126.8863597),
-                    iwRemoveable = true;
+            var iwContent = '<div class="map_position">천재IT교육센터</div>',
+                iwPosition = new kakao.maps.LatLng(37.4786643, 126.8863597),
+                iwRemoveable = true;
 
-                // 마커가 표시될 위치입니다
-                var markerPosition  = new kakao.maps.LatLng(37.4786643, 126.8863597);
+            // 마커가 표시될 위치입니다
+            var markerPosition  = new kakao.maps.LatLng(37.4786643, 126.8863597);
 
-                // 마커를 생성합니다
-                var marker = new kakao.maps.Marker({
-                    position: markerPosition
-                });
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
 
-                // 인포윈도우 생성
-                var infowindow = new kakao.maps.InfoWindow({
-                    map: map,
-                    position : iwPosition,
-                    content : iwContent,
-                    removable : iwRemoveable
-                });
-            </script>
-        </section>
-      <!-- 지도 end -->
+            // 인포윈도우 생성
+            var infowindow = new kakao.maps.InfoWindow({
+                map: map,
+                position : iwPosition,
+                content : iwContent,
+                removable : iwRemoveable
+            });
+        </script>
+    </section>
+    <!-- 지도 end -->
 
-    </th:block>
-  </body>
+</th:block>
+</body>
 </html>

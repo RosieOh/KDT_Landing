@@ -145,7 +145,6 @@ public class NoticeController {
         BoardDTO boardDTO1 = boardService.getBoard(id);
         boardDTO1.setTitle(boardDTO.getTitle());
         boardDTO1.setContent(boardDTO.getContent());
-//        boardDTO1.setFileId(boardDTO.getFileId());
         boardService.modify(boardDTO1);
         return "redirect:/notice/read?id="+id;
     }

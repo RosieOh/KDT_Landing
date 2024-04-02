@@ -31,7 +31,8 @@
         <div class="container back_white" data-aos="fade-up">
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="pricing-item featured" style="padding:0;">
-                    <form th:action="@{/modifyBoard/modify/{id}(id=${boardDTO.id})}" method="post" enctype="multipart/form-data">
+<!--                    <form th:action="@{/modifyBoard/modify/{id}(id=${boardDTO.id})}" method="post" enctype="multipart/form-data">-->
+                    <form th:action="@{/modifyBoard/modify/{id}(id=${boardDTO.id})}" method="post">
                         <div class="table-responsive">
                             <div class="input-group mb-3" hidden>
                                 <select name="boardType" id="boardType">

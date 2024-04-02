@@ -148,27 +148,37 @@ public class ModifyBoardController {
     }
 
     @PostMapping("/modify/{id}")
-    public String modifyBoardEdit(@PathVariable("id") Long id, BoardDTO boardDTO, @RequestParam("file") MultipartFile file) {
+    public String modifyBoardEdit(@PathVariable("id") Long id, BoardDTO boardDTO) {
         BoardDTO boardDTO1 = boardService.getBoard(id);
         boardDTO1.setTitle(boardDTO.getTitle());
         boardDTO1.setContent(boardDTO.getContent());
-
-        // 새 파일이 업로드된 경우에만 처리
-        if (!file.isEmpty()) {
-            // 이전 파일 삭제
-            List<String> filesToDelete = Arrays.asList(String.valueOf(boardDTO1.getFileId()));
-            removeFiles(filesToDelete);
-
-            // 새 파일 저장
-            String fileName = storeFile(file);
-
-            // 파일 ID 설정
-            boardDTO1.setFileId(Long.valueOf(fileName));
-        }
-
         boardService.modify(boardDTO1); // 수정된 boardDTO1을 전달
-        return "redirect:/modifyBoard/read?id=" + id;
+        return "redirect:/modifyBoard/read?id="+id;
     }
+
+//
+//    @PostMapping("/modify/{id}")
+//    public String modifyBoardEdit(@PathVariable("id") Long id, BoardDTO boardDTO, @RequestParam("file") MultipartFile file) {
+//        BoardDTO boardDTO1 = boardService.getBoard(id);
+//        boardDTO1.setTitle(boardDTO.getTitle());
+//        boardDTO1.setContent(boardDTO.getContent());
+//
+//        // 새 파일이 업로드된 경우에만 처리
+//        if (!file.isEmpty()) {
+//            // 이전 파일 삭제
+//            List<String> filesToDelete = Arrays.asList(String.valueOf(boardDTO1.getFileId()));
+//            removeFiles(filesToDelete);
+//
+//            // 새 파일 저장
+//            String fileName = storeFile(file);
+//
+//            // 파일 ID 설정
+//            boardDTO1.setFileId(Long.valueOf(fileName));
+//        }
+//
+//        boardService.modify(boardDTO1); // 수정된 boardDTO1을 전달
+//        return "redirect:/modifyBoard/read?id="+id;
+//    }
 
     @RequestMapping(value = "/remove", method = {RequestMethod.GET, RequestMethod.POST})
     public String remove(Long id, RedirectAttributes redirectAttributes) {

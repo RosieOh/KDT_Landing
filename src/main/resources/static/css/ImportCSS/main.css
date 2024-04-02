@@ -9,6 +9,9 @@
   width: 100%;
   height: auto;
   z-index: 1;
+
+  /* 1480으로 수정 */
+  max-width: 1480px;
 }
 
 .container_vw {
@@ -134,8 +137,8 @@
 }
 .is-shady:hover {
   box-shadow:
-    0 10px 16px rgba(0, 0, 0, 0.13),
-    0 6px 6px rgba(0, 0, 0, 0.19);
+          0 10px 16px rgba(0, 0, 0, 0.13),
+          0 6px 6px rgba(0, 0, 0, 0.19);
 }
 /*adds font awesome stars*/
 footer li:before {
@@ -1052,9 +1055,9 @@ p {
 }
 
 .nav-dropdown:hover {
-    .nav-dropdown_wrap {
-      display: block;
-    }
+  .nav-dropdown_wrap {
+    display: block;
+  }
   #nav-dropdown {
     transition: 0.4s ease-in-out;
     transform: rotateX(180deg);
@@ -1062,8 +1065,8 @@ p {
 }
 
 .nav-dropdown_wrap > .nav-content {
-    padding-left: 0;
-    display: block;
+  padding-left: 0;
+  display: block;
 }
 
 .nav_logo {
@@ -1113,11 +1116,11 @@ p {
 
 
 .border1 {
-box-shadow: 2px 2px 10px 1px var(--c-back_gray);
+  box-shadow: 2px 2px 10px 1px var(--c-back_gray);
 }
 
 .box_shadow_in {
-box-shadow: inset -5px 0 1px var(--c-back_gray);
+  box-shadow: inset -5px 0 1px var(--c-back_gray);
 }
 
 /* index.test */

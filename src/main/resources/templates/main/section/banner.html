@@ -1,0 +1,101 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+<th:block th:fragment="main_banner">
+    <style>
+        .slick-prev {
+            position: absolute;
+            background-image: url("/static/images/picture/common2/left.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 1rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            color: transparent;
+            background-color: var(--c-main);
+            cursor: pointer;
+            bottom: 2em;
+            right: 4em;
+            z-index: 1;
+        }
+
+        .slick-next {
+            position: absolute;
+            background-image: url("/static/images/picture/common2/right.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 1rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            color: transparent;
+            background-color: var(--c-main);
+            cursor: pointer;
+            right: 0;
+            bottom: 2em;
+            z-index: 1;
+        }
+    </style>
+
+  <div class="slick-slider">
+    <div class="slick-slide1">
+        <div class="banner_hole">
+            <picture>
+                <source srcset="../../../static/images/picture/bg_1_1_mobile.png" media="(max-width: 358px)" style="position: absolute; display: flex; align-items: center;">
+                <img th:src="@{/picture/bg_1_1.png}" alt="bigdata banner" style="position: absolute; display: flex; align-items: center; width: 100vw; height: 100vw;">
+            </picture>
+            <div class="container">
+                <picture>
+                    <source srcset="../../../static/images/picture/bg_1_2_mobile.png" media="(max-width: 358px)">
+                    <img th:src="@{/picture/bg_1_2.png}" alt="bigdata banner">
+                </picture>
+            </div>
+        </div>
+    </div>
+      <div class="slick-slide1">
+          <div class="banner_hole">
+              <picture>
+                  <source srcset="../../../static/images/picture/bg_2_1_mobile.png" media="(max-width: 358px)" style="position: absolute; display: flex; align-items: center;">
+                  <img th:src="@{/picture/bg_2_1.png}" alt="bigdata banner" style="position: absolute; display: flex; align-items: center; width: 100vw;">
+              </picture>
+              <div class="container">
+                  <picture>
+                      <source srcset="../../../static/images/picture/bg_2_2_mobile.png" media="(max-width: 358px)">
+                      <img th:src="@{/picture/bg_2_2.png}" alt="bigdata banner">
+                  </picture>
+              </div>
+          </div>
+      </div>
+      <div class="slick-slide1">
+          <div class="banner_hole">
+              <picture>
+                  <source srcset="../../../static/images/picture/bg_3_1_mobile.png" media="(max-width: 358px)" style="position: absolute; display: flex; align-items: center; height: 100%;">
+                  <img th:src="@{/picture/bg_3_1.png}" alt="bigdata banner" style="position: absolute; display: flex; align-items: center; width: 100vw;">
+              </picture>
+              <div class="container">
+                  <picture>
+                      <source srcset="../../../static/images/picture/bg_3_2_mobile.png" media="(max-width: 358px)">
+                      <img th:src="@{/picture/bg_3_2.png}" alt="bigdata banner">
+                  </picture>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script th:inline="javascript">
+    $(document).ready(function(){
+      $('.slick-slider').slick({
+          autoplay: true,
+          autoplaySpeed: 2000,
+          nextArrow:$('.next'),
+          prevArrow:$('.prev'),
+      })
+    });
+  </script>
+</th:block>
+</body>
+</html>
+
+
+
