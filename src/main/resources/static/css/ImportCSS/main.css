@@ -1,5 +1,5 @@
 .main {
-  padding: 70px 0 70px;
+  /*padding: 70px 0 70px;*/
 }
 
 .container {
@@ -18,8 +18,8 @@
 }
 
 .main .container {
-  opacity: 0;
-  margin: 120px auto 120px;
+  opacity: 1;
+  /*margin: 120px auto 120px;*/
 }
 
 .pm_self_back {
