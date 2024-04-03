@@ -43,11 +43,6 @@
         margin-top: 5em;
     }
 
-    .six_image {
-        background-image: url("/static/images/picture/bigdata/six_small.png");
-        background-size: contain;
-    }
-
     .Ladder_content {
         width: 360px;
     }
@@ -67,15 +62,7 @@
     .burger_btn {
         display: block;
     }
-    .subSign_form {
-        width: 100%;
-        font-size: 90%;
-        padding: 7rem 1rem;
-    }
 
-    .subSign_form p {
-        font-size: 12px;
-    }
     .notification {
         width: 47%;
     }
@@ -140,14 +127,6 @@
         width: 80%;
     }
     .faq {
-        font-size: 14px;
-    }
-    .sign_form {
-        width: 100%;
-        padding: 30px 50px 30px;
-    }
-
-    .sign_form p {
         font-size: 14px;
     }
 }

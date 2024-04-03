@@ -95,7 +95,7 @@ input, textarea, select {
   border-color: var(--c-back_gray);
   border-radius: 5px;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.2em;
 }
 input, select {
   height: 50px;
@@ -127,7 +127,7 @@ textarea:hover, input:hover, select:hover {
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 
 .label {
-  font-size: 1rem;
+  font-size: 1em;
   font-weight: 700;
 }
 .label:not(:last-child) {
