@@ -52,10 +52,6 @@
         width: 360px;
     }
 
-
-    .bottom_banner_text {
-        font-size: 10px;
-    }
     .bottom_btn {
         font-size: 12px;
     }
@@ -95,14 +91,6 @@
     .benefit_content {
         padding: 1.5rem;
     }
-
-    .map_content {
-        margin: 2rem 0;
-    }
-    .map_text {
-        margin: 0 0 2rem;
-    }
-
     .cp_img_wrap {
         flex-direction: column;
         align-items: baseline;
