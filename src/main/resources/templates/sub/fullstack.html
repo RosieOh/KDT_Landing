@@ -19,34 +19,34 @@
   <!-- 상단배너 start -->
   <section class="container" id="top">
     <div class="image_content flex_column">
-      <div class="flex">
+      <div class="flex direct_column">
         <div class="flex_column">
           <picture>
-            <source srcset="../../static/images/picture/full/full_mobile/banner_full.png" media="(max-width: 450px)">
+            <source srcset="../../static/images/picture/full/full_mobile/banner_full1.png" media="(max-width: 450px)">
             <img th:src="@{/picture/full/banner_full1.png}" alt="">
           </picture>
           <div class="flex">
             <a th:href="@{/subSign_full}">
               <picture>
-                <source srcset="../../static/images/picture/full/full_mobile/banner_full.png" media="(max-width: 450px)">
+                <source srcset="../../static/images/picture/common2/common2_mobile/banner_btn.png" media="(max-width: 450px)">
                 <img th:src="@{/picture/common2/banner_btn.png}" alt="">
               </picture>
             </a>
             <picture>
-              <source srcset="../../static/images/picture/full/full_mobile/banner_full.png" media="(max-width: 450px)">
+              <source srcset="../../static/images/picture/common2/common2_mobile/banner_btn2.png" media="(max-width: 450px)">
               <img th:src="@{/picture/common2/banner_btn2.png}" alt="">
             </picture>
           </div>
         </div>
         <div class="">
           <picture>
-            <source srcset="../../static/images/picture/full/full_mobile/banner_full.png" media="(max-width: 450px)">
+            <source srcset="../../static/images/picture/full/full_mobile/banner_full2.png" media="(max-width: 450px)">
             <img th:src="@{/picture/full/banner_full2.png}" alt="">
           </picture>
         </div>
       </div>
       <picture>
-        <source srcset="../../static/images/picture/full/full_mobile/banner_full.png" media="(max-width: 450px)">
+        <source srcset="/" media="(max-width: 450px)">
         <img th:src="@{/picture/common2/banner_text.png}" alt="">
       </picture>
       <img th:src="@{/picture/common2/banner_img.png}" alt="" class="image_banner">
@@ -58,23 +58,25 @@
   <section class="container ">
     <div class="image_content review_content">
       <picture>
-        <source srcset="../../static/images/picture/full/full_mobile/review_full.png" media="(max-width: 450px)">
+        <source srcset="../../static/images/picture/full/full_mobile/review_full1.png" media="(max-width: 450px)">
         <img th:src="@{/picture/full/review_full.png}" alt="">
       </picture>
       <div class="review_text">
         <a href="https://blog.naver.com/chunjae2023">
           <picture>
+            <source srcset="../../static/images/picture/common2/common2_mobile/review_btn1.png" media="(max-width: 450px)">
             <img th:src="@{/picture/common2/review_btn.png}" alt="">
           </picture>
         </a>
         <picture>
+          <source srcset="../../static/images/picture/common2/common2_mobile/review_btn2.png" media="(max-width: 450px)">
           <img th:src="@{/picture/common2/review_btn2.png}" alt="">
         </picture>
       </div>
     </div>
     <div class="review_image_wrap">
       <div class="width"></div>
-      <div class="slide slide_review_wrap" id="slide">
+      <div class="slide slide_review_wrap">
         <div class="slide_review">
           <img th:src="@{/picture/full/fullex_1.png}" alt="fullstack후기_1" class="border10">
         </div>
@@ -89,10 +91,27 @@
         </div>
       </div>
     </div>
+    <div class="review_image_mobile">
+      <div class="slide slide_review_mobile">
+        <div class="slide_review">
+          <img th:src="@{/picture/full/fullex_1.png}" alt="full후기_1" class="border10">
+        </div>
+        <div class="slide_review">
+          <img th:src="@{/picture/full/fullex_2.png}" alt="full후기_2" class="border10">
+        </div>
+        <div class="slide_review">
+          <img th:src="@{/picture/full/fullex_3.png}" alt="full후기_3" class="border10">
+        </div>
+        <div class="slide_review">
+          <img th:src="@{/picture/full/fullex_4.png}" alt="full후기_4" class="border10">
+        </div>
+      </div>
+    </div>
   </section>
   <!-- REVIEW end -->
 
   <!-- 모집 안내 start -->
+  <div class="image_absolute_wrap"><img th:src="@{/picture/common2/recru_img.png}" alt="recru_img" class="recru_img"/></div>
   <section class="container ">
     <div class="image_content">
       <picture>
@@ -129,17 +148,43 @@
   <section class="container ">
     <div class="image_content">
       <picture>
-        <source srcset="../../static/images/picture/full/full_mobile/port_full.png" media="(max-width: 450px)">
-        <img th:src="@{/picture/full/port_full.png}" alt="">
+        <source srcset="../../static/images/picture/full/full_mobile/port_full1.png" media="(max-width: 450px)">
+        <img th:src="@{/picture/full/port_full1.png}" alt="">
       </picture>
     </div>
     <div class="port_content">
         <div class="port_image">
-          <img th:src="@{/picture/full/project_1.gif}" alt="fullstack 포트폴리오2" class="border10">
+          <picture>
+            <source srcset="../../static/images/picture/full/full_mobile/port_full2.png" media="(max-width: 450px)">
+            <img th:src="@{/picture/full/port_full2.png}" alt="">
+          </picture>
+          <div class="port_box">
+            <img th:src="@{/picture/full/project_1.gif}" alt="fullstack 포트폴리오2" class="border10">
+          </div>
         </div>
         <div class="port_image">
-          <img th:src="@{/picture/full/project_2.gif}" alt="fullstack 포트폴리오2" class="border10">
+          <picture>
+            <img th:src="@{/picture/full/port_full3.png}" alt="">
+          </picture>
+          <div class="port_box">
+            <img th:src="@{/picture/full/project_2.gif}" alt="fullstack 포트폴리오2" class="border10">
+          </div>
         </div>
+    </div>
+
+    <div class="port_content_mobile">
+      <div class="port_box">
+        <img th:src="@{/picture/full/project_1.gif}" alt="fullstack 포트폴리오2" class="border10">
+      </div>
+      <div class="port_box">
+        <picture>
+          <img th:src="@{/picture/full/full_mobile/port_full2.png}" alt="">
+        </picture>
+      </div>
+      <div class="port_box">
+        <img th:src="@{/picture/full/project_2.gif}" alt="fullstack 포트폴리오2" class="border10">
+      </div>
+
     </div>
   </section>
   <!-- 포트폴리오 end -->

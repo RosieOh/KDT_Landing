@@ -5,31 +5,28 @@
       <script th:src="@{/static/js/slick.js}"></script>
       <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
       <a href="#top" class="gotop" id="gotop">▲</a>
-
-<div class="bottom_banner">
-        <section class="container ">
-          <div class="image_content">
+      <div class="bottom_banner">
+        <section class="container_side ">
+          <div class="image_content direct_column">
             <picture>
-              <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner.png" media="(max-width: 450px)">
+              <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner1.png" media="(max-width: 450px)">
               <img th:src="@{/picture/common2/bottom_banner1.png}" alt="">
             </picture>
-            <picture>
-              <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner.png" media="(max-width: 450px)">
-              <img th:src="@{/picture/common2/bottom_banner2.png}" alt="" id="ban_btn" class="bottom_banner_btn">
-            </picture>
+            <div class="flex">
+              <picture>
+                <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner_btn.png" media="(max-width: 450px)">
+                <img th:src="@{/picture/common2/bottom_banner2.png}" alt="" id="ban_btn" class="bottom_banner_btn">
+              </picture>
+              <picture>
+                <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner2.png" media="(max-width: 450px)">
+                <img src="" alt="" >
+              </picture>
+            </div>
           </div>
-
-<!--          <div class="bottom_banner_wrap red">-->
-<!--            <div style="width: 100%">-->
-<!--            </div>-->
-<!--            <div class="bottom_banner_btn blue">-->
-<!--              <img th:src="@{/picture/common2/button.png}" alt="" class="bottom_btn red" id="ban_btn">-->
-<!--            </div>-->
-<!--          </div>-->
         </section>
-</div>
+      </div>
       <footer class="ft" id="ft">
-        <section class="container">
+        <section class="container_side">
         <div class="ft_wrap">
           <div class="ft_wrap_text">
             <p class="copyright ">

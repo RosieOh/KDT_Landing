@@ -1,7 +1,187 @@
 /* 교진  */
+.main {
+}
+
+.main.back_lightgray {
+    padding: 5em;
+}
+
+.container {
+    flex-grow: 1;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    max-width: 1400px;
+}
+.container_side {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.main .container:nth-child(1) {
+    opacity: 1;
+    padding-top: 3em;
+}
+
+.main .container:nth-child(2) {
+    opacity: 1;
+}
+.main .container {
+    opacity: 0;
+    padding-bottom: 3em;
+}
+
+.ud_m {
+    padding: 3em 0 5em;
+}
+
+.pt_3 {
+    padding-top: 3em;
+}
+
+.container_vw {
+    flex-grow: 1;
+    position: relative;
+    width: 100vw;
+    height: auto;
+    z-index: 1;
+}
+
 .flex {
     display: flex;
 }
+
+
+/* header var */
+
+.navbar {
+    z-index: 999;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: var(--c-white);
+}
+.navbar_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-wrap {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.nav-content {
+    line-height: 1.5;
+    padding: 1.5rem 1rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+}
+.nav-content:hover {
+    color: var(--c-main);
+    font-weight: bold;
+}
+.nav-dropdown {
+    display: block;
+    color: var(--c-sub);
+}
+
+.nav-dropdown_wrap {
+    display: none;
+    padding: 0 0 0 20px;
+    margin: auto;
+    position: absolute;
+    background-color: var(--c-white);
+    right: -21px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -3px gray;
+}
+
+
+
+#nav-dropdown {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.nav-dropdown:hover {
+    .nav-dropdown_wrap {
+        display: block;
+    }
+    #nav-dropdown {
+        transition: 0.4s ease-in-out;
+        transform: rotateX(180deg);
+    }
+}
+
+.nav-dropdown_wrap > .nav-content {
+    padding-left: 0;
+    display: block;
+}
+
+.nav_logo {
+    width: 150px;
+
+}
+
+.burger_btn {
+    display: none;
+    background-color: var(--c-white);
+    border: none;
+    padding: 17px;
+}
+
+.burger {
+    display: none;
+    width: 100%;
+    position: relative;
+    height: auto;
+}
+
+.bugger_wrap {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.bugger_wrap li{
+    display: flex;
+}
+
+.bugger_link {
+    width: 100%;
+    padding: 1.5rem;
+    font-weight: bold;
+}
+
+.bugger_link:active {
+    color: var(--c-main);
+    background-color: var(--c-white_ob);
+}
+
+.nav_link {
+    margin: 0 auto;
+}
+
+.border1 {
+    box-shadow: 2px 2px 10px 1px var(--c-back_gray);
+}
+
+.box_shadow_in {
+    box-shadow: inset -5px 0 1px var(--c-back_gray);
+}
+
 
 .image_content {
     width: 100%;
@@ -28,27 +208,24 @@
     color: var(--c-white);
     width: 100%;
     display: flex;
-    margin-top: 1em;
 }
-.port_box1 {
-
+.port_box {
+    margin-top: 4%;
 }
-
-.port_box2 {
-}
-
 .port_image {
-    width: 90%;
-    margin: 1em;
-}
-
-.map_box {
-    display: flex;
     width: 100%;
+    margin: 0 1em;
 }
 
+.port_content_mobile {
+    display: none;
+}
 .review_image_wrap {
     display: flex;
+}
+
+.review_image_mobile {
+    display: none;
 }
 .review_text {
     display: flex;
@@ -59,6 +236,12 @@
     align-items: center;
     margin: 3em 0;
 }
+.pm_port_wrap_mobile {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 .pm_port3 {
 
 }
@@ -128,6 +311,7 @@
     width: 20px;
     height: 20px;
 }
+
 .men_slide {
     display: flex;
     flex-wrap: nowrap;
@@ -218,6 +402,7 @@
     color: transparent;
     background-color: var(--c-main);
     cursor: pointer;
+    border: none;
 }
 
 
@@ -233,6 +418,7 @@
     color: transparent;
     background-color: var(--c-main);
     cursor: pointer;
+    border: none;
 }
 
 .pm_slide_wrap .slick-prev {
@@ -276,7 +462,7 @@
 
 .slick-dots {
     position: absolute;
-    bottom: 2em;
+    bottom: 3em;
     display: flex;
     width: 100%;
     padding: 0;
@@ -353,13 +539,440 @@
     color: var(--c-main);
 }
 
+.map_box {
+    display: flex;
+    width: 100%;
+}
+
+.map {
+    width: 60%;
+    height: 500px;
+}
+
+.map_text {
+    margin: 5% 0;
+}
+
+.map_text p{
+    display: flex;
+    align-items: center;
+    color: var(--c-white);
+}
+
+
+/* 사전신청 양식 폼 */
+
+.sign_form_back {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(78, 81, 82, 0.774);
+    z-index: 999;
+}
+
+.sign_form {
+    position: fixed;
+    width: 700px;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    padding: 30px 50px 30px;
+    margin: 0;
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    overflow: scroll;
+}
+
+
+.sign_form h1 {
+    margin: 0 0 2rem 0;
+    font-size: 300%;
+    color: black;
+}
+
+.sign_form h3 {
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.sign_title {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.close_btn {
+    background-color: var(--c-black);
+    border-radius: 50px;
+    font-size: 2em;
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.sign_form p {
+    font-size: 1em;
+}
+
+.sign_form em {
+    color: var(--c-main);
+    font-weight: bold;
+    font-style: normal;
+    margin-left: 3px;
+}
+
+.sign_list {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.sign_list_wrap {
+    width: 100%;
+    display: block;
+}
+
+.sign_list_title {
+    display: flex;
+    font-size: 110%;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0.2rem;
+}
+
+.agree {
+    border: 1px solid var(--c-back_gray);
+    color: var(--c-black);
+    display: inline-block;
+    background-color: var(--c-white);
+    padding: 1rem;
+    border-radius: 20px;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+.agree:hover {
+    cursor: pointer;
+}
+
+.agree a {
+    color: var(--c-black);
+    background-color: transparent;
+    font-size: 1em;
+    float: right;
+}
+
+.agree p {
+    color: var(--c-black);
+}
+
+.agree_check {
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    margin: 0.75rem 0.75rem 3rem;
+}
+
+.scroll_wrap {
+    display: none;
+    margin-top: 1.5rem;
+}
+
+.scrollBox {
+    overflow-y: scroll;
+    height: 100px;
+}
+
+
+
+
+
+
+/* 신청 양식 폼 */
+.subSign_form {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 920px;
+    height: auto;
+    background-color: var(--c-white);
+    border: none;
+    padding: 3rem 2rem;
+}
+
+.subSign_form p {
+    font-size: 100%;
+    padding-left: 0.5rem;
+    line-height: 1.5;
+}
+
+.subSign_form strong {
+    color: var(--c-main);
+}
+
+.subSign_form h1 {
+    margin: 0 0 2rem 0;
+    font-size: 300%;
+    color: black;
+}
+
+.subSign_form h3 {
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.subSign_title {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.subSign_form em {
+    color: var(--c-main);
+    font-weight: bold;
+    font-style: normal;
+    margin-left: 3px;
+}
+
+.sign_list {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.sign_list_wrap {
+    width: 100%;
+    display: block;
+}
+
+.sign_list_title {
+    display: flex;
+    font-size: 110%;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0.2rem;
+}
+
+.paper {
+    border: none;
+    color: var(--c-black);
+    display: inline-block;
+    background-color: var(--c-white);
+    width: 100%;
+    margin-left: 0.75rem;
+}
+
+.paper:hover {
+    color: var(--c-hover);
+    cursor: pointer;
+}
+
+.paper .scroll_wrap {
+    scale: none;
+    height: 80px;
+}
+.paper a {
+    color: var(--c-back_gray);
+}
+.paper h5 {
+    font-size: 85%;
+    color: var(--c-back_gray);
+    font-weight: bold;
+}
+.subSign_form.field {
+    margin-top: 5rem;
+}
+
+.subSign_form label p {
+    font-size: 13px;
+    color: var(--c-back_gray);
+}
+
+[type="radio"] + span {
+    margin-left: 0.5rem;
+    vertical-align: text-bottom;
+}
+
+[type="radio"] {
+    appearance: none;
+    border: max(2px, 0.1em) solid var(--c-back_gray);
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    line-height: 2;
+    transition: border 0.1s ease-in-out;
+    padding: 0;
+}
+
+[type="radio"]:checked {
+    border: 0.3rem solid var(--c-sub);
+}
+
+[type="radio"]:focus-visible {
+    outline-offset: max(2px, 0.1em);
+    outline: max(2px, 0.1em) dotted tomato;
+}
+
+[type="radio"]:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) var(--c-back_lightgray);
+    cursor: pointer;
+}
+
+[type="radio"]:disabled {
+    background-color: var(--c-back_gray);
+    box-shadow: none;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+[type="radio"]:disabled + span {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+[type="checkbox"] {
+    appearance: none;
+    border: max(2px, 0.1em) solid var(--c-back_gray);
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    transition: border 0.1s ease-in-out;
+    padding: 0;
+}
+
+[type="checkbox"]:checked {
+    border: 0.4em solid var(--c-main);
+}
+
+[type="checkbox"]:focus-visible {
+    outline-offset: max(2px, 0.1em);
+    outline: max(2px, 0.1em) dotted tomato;
+}
+
+[type="checkbox"]:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) var(--c-back_lightgray);
+    cursor: pointer;
+}
+
+[type="checkbox"]:disabled {
+    background-color: var(--c-back_gray);
+    box-shadow: none;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+[type="checkbox"]:disabled + span {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+[type="checkbox"] + span {
+    margin-left: 0.5rem;
+    vertical-align: text-bottom;
+}
+
+.label_input {
+    margin-left: 1rem;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    font-size: 14px;
+    height: 2.5em;
+    padding: calc(0.5em - 1px) calc(0.75em - 1px);
+    position: relative;
+    outline: none;
+    width: 60%;
+}
+
+.textCount {
+    text-align: right;
+    padding-right: 0.5rem;
+    color: var(--c-back_gray);
+}
+
+.sign_list_chek {
+    margin-right: 0.3em;
+}
+
+
+
+.agree_button {
+    background-color: var(--c-sub);
+    padding: 1rem 1.5rem;
+    color: var(--c-white);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    width: 80%;
+    margin-top: 3rem;
+}
+
+.agree_button:hover {
+    background-color: var(--c-hover);
+    color: var(--c-white);
+}
+
+
+/* gotop */
+.gotop {
+    display: none;
+    z-index: 990;
+    position: fixed;
+    right: 25px;
+    bottom: 210px;
+    border-radius: 10px;
+    padding: 10px 15px;
+    border: 1px solid var(--c-sub);
+    background-color: var(--c-white);
+    color: var(--c-sub);
+    transition: all 0.2s ease-in-out;
+}
+
+
+.gotop:hover {
+    background-color: var(--c-sub);
+    color: var(--c-white);
+}
+
+
+
+
 @media (max-width:1399px) {
     .men_slide {
         height: auto;
     }
+    .container {
+        padding: 3em 10px;
+    }
 }
 
+@media (max-width:899px) {
+    .subSign_form {
+        width: 100%;
+        padding: 10px
+    }
+    .sign_form {
+        position: initial;
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        font-size: 80%;
+        overflow: scroll;
+        height: 100%;
+        transform: translate(0, 0);
+        border-radius: initial;
+    }
+    .sign_field:not(:last-child) {
+         margin-bottom: 0.5em;
+    }
+}
 @media (max-width:450px) {
+    body {
+        font-size: 60%;
+    }
     .direct_column {
         flex-direction: column;
     }
@@ -389,5 +1002,61 @@
     .review_content {
         position: relative;
     }
+    .review_image_wrap {
+        display: none;
+    }
+    .review_image_mobile {
+        display: block;
+    }
+    .port_content {
+        display: none;
+    }
+    .port_content_mobile {
+        display: block;
+    }
+    .pm_port_wrap_mobile {
+        display: flex;
 
+    }
+    .pm_port_wrap {
+        display: none;
+        margin: 0;
+    }
+    .ud_m {
+        padding: 0;
+    }
+    .subSign_form {
+        font-size: 80%;
+    }
+
+    .subSign_form p {
+        font-size: 12px;
+    }
+    .main.back_lightgray {
+        padding: 0;
+        margin: 2em 0 5em;
+    }
+    .agree {
+        font-size: 90%;
+    }
+    .agree_check {
+        margin: 1em 0.5em;
+        font-size: 85%;
+    }
+    .gotop {
+        right: 5.5%;
+        bottom: 16%;
+        padding: 5px 8px;
+    }
+    .sign_form h1 {
+        margin: 2rem 0;
+        font-size: 200%;
+    }
+    .close_btn {
+        right: 14px;
+        top: 8px;
+        padding: 2px 7px;
+    }
 }
+
+

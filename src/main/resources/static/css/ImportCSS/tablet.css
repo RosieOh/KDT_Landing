@@ -24,20 +24,12 @@
         justify-content: center;
     }
 
-    .container {
-        padding: 0 15px;
-    }
-
     .curri_text {
         width: 100%;
         margin-bottom: 1.5rem;
         padding: 2rem 0;
     }
 
-    .port_box {
-        flex-direction: column;
-        justify-content: center;
-    }
     .port_content {
         width: 100%;
     }
@@ -203,9 +195,6 @@
         height: 400px;
     }
 
-    .bottom_banner_text {
-        font-size: 18px;
-    }
 
     .cardFull{
         flex-direction: column;
