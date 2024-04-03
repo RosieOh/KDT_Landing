@@ -36,13 +36,20 @@
                   <a th:href="@{/member/login}" class="nav_link ">로그인</a>
                 </li>
               </th:block>
-                <th:block sec:authorize="hasAnyAuthority('STUDENT')">
+              <th:block sec:authorize="hasAnyAuthority('STUDENT')">
                 <li class="nav-content">
                   <a class="nav_link " th:href="@{/logout}">
                     로그아웃
                   </a>
                 </li>
-                </th:block>
+              </th:block>
+<!--                <th:block sec:authorize="hasAnyAuthority('STUDENT')">-->
+<!--                <li class="nav-content">-->
+<!--                  <a class="nav_link " th:href="@{/logout}">-->
+<!--                    로그아웃-->
+<!--                  </a>-->
+<!--                </li>-->
+<!--                </th:block>-->
                 <th:block sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')">
                 <li class="nav-content nav-dropdown" >
                     <a class="nav_link" href="#">관리자용

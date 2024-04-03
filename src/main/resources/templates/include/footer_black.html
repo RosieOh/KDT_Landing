@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<th:block th:fragment="footer_black">
+  <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
+  <a href="#banner" class="gotop" id="gotop">▲</a>
+  <div class="bottom_banner">
+    <section class="container">
+      <div class="bottom_banner_wrap">
+        <div class="bottom_banner_text">
+          전액 무료로 교육·인턴·직원 전환까지&nbsp<strong class="font_strong">한번에 해결하고 싶다면?</strong>
+          <div class="bottom_banner_image">
+            <img
+                    th:src="@{/picture/common/footer.png}"
+                    alt="ico benefit_0"
+            />
+          </div>
+        </div>
+        <div class="bottom_banner_btn">
+          <button type="button" class="bottom_btn" id="ban_btn">지금 지원하기 ></button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="ft_black" id="ft">
+    <section class="container">
+      <div class="ft_wrap">
+        <div class="ft_wrap_text_black">
+          <p class="copyright copyright_black  ">
+            <span>(주)천재교육 &nbsp;|&nbsp; 서울특별시 디지털로 9길 23 마리오아울렛2관 11층 천재IT교육센터</span>
+          </p>
+          <p class="copyright copyright_black ">
+            <span>사업자등록번호: 119-81-19350 &nbsp;|&nbsp; 서울특별시 디지털로 9길 23 마리오아울렛2관 11층 천재IT교육센터</span>
+          </p>
+          <p class="copyright copyright_black">
+            <span>접수 문의 · 사이트 이용 문의 : 02-3282-8589 &nbsp;|&nbsp;  이메일 : genia@chunjae.co.kr</span>
+          </p>
+          <p class="cp cp_black">
+            COPYRIGHT 2023 Chunjae EDUCATION INC. ALL RIGHTS RESERVED.
+          </p>
+        </div>
+        <div class="cp_img_wrap">
+          <a href="https://www.chunjae.co.kr/" class="cp_img"><img class="ft_logo_black" th:src="@{/picture/common/footer_black.png}" alt="천재교육 logo"></a>
+          <a href="https://chunjaetext.co.kr/" class="cp_img"><img class="ft_logo_black" th:src="@{/picture/common/chunjaebooklogo.png}" alt="천재교과서 logo"></a>
+          <a href="https://www.moel.go.kr/" class="cp_img"><img class="ft_logo_black" th:src="@{/picture/hirecenter_logo.png}" alt="고용노동부 logo"></a>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <script th:inline="javascript">
+    (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+
+    ChannelIO('boot', {
+      "pluginKey": "ebc8aaee-afda-484d-a633-5d8a0dff7fb3"
+    });
+  </script>
+</th:block>
+</body>
+</html>

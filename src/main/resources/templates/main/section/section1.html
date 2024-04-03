@@ -1,0 +1,156 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+
+<style>
+    .slick-dots {
+        display: none;
+    }
+
+    @media (max-width: 767px) {
+        .profile_card {
+            display: flex;
+        }
+    }
+</style>
+
+<th:block th:fragment="main_section1">
+    <div class="container">
+        <div class="main_section1">
+            <div class="slick-slider_section1">
+                <div class="slideWrap">
+                    <section class="container container_bottom_section1">
+
+                        <!-- 여기까지 완료 -->
+                        <div class="container_section1_header1">
+                            <img class="radius_2_section1" th:src="@{/picture/Group570.png}" alt="">
+                        </div>
+                        <!-- 여기까지 완료 -->
+
+                        <!-- 여기까지 완료 -->
+                        <div class="profile_card">
+                            <div class="profile_card_batch">
+                                <div class="columns features features_1 radius1_cur_re">
+                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
+                                        <div class="card-image">
+                                            <img class="radius_2_section1" th:src="@{/picture/Group27_1_1.png}" alt="">
+                                        </div>
+                                        <div class="card-content_section1_text">
+                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/Group27_2.png}" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
+                                        <div class="card-image">
+                                            <img class="radius_2_section1" th:src="@{/picture/Group27_1_2.png}" alt="">
+                                        </div>
+                                        <div class="card-content_section1_text">
+                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/Group27_2.png}" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
+                                        <div class="card-image">
+                                            <img class="radius_2_section1" th:src="@{/picture/Group27_1_3.png}" alt="">
+                                        </div>
+                                        <div class="card-content_section1_text">
+                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/Group27_2.png}" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 여기까지 완료 -->
+
+                        <div class="slick-slider_wrap">
+                            <div class="container_section1_header1_mobile">
+                                <img class="radius_2_section1_mobile" th:src="@{/picture/section2_mobile.png}" alt="">
+                            </div>
+                            <div class="slick-slider_section1">
+                                <div class="">
+                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
+                                        <div class="card-image">
+                                            <img class="radius_2_section1" th:src="@{/picture/Group27_1_1.png}" alt="">
+                                        </div>
+                                        <div class="card-content_section1_text">
+                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/Group27_2.png}" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
+                                        <div class="card-image">
+                                            <img class="radius_2_section1" th:src="@{/picture/Group27_1_2.png}" alt="">
+                                        </div>
+                                        <div class="card-content_section1_text">
+                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/Group27_2.png}" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
+                                        <div class="card-image">
+                                            <img class="radius_2_section1" th:src="@{/picture/Group27_1_3.png}" alt="">
+                                        </div>
+                                        <div class="card-content_section1_text">
+                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/Group27_2.png}" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <script th:inline="javascript">
+                $(document).ready(function(){
+                    $('.slick-slider_section1').slick({
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                        dots: false,
+                        arrows: false,
+                    })
+                });
+            </script>
+        </div>
+
+    </div>
+</th:block>
+</body>
+</html>
+
+
+
+
+<!--<section class="container container_bottom_section1">-->
+<!--    <div class="container_section1_header1">-->
+<!--        <img class="radius_2_section1" th:src="@{/picture/Group570.png}" alt="">-->
+<!--    </div>-->
+<!--    <div class="columns features features_1 radius1_cur_re" >-->
+<!--        <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">-->
+<!--            <div class="card-image">-->
+<!--                <img class="radius_2_section1" th:src="@{/picture/Group27_1_1.png}" alt="">-->
+<!--            </div>-->
+<!--            <div class="card-content_section1_text">-->
+<!--                <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/Group27_2.png}" alt=""></a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">-->
+<!--            <div class="card-image">-->
+<!--                <img class="radius_2_section1" th:src="@{/picture/Group27_1_2.png}" alt="">-->
+<!--            </div>-->
+<!--            <div class="card-content_section1_text">-->
+<!--                <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/Group27_2.png}" alt=""></a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">-->
+<!--            <div class="card-image">-->
+<!--                <img class="radius_2_section1" th:src="@{/picture/Group27_1_3.png}" alt="">-->
+<!--            </div>-->
+<!--            <div class="card-content_section1_text">-->
+<!--                <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/Group27_2.png}" alt=""></a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+</section>
+
+
+

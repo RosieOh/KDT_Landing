@@ -4,7 +4,7 @@
 @import url("ImportCSS/font.css");
 @import url("ImportCSS/subject.css");
 @import url("ImportCSS/board.css");
-@import url("ImportCSS/tablet.css");
+/*@import url("ImportCSS/tablet.css");*/
 @import url("ImportCSS/image_absolute.css");
 @import url("ImportCSS/mobile.css");
 @import url("ImportCSS/table.css");
@@ -14,6 +14,7 @@
 @import url("ImportCSS/taehoon.css");
 @import url("ImportCSS/taehoon_mobile.css");
 @import url("ImportCSS/taehoon_tablet.css");
+@import url("ImportCSS/banner.css");
 
 :root {
   --c-main: rgba(85, 59, 243, 1);
@@ -30,6 +31,10 @@
   --c-white_2: rgba(248, 248, 248, 1);
   --c-white_ob: rgba(255, 255, 255, 0.3);
   --border_radius: 30px;
+
+  /* 오태훈 추가 사항 */
+  --footer_black: #292929;
+  --card_section1_btn: #553BF3;
 }
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
 

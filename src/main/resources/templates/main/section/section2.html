@@ -1,0 +1,67 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+
+<style>
+    .slick-dots {
+        display: none;
+    }
+</style>
+
+<th:block th:fragment="main_section2">
+    <div class="main_section2">
+        <div class="slick-slider_section2">
+            <div class="slideWrap">
+                <section class="container main_section2">
+                    <div class="edu_card">
+                        <img class="edu_card_header" th:src="@{/picture/Rectangle13_header.png}" alt="">
+                    </div>
+                    <div class="profile_card">
+                        <div class="profile_card_batch">
+                            <div class="profile_card_1" >
+                                <a href="https://blog.naver.com/chunjae2023/223276145212"><img th:src="@{/picture/Rectangle13_1.png}" alt=""></a>
+                            </div>
+                            <div class="profile_card_1" >
+                                <a href="https://blog.naver.com/chunjae2023/223273835756"><img th:src="@{/picture/Rectangle13_2.png}" alt=""></a>
+                            </div>
+                            <div class="profile_card_1" >
+                                <a href="https://blog.naver.com/chunjae2023/223276796275"><img th:src="@{/picture/Rectangle13_3.png}" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="profile_card_text">
+                            <a href="https://blog.naver.com/chunjae2023"><img th:src="@{/picture/Rectangle13_4.png}" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="slick-slider_wrap">
+                            <div class="slick-slider_section2">
+                                <div class="">
+                                    <img th:src="@{/picture/Rectangle13_1.png}" alt="bigdata banner">
+                                </div>
+                                <div class="">
+                                    <img th:src="@{/picture/Rectangle13_2.png}" alt="bigdata banner">
+                                </div>
+                                <div class="">
+                                    <img th:src="@{/picture/Rectangle13_3.png}" alt="bigdata banner">
+                                </div>
+                            </div>
+                        <div class="profile_card_text">
+                            <a href="https://blog.naver.com/chunjae2023"><img th:src="@{/picture/Rectangle13_4_mobile.png}" alt=""></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script th:inline="javascript">
+            $(document).ready(function(){
+                $('.slick-slider_section2').slick({
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    dots: false,
+                    arrows: false,
+                })
+            });
+        </script>
+    </div>
+</th:block>
+</body>
+</html>
