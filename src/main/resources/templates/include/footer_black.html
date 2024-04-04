@@ -5,19 +5,21 @@
   <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
   <a href="#banner" class="gotop" id="gotop">▲</a>
   <div class="bottom_banner">
-    <section class="container">
-      <div class="bottom_banner_wrap">
-        <div class="bottom_banner_text">
-          전액 무료로 교육·인턴·직원 전환까지&nbsp<strong class="font_strong">한번에 해결하고 싶다면?</strong>
-          <div class="bottom_banner_image">
-            <img
-                    th:src="@{/picture/common/footer.png}"
-                    alt="ico benefit_0"
-            />
-          </div>
-        </div>
-        <div class="bottom_banner_btn">
-          <button type="button" class="bottom_btn" id="ban_btn">지금 지원하기 ></button>
+    <section class="container_side ">
+      <div class="image_content direct_column">
+        <picture>
+          <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner1.png" media="(max-width: 450px)">
+          <img th:src="@{/picture/common2/bottom_banner1.png}" alt="">
+        </picture>
+        <div class="flex">
+          <picture>
+            <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner_btn.png" media="(max-width: 450px)">
+            <img th:src="@{/picture/common2/bottom_banner2.png}" alt="" id="ban_btn" class="bottom_banner_btn">
+          </picture>
+          <picture>
+            <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner2.png" media="(max-width: 450px)">
+            <img src="" alt="" >
+          </picture>
         </div>
       </div>
     </section>

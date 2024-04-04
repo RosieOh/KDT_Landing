@@ -945,7 +945,10 @@
         height: auto;
     }
     .container {
-        padding: 3em 10px;
+        padding: 0 10px;
+    }
+    .img-class1 {
+        display: none;
     }
 }
 
