@@ -1,6 +1,7 @@
 /* 강좌 Page */
 
 .main {
+    overflow: hidden;
 }
 
 .main.back_lightgray {
@@ -561,6 +562,8 @@
 .map {
     width: 60%;
     height: 500px;
+    min-width: 300px;
+    margin-right: 3em;
 }
 
 .map_text {
