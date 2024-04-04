@@ -6,13 +6,9 @@
   background-position: center;
 }
 
-
-
 .features {
   display: flex;
 }
-
-
 .breadcrumb_1 {
   background-color: #f1f4f9;
   height: 150px;
@@ -385,7 +381,7 @@ width: 2.5rem;
   left: 50%;
   top: 30%;
   transform: translate(-50%, -50%);
-  background-image: url(/static/images/picture/common/complete.jpg);
+  background-image: url(/static/images/picture/common2/complete.jpg);
   background-color: #31c97b;
   background-size: cover;
   font-weight: bold;
@@ -661,6 +657,7 @@ width: 2.5rem;
   width: 100%;
   background-color: var(--c-white);
   padding: 0.5rem 0.5rem 7rem;
+  box-shadow: 0 5px 10px 0px gray;
 }
 
 .ft_wrap {
@@ -691,13 +688,12 @@ width: 2.5rem;
 }
 
 .cp_img {
-  margin-top: 1rem;
+  margin-right: 0.75em;
 }
 
 .ft_logo {
   width: 130px;
   height: 35px;
-  background-color: var(--c-white);
   object-fit: contain;
 }
 
