@@ -750,17 +750,13 @@ p {
 .login-wrapper{
     width: 350px;
     height: 350px;
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 5em auto;
 }
 
-.login-wrapper{
-    width: 350px;
-    height: 350px;
+.login_size {
     margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
+    padding-top: 50px;
+    min-height: 59vh;
 }
 
 .login-wrapper > h2{
@@ -999,7 +995,7 @@ p {
 
 .kakao_login_img {
     object-fit: contain;
-    width: 350px;
+    width: 100%;
     height: 53px;
 }
 

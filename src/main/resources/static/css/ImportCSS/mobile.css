@@ -289,5 +289,12 @@
         bottom: 2em;
         z-index: 1;
     }
+
+}
+
+@media (max-width: 350px) {
+    .login-wrapper{
+        width: 100%;
+    }
 }
 
