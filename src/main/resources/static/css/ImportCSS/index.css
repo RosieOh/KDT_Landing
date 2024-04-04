@@ -22,6 +22,7 @@
 
 .card-content_section1_text {
     text-align: left;
+    padding-bottom: 1.5rem;
 }
 
 .radius1_cur_re {
@@ -93,7 +94,7 @@
 }
 
 .card-image {
-    padding-bottom: 20px;
+    padding-bottom: 2.5rem;
 }
 
 .radius_2_section2 {
