@@ -241,6 +241,18 @@
     justify-content: center;
     align-items: center;
 }
+.pm_port_wrap_mobile .slick-prev {
+    right: 3em;
+    bottom: 1em;
+    z-index: 1;
+}
+
+.pm_port_wrap_mobile .slick-next {
+    right: 0;
+    bottom: 1em;
+    z-index: 1;
+}
+
 
 .pm_port3 {
 
@@ -297,19 +309,15 @@
 }
 
 .men_slide_wrap_mobile .slick-prev {
-    right: 2em;
+    right: 3em;
     bottom: 1em;
     z-index: 1;
-    width: 20px;
-    height: 20px;
 }
 
 .men_slide_wrap_mobile .slick-next {
     right: 0;
     bottom: 1em;
     z-index: 1;
-    width: 20px;
-    height: 20px;
 }
 
 .men_slide {
@@ -392,7 +400,7 @@
 
 .slick-prev {
     position: absolute;
-    background-image: url("/static/images/picture/common2/left.png");
+    background-image: url("/static/images/picture/banner_button_1.png");
     background-repeat: no-repeat;
     background-position: center;
     margin: 1rem;
@@ -400,15 +408,15 @@
     height: 30px;
     border-radius: 100%;
     color: transparent;
-    background-color: var(--c-main);
+    background-color: transparent;
+    border: 1px solid white;
     cursor: pointer;
-    border: none;
 }
 
 
 .slick-next {
     position: absolute;
-    background-image: url("/static/images/picture/common2/right.png");
+    background-image: url("/static/images/picture/banner_button_2.png");
     background-repeat: no-repeat;
     background-position: center;
     margin: 1rem;
@@ -416,9 +424,9 @@
     height: 30px;
     border-radius: 100%;
     color: transparent;
-    background-color: var(--c-main);
+    background-color: transparent;
+    border: 1px solid white;
     cursor: pointer;
-    border: none;
 }
 
 .pm_slide_wrap .slick-prev {
@@ -947,6 +955,13 @@
     .container {
         padding: 3em 10px;
     }
+    .pm_slide_wrap .slick-prev {
+        bottom: 0;
+    }
+
+    .pm_slide_wrap .slick-next {
+        bottom: 0;
+    }
 }
 
 @media (max-width:899px) {
@@ -967,6 +982,9 @@
     }
     .sign_field:not(:last-child) {
          margin-bottom: 0.5em;
+    }
+    .burger_btn {
+        display: block;
     }
 }
 @media (max-width:450px) {
@@ -1056,6 +1074,18 @@
         right: 14px;
         top: 8px;
         padding: 2px 7px;
+    }
+
+    .men_slide_item {
+        animation: initial;
+    }
+    .slick-prev {
+        width: 20px;
+        height: 20px;
+    }
+    .slick-next {
+        width: 20px;
+        height: 20px;
     }
 }
 

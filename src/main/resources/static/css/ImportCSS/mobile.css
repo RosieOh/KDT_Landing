@@ -59,9 +59,7 @@
     .navbar-menu {
         display: none;
     }
-    .burger_btn {
-        display: block;
-    }
+
 
     .notification {
         width: 47%;
@@ -129,10 +127,6 @@
     .faq {
         font-size: 14px;
     }
-}
-
-
-@media (max-width:767px) {
 
     .notification .benefit_sub{
         font-size: 14px;

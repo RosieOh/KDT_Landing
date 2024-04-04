@@ -28,9 +28,9 @@
                 >PM 과정</a
                 >
               </li>
-              <li class="nav-content">
-                <a class="nav_link " href="#">천재IT Blog</a>
-              </li>
+<!--              <li class="nav-content">-->
+<!--                <a class="nav_link " href="#">천재IT Blog</a>-->
+<!--              </li>-->
               <th:block sec:authorize="isAnonymous()">
                 <li class="nav-content">
                   <a th:href="@{/member/login}" class="nav_link ">로그인</a>
@@ -43,13 +43,6 @@
                   </a>
                 </li>
               </th:block>
-<!--                <th:block sec:authorize="hasAnyAuthority('STUDENT')">-->
-<!--                <li class="nav-content">-->
-<!--                  <a class="nav_link " th:href="@{/logout}">-->
-<!--                    로그아웃-->
-<!--                  </a>-->
-<!--                </li>-->
-<!--                </th:block>-->
                 <th:block sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')">
                 <li class="nav-content nav-dropdown" >
                     <a class="nav_link" href="#">관리자용
@@ -121,6 +114,11 @@
               <th:block sec:authorize="isAnonymous()">
                 <li>
                   <a class="bugger_link " th:href="@{/member/login}">로그인</a>
+                </li>
+              </th:block>
+              <th:block sec:authorize="isAuthenticated()">
+                <li>
+                  <a class="bugger_link " th:href="@{/logout}">로그아웃</a>
                 </li>
               </th:block>
             </ul>
