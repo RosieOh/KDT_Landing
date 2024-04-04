@@ -1,5 +1,98 @@
 /* 모바일 */
 
+@media (max-width:1399px) {
+    .men_slide {
+        height: auto;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .img-class1 {
+        display: none;
+    }
+    .pm_slide_wrap .slick-prev {
+        bottom: 0;
+    }
+
+    .pm_slide_wrap .slick-next {
+        bottom: 0;
+    }
+}
+
+@media (max-width: 1023px) {
+    .radius1_cur_re {
+        margin: 0 auto;
+    }
+    .radius1_cur {
+        border-radius: 20px;
+        margin: 20px 0.5rem;
+        padding: 1rem;
+    }
+    .columns {
+        flex-wrap: nowrap;
+    }
+    .features {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .title_big {
+        font-size: 34px;
+    }
+
+    .small_title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:899px) {
+    .subSign_form {
+        width: 100%;
+        padding: 10px
+    }
+    .sign_form {
+        position: initial;
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        font-size: 80%;
+        overflow: scroll;
+        height: 100%;
+        transform: translate(0, 0);
+        border-radius: initial;
+    }
+    .sign_field:not(:last-child) {
+        margin-bottom: 0.5em;
+    }
+    .burger_btn {
+        display: block;
+    }
+    .main.back_black .container{
+        padding-bottom: 5em;
+        padding-top: 0;
+    }
+    .main.back_black .container:nth-child(1) {
+        padding-top: 3em;
+    }
+    .container_section1_header1 {
+        display: none;
+    }
+    .container_section1_header1_mobile {
+        display: block;
+    }
+    .profile_card {
+        display: none;
+    }
+
+    .slick-slider_wrap {
+        display: block;
+    }
+}
+
+
 @media (max-width:767px) {
     .title_big {
         color: var(--c-black);
@@ -13,6 +106,9 @@
     .ft_wrap {
         flex-direction: column;
     }
+    .copyright {
+        font-size: 75%;
+    }
     .navbar-menu {
         display: none;
     }
@@ -24,7 +120,8 @@
         font-size: 14px;
     }
     .faq {
-        font-size: 14px;
+        font-size: 70%;
+        padding: 5px 0;
     }
     .member{
         width: 100%;
@@ -57,5 +154,140 @@
         margin: 1rem 0.5rem;
         padding: 1rem;
     }
-
+    .main .container {
+        padding-bottom: 0;
+        padding-top: 3em;
+    }
+    .edu_card{
+        padding-top: 0;
+    }
+    .main_section4 {
+        margin: 0 auto;
+    }
 }
+
+
+@media (max-width:450px) {
+    body {
+        font-size: 60%;
+    }
+    .direct_column {
+        flex-direction: column;
+    }
+    .mentoring_wrap_mobile {
+        display: block;
+    }
+    .mentoring_wrap {
+        display: none;
+    }
+    .men_text {
+        font-size: 60%;
+    }
+    .map_box {
+        flex-direction: column;
+    }
+    .map {
+        width: 100%;
+        height: 400px;
+    }
+    .procedure {
+        display: none;
+    }
+    .procedure_mobile {
+        display: flex;
+        flex-direction: column;
+    }
+    .review_content {
+        position: relative;
+    }
+    .review_image_wrap {
+        display: none;
+    }
+    .review_image_mobile {
+        display: block;
+        height: 360px;
+    }
+    .port_content {
+        display: none;
+    }
+    .port_content_mobile {
+        display: block;
+    }
+    .pm_port_wrap_mobile {
+        display: flex;
+
+    }
+    .pm_port_wrap {
+        display: none;
+        margin: 0;
+    }
+    .ud_m {
+        padding: 0 10px;
+    }
+    .subSign_form {
+        font-size: 80%;
+    }
+
+    .subSign_form p {
+        font-size: 12px;
+    }
+    .main.back_lightgray {
+        padding: 0;
+        margin: 2em 0 5em;
+    }
+    .agree {
+        font-size: 90%;
+    }
+    .agree_check {
+        margin: 1em 0.5em;
+        font-size: 85%;
+    }
+    .gotop {
+        right: 5.5%;
+        bottom: 16%;
+        padding: 5px 8px;
+    }
+    .sign_form h1 {
+        margin: 2rem 0;
+        font-size: 200%;
+    }
+    .close_btn {
+        right: 14px;
+        top: 8px;
+        padding: 2px 7px;
+    }
+
+    .men_slide_item {
+        animation: initial;
+    }
+    .slick-prev {
+        width: 20px;
+        height: 20px;
+    }
+    .slick-next {
+        width: 20px;
+        height: 20px;
+    }
+
+    .banner_hole {
+        height: 530px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .img_100vw {
+        height: 530px;
+    }
+    .slick-slider_banner .slick-prev {
+        bottom: 2em;
+        right: 2em;
+        z-index: 1;
+    }
+
+    .slick-slider_banner .slick-next {
+        right: 0;
+        bottom: 2em;
+        z-index: 1;
+    }
+}
+

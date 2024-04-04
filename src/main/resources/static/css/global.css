@@ -1,12 +1,10 @@
 @charset "UTF-8";
 /* abc 순으로 기입 */
-@import url("ImportCSS/main.css");
 @import url("ImportCSS/board.css");
-@import url("ImportCSS/tablet.css");
-@import url("ImportCSS/image_absolute.css");
-@import url("ImportCSS/mobile.css");
+@import url("ImportCSS/subject.css");
 @import url("ImportCSS/index.css");
-@import url("ImportCSS/course.css");
+@import url("ImportCSS/mobile.css");
+@import url("ImportCSS/image_absolute.css");
 
 :root {
   --c-main: rgba(85, 59, 243, 1);

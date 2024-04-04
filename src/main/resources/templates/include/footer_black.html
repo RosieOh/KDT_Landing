@@ -4,7 +4,7 @@
 <th:block th:fragment="footer_black">
   <script th:src="@{/static/js/slick.js}"></script>
   <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
-  <a href="#banner" class="gotop" id="gotop">▲</a>
+  <a href="#top" class="gotop" id="gotop">▲</a>
   <div class="bottom_banner">
     <section class="container_side ">
       <div class="image_content direct_column">
@@ -25,20 +25,21 @@
       </div>
     </section>
   </div>
-  <footer class="ft_black" id="ft">
+  <footer class="ft back_black" id="ft">
     <section class="container_side">
       <div class="ft_wrap">
-        <div class="ft_wrap_text_black">
-          <p class="copyright copyright_black  ">
-            <span>(주)천재교육 &nbsp;|&nbsp; 서울특별시 디지털로 9길 23 마리오아울렛2관 11층 천재IT교육센터</span>
+        <div class="ft_wrap_text">
+          <p class="copyright font_white">
+            <span>(주)천재교육 &nbsp;|&nbsp; 대표: 강희철, 최정민</span>
           </p>
-          <p class="copyright copyright_black ">
+          <p class="copyright font_white">
             <span>사업자등록번호: 119-81-19350 &nbsp;|&nbsp; 서울특별시 디지털로 9길 23 마리오아울렛2관 11층 천재IT교육센터</span>
           </p>
-          <p class="copyright copyright_black">
+          <p class="copyright font_white">
             <span>접수 문의 · 사이트 이용 문의 : 02-3282-8589 &nbsp;|&nbsp;  이메일 : genia@chunjae.co.kr</span>
           </p>
-          <p class="cp cp_black">
+          <br/>
+          <p class="copyright font_white">
             COPYRIGHT 2023 Chunjae EDUCATION INC. ALL RIGHTS RESERVED.
           </p>
         </div>
@@ -49,14 +50,14 @@
         </div>
       </div>
     </section>
-  </footer>
-  <script th:inline="javascript">
-    (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
+    <script th:inline="javascript">
+      (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
 
-    ChannelIO('boot', {
-      "pluginKey": "ebc8aaee-afda-484d-a633-5d8a0dff7fb3"
-    });
-  </script>
+      ChannelIO('boot', {
+        "pluginKey": "ebc8aaee-afda-484d-a633-5d8a0dff7fb3"
+      });
+    </script>
+  </footer>
 </th:block>
 </body>
 </html>
