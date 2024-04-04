@@ -1,20 +1,12 @@
 @charset "UTF-8";
 /* abc 순으로 기입 */
 @import url("ImportCSS/main.css");
-@import url("ImportCSS/font.css");
-@import url("ImportCSS/subject.css");
 @import url("ImportCSS/board.css");
-/*@import url("ImportCSS/tablet.css");*/
+@import url("ImportCSS/tablet.css");
 @import url("ImportCSS/image_absolute.css");
 @import url("ImportCSS/mobile.css");
-@import url("ImportCSS/table.css");
-@import url("ImportCSS/kyojin.css");
-@import url("ImportCSS/kyojin_mobile.css");
-@import url("ImportCSS/kyojin_tablet.css");
-@import url("ImportCSS/taehoon.css");
-@import url("ImportCSS/taehoon_mobile.css");
-@import url("ImportCSS/taehoon_tablet.css");
-@import url("ImportCSS/banner.css");
+@import url("ImportCSS/index.css");
+@import url("ImportCSS/course.css");
 
 :root {
   --c-main: rgba(85, 59, 243, 1);

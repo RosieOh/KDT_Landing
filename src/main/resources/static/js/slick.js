@@ -57,3 +57,29 @@ $(document).ready(function(){
         slidesToScroll: 1,
     });
 });
+
+$(document).ready(function(){
+    $('.slick-slider_section2').slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: false,
+        arrows: false,
+    })
+});
+
+$(document).ready(function(){
+    $('.slick-slider_section1').slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: false,
+        arrows: false,
+    })
+});
+
+$(document).ready(function(){
+    $('.slick-slider_banner').slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true,
+    })
+});

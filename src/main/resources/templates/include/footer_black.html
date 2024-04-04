@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
 <th:block th:fragment="footer_black">
+  <script th:src="@{/static/js/slick.js}"></script>
   <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
   <a href="#banner" class="gotop" id="gotop">▲</a>
   <div class="bottom_banner">
@@ -25,7 +26,7 @@
     </section>
   </div>
   <footer class="ft_black" id="ft">
-    <section class="container">
+    <section class="container_side">
       <div class="ft_wrap">
         <div class="ft_wrap_text_black">
           <p class="copyright copyright_black  ">
@@ -41,10 +42,10 @@
             COPYRIGHT 2023 Chunjae EDUCATION INC. ALL RIGHTS RESERVED.
           </p>
         </div>
-        <div class="cp_img_wrap">
-          <a href="https://www.chunjae.co.kr/" class="cp_img"><img class="ft_logo_black" th:src="@{/picture/common/footer_black.png}" alt="천재교육 logo"></a>
-          <a href="https://chunjaetext.co.kr/" class="cp_img"><img class="ft_logo_black" th:src="@{/picture/common/chunjaebooklogo.png}" alt="천재교과서 logo"></a>
-          <a href="https://www.moel.go.kr/" class="cp_img"><img class="ft_logo_black" th:src="@{/picture/hirecenter_logo.png}" alt="고용노동부 logo"></a>
+        <div class="cp_img_wrap back_black">
+          <a href="https://www.chunjae.co.kr/" class="cp_img"><img class="ft_logo" th:src="@{/picture/common2/chunjae_logo(gray).png}" alt="천재교육 logo"></a>
+          <a href="https://chunjaetext.co.kr/" class="cp_img"><img class="ft_logo" th:src="@{/picture/common2/chunjaebooklogo.png}" alt="천재교과서 logo"></a>
+          <a href="https://www.moel.go.kr/" class="cp_img"><img class="ft_logo" th:src="@{/picture/common2/hirecenter_logo.png}" alt="고용노동부 logo"></a>
         </div>
       </div>
     </section>
