@@ -200,9 +200,7 @@
     bottom: 2em;
     z-index: 1;
 }
-.banner_hole {
-    margin-top: 4em;
-}
+
 .banner_ico {
     display: flex;
     justify-content: center;
