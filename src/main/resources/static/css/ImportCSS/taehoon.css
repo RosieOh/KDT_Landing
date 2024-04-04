@@ -237,7 +237,7 @@
 
 
 .slick-slider_banner .slick-prev {
-    background-image: url("/static/images/picture/banner_button_1.png");
+    background-image: url("/static/images/picture/index/banner_button_1.png");
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
@@ -248,7 +248,7 @@
 }
 
 .slick-slider_banner .slick-next {
-    background-image: url("/static/images/picture/banner_button_2.png");
+    background-image: url("/static/images/picture/index/banner_button_2.png");
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
@@ -275,4 +275,70 @@
         z-index: 1;
     }
 
+}
+
+
+.slick-slider_banner .slick-slide1 .banner_hole .slick-prev {
+    position: absolute;
+    background-image: url("/static/images/picture/index/banner_button_1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 1rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    bottom: 2em;
+    right: 4em;
+    z-index: 1;
+}
+
+.slick-slider_banner .slick-slide1 .slick-next {
+    position: absolute;
+    background-image: url("/static/images/picture/index/banner_button_2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 1rem;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    right: 0;
+    bottom: 2em;
+    z-index: 1;
+}
+.banner_ico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner_back {
+    position: absolute;
+    width: 100%
+}
+.img_100vw {
+    width: 100%;
+}
+@media (max-width: 450px) {
+    .banner_hole {
+        height: 530px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .img_100vw {
+        height: 530px;
+    }
+}
+
+
+
+
+.procedure_title {
+    padding-top: 5em;
 }
