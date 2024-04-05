@@ -15,7 +15,7 @@
 <th:block th:replace="include/header :: header"></th:block>
 <div class="main back_black ">
   <!-- 상단배너 start -->
-  <section class="container" id="top">
+  <section class="container">
     <div class="image_content flex_column">
       <div class="flex direct_column">
         <div class="flex_column">
@@ -27,7 +27,7 @@
             <a th:href="@{/subSign_pm}">
               <picture>
                 <source srcset="../../static/images/picture/common2/common2_mobile/banner_btn.png" media="(max-width: 450px)">
-                <img th:src="@{/picture/common2/banner_btn.png}" alt="">
+                <img th:src="@{/picture/common2/banner_btn.png}" alt="" class="button">
               </picture>
             </a>
             <picture>
@@ -60,10 +60,10 @@
         <img th:src="@{/picture/pm/review_pm.png}" alt="">
       </picture>
       <div class="review_text">
-        <a href="https://blog.naver.com/chunjae2023">
+        <a href="https://blog.naver.com/chunjae2023" target='_blank'>
           <picture>
             <source srcset="../../static/images/picture/common2/common2_mobile/review_btn1.png" media="(max-width: 450px)">
-            <img th:src="@{/picture/common2/review_btn.png}" alt="">
+            <img th:src="@{/picture/common2/review_btn.png}" alt="" class="button">
           </picture>
         </a>
         <picture>
@@ -111,7 +111,7 @@
 
   <!-- 모집 안내 start -->
   <div class="image_absolute_wrap"><img th:src="@{/picture/common2/recru_img.png}" alt="recru_img" class="recru_img"/></div>
-  <section class="container ">
+  <section class="container recru_mt5">
     <div class="image_content">
       <picture>
         <source srcset="../../static/images/picture/pm/pm_mobile/recru_pm.png" media="(max-width: 450px)">
@@ -145,7 +145,7 @@
 
   <!-- 자가진단표 start -->
   <div class="back_white_2 ud_m">
-  <section class="container ">
+  <section class="container_side">
     <div class="image_content">
       <picture>
         <source srcset="../../static/images/picture/pm/pm_mobile/self_pm.png" media="(max-width: 450px)">

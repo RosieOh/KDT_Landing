@@ -74,10 +74,7 @@
         display: block;
     }
     .main.back_black .container{
-        padding-bottom: 5em;
-        padding-top: 0;
-    }
-    .main.back_black .container:nth-child(1) {
+        padding-bottom: 2em;
         padding-top: 3em;
     }
     .container_section1_header1 {
@@ -167,6 +164,20 @@
     .main_section4 {
         margin: 0 auto;
     }
+    .map_text {
+        margin: 0;
+    }
+    .map_box {
+        flex-direction: column;
+    }
+    .map {
+        width: 70%;
+        height: 300px;
+        margin-right: 0;
+    }
+    .justify_left {
+        justify-content: left;
+    }
 }
 
 
@@ -186,14 +197,7 @@
     .men_text {
         font-size: 60%;
     }
-    .map_box {
-        flex-direction: column;
-    }
-    .map {
-        width: 100%;
-        height: 400px;
-        margin-right: 0;
-    }
+
     .procedure {
         display: none;
     }
@@ -293,7 +297,8 @@
         bottom: 2em;
         z-index: 1;
     }
-
+    .recru_mt5{
+    }
 }
 
 @media (max-width: 350px) {
@@ -301,4 +306,5 @@
         width: 100%;
     }
 }
+
 

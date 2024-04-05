@@ -4,10 +4,6 @@
     overflow: hidden;
 }
 
-.main.back_lightgray {
-    padding: 5em;
-}
-
 .container {
     flex-grow: 1;
     margin: 0 auto;
@@ -28,7 +24,7 @@
 }
 .main .container:nth-child(1) {
     opacity: 1;
-    padding-top: 3em;
+    padding-top: 5em;
 }
 
 .main .container:nth-child(2) {
@@ -43,10 +39,10 @@
 }
 
 .ud_m {
-    padding: 3em 0 5em;
+    padding: 5em 0;
 }
 .pt_3 {
-    padding-top: 3em;
+    padding-top: 6em;
 }
 
 .container_vw {
@@ -198,7 +194,7 @@
 
 
 .men_slide_item {
-    animation: mento_flow 60s linear infinite;
+    animation: mento_flow 120s linear infinite;
 
 }
 @keyframes mento_flow {
@@ -206,7 +202,7 @@
         transform: translate(50%, 0);
     }
     100% {
-        transform: translate(-800%, 0);
+        transform: translate(-650%, 0);
     }
 }
 
@@ -476,7 +472,7 @@
 
 .slick-dots {
     position: absolute;
-    bottom: 3em;
+    bottom: 4em;
     display: flex;
     width: 100%;
     padding: 0;
@@ -493,7 +489,7 @@
 
     width: 20px;
     height: 20px;
-    margin: 0 5px;
+    margin: 0;
     padding: 0;
 
     cursor: pointer;
@@ -567,19 +563,20 @@
 }
 
 .map_text {
-    margin: 5% 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
 }
 
-.map_text p{
-    display: flex;
-    align-items: center;
-    color: var(--c-white);
-}
 .map_position {
     padding: 5px;
     text-align: center;
     font-weight: bold;
 }
+.mb_1{
+    margin-bottom: 1em;
+}
+
 
 
 /* 사전신청 양식 폼 */
@@ -702,12 +699,12 @@
 
 .scroll_wrap {
     display: none;
-    margin-top: 1.5rem;
+    margin-top: 1em;
 }
 
 .scrollBox {
     overflow-y: scroll;
-    height: 100px;
+    height: auto;
 }
 
 
@@ -800,7 +797,7 @@
     color: var(--c-back_gray);
 }
 .paper h5 {
-    font-size: 85%;
+    font-size: 90%;
     color: var(--c-back_gray);
     font-weight: bold;
 }
@@ -957,6 +954,10 @@
     color: var(--c-white);
 }
 
+.img_hover:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
 
-
-
+.m2 {
+    margin: 2em 0;
+}
