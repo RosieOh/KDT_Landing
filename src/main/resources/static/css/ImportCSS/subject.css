@@ -863,7 +863,7 @@
 }
 
 [type="checkbox"]:checked {
-    border: 0.4em solid var(--c-main);
+    border: 0.3em solid var(--c-main);
 }
 
 [type="checkbox"]:focus-visible {
@@ -960,4 +960,40 @@
 
 .m2 {
     margin: 2em 0;
+}
+
+
+/* complete_apply */
+
+.complete_box {
+    width: 280px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.complete_image {
+    font-size: 13rem;
+}
+
+.complete_text {
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: bold;
+
+}
+.complete_home {
+    color: var(--c-white);
+    font-size: 1.2rem;
+    background-color: var(--c-main);
+    width: 100%;
+    padding: 0.5rem 3rem;
+    margin-top: 1em;
+    border-radius: 30px;
 }
