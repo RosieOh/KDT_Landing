@@ -44,14 +44,14 @@
 @font-face {
     font-family: "Pretendard";
     font-style: normal;
-    font-weight: 200;
+    font-weight: lighter;
     src: url("../font/Pretendard-Thin.otf") format("otf");
 }
 
 @font-face {
     font-family: "Pretendard";
     font-style: normal;
-    font-weight: 200;
+    font-weight: lighter;
     src: url("../font/Pretendard-ExtraLight.otf") format("otf");
 }
 
