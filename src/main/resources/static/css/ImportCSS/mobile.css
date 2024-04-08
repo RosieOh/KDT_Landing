@@ -52,7 +52,7 @@
     }
 
     .small_title {
-        font-size: 14px;
+        font-size: 90%;
     }
 }
 
@@ -161,7 +161,7 @@
         font-size: 14px;
     }
     .faq {
-        font-size: 70%;
+        font-size: 83%;
         padding: 5px 0;
     }
     .member{

@@ -9,10 +9,8 @@
     />
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Topic Listing Bootstrap 5 Template</title>
+    <title>회원가입</title>
     <th:block th:replace="~{include/head :: head}"></th:block>
-
-<!--    <script th:src="@{../static/js/email.js}"></script>-->
 </head>
 
 <body>
@@ -34,10 +32,12 @@
     <div class="member">
 
         <!-- 1. 로고 -->
-        <img class="logo" th:src="@{/static/images/1.png}" />
+        <img class="logo" th:src="@{/picture/common2/chunjaelogo.png}" />
 
         <!-- 2. 필드 -->
-
+        <div class="container join1">
+            <h1 class="join1_h1">필수 회원 정보</h1>
+        </div>
         <div class="field">
             <b>이메일</b>
             <input type="email" name="email" id="email" placeholder="이메일" class="form-control" required>
@@ -52,6 +52,19 @@
         </div>
 
         <div class="field">
+            <b>이름</b>
+            <input type="text" name="name" id="name" placeholder="이름" class="form-control" minlength="2" maxlength="8" required />
+        </div>
+
+        <div class="field tel-number">
+            <b>휴대전화</b>
+            <select>
+                <option value="">대한민국 +82</option>
+            </select>
+            <input type="tel" name="tel" class="form-control" placeholder="전화번호 입력">
+        </div>
+
+        <div class="field">
             <b>비밀번호</b>
             <input class="userpw" name="pw" id="pw" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&.,])[A-Za-z\d$@$!%*#?&]{8,16}$" placeholder="비밀번호" type="password">
             <p class="info mb-0"><i class="fas fa-check"></i> 비밀번호는 최소 8자리에서 최대 16자리 <br> &nbsp;&nbsp;&nbsp;&nbsp;숫자, 영문, 특수문자 각 1개 이상 포함</p>
@@ -62,12 +75,10 @@
             <input class="userpw-confirm" name="pw2" id="pw2" type="password">
         </div>
 
-        <div class="field">
-            <b>이름</b>
-            <input type="text" name="name" id="name" placeholder="이름" class="form-control" minlength="2" maxlength="8" required />
-        </div>
-
         <!-- 3. 필드(생년월일) -->
+        <div class="container join1">
+            <h1 class="join1_h1">선택 회원정보</h1>
+        </div>
         <div class="field birth">
             <b>생년월일</b>
             <div>
@@ -91,18 +102,10 @@
             </div>
         </div>
 
-        <div class="field tel-number">
-            <b>휴대전화</b>
-            <select>
-                <option value="">대한민국 +82</option>
-            </select>
-            <input type="tel" name="tel" class="form-control" placeholder="전화번호 입력">
-
         <!-- 6. 가입하기 버튼 -->
             <div class="join_btn">
         <button type="submit" class="button" >회원가입</button>
             </div>
-    </div>
     </div>
 </form>
 
