@@ -353,7 +353,7 @@
     flex-shrink: 0;
     transition: left 1s;
     flex-direction: column;
-    margin: 60px 25px;
+    margin: 5px 25px;
 }
 
 .men_text {
@@ -558,7 +558,6 @@
 .map {
     width: 60%;
     height: 500px;
-    min-width: 300px;
     margin-right: 3em;
 }
 
