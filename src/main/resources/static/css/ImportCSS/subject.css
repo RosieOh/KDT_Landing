@@ -953,8 +953,19 @@
     color: var(--c-white);
 }
 
+
+.img_hover {
+    border: none;
+}
 .img_hover:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.img_hover2 {
+    border-radius: 30px;
+}
+.img_hover2:hover {
+    background-color: var(--c-back_gray);
 }
 
 .m2 {
