@@ -120,9 +120,7 @@
 }
 
 
-.img_hover {
-    border: none;
-}
+
 
 .slick-slider_wrap {
     display: none;
@@ -833,6 +831,9 @@ p {
 #login-form > label{
     color: #999999;
     display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    flex-direction: row;
     align-items: center;
 }
 
