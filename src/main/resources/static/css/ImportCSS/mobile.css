@@ -109,7 +109,8 @@
     }
     .slick-slider_wrap {
         display: block;
-        width: 100%;
+        margin: 0 auto;
+        width: 80%;
     }
 
     .slick-slider_section2 {
