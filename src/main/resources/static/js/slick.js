@@ -64,6 +64,8 @@ $(document).ready(function(){
         autoplaySpeed: 2000,
         dots: false,
         arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
     })
 });
 

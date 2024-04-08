@@ -61,6 +61,13 @@
     width: 45rem;
 }
 
+.section1_img {
+    position: absolute;
+    top: 46em;
+    left: -9rem;
+    width: 24rem;
+}
+
 
 @media (max-width:1399px) {
     .img-orange_arrow {
@@ -73,3 +80,38 @@
         display: none;
     }
 }
+
+@media (max-width: 899px) {
+    .section1_img {
+        display: none;
+        position: absolute;
+        top: 49em;
+        left: -9rem;
+        width: 24rem;
+    }
+
+}
+@media (max-width:281px) {
+    .img-class1 {
+        display: block;
+        top: 4rem;
+        left: 14.5rem;
+        width: 3rem;
+    }
+
+    .img-class2 {
+        display: block;
+        top: 39rem;
+        left: 0rem;
+        width: 3rem;
+    }
+    .six_img {
+        display: block;
+        top: -8.5rem;
+        left: 8rem;
+        width: 47rem;
+    }
+}
+
+
+

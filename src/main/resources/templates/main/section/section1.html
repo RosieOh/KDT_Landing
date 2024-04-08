@@ -3,84 +3,72 @@
 <body>
 <th:block th:fragment="main_section1">
     <div class="container">
+        <img th:src="@{/picture/index/section1_img.png}" alt="" class="section1_img">
         <div class="main_section1">
             <div class="slick-slider_section1">
                 <div class="slideWrap">
-                    <section class="container container_bottom_section1">
-
-                        <!-- 여기까지 완료 -->
+                    <section class="container_bottom_section1">
                         <div class="container_section1_header1">
-                            <img class="radius_2_section1" th:src="@{/picture/index/section1_1_header.png}" alt="">
+                            <picture>
+                                <source srcset="../../../static/images/picture/index/section2_mobile.png" media="(max-width: 450px)">
+                                <img th:src="@{/picture/index/section1_1_header.png}" alt="">
+                            </picture>
                         </div>
-                        <!-- 여기까지 완료 -->
 
-                        <!-- 여기까지 완료 -->
                         <div class="profile_card">
-                            <div class="profile_card_batch">
-                                <div class="columns features features_1 radius1_cur_re">
-                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
-                                        <div class="card-image">
-                                            <img class="radius_2_section1" th:src="@{/picture/index/section1_2_ai.png}" alt="">
-                                        </div>
-                                        <div class="card-content_section1_text">
-                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/index/section1_2_button.png}" alt=""></a>
-                                        </div>
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="radius_2_section1">
+                                    <img th:src="@{/picture/index/section1_2_ai.png}" alt=""></div>
+                                    <div class="card-content_section1_text">
+                                        <a th:href="@{/subSign_big}"><img class="button_sec1" th:src="@{/picture/index/test_btn.png}" alt=""></a>
                                     </div>
-                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
-                                        <div class="card-image">
-                                            <img class="radius_2_section1" th:src="@{/picture/index/section1_2_full.png}" alt="">
-                                        </div>
-                                        <div class="card-content_section1_text">
-                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/index/section1_2_button.png}" alt=""></a>
-                                        </div>
+                                </div>
+                                <div class="column">
+                                    <div class="radius_2_section1">
+                                        <img th:src="@{/picture/index/section1_2_full.png}" alt=""></div>
+                                    <div class="card-content_section1_text">
+                                        <a th:href="@{/subSign_big}"><img class="button_sec1" th:src="@{/picture/index/test_btn.png}" alt=""></a>
                                     </div>
-                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
-                                        <div class="card-image">
-                                            <img class="radius_2_section1" th:src="@{/picture/index/section1_2_pm.png}" alt="">
-                                        </div>
-                                        <div class="card-content_section1_text">
-                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/index/section1_2_button.png}" alt=""></a>
-                                        </div>
+                                </div>
+                                <div class="column">
+                                    <div class="radius_2_section1">
+                                        <img th:src="@{/picture/index/section1_2_pm.png}" alt=""></div>
+                                    <div class="card-content_section1_text">
+                                        <a th:href="@{/subSign_big}"><img class="button_sec1" th:src="@{/picture/index/test_btn.png}" alt=""></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- 여기까지 완료 -->
 
-                        <div class="slick-slider_wrap">
-                            <div class="container_section1_header1_mobile">
-                                <img class="radius_2_section1_mobile" th:src="@{/picture/index/section2_mobile.png}" alt="">
-                            </div>
-                            <div class="slick-slider_section1">
-                                <div class="">
-                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
-                                        <div class="card-image">
-                                            <img class="radius_2_section1" th:src="@{/picture/index/section1_2_mobile_ai.png}" alt="">
-                                        </div>
-                                        <div class="card-content_section1_text">
-                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/index/section1_2_mobile_button.png}" alt=""></a>
-                                        </div>
+                        <div class="profile_card_mobile">
+                            <div class="columns slick-slider_section1">
+                                <div class="column_767">
+                                <div class="column">
+                                    <div class="radius_2_section1">
+                                        <img th:src="@{/picture/index/section1_2_ai.png}" alt=""></div>
+                                    <div class="card-content_section1_text">
+                                        <a th:href="@{/subSign_big}"><img class="button_sec1" th:src="@{/picture/index/test_btn.png}" alt=""></a>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
-                                        <div class="card-image">
-                                            <img class="radius_2_section1" th:src="@{/picture/index/section1_2_mobile_full.png}" alt="">
-                                        </div>
-                                        <div class="card-content_section1_text">
-                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/index/section1_2_mobile_button.png}" alt=""></a>
-                                        </div>
+                                </div>
+                                <div class="column_767">
+                                    <div class="column">
+                                    <div class="radius_2_section1">
+                                        <img th:src="@{/picture/index/section1_2_full.png}" alt=""></div>
+                                    <div class="card-content_section1_text">
+                                        <a th:href="@{/subSign_big}"><img class="button_sec1" th:src="@{/picture/index/test_btn.png}" alt=""></a>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <div class="column text_center border1_section1 radius1_cur radius1_cur_re radius1_cur_section1">
-                                        <div class="card-image">
-                                            <img class="radius_2_section1" th:src="@{/picture/index/section1_2_mobile_pm.png}" alt="">
-                                        </div>
-                                        <div class="card-content_section1_text">
-                                            <a th:href="@{/subSign_big}"><img class="radius_2_section1" th:src="@{/picture/index/section1_2_mobile_button.png}" alt=""></a>
-                                        </div>
+                                </div>
+                                <div class="column_767">
+                                <div class="column">
+                                    <div class="radius_2_section1">
+                                        <img th:src="@{/picture/index/section1_2_pm.png}" alt=""></div>
+                                    <div class="card-content_section1_text">
+                                        <a th:href="@{/subSign_big}"><img class="button_sec1" th:src="@{/picture/index/test_btn.png}" alt=""></a>
                                     </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +76,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </th:block>
 </body>
