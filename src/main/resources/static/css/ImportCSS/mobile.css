@@ -338,6 +338,10 @@
     .recru_mt5 {
         margin-top: 5em;
     }
+    .big_mg {
+        margin: 1em 0;
+        padding: 3em 10px;
+    }
 }
 
 @media (max-width: 350px) {
