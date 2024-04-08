@@ -260,7 +260,7 @@
         margin: 0;
     }
     .ud_m {
-        padding: 0 10px;
+        padding: 2em 10px;
     }
     .subSign_form {
         font-size: 80%;
@@ -330,6 +330,9 @@
 
     .column {
         width: 100%;
+    }
+    .procedure_title {
+        padding-top: 0;
     }
 
 }
