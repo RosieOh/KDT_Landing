@@ -84,8 +84,8 @@
         display: block;
     }
     .main.back_black .container{
-        padding-bottom: 5em;
-        padding-top: 0;
+        padding-bottom: 2em;
+        padding-top: 3em;
     }
     .main.back_black .container:nth-child(1) {
         padding-top: 3em;

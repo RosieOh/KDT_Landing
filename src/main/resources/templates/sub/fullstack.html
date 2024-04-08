@@ -29,7 +29,7 @@
             <a th:href="@{/subSign_full}">
               <picture>
                 <source srcset="../../static/images/picture/common2/common2_mobile/banner_btn.png" media="(max-width: 450px)">
-                <img th:src="@{/picture/common2/banner_btn.png}" alt="">
+                <img th:src="@{/picture/common2/banner_btn.png}" alt="" class="button">
               </picture>
             </a>
             <picture>
@@ -62,10 +62,10 @@
         <img th:src="@{/picture/full/review_full.png}" alt="">
       </picture>
       <div class="review_text">
-        <a href="https://blog.naver.com/chunjae2023">
+        <a href="https://blog.naver.com/chunjae2023" target='_blank'>
           <picture>
             <source srcset="../../static/images/picture/common2/common2_mobile/review_btn1.png" media="(max-width: 450px)">
-            <img th:src="@{/picture/common2/review_btn.png}" alt="">
+            <img th:src="@{/picture/common2/review_btn.png}" alt="" class="button">
           </picture>
         </a>
         <picture>
@@ -112,7 +112,7 @@
 
   <!-- 모집 안내 start -->
   <div class="image_absolute_wrap"><img th:src="@{/picture/common2/recru_img.png}" alt="recru_img" class="recru_img"/></div>
-  <section class="container ">
+  <section class="container recru_mt5">
     <div class="image_content">
       <picture>
         <source srcset="../../static/images/picture/full/full_mobile/recru_full.png" media="(max-width: 450px)">
@@ -205,7 +205,61 @@
   <!-- TALENT end -->
 
 
-  <th:block th:replace="sub/sub_inclulde/procedure :: procedure"></th:block>
+
+  <!-- 선발절차 start -->
+  <section class="container ud_m">
+    <div class="image_content flex_column">
+      <picture>
+        <source srcset="../../../static/images/picture/common2/common2_mobile/procedure1.png" media="(max-width: 450px)">
+        <img th:src="@{/picture/common2/procedure_title.png}" alt="" class="procedure_title">
+      </picture>
+
+      <div class="procedure">
+        <a th:href="@{/subSign_full}">
+          <picture>
+            <img th:src="@{/picture/common2/procedure1.png}" alt="" class="img_hover">
+          </picture>
+        </a>
+        <picture>
+          <img th:src="@{/picture/common2/procedure2.png}" alt="">
+        </picture>
+        <a href="https://www.hrd.go.kr/">
+          <picture>
+            <img th:src="@{/picture/common2/procedure3.png}" alt="" class="img_hover">
+          </picture>
+        </a>
+      </div>
+
+      <div class="procedure_mobile">
+        <div class="flex">
+          <a th:href="@{/subSign_full}">
+            <picture>
+              <img th:src="@{/picture/common2/common2_mobile/procedure2.png}" alt="" class="img_hover">
+            </picture>
+          </a>
+          <picture>
+            <img th:src="@{/picture/common2/common2_mobile/procedure3.png}" alt="">
+          </picture>
+        </div>
+        <div class="flex">
+          <picture>
+            <img th:src="@{/picture/common2/common2_mobile/procedure4.png}" alt="">
+          </picture>
+          <a href="https://www.hrd.go.kr/">
+            <picture>
+              <img th:src="@{/picture/common2/common2_mobile/procedure5.png}" alt="" class="img_hover">
+            </picture>
+          </a>
+        </div>
+        <picture>
+          <img th:src="@{/picture/common2/common2_mobile/procedure6.png}" alt="">
+        </picture>
+      </div>
+
+    </div>
+  </section>
+  <!-- 선발절차 end -->
+
 
   <th:block th:replace="sub/sub_inclulde/eduplace :: eduplace"></th:block>
   <th:block th:replace="sub/sub_inclulde/digital_tran :: digital_tran"></th:block>

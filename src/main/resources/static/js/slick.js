@@ -42,9 +42,10 @@ $(document).ready(function(){
     $('.men_slide_wrap_mobile').slick({
         infinite: true,
         autoplay: true,
-        speed: 2000,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        arrows: false,
     });
 });
 
@@ -52,9 +53,10 @@ $(document).ready(function(){
     $('.pm_slide_wrap_mobile').slick({
         infinite: true,
         autoplay: true,
-        speed: 2000,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        arrows: false,
     });
 });
 
