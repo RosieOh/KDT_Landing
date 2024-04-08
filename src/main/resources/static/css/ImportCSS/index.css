@@ -420,7 +420,7 @@ p {
 .title_big {
     color: var(--c-black);
     margin-bottom: 1.25rem;
-    font-size: 46px;
+    font-size: 2.75em;
     font-weight: 700;
 }
 
@@ -439,6 +439,7 @@ p {
     font-weight: bold;
     padding-bottom: 15px;
     color: var(--c-sub);
+    font-size: 100%;
 }
 .mb-6 {
     margin-top: 3rem;
@@ -679,10 +680,9 @@ p {
 }
 
 .member .logo{
-    /*로고는 이미지라 인라인 블록이니까 마진 오토 안됨 블록요소만 됨 */
     display: block;
-    margin :50px auto;
-    width: 100%;
+    margin: 50px 72px;
+    width: 55%;
     height: 10%;
 }
 
@@ -1041,6 +1041,18 @@ p {
 }
 
 
+.join1 {
+    background-color: var(--c-back_darkgray);
+    color: var(--c-white);
+    width: 100%;
+    height: 2rem;
+}
+
+.join1_h1 {
+    line-height: 30px;
+    text-align: center;
+}
+
 
 
 
@@ -1136,7 +1148,7 @@ p {
 
 .faq_title {
     color: var(--c-main);
-    font-size: 1.25em;
+    font-size: 1.3em;
     font-weight: bold;
     border-width: 0 0 1px;
     border-color: var(--c-main);
