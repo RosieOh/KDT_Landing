@@ -958,7 +958,8 @@ p {
 }
 
 .index_ex:hover {
-    box-shadow: 5px 5px 30px #000;
+    /*box-shadow: 5px 5px 30px #000;*/
+    box-shadow: 5px 0 10px #000;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
