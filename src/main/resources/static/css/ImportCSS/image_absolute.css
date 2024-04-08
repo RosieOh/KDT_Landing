@@ -61,6 +61,13 @@
     width: 45rem;
 }
 
+.section1_img {
+    position: absolute;
+    top: 46em;
+    left: -9rem;
+    width: 24rem;
+}
+
 
 @media (max-width:1399px) {
     .img-orange_arrow {
@@ -72,6 +79,17 @@
     .six_img {
         display: none;
     }
+}
+
+@media (max-width: 899px) {
+    .section1_img {
+        display: none;
+        position: absolute;
+        top: 49em;
+        left: -9rem;
+        width: 24rem;
+    }
+
 }
 @media (max-width:281px) {
     .img-class1 {
@@ -94,4 +112,6 @@
         width: 47rem;
     }
 }
+
+
 
