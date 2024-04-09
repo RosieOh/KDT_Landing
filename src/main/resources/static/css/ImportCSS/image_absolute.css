@@ -68,6 +68,14 @@
     width: 24rem;
 }
 
+.section4_img {
+    position: absolute;
+    top: 4em;
+    left: -10rem;
+    width: 13.8rem;
+}
+
+
 
 @media (max-width:1399px) {
     .img-orange_arrow {
@@ -88,6 +96,10 @@
         top: 49em;
         left: -9rem;
         width: 24rem;
+    }
+
+    .section4_img {
+        display: none;
     }
 
 }
