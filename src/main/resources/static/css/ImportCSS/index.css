@@ -687,7 +687,7 @@ p {
 .member{
     width: 450px;
     padding: 0 20px;
-    margin: auto auto 20px;
+    margin: 2rem auto 20px;
 }
 
 .member .logo{
