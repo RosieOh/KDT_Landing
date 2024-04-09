@@ -7,6 +7,9 @@
     .container {
         padding: 0 10px;
     }
+   .container_side {
+       padding: 0 10px;
+    }
     .img-class1 {
         display: none;
     }
@@ -247,7 +250,7 @@
         flex-direction: column;
     }
     .map {
-        width: 65%;
+        width: 75%;
         height: 250px;
         margin: 0 auto;
     }
@@ -355,7 +358,7 @@
         padding-top: 0;
     }
     .map_450 {
-        margin-top: 1.5em;
+        margin-top: 2.5em;
     }
     .recru_mt5 {
         margin-top: 5em;
