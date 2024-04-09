@@ -132,6 +132,7 @@
     .main_section2 {
         padding-bottom: 2em;
     }
+
 }
 
 @media (max-width:767px) {
@@ -141,30 +142,38 @@
         font-size: 22px;
         font-weight: 700;
     }
+
     .small_title {
         font-size: 12px;;
     }
+
     .ft_wrap {
         flex-direction: column;
     }
+
     .copyright {
         font-size: 75%;
     }
+
     .navbar-menu {
         display: none;
     }
+
     .cp_img_wrap {
         flex-direction: column;
         align-items: baseline;
     }
+
     .button {
         font-size: 14px;
     }
+
     .faq {
         font-size: 83%;
         padding: 5px 0;
     }
-    .member{
+
+    .member {
         width: 100%;
     }
 
@@ -180,21 +189,26 @@
     .title {
         font-size: 1rem;
     }
+
     .radius1_cur {
         border-radius: 20px;
         margin-bottom: 6rem;
         padding: 2rem;
     }
+
     .main .container {
         padding-bottom: 0;
         padding-top: 2em;
     }
-    .edu_card{
+
+    .edu_card {
         padding-top: 0;
     }
+
     .main_section4 {
         margin: 0 auto;
     }
+
     .column_767 {
         padding: 1em;
     }
