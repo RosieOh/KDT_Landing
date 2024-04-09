@@ -1,22 +1,15 @@
 <!Doctype html>
 
-<html
-        xmlns:th="http://www.thymeleaf.org"
-        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
->
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
-  <meta
-          content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
-          name="viewport"
-  />
+  <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no" name="viewport"/>
   <title>fullstack 랜딩페이지</title>
   <th:block th:replace="include/head :: head"></th:block>
 </head>
 <body>
 <th:block th:replace="include/header :: header"></th:block>
 <div class="main back_black">
-  <!-- 상단배너 start -->
   <section class="container" id="top">
     <div class="image_content flex_column">
       <div class="flex direct_column">
@@ -52,9 +45,6 @@
       <img th:src="@{/picture/common2/banner_img.png}" alt="" class="image_banner">
     </div>
   </section>
-  <!-- 상단배너 end -->
-
-  <!-- REVIEW start -->
   <section class="container ">
     <div class="image_content review_content">
       <picture>
@@ -108,9 +98,6 @@
       </div>
     </div>
   </section>
-  <!-- REVIEW end -->
-
-  <!-- 모집 안내 start -->
   <div class="image_absolute_wrap"><img th:src="@{/picture/common2/recru_img.svg}" alt="recru_img" class="recru_img"/></div>
   <section class="container recru_mt5">
     <div class="image_content">
@@ -120,9 +107,6 @@
       </picture>
     </div>
   </section>
-  <!-- 모집 안내 end -->
-
-  <!-- BENEFITS start  -->
   <section class="container ">
     <div class="image_content">
       <picture>
@@ -131,9 +115,6 @@
       </picture>
     </div>
   </section>
-  <!-- BENEFITS end  -->
-
-  <!-- 커리큘럼 start -->
   <section class="container ">
     <div class="image_content">
       <picture>
@@ -142,9 +123,6 @@
       </picture>
     </div>
   </section>
-  <!-- 커리큘럼 end -->
-
-  <!-- 포트폴리오 start -->
   <section class="container ">
     <div class="image_content">
       <picture>
@@ -171,7 +149,6 @@
           </div>
         </div>
     </div>
-
     <div class="port_content_mobile">
       <div class="port_box">
         <img th:src="@{/picture/full/project_1.gif}" alt="fullstack 포트폴리오2" class="border10">
@@ -184,14 +161,9 @@
       <div class="port_box">
         <img th:src="@{/picture/full/project_2.gif}" alt="fullstack 포트폴리오2" class="border10">
       </div>
-
     </div>
   </section>
-  <!-- 포트폴리오 end -->
-
   <th:block th:replace="sub/sub_inclulde/mentoring :: mentoring"></th:block>
-
-  <!-- TALENT start -->
   <div class="back_white ud_m">
     <section class="container">
       <div class="image_content">
@@ -202,18 +174,12 @@
       </div>
     </section>
   </div>
-  <!-- TALENT end -->
-
-
-
-  <!-- 선발절차 start -->
   <section class="container">
     <div class="image_content flex_column ud_m">
       <picture>
         <source srcset="/static/images/picture/common2/common2_mobile/procedure1.svg" media="(max-width: 450px)">
         <img th:src="@{/picture/common2/procedure_title.png}" alt="" >
       </picture>
-
       <div class="procedure">
         <a th:href="@{/subSign_full}">
           <picture>
@@ -229,7 +195,6 @@
           </picture>
         </a>
       </div>
-
       <div class="procedure_mobile">
         <div class="flex">
           <a th:href="@{/subSign_full}">
@@ -255,19 +220,13 @@
           <img th:src="@{/picture/common2/common2_mobile/procedure6.svg}" alt="">
         </picture>
       </div>
-
     </div>
   </section>
-  <!-- 선발절차 end -->
-
-
   <th:block th:replace="sub/sub_inclulde/eduplace :: eduplace"></th:block>
   <th:block th:replace="sub/sub_inclulde/digital_tran :: digital_tran"></th:block>
   <th:block th:replace="sub/sub_inclulde/map :: map"></th:block>
-
 </div>
 <script th:src="@{/static/js/slide.js}"></script>
-
 <th:block th:replace="include/footer :: footer"></th:block>
 
 </body>

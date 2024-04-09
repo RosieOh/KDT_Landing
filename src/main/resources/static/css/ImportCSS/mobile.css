@@ -133,6 +133,14 @@
         padding-bottom: 2em;
     }
 
+    .banner {
+        display: none;
+    }
+
+    .banner_mobile {
+        display: block;
+    }
+
 }
 
 @media (max-width:767px) {

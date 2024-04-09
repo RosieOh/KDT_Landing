@@ -129,8 +129,6 @@
     display: none;
 }
 
-
-
 .profile_card_text {
     padding-top: 20px;
     justify-content: right;
@@ -255,6 +253,15 @@
     bottom: 2em;
     z-index: 1;
 }
+
+.slick-slide1 {
+    display: none;
+}
+
+.banner_mobile {
+    display: none;
+}
+
 
 .banner_ico {
     display: flex;
