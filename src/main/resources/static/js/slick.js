@@ -87,3 +87,12 @@ $(document).ready(function(){
         dots: true,
     })
 });
+
+$(document).ready(function(){
+    $('.slick-slider_banner_mobile').slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: true,
+        arrows: false,
+    })
+});
