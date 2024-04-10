@@ -78,7 +78,10 @@ public class SecurityConfig {
                         .clientSecret("4lTEsqCbbs1jfI1G3B9vKQfuJBdLCz87")
                         .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_POST)
                         .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-                        .redirectUri("http://13.209.34.9:8080/login/oauth2/code/kakao")
+                        .redirectUri("http://chunjae-learning.com/login/oauth2/code/kakao")
+                        // 리다이렉트 안될 때 이걸로 검토
+                        //.redirectUri("http://chunjae-learning.com/login/oauth2/code/kakao")
+                        //.redirectUri("http://13.209.34.9:8080/login/oauth2/code/kakao")
                         .scope("profile_nickname", "account_email")
                         .authorizationUri("https://kauth.kakao.com/oauth/authorize")
                         .tokenUri("https://kauth.kakao.com/oauth/token")
@@ -99,4 +102,4 @@ public class SecurityConfig {
 
 
 
-
+    
