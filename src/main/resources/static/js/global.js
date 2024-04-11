@@ -145,54 +145,127 @@ $(document).ready(function () {
 });
 
 //자기 소개서 1
-
 $(document).ready(function () {
   $("#paperText1").keyup(function (e) {
     var content = $(this).val();
+    var charCount = content.length;
 
-    if (content.length == 0 || content == "") {
-      $("#paperCount1 span").text("0");
-    } else {
-      $("#paperCount1 span").text(content.length);
+    // 글자수 세기
+    $("#paperCount1 span").text(charCount);
+
+    // 250자 미만이면서 이전에 경고창을 표시하지 않았을 때
+    if (charCount < 250 && !$(this).data("warningShown")) {
+      // 경고창 표시
+      alert("250자 이상 입력해주세요.");
+      // 경고창을 표시했음을 표시
+      $(this).data("warningShown", true);
     }
-    if (content.length > 250) {
-      $(this).val($(this).val().substring(0, 250));
-      alert("글자수는 250자까지 입력 가능합니다.");
+
+    // 1000자 이상이면
+    if (charCount > 1000) {
+      // 1000자로 제한하고
+      $(this).val(content.substring(0, 1000));
+      // 경고창 표시
+      alert("1000자를 초과하여 더 이상 입력할 수 없습니다.");
     }
   });
 });
 
+
+// 기존에 꺼
+// $(document).ready(function () {
+//   $("#paperText1").keyup(function (e) {
+//     var content = $(this).val();
+//
+//     if (content.length == 0 || content == "") {
+//       $("#paperCount1 span").text("0");
+//     } else {
+//       $("#paperCount1 span").text(content.length);
+//     }
+//     if (content.length > 250) {
+//       $(this).val($(this).val().substring(0, 250));
+//       alert("글자수는 250자까지 입력 가능합니다.");
+//     }
+//   });
+// });
+
+
+// 자소서 2번
 $(document).ready(function () {
   $("#paperText2").keyup(function (e) {
     var content = $(this).val();
+    var charCount = content.length;
 
-    if (content.length == 0 || content == "") {
-      $("#paperCount2 span").text("0");
-    } else {
-      $("#paperCount2 span").text(content.length);
+    // 글자수 세기
+    $("#paperCount2 span").text(charCount);
+
+    // 250자 미만이면서 이전에 경고창을 표시하지 않았을 때
+    if (charCount < 250 && !$(this).data("warningShown")) {
+      // 경고창 표시
+      alert("250자 이상 입력해주세요.");
+      // 경고창을 표시했음을 표시
+      $(this).data("warningShown", true);
     }
-    if (content.length > 250) {
-      $(this).val($(this).val().substring(0, 250));
-      alert("글자수는 250자까지 입력 가능합니다.");
+
+    // 1000자 이상이면
+    if (charCount > 1000) {
+      // 1000자로 제한하고
+      $(this).val(content.substring(0, 1000));
+      // 경고창 표시
+      alert("1000자를 초과하여 더 이상 입력할 수 없습니다.");
     }
   });
 });
 
-$(document).ready(function () {
-  $("#paperText3").keyup(function (e) {
-    var content = $(this).val();
+  // 기존에 꺼
+  // $("#paperText2").keyup(function (e) {
+  //   var content = $(this).val();
+  //
+  //   if (content.length == 0 || content == "") {
+  //     $("#paperCount2 span").text("0");
+  //   } else {
+  //     $("#paperCount2 span").text(content.length);
+  //   }
+  //   if (content.length < 250) {
+  //     $(this).val($(this).val().substring(0, 250));
+  //     alert("250자 이상 입력해주세요.");
+  //   }
+  //
+  //   // 1000자 이상이면
+  //   if (content.length > 1000) {
+  //     // 1000자로 제한하고
+  //     $(this).val(content.substring(0, 1000));
+  //     // 경고창 표시
+  //     alert("1000자를 초과하여 더 이상 입력할 수 없습니다.");
+  //   }
+  // });
 
-    if (content.length == 0 || content == "") {
-      $("#paperCount3 span").text("0");
-    } else {
-      $("#paperCount3 span").text(content.length);
-    }
-    if (content.length > 250) {
-      $(this).val($(this).val().substring(0, 250));
-      alert("글자수는 250자까지 입력 가능합니다.");
-    }
+// 자소서 3번
+  $(document).ready(function () {
+    $("#paperText3").keyup(function (e) {
+      var content = $(this).val();
+      var charCount = content.length;
+
+      // 글자수 세기
+      $("#paperCount3 span").text(charCount);
+
+      // 250자 미만이면서 이전에 경고창을 표시하지 않았을 때
+      if (charCount < 250 && !$(this).data("warningShown")) {
+        // 경고창 표시
+        alert("250자 이상 입력해주세요.");
+        // 경고창을 표시했음을 표시
+        $(this).data("warningShown", true);
+      }
+
+      // 1000자 이상이면
+      if (charCount > 1000) {
+        // 1000자로 제한하고
+        $(this).val(content.substring(0, 1000));
+        // 경고창 표시
+        alert("1000자를 초과하여 더 이상 입력할 수 없습니다.");
+      }
+    });
   });
-});
 
 $(document).ready(function() {
   $(window).scroll( function(){
