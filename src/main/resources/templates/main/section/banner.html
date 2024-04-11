@@ -1,67 +1,96 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <body>
 <th:block th:fragment="main_banner">
-    <div class="" id="top" >
- <div class="slick-slider_banner">
-    <div class="slick-slide1">
-        <div class="banner_hole">
-            <div class="banner_back">
-                <picture >
-                    <source srcset="../../../static/images/picture/index/bg_1_1_mobile.png" media="(max-width: 450px)" >
-                    <img th:src="@{/picture/index/bg_1_1.png}" alt="bigdata banner" class="img_100vw">
-                </picture>
+    <div id="top" >
+        <div class="banner">
+            <div class="slick-slider_banner">
+                <div class="slick-slide1">
+                    <div class="banner_hole">
+                        <div class="banner_back">
+                                <img th:src="@{/picture/index/bg_1_1.png}" alt="bigdata banner" class="img_100vw">
+                        </div>
+                        <div class="container_banner">
+                            <div class="banner_ico">
+                                    <img th:src="@{/picture/index/bg_1_2.svg}" alt="bigdata banner" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <div class="slick-slide1">
+                      <div class="banner_hole">
+                          <div class="banner_back">
+                              <img th:src="@{/picture/index/bg_2_1.png}" alt="bigdata banner"  class="img_100vw">
+                          </div>
+                          <div class="container_banner">
+                              <div class="banner_ico">
+                                  <img th:src="@{/picture/index/bg_2_2.svg}" alt="bigdata banner" >
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="slick-slide1">
+                      <div class="banner_hole">
+                          <div class="banner_back">
+                              <img th:src="@{/picture/index/bg_3_1.png}" alt="bigdata banner"  class="img_100vw">
+                          </div>
+                          <div class="container_banner">
+                              <div class="banner_ico">
+                                  <img th:src="@{/picture/index/bg_3_2.svg}" alt="bigdata banner" >
+                              </div>
+                          </div>
+                      </div>
+                  </div>
             </div>
-            <div class="container_banner">
-                <div class="banner_ico">
-                    <picture>
-                        <source srcset="../../../static/images/picture/index/bg_1_2_mobile.svg" media="(max-width: 450px)">
-                        <img th:src="@{/picture/index/bg_1_2.svg}" alt="bigdata banner" >
-                    </picture>
+        </div>
+
+
+
+        <div class="banner_mobile" >
+            <div class="slick-slider_banner_mobile">
+                <div class="slick-slide1">
+                    <div class="banner_hole">
+                        <div class="banner_back">
+                            <img th:src="@{/picture/index/bg_1_1_mobile.png}" alt="bigdata banner" class="img_100vw">
+                        </div>
+                        <div class="container_banner">
+                            <div class="banner_ico">
+                                <img th:src="@{/picture/index/bg_1_2_mobile.svg}" alt="bigdata banner" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slick-slide1">
+                    <div class="banner_hole">
+                        <div class="banner_back">
+                            <img th:src="@{/picture/index/bg_2_1_mobile.png}" alt="bigdata banner"  class="img_100vw">
+                        </div>
+                        <div class="container_banner">
+                            <div class="banner_ico">
+                                <img th:src="@{/picture/index/bg_2_2_mobile.svg}" alt="bigdata banner" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slick-slide1">
+                    <div class="banner_hole">
+                        <div class="banner_back">
+                            <img th:src="@{/picture/index/bg_3_1_mobile.png}" alt="bigdata banner"  class="img_100vw">
+                        </div>
+                        <div class="container_banner">
+                            <div class="banner_ico">
+                                <img th:src="@{/picture/index/bg_3_2_1mobile.svg}" alt="bigdata banner" >
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+
     </div>
-
-      <div class="slick-slide1">
-          <div class="banner_hole">
-              <div class="banner_back">
-              <picture>
-                  <source srcset="../../../static/images/picture/index/bg_2_1_mobile.png" media="(max-width: 450px)" >
-                  <img th:src="@{/picture/index/bg_2_1.png}" alt="bigdata banner"  class="img_100vw">
-              </picture>
-              </div>
-              <div class="container_banner">
-                  <div class="banner_ico">
-                  <picture>
-                      <source srcset="../../../static/images/picture/index/bg_2_2_mobile.svg" media="(max-width: 450px)">
-                      <img th:src="@{/picture/index/bg_2_2.svg}" alt="bigdata banner" >
-                  </picture>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <div class="slick-slide1">
-          <div class="banner_hole">
-              <div class="banner_back">
-              <picture>
-                  <source srcset="../../../static/images/picture/index/bg_3_1_mobile.png" media="(max-width: 450px)" >
-                  <img th:src="@{/picture/index/bg_3_1.png}" alt="bigdata banner"  class="img_100vw">
-              </picture>
-              </div>
-              <div class="container_banner">
-                  <div class="banner_ico">
-                  <picture>
-                      <source srcset="../../../static/images/picture/index/bg_3_2_1mobile.svg" media="(max-width: 450px)">
-                      <img th:src="@{/picture/index/bg_3_2.svg}" alt="bigdata banner" >
-                  </picture>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
 </th:block>
 </body>
 </html>
