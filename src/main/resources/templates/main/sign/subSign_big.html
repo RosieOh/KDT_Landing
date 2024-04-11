@@ -7,7 +7,7 @@
             content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
             name="viewport"
     />
-    <title>교육신청 폼</title>
+    <title>AI·데이터 개발자 신청</title>
     <th:block th:replace="include/head :: head" ></th:block>
 </head>
 <body>
@@ -39,7 +39,7 @@
                 <div class="field">
                     <label class="label">교육과정<em>*</em></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="course" value="BIGDATA" checked readonly/><span>빅데이터</span></label>
+                        <label><input class="" type="radio" name="course" value="BIGDATA" checked readonly/><span>AI·데이터 개발자 과정</span></label>
                     </div>
                 </div>
                 <div class="field">
@@ -147,8 +147,8 @@
                         </div>
                     </label>
                     <div class="control">
-                        <textarea class="textarea" id="paperText1" name="paper1"></textarea>
-                        <div class="textCount" id="paperCount1"><span>0</span>/250</div>
+                        <textarea class="textarea" id="paperText1" name="paper1" maxlength="1000"></textarea>
+                        <div class="textCount" id="paperCount1"><span>0</span>/1000</div>
                     </div>
                 </div>
                 <div class="field">
@@ -169,8 +169,8 @@
                         </div>
                     </label>
                     <div class="control">
-                        <textarea class="textarea" id="paperText2" name="paper2"></textarea>
-                        <div class="textCount" id="paperCount2"><span>0</span>/250</div>
+                        <textarea class="textarea textarea_sub" id="paperText2" name="paper2"  maxlength="1000"></textarea>
+                        <div class="textCount" id="paperCount2"><span>0</span>/1000</div>
                     </div>
                 </div>
                 <div class="field">
@@ -182,14 +182,14 @@
                             </h5>
                             <div class="scroll_wrap">
                                 <div class="scrollBox">
-                                    <h5>-  조별 과제, 팀프로젝트, 대회 출전 경험 등, 팀 내 갈등 해결 경험을 작성해보세요.</h5>
+                                    <h5>- 조별 과제, 팀프로젝트, 대회 출전 경험 등, 팀 내 갈등 해결 경험을 작성해보세요.</h5>
                                 </div>
                             </div>
                         </div>
                     </label>
                     <div class="control">
-                        <textarea class="textarea" id="paperText3" name="paper3"></textarea>
-                        <div class="textCount" id="paperCount3"><span>0</span>/250</div>
+                        <textarea class="textarea" id="paperText3" name="paper3" maxlength="1000"></textarea>
+                        <div class="textCount" id="paperCount3"><span>0</span>/1000</div>
                     </div>
                 </div>
                 <div class="field">
