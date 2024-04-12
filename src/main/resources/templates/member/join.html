@@ -42,7 +42,7 @@
             <b>이메일</b>
             <input type="email" name="email" id="email" placeholder="이메일" class="form-control" required>
             <input type="hidden" id="emailCK" name="emailCK" value="no">
-            <button type="button" onclick="PostEmail()" id="PostEmailbtn" class="is_btn"> 인증번호 보내기 </button>
+            <button type="button" onclick="PostEmail()" id="PostEmailbtn" class="is_btn"> 인증번호 확인 </button>
             <div class="insubForm" style="display: none; ">
                 <label class="form-label blind" for="insub">인증번호</label>
                 <input type="text" id="insub" name="insub" placeholder="인증번호 입력" class="form-control">
@@ -82,7 +82,7 @@
         <div class="field birth">
             <b>생년월일</b>
             <div>
-                <input type="number" class="form-control" placeholder="년(4자)">
+                <input type="number" min="1900" class="form-control" placeholder="년(4자)">
                 <select>
                     <option value="">월</option>
                     <option value="">1월</option>
@@ -98,7 +98,7 @@
                     <option value="">11월</option>
                     <option value="">12월</option>
                 </select>
-                <input type="number" class="form-control" placeholder="일">
+                <input type="number" min="1" max="31" class="form-control" placeholder="일">
             </div>
         </div>
 
