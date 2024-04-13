@@ -45,9 +45,6 @@ public class OAuth2MemberService extends DefaultOAuth2UserService {
         String oauth2Id = provider = "_" + providerId;
         String name = memberInfo.getName();
         String email = memberInfo.getEmail();
-
-        // 개인정보 심사 끝나면 사용할 예정
-//        String tel = memberInfo.getTel();
         String role = "STUDENT";
         System.out.println("=======================================================Attributes Check = " + oAuth2User.getAttributes());
         Optional<Member> findMember = memberRepository.findByOauth2Id(oauth2Id);
@@ -58,7 +55,6 @@ public class OAuth2MemberService extends DefaultOAuth2UserService {
                     .oauth2Id(oauth2Id)
                     .name(name)
                     .email(email)
-//                    .tel(tel)
                     .pw(passwordEncoder.encode("pw"))
                     .provider(provider)
                     .providerId(providerId)

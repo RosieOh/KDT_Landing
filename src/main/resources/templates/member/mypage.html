@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head style="min-height: 100vh;">
+    <meta charset="utf-8">
+    <meta
+            content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+            name="viewport"
+    />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>마이페이지</title>
+    <th:block th:replace="~{include/head :: head}"></th:block>
+</head>
+
+<body>
+
+<th:block th:replace="~{include/header :: header}"></th:block>
+
+<section class="page-title">
+    <nav class="breadcrumb_1" aria-label="breadcrumbs">
+        <ul class="breadcrumb_1_road">
+            <li><a class="breadcrumb_1_road_a" th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
+            <li><a class="breadcrumb_1_road_a" th:href="@{/member/myPage(id=${msg.id})}">마이페이지</a></li>
+        </ul>
+        <p class="breadcrumb_1_road_title">회원가입</p>
+    </nav>
+</section>
+
+
+<form th:action="@{/member/myPagePro}" method="post" th:object="${memberJoinDTO}" th:class="form-horizontal" id="joinForm">
+    <div class="member">
+        <!-- 2. 필드 -->
+        <div class="container join1">
+            <h1 class="join1_h1">필수 회원 정보</h1>
+        </div>
+        <div class="field">
+            <b>이메일</b>
+            <input style="border: none;" type="text" name="email" class="form-control" th:value="${msg.email}" readonly>
+        </div>
+
+        <div class="field">
+            <b>이름</b>
+            <input type="text" name="name" id="name" placeholder="이름" class="form-control" th:value="${msg.name}" minlength="2" maxlength="8" required />
+        </div>
+
+        <div class="field tel-number">
+            <b>휴대전화</b>
+            <select>
+                <option value="">대한민국 +82</option>
+            </select>
+            <input type="tel" name="tel" class="form-control" placeholder="전화번호 입력">
+        </div>
+
+        <div class="field">
+            <b>비밀번호</b>
+            <input class="userpw" name="pw" id="pw" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&.,])[A-Za-z\d$@$!%*#?&]{8,16}$" placeholder="비밀번호" type="password">
+            <p class="info mb-0"><i class="fas fa-check"></i> 비밀번호는 최소 8자리에서 최대 16자리 <br> &nbsp;&nbsp;&nbsp;&nbsp;숫자, 영문, 특수문자 각 1개 이상 포함</p>
+        </div>
+
+        <div class="field">
+            <b>비밀번호 재확인</b>
+            <input class="userpw-confirm" name="pw2" id="pw2" type="password">
+        </div>
+
+        <!-- 3. 필드(생년월일) -->
+        <div class="container join1">
+            <h1 class="join1_h1">선택 회원정보</h1>
+        </div>
+        <div class="field birth">
+            <b>생년월일</b>
+            <div>
+                <input type="number" min="1900" class="form-control" placeholder="년(4자)">
+                <select>
+                    <option value="">월</option>
+                    <option value="">1월</option>
+                    <option value="">2월</option>
+                    <option value="">3월</option>
+                    <option value="">4월</option>
+                    <option value="">5월</option>
+                    <option value="">6월</option>
+                    <option value="">7월</option>
+                    <option value="">8월</option>
+                    <option value="">9월</option>
+                    <option value="">10월</option>
+                    <option value="">11월</option>
+                    <option value="">12월</option>
+                </select>
+                <input type="number" min="1" max="31" class="form-control" placeholder="일">
+            </div>
+        </div>
+
+        <!-- 6. 수정하기 버튼 -->
+        <div class="join_btn">
+            <button type="submit" class="is_btn" >회원정보 수정</button>
+        </div>
+    </div>
+</form>
+
+<script th:inline="javascript">
+    $(document).ready(function(){
+        $("#id").keyup(function(){
+            $("#idCk").val("no");
+            if($(this).val()!=""){
+                if($("#msg").hasClass("no_check")) {
+                    $("#msg").removeClass("no_check");
+                }
+                $("#msg").html("아이디 입력중입니다.").css("color", "black");
+                $("#id").focus();
+            } else {
+                $("#msg").addClass("no_check").html("아이디 중복 체크를 하지 않으셨습니다.").css("color", "red");
+            }
+        });
+    });
+
+    function idCheck(){
+        if($("#id").val()==""){
+            alert("아이디를 입력하지 않았습니다.");
+            $("#id").focus();
+            return false;
+        }
+
+        var params = {"id" : $("#id").val()};
+        $.ajax({
+            url:"/member/idCheckPro",	//아이디가 전송되어질 곳
+            type:"post",
+            data:JSON.stringify(params),
+            dataType:"json",
+            contentType:"application/json",
+            success : function(result) {
+                var idPass = result;
+                if(idPass == false){
+                    $("#idCk").val("no");
+                    $("#msg").addClass("no_check").html("사용할 수 없는 아이디입니다. 다시 입력하시기 바랍니다.").css("color", "red");
+                    $("#id").focus();
+                } else if(idPass == true){
+                    $("#idCk").val("yes");
+                    if($("#msg").hasClass("no_check")) {
+                        $("#msg").removeClass("no_check");
+                    }
+                    $("#msg").html("사용 가능한 아이디입니다.").css("color", "blue");
+                } else if(idPass==""){
+                    $("#msg").addClass("no_check").text("아이디가 확인되지 않았습니다. 다시 시도하시기 바랍니다.").css("color", "red");
+                }
+            }
+        });
+    }
+
+    function joinCheck(f){
+        if(f.pw.value!=f.pw2.value){
+            alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
+            f.pw.focus();
+            return false;
+        }
+        if(f.pw.value.length(8-16)){
+            alert("비밀번호는 최소 8자리에서 최대 16자리까지 숫자, 영문, 특수문자 각 1개 이상 포함해주세요.");
+            f.pw.focus();
+            return false;
+        }
+        if(f.idCk.value!="yes"){
+            alert("아이디 중복 체크를 하지 않으셨습니다.");
+            $("#id").focus();
+            return false;
+        }
+        let value = $("#pw").val();
+
+        let pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&.,])[A-Za-z\d$@$!%*#?&]{8,16}$"
+        if (!pattern.test(value)) {
+            alert("숫자, 영문, 특수문자 각 1개 이상 포함입니다.");
+            $("#pw").focus();
+            return false;
+        }
+    }
+</script>
+
+
+<!-- ======= Footer ======= -->
+<th:block th:replace="~{include/footer :: footer}"></th:block>
+<!-- End Footer -->
+
+</body>
+</html>
