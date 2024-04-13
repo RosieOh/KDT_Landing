@@ -60,6 +60,7 @@ public class MemberServiceImpl implements MemberService{
         return this.passwordEncoder;
     }
 
+
     @Override
     public List<MemberJoinDTO> memberList() {
         List<Member> memberList = memberRepository.findAll();
@@ -159,6 +160,15 @@ public class MemberServiceImpl implements MemberService{
         memberJoinDTO.setPw(password);
         Member member = modelMapper.map(memberJoinDTO, Member.class);
         memberRepository.save(member);
+    }
+
+
+    // 회원 업데이트를 위한 추가사항
+    @Override
+    public MemberJoinDTO getById(Long id) {
+        Member member = memberRepository.getById(id);
+        MemberJoinDTO memberJoinDTO = modelMapper.map(member, MemberJoinDTO.class);
+        return memberJoinDTO;
     }
 
 }
