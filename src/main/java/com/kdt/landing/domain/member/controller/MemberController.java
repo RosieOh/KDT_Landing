@@ -1,6 +1,7 @@
 package com.kdt.landing.domain.member.controller;
 
 import com.kdt.landing.domain.member.dto.MemberJoinDTO;
+import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.service.MemberService;
 import com.kdt.landing.global.cosntant.Status;
 import jakarta.servlet.http.HttpServletRequest;
@@ -105,5 +106,41 @@ public class MemberController {
         return "/alert";
     }
 
+    // 카카오 로그인 시 정보 입력
+    @GetMapping("addInfo")
+    public String updateInfo(@RequestParam("id") Long id, Model model) {
+        MemberJoinDTO memberJoinDTO1 = memberService.getById(id);
+        model.addAttribute("msg", memberJoinDTO1);
+        return "member/update";
+    }
 
+    @PostMapping("addInfoPro")
+    public String updateInfoPro(Model model, MemberJoinDTO memberJoinDTO) {
+        try {
+            memberService.memberUpdate(memberJoinDTO);
+            model.addAttribute("msg", "회원 정보가 업데이트되었습니다.");
+        } catch (Exception e) {
+            model.addAttribute("msg", "회원 정보 업데이트에 실패하였습니다.");
+        }
+        return "redirect:/";
+    }
+
+    // 카카오 로그인 시 정보 입력
+    @GetMapping("myPage")
+    public String myPageInfo(@RequestParam("id") Long id, Model model) {
+        MemberJoinDTO memberJoinDTO1 = memberService.getById(id);
+        model.addAttribute("msg", memberJoinDTO1);
+        return "member/mypage";
+    }
+
+    @PostMapping("myPagePro")
+    public String myPageInfoPro(Model model, MemberJoinDTO memberJoinDTO) {
+        try {
+            memberService.memberUpdate(memberJoinDTO);
+            model.addAttribute("msg", "회원 정보가 업데이트되었습니다.");
+        } catch (Exception e) {
+            model.addAttribute("msg", "회원 정보 업데이트에 실패하였습니다.");
+        }
+        return "redirect:/";
+    }
 }
