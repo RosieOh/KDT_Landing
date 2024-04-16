@@ -38,6 +38,8 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     Member getName(@Param("name") String name);
 
 
+
+    @Query("select count(m) from Member m where m.email = :email")
     Integer countByEmail(@Param("email") String email);
 
     Member getById(Long id);
