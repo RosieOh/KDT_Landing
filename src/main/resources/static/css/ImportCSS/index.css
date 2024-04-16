@@ -267,6 +267,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 1rem;
 }
 
 .banner_back {
@@ -711,6 +712,18 @@ p {
     font-weight: bold;
     margin-top: 5px;
 }
+
+.is_btn1{
+    background-color: var(--c-sub);
+    padding: 5px 0;
+    width: 100%;
+    color: var(--c-white);
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+}
 .field .button {
     width: 300px;
 }
@@ -829,7 +842,7 @@ p {
 
 #login-form > input[type="submit"]{
     color: #fff;
-    font-size: 16px;
+    font-size: 22px;
     background-color: #6A24FE;
     margin-top: 20px;
 }
