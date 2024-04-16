@@ -108,10 +108,14 @@ public class MemberController {
 
     // 카카오 로그인 시 정보 입력
     @GetMapping("addInfo")
-    public String updateInfo(@RequestParam("id") Long id, Model model) {
-        MemberJoinDTO memberJoinDTO1 = memberService.getById(id);
-        model.addAttribute("msg", memberJoinDTO1);
-        return "member/update";
+    public String updateInfo(@RequestParam("id") Long id, Model model, Principal principal) {
+        if(principal != null){
+            MemberJoinDTO memberJoinDTO1 = memberService.getById(id);
+            model.addAttribute("msg", memberJoinDTO1);
+            return "member/update";
+        } else {
+            return "redirect:/";
+        }
     }
 
     @PostMapping("addInfoPro")
