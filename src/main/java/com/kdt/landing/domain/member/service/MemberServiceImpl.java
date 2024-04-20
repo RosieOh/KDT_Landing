@@ -148,12 +148,9 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public boolean idCheck(String email) {
-        boolean pass = true;
         int cnt = memberRepository.countByEmail(email);
-        if(cnt > 0) pass = false;
-        return pass;
+        return cnt == 0; // 데이터베이스에 존재하지 않으면 true를 반환하고, 존재하면 false를 반환합니다.
     }
-
     @Override
     public void memberChangePw(MemberJoinDTO memberJoinDTO) {
         String password = passwordEncoder.encode(memberJoinDTO.getPw());

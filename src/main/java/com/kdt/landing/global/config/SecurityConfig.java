@@ -1,5 +1,6 @@
 package com.kdt.landing.global.config;
 
+import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.service.MemberService;
 import com.kdt.landing.global.oauth2.service.OAuth2MemberService;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +33,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig {
 
     private final OAuth2MemberService oAuth2MemberService;
+    private final MemberService memberService;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -45,7 +47,7 @@ public class SecurityConfig {
                         .loginPage("/member/login")
                         .failureUrl("/member/login?error=true")
                         .loginProcessingUrl("/loginPro")
-                        .defaultSuccessUrl("/")
+                        .defaultSuccessUrl("/addInfo")
                         .usernameParameter("email")
                         .passwordParameter("pw"))
             .logout((logout) -> logout.logoutUrl("/logout").logoutSuccessUrl("/"))
@@ -61,7 +63,8 @@ public class SecurityConfig {
         http.oauth2Login(oauth2Login -> {
             oauth2Login
                     .loginPage("/") // OAuth2 로그인 페이지 설정
-                    .defaultSuccessUrl("/") // OAuth2 로그인 성공 시 이동할 URL 설정
+                    .defaultSuccessUrl("/") // 이거 참 난감하네...
+                   // .defaultSuccessUrl("/member/addInfo?id=" + ) // OAuth2 로그인 성공 시 이동할 URL 설정
                     .userInfoEndpoint(infoEndpoint ->
                             infoEndpoint.userService(oAuth2MemberService));
             oauth2Login.clientRegistrationRepository(clientRegistrationRepository());
@@ -78,7 +81,7 @@ public class SecurityConfig {
                         .clientSecret("4lTEsqCbbs1jfI1G3B9vKQfuJBdLCz87")
                         .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_POST)
                         .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-                        .redirectUri("http://chunjae-learning.com/login/oauth2/code/kakao")
+                        .redirectUri("http://localhost:8080/login/oauth2/code/kakao")
                         // 리다이렉트 안될 때 이걸로 검토
                         //.redirectUri("http://chunjae-learning.com/login/oauth2/code/kakao")
                         //.redirectUri("http://13.209.34.9:8080/login/oauth2/code/kakao")
