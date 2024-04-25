@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
 import java.util.List;
 
 @Log4j2
@@ -33,6 +34,7 @@ public class SubjectController {
 
     @GetMapping("/list/FullStack")
     public String applySubjectFullStackList(Model model) throws Exception {
+
         List<SubjectDTO> subjectDTOFullStackList = subFullStackService.getFullStackSubjects();
         model.addAttribute("fullStackList", subjectDTOFullStackList);
         return "/sub/list";

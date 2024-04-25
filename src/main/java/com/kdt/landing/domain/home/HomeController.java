@@ -3,6 +3,7 @@ package com.kdt.landing.domain.home;
 
 import com.kdt.landing.domain.member.repository.MemberRepository;
 import com.kdt.landing.domain.member.service.MemberService;
+import com.kdt.landing.global.oauth2.service.PrincipalDetailService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,10 @@ public class HomeController {
     }
 
     @GetMapping("/subSign_full")
-    public String subSign_full(Model model) {
+    public String subSign_full(Model model, Principal principal, PrincipalDetailService principalDetailService) {
+        log.info("principal --------" + principal);
+        log.info("principal.getName() --------" + principal.getName());
+        log.info("principalDetailService --------" + principalDetailService.toString());
         return "main/sign/subSign_full";
     }
 

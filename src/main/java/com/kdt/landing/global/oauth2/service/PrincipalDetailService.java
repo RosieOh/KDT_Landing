@@ -18,6 +18,7 @@ import java.util.Optional;
 @Service
 public class PrincipalDetailService implements UserDetailsService {
     private final MemberRepository memberRepository;
+
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
 

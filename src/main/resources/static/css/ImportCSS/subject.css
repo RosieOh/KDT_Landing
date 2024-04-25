@@ -91,43 +91,7 @@
     color: var(--c-main);
     font-weight: bold;
 }
-.nav-dropdown {
-    display: block;
-    color: var(--c-sub);
-}
 
-.nav-dropdown_wrap {
-    display: none;
-    padding: 0 0 0 20px;
-    margin: auto;
-    position: absolute;
-    background-color: var(--c-white);
-    right: -21px;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px -3px gray;
-}
-
-
-
-#nav-dropdown {
-    display: inline-block;
-    font-size: 15px;
-}
-
-.nav-dropdown:hover {
-    .nav-dropdown_wrap {
-        display: block;
-    }
-    #nav-dropdown {
-        transition: 0.4s ease-in-out;
-        transform: rotateX(180deg);
-    }
-}
-
-.nav-dropdown_wrap > .nav-content {
-    padding-left: 0;
-    display: block;
-}
 
 .nav_logo {
     width: 150px;

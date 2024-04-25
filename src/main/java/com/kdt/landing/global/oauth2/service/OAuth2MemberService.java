@@ -2,6 +2,7 @@ package com.kdt.landing.global.oauth2.service;
 
 import com.kdt.landing.domain.member.entity.Member;
 import com.kdt.landing.domain.member.repository.MemberRepository;
+import com.kdt.landing.global.cosntant.Status;
 import com.kdt.landing.global.oauth2.domain.PrincipalDetails;
 import com.kdt.landing.global.oauth2.info.KakaoMemberInfo;
 import com.kdt.landing.global.oauth2.info.OAuth2MemberInfo;
@@ -58,6 +59,7 @@ public class OAuth2MemberService extends DefaultOAuth2UserService {
                     .pw(passwordEncoder.encode("pw"))
                     .provider(provider)
                     .providerId(providerId)
+                    .status(Status.ACTIVE)
                     .build();
             memberRepository.save(member);
         } else {
