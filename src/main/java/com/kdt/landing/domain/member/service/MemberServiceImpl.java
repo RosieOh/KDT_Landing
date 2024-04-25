@@ -98,7 +98,9 @@ public class MemberServiceImpl implements MemberService{
     public void memberUpdate(MemberJoinDTO memberJoinDTO) {
         Optional<Member> member = memberRepository.getMember(memberJoinDTO.getEmail());
         Member member1 = member.orElseThrow();
-        member1.change(memberJoinDTO);
+        member1.setLoginAt(memberJoinDTO.getLoginAt());
+        member1.setName(memberJoinDTO.getName());
+        member1.setTel(memberJoinDTO.getTel());
         memberRepository.save(member1);
     }
 
@@ -127,6 +129,8 @@ public class MemberServiceImpl implements MemberService{
     public int loginPro(String email) {
         int pass = 0;
         Member member = memberRepository.getEmail(email);
+        member.setLoginAt(LocalDateTime.now());
+        memberRepository.save(member);
         LocalDateTime localDateTime = LocalDateTime.now().minusDays(30); // 현재 시점에서 30일 동안 반응이 없으면 휴면
         if (localDateTime.isAfter(member.getLoginAt())) {
             member.setStatus(Status.REST);
@@ -144,6 +148,13 @@ public class MemberServiceImpl implements MemberService{
             }
         }
         return pass;
+    }
+
+    @Override
+    public void loginUpdate(String email) {
+        Member member = memberRepository.getEmail(email);
+        member.setLoginAt(LocalDateTime.now());
+        memberRepository.save(member);
     }
 
     @Override

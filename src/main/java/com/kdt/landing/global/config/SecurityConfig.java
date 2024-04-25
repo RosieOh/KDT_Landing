@@ -41,13 +41,17 @@ public class SecurityConfig {
 
 
         http.csrf(AbstractHttpConfigurer::disable)
-            .authorizeHttpRequests((authorizeRequests) -> {authorizeRequests.requestMatchers(new AntPathRequestMatcher("**")).permitAll();})
-                .authorizeHttpRequests((authorizeRequests) -> {authorizeRequests.requestMatchers(new AntPathRequestMatcher("/")).permitAll();})
+            .authorizeHttpRequests((authorizeRequests) -> { authorizeRequests
+                    .requestMatchers(new AntPathRequestMatcher("/")).permitAll()
+                    .requestMatchers(new AntPathRequestMatcher("/adminSubject/**"), new AntPathRequestMatcher("/apply/**"),
+                                    new AntPathRequestMatcher("/modifyBoard/**"), new AntPathRequestMatcher("/notice/**")).hasAuthority("ADMIN")
+                    .anyRequest().permitAll();
+                })
             .formLogin((formLogin) -> formLogin
-                        .loginPage("/member/login")
-                        .failureUrl("/member/login?error=true")
+                        .loginPage("/login")
+                        .failureUrl("/login?error=true")
                         .loginProcessingUrl("/loginPro")
-                        .defaultSuccessUrl("/")
+                        .defaultSuccessUrl("/member/status")
                         .usernameParameter("email")
                         .passwordParameter("pw"))
             .logout((logout) -> logout.logoutUrl("/logout").logoutSuccessUrl("/"))
@@ -63,7 +67,7 @@ public class SecurityConfig {
         http.oauth2Login(oauth2Login -> {
             oauth2Login
                     .loginPage("/") // OAuth2 로그인 페이지 설정
-                    .defaultSuccessUrl("/") // 이거 참 난감하네...
+                    .defaultSuccessUrl("/member/addInfo") //
                    // .defaultSuccessUrl("/member/addInfo?id=" + ) // OAuth2 로그인 성공 시 이동할 URL 설정
                     .userInfoEndpoint(infoEndpoint ->
                             infoEndpoint.userService(oAuth2MemberService));
