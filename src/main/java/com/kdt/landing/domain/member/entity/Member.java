@@ -49,7 +49,6 @@ public class Member extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Status status;      //회원 활동상태
 
-    @CreatedDate
     private LocalDateTime loginAt;  //최종 로그인시간
 
     @ElementCollection(fetch = FetchType.EAGER)

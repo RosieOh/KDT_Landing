@@ -20,6 +20,7 @@ public interface MemberService {
     public void roleUpdate(MemberJoinDTO memberJoinDTO);
     public void memberDelete(Long id);
     public int loginPro(String email);
+    public void loginUpdate(String email);
     public boolean idCheck(String email);
     public void memberChangePw(MemberJoinDTO memberJoinDTO);
 
