@@ -18,10 +18,11 @@ import java.util.Optional;
 @Service
 public class PrincipalDetailService implements UserDetailsService {
     private final MemberRepository memberRepository;
+
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
 
-        Optional<Member> member = memberRepository.findByEmail2(name);
+        Optional<Member> member = memberRepository.getMember(name);
         if (member.isPresent()) {
             System.out.println("member = " + member.get());
             return new PrincipalDetails(member.get());
