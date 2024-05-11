@@ -37,14 +37,14 @@
             <div th:if="${param.authError}">
                 <p style="color:blue">토큰 정보가 만료되었습니다. 토큰을 갱신하시기 바랍니다.</p>
             </div>
-            <label for="remember-check">
-                <input type="checkbox" id="remember-check">아이디 저장하기
-            </label>
+<!--            <label for="remember-check">-->
+<!--                <input type="checkbox" id="remember-check">아이디 저장하기-->
+<!--            </label>-->
             <input type="submit" value="Login">
             <div class="kakao_login">
                 <a th:href="@{/oauth2/authorization/kakao}"><img th:src="@{/picture/index/kakao_login_medium_wide.png}" alt="" class="kakao_login_img"></a>
             </div>
-                <p class="d-flex justify-content-center mt-3"> 회원이 아니신가요? &nbsp; <a th:href="@{/member/join}" class="text-secondary"> 회원가입하기 </a></p>
+                <p class="d-flex justify-content-center mt-3"> 회원이 아니신가요? &nbsp; <a th:href="@{/join}" class="text-secondary"> 회원가입하기 </a></p>
         </form>
         </div>
     </div>

@@ -91,10 +91,6 @@
     color: var(--c-main);
     font-weight: bold;
 }
-.nav-dropdown {
-    display: block;
-    color: var(--c-sub);
-}
 
 .nav-dropdown_wrap {
     display: none;
@@ -102,11 +98,11 @@
     margin: auto;
     position: absolute;
     background-color: var(--c-white);
-    right: -21px;
-    border-radius: 20px;
+    top: 66px;
+    right: 78px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px -3px gray;
 }
-
 
 
 #nav-dropdown {
@@ -128,6 +124,7 @@
     padding-left: 0;
     display: block;
 }
+
 
 .nav_logo {
     width: 150px;
