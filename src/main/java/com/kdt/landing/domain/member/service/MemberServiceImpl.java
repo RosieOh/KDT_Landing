@@ -31,12 +31,12 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public void createAdminMember() {
         // 이미 존재하는 회원인지 확인
-        if (!memberRepository.existsByEmail("admin@chunjaeIT.co.kr")) {
+        if (!memberRepository.existsByEmail("admin@chunjae.co.kr")) {
             // 관리자 계정 생성 및 초기 설정
             Member admin = Member.builder()
                     .pw(passwordEncoder.encode("1234"))
                     .name("관리자")
-                    .email("admin@chunjaeIT.co.kr")
+                    .email("admin@chunjae.co.kr")
                     .role(Role.ADMIN)
                     .status(Status.ACTIVE)
                     .tel("02-3282-8589")
