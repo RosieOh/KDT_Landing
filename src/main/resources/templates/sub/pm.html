@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8" />
 
-  <title>PM 과정</title>
+  <title>에듀테크 상품/서비스 PM 교육과정 과정</title>
   <th:block th:replace="include/head :: head"></th:block>
 
 </head>
@@ -24,7 +24,8 @@
             <img th:src="@{/picture/pm/banner_pm1.png}" alt="">
           </picture>
           <div class="flex">
-            <a th:href="@{/subSign_pm}">
+            <!-- 신청하기  -->
+            <a th:href="@{/subSign_pm}" target="_blank">
               <picture>
                 <source srcset="../../static/images/picture/common2/common2_mobile/banner_btn.svg" media="(max-width: 450px)">
                 <img th:src="@{/picture/common2/banner_btn.png}" alt="" class="button">
@@ -275,7 +276,8 @@
       </picture>
 
       <div class="procedure">
-        <a th:href="@{/subSign_pm}">
+        <!-- 신청하기  -->
+        <a th:href="@{/subSign_pm}" target="_blank">
         <picture>
             <img th:src="@{/picture/common2/procedure1.png}" alt="" class="img_hover">
           </picture>
@@ -292,7 +294,8 @@
 
       <div class="procedure_mobile">
         <div class="flex">
-          <a th:href="@{/subSign_pm}">
+          <!-- 신청하기  -->
+          <a th:href="@{/subSign_pm}" target="_blank">
           <picture>
               <img th:src="@{/picture/common2/common2_mobile/procedure2.svg}" alt="" class="img_hover">
             </picture>
@@ -305,7 +308,7 @@
           <picture>
             <img th:src="@{/picture/common2/common2_mobile/procedure4.svg}" alt="">
           </picture>
-          <a href="https://www.hrd.go.kr/">
+          <a href="https://www.hrd.go.kr/" target="_blank">
             <picture>
               <img th:src="@{/picture/common2/common2_mobile/procedure5.svg}" alt="" class="img_hover">
             </picture>
@@ -329,6 +332,29 @@
 <!--<script th:src="@{/static/js/slide.js}"></script>-->
 
 <th:block th:replace="include/footer :: footer"></th:block>
-
+<th:block th:replace="~{main/sign/sign :: sign}"></th:block>
+<div class="bottom_banner">
+  <section class="container_side ">
+    <div class="image_content direct_column">
+      <picture>
+        <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner1.svg" media="(max-width: 450px)">
+        <img th:src="@{/picture/common2/bottom_banner1.png}" alt="df">
+      </picture>
+      <div class="flex">
+        <!-- 신청하기  -->
+        <a th:href="@{/subSign_pm}" target='_blank'>
+          <picture>
+            <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner_btn.svg" media="(max-width: 450px)">
+            <img th:src="@{/picture/common2/bottom_banner2.svg}" alt="df" class="bottom_button">
+          </picture>
+        </a>
+        <picture>
+          <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner2.png" media="(max-width: 450px)" ids="ban_btn">
+          <img src="" alt="" >
+        </picture>
+      </div>
+    </div>
+  </section>
+</div>
 </body>
 </html>

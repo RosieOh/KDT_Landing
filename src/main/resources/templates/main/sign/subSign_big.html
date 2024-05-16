@@ -13,7 +13,7 @@
 <body>
 <th:block th:replace="include/header :: header" ></th:block>
 <div class="main back_lightgray">
-    <section class="container_side">
+    <section class="container">
         <div class="subSign_form">
             <div class="subSign_title">
                 <h1>교육 신청</h1>
@@ -33,9 +33,8 @@
                 - 지원서를 통해 취득한 개인정보는 지원과 선발 절차, 교육 과정 입과 단계에서만 이용될 것을 알려드립니다.
                 <br>
                 <br>
-                </p>
             </div>
-            <form th:action="@{/subject/register}" method="post">
+            <form th:action="@{/subject/register}" method="post" onsubmit="return Register(this)">
                 <div class="field">
                     <label class="label">교육과정<em>*</em></label>
                     <div class="control">
@@ -45,7 +44,7 @@
                 <div class="field">
                     <label class="label">이름<em>*</em></label>
                     <div class="control">
-                        <input class="input" type="text" name="name" placeholder="홍길동" required/>
+                        <input type="text" class="input"  name="name" placeholder="한글로 공백없이 입력해주세요." minlength="2" maxlength="4" onchange="nameCheck(this)" required/>
                     </div>
                 </div>
                 <div class="field">
@@ -60,13 +59,13 @@
                 <div class="field">
                     <label class="label">연락처<em>*</em></label>
                     <div class="control">
-                        <input class="input" type="text" name="tel" placeholder="010-0000-0000" required/>
+                        <input class="input" type="text" name="tel" placeholder="'-'없이 눌러주세요." minlength="11" maxlength="11" required/>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">이메일<em>*</em></label>
                     <div class="control">
-                        <input class="input" type="text" name="email" placeholder="chunjae@chunjae.co.kr" required/>
+                        <input class="input" type="text" name="email" placeholder="chunjae@chunjae.co.kr" onchange="emailCheck(this)" required/>
                     </div>
                 </div>
                 <div class="field">
@@ -90,10 +89,10 @@
                 </div>
                 <div class="field">
                     <label class="label">최종 졸업(혹은 졸업예정) 학교 및 전공명을 기재해주세요.<em>*</em>
-                        <p >*자료 수집용일 뿐, 선발 심사에는 반영되지 않습니다.</p>
+                        <p>*자료 수집용일 뿐, 선발 심사에는 반영되지 않습니다.</p>
                     </label>
                     <div class="control">
-                        <input class="input" type="text" name="graduation_degree" placeholder="천재대학교/교육학과" required />
+                        <input class="input" type="text" name="graduation_degree" placeholder="천재대학교/교육학과" required/>
                     </div>
                 </div>
                 <div class="field">
@@ -127,7 +126,7 @@
                         <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="1년 미만" /><span>1년 미만</span></label>
                         <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="1 ~ 3년" /><span>1 ~ 3년</span></label>
                         <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="3년 이상" /><span>3년 이상</span></label>
-                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=false" value="기타" /><span>기타</span><input class="label_input" type="text" name="coding_experience_text" disabled/></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=false" id="coding_experience" value="기타" /><span>기타</span><input class="label_input" type="text" name="coding_experience_text" onchange="etcExperience(this)" disabled/></label>
                     </div>
                 </div>
                 <div class="field">
@@ -135,7 +134,7 @@
                         <div class="paper">
                             <h5>
                                 작성 내용이 고민된다면 아래 가이드를 참고하세요!
-                                <a href="javascript:;" class="toggle">▼ 내용보기</a>
+                                <a href="javascript:" class="toggle">▼ 내용보기</a>
                             </h5>
                             <div class="scroll_wrap">
                                 <div class="scrollBox">
@@ -157,7 +156,7 @@
                         <div class="paper">
                             <h5>
                                 작성 내용이 고민된다면 아래 가이드를 참고하세요!
-                                <a href="javascript:;" class="toggle">▼ 내용보기</a>
+                                <a href="javascript:" class="toggle">▼ 내용보기</a>
                             </h5>
                             <div class="scroll_wrap">
                                 <div class="scrollBox">
@@ -169,7 +168,7 @@
                         </div>
                     </label>
                     <div class="control">
-                        <textarea class="textarea textarea_sub" id="paperText2" name="paper2"  maxlength="1000" required></textarea>
+                        <textarea class="textarea" id="paperText2" name="paper2" maxlength="1000" required></textarea>
                         <div class="textCount" id="paperCount2"><span>0</span>/1000</div>
                     </div>
                 </div>
@@ -178,7 +177,7 @@
                         <div class="paper">
                             <h5>
                                 작성 내용이 고민된다면 아래 가이드를 참고하세요!
-                                <a href="javascript:;" class="toggle">▼ 내용보기</a>
+                                <a href="javascript:" class="toggle">▼ 내용보기</a>
                             </h5>
                             <div class="scroll_wrap">
                                 <div class="scrollBox">
@@ -208,14 +207,14 @@
                         <label><input class="" type="checkbox" name="route" value="네이버 취업 카페"/><span>네이버 취업 카페</span></label>
                         <label><input class="" type="checkbox" name="route" value="요즘것들"/><span>요즘것들</span></label>
                         <label><input class="" type="checkbox" name="route" value="올콘/씽굿/이벤터스/슈퍼루키/생각나눔소/스펙토리"/><span>올콘/씽굿/이벤터스/슈퍼루키/생각나눔소/스펙토리</span></label>
-                        <label><input class="" type="checkbox" name="route" value="지인소개"/><span>지인소개</span><input class="label_input" type="text" name="route_text"/></label>
-                        <label><input class="" type="checkbox" name="route" value="기타"/><span>기타</span><input class="label_input" type="text" name="route_text"/></label>
+                        <label><input class="" type="checkbox" name="route" value="지인소개" id="routePeople" onclick="this.form.routePeople_text.disabled=false"/><span>지인소개</span><input class="label_input" type="text" name="routePeople_text" onchange="RoutePeople(this)" disabled/></label>
+                        <label><input class="" type="checkbox" name="route" value="기타" id="routeEtc" onclick="this.form.routeEtc_text.disabled=false"/><span>기타</span><input class="label_input" type="text" name="routeEtc_text" onchange="RouteEtc(this)" disabled/></label>
                     </div>
                 </div>
                 <div class="agree">
                     <h4>
                         개인정보 수집 및 이용 동의
-                        <a href="javascript:;" class="toggle">▼ 내용보기</a>
+                        <a href="javascript:" class="toggle">▼ 내용보기</a>
                     </h4>
                     <div class="scroll_wrap">
                         <div class="scrollBox">
@@ -278,3 +277,81 @@
 <th:block th:replace="include/footer :: footer" ></th:block>
 </body>
 </html>
+<script>
+    let experience = document.querySelector('#coding_experience');
+
+    function etcExperience(obj) {
+        experience.value = '기타: ' + obj.value
+    }
+</script>
+<script>
+    let route_etc = document.querySelector('#routeEtc');
+
+    function RouteEtc(obj) {
+        route_etc.value = '기타: ' + obj.value
+    }
+</script>
+<script>
+    let route_people = document.querySelector('#routePeople');
+    function RoutePeople(obj) {
+        route_people.value = '지인소개: ' + obj.value
+    }
+</script>
+
+<script>
+
+    // 자소서 2번
+    let paperText1 = document.querySelector('#paperText1')
+    let paperText2 = document.querySelector('#paperText2')
+    let paperText3 = document.querySelector('#paperText3')
+    let content1 = paperText1.value.length;
+    let content2 = paperText2.value.length;
+    let content3 = paperText3.value.length;
+
+    function Register(obj){
+        // 250자 미만이면서 이전에 경고창을 표시하지 않았을 때
+        if (content1 < 250) {
+            alert("250자 이상 입력해주세요.");
+            paperText1.focus();
+            return false
+        }
+        if (content2 < 250) {
+            alert("250자 이상 입력해주세요.");
+            paperText2.focus();
+            return false
+        }
+        if (content3 < 250) {
+            alert("250자 이상 입력해주세요.");
+            paperText3.focus();
+            return false
+        }
+    }
+
+</script>
+
+<script>
+    function nameCheck(obj){
+        name_pattern = /^[ㄱ-ㅎ|가-힣]*$/;
+        if(name_pattern.test(obj.value) == false){
+            alert("이름은 한글만 가능합니다.")
+            obj.value = '';
+            obj.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function emailCheck(obj){
+        email_pattern = /^[0-9a-zA-Z]+@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])+(\.com)$/;
+        email_pattern2 = /^[0-9a-zA-Z]+@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])+(\.co\.kr)$/;
+        email_pattern3 = /^[0-9a-zA-Z]+@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])+(\.net)$/;
+        if(email_pattern.test(obj.value) == false && email_pattern2.test(obj.value) == false && email_pattern3.test(obj.value) == false){
+            alert("이메일 주소가 맞지않습니다.")
+            obj.value = '';
+            obj.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>

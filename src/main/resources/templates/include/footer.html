@@ -3,28 +3,7 @@
   <body>
     <th:block th:fragment="footer">
       <script th:src="@{/static/js/slick.js}"></script>
-      <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
       <a href="#" class="gotop" id="gotop">▲</a>
-      <div class="bottom_banner">
-        <section class="container_side ">
-          <div class="image_content direct_column">
-            <picture>
-              <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner1.svg" media="(max-width: 450px)">
-              <img th:src="@{/picture/common2/bottom_banner1.png}" alt="df">
-            </picture>
-            <div class="flex">
-              <picture>
-                <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner_btn.svg" media="(max-width: 450px)">
-                <img th:src="@{/picture/common2/bottom_banner2.svg}" alt="df" class="bottom_button" id="ban_btn">
-              </picture>
-              <picture>
-                <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner2.png" media="(max-width: 450px)" ids="ban_btn">
-                <img th:src="@{}" alt="" >
-              </picture>
-            </div>
-          </div>
-        </section>
-      </div>
       <footer class="ft" id="ft">
         <section class="container_side m2">
           <div class="ft_wrap">

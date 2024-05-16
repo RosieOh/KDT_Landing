@@ -7,7 +7,7 @@
             content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
             name="viewport"
     />
-    <title>Java 풀스택 개발자 신청</title>
+    <title>AI·데이터 개발자 신청</title>
     <th:block th:replace="include/head :: head" ></th:block>
 </head>
 <body>
@@ -38,7 +38,7 @@
                 <div class="field">
                     <label class="label">교육과정<em>*</em></label>
                     <div class="control">
-                        <label><input class="" type="radio" name="course" value="FULLSTACK" checked readonly/><span>Java 풀스택 개발자 과정</span></label>
+                        <label><input class="" type="radio" name="course" value="BIGDATA" checked readonly/><span>AI·데이터 개발자 과정</span></label>
                     </div>
                 </div>
                 <div class="field">
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">풀스택 과정에 지원하게 된 동기와 앞으로의 포부에 대해서 작성해주세요. (250자 이상)<em>*</em>
+                    <label class="label">지원 동기와 취업 목표에 대해 기재해주세요. (250자 이상)<em>*</em>
                         <div class="paper">
                             <h5>
                                 작성 내용이 고민된다면 아래 가이드를 참고하세요!
@@ -138,20 +138,21 @@
                             </h5>
                             <div class="scroll_wrap">
                                 <div class="scrollBox">
-                                    <h5>- 개발자 혹은 풀스택에 관심을 가지게 된 이유와 교육에 대한 가치나 경험, 커리어 성장과 발전을 위한 계획을 작성해보세요.</h5>
-                                    <h5>- 교육 과정을 통해 얻고자 하는 가장 중요한 목표를 작성해보세요.</h5>
+                                    <h5>- 데이터 분야에 대한 관심과 경험이 있나요?</h5>
+                                    <h5>- 교육 산업에 대한 관심과 경험이 있나요?</h5>
+                                    <h5>- 데이터 서비스 개발자로서의 강한 의지와 직무적 자기계발 계획</h5>
                                 </div>
                             </div>
                         </div>
                     </label>
                     <div class="control">
-                        <textarea class="textarea" id="paperText1" name="paper1" required></textarea>
+                        <textarea class="textarea" id="paperText1" name="paper1" maxlength="1000" required></textarea>
                         <div class="textCount" id="paperCount1"><span>0</span>/1000</div>
                     </div>
                 </div>
                 <div class="field">
-                    <label class="label">개발자가 되기 위해 현재 본인이 보유한 역량 및 강점이 무엇이고, <br>
-                        강점을 발휘한 사례(경험)을 작성해주세요.(250자 이상)<em>*</em>
+                    <label class="label">자신이 보유한 역량 및 강점에 대해 기재해주세요. <br>
+                        해당 과정을 들으며 필요하다고 생각하는 역량 및 강점을 서술해도 좋아요! (250자 이상)<em>*</em>
                         <div class="paper">
                             <h5>
                                 작성 내용이 고민된다면 아래 가이드를 참고하세요!
@@ -159,15 +160,35 @@
                             </h5>
                             <div class="scroll_wrap">
                                 <div class="scrollBox">
-                                    <h5>- 본인의 역량과 강점을 기업이 어떻게 활용할 수 있는지 확인하는 문항이에요. </h5>
-                                    <h5>- 풀스택 개발자 과정을 이수하면서 얻게 될 역량 및 강점, 개발 직무 역량을 얻기 위한 본인의 노력, 이수한 교육 과정이나 프로그램, 관련 분야 (실무) 경험과 성과, 본인의 전공, 성격, 기술 등을 작성해보세요. </h5>
+                                    <h5>- 본인의 장점을 기업이 어떻게 활용할 수 있을지 작성해보세요. </h5>
+                                    <h5>- 해당 직무 역량을 얻기 위한 본인의 노력과 성과를 데이터나 수치를 근거로 작성해보세요.</h5>
+                                    <h5>- 데이터 분야 교육 경험이나 업무 경험에 자신의 전공, 성격, 기술 등 녹여내 작성해보세요.</h5>
                                 </div>
                             </div>
                         </div>
                     </label>
                     <div class="control">
-                        <textarea class="textarea" id="paperText2" name="paper2" required></textarea>
+                        <textarea class="textarea" id="paperText2" name="paper2" maxlength="1000" required></textarea>
                         <div class="textCount" id="paperCount2"><span>0</span>/1000</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">학업 수행 또는 실무 현장에서 팀원 간 의견이 충돌된 경험이 있다면 해결 과정 및 결과를 작성해주세요. (250자 이상)<em>*</em>
+                        <div class="paper">
+                            <h5>
+                                작성 내용이 고민된다면 아래 가이드를 참고하세요!
+                                <a href="javascript:" class="toggle">▼ 내용보기</a>
+                            </h5>
+                            <div class="scroll_wrap">
+                                <div class="scrollBox">
+                                    <h5>- 조별 과제, 팀프로젝트, 대회 출전 경험 등, 팀 내 갈등 해결 경험을 작성해보세요.</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="control">
+                        <textarea class="textarea" id="paperText3" name="paper3" maxlength="1000" required></textarea>
+                        <div class="textCount" id="paperCount3"><span>0</span>/1000</div>
                     </div>
                 </div>
                 <div class="field">
@@ -193,7 +214,7 @@
                 <div class="agree">
                     <h4>
                         개인정보 수집 및 이용 동의
-                        <a href="javascript:" class="toggle">▼ 내용보기</a>
+                        <a href="javascript:;" class="toggle">▼ 내용보기</a>
                     </h4>
                     <div class="scroll_wrap">
                         <div class="scrollBox">

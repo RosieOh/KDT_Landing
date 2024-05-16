@@ -10,7 +10,7 @@
           content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
           name="viewport"
   />
-  <title>AI 데이터 과정</title>
+  <title>AI·데이터 개발자 과정</title>
   <th:block th:replace="include/head :: head"></th:block>
 
 </head>
@@ -27,12 +27,13 @@
                   <img th:src="@{/picture/bigdata/banner_big1.png}" alt="">
                 </picture>
                   <div class="flex">
-                    <a th:href="@{/subSign_big}" target='_blank'>
+                    <!-- 신청하기  -->
+<!--                    <a th:href="@{/subSign_big}" target='_blank'>-->
                       <picture>
                         <source srcset="../../static/images/picture/common2/common2_mobile/banner_btn.svg" media="(max-width: 450px)">
-                        <img th:src="@{/picture/common2/banner_btn.png}" alt="" class="button">
+                        <img th:src="@{/picture/common2/banner_btn.png}" alt="" class="button ban_btn">
                       </picture>
-                    </a>
+<!--                    </a>-->
                     <picture>
                       <source srcset="../../static/images/picture/common2/common2_mobile/banner_btn2.png" media="(max-width: 450px)">
                       <img th:src="@{/picture/common2/banner_btn2.png}" alt="" >
@@ -193,11 +194,12 @@
           </picture>
 
           <div class="procedure">
-            <a th:href="@{/subSign_big}" target='_blank'>
+            <!-- 신청하기  -->
+<!--            <a th:href="@{/subSign_big}" target='_blank'>-->
               <picture>
-                <img th:src="@{/picture/common2/procedure1.png}" alt="" class="img_hover">
+                <img th:src="@{/picture/common2/procedure1.png}" alt="" class="img_hover ban_btn">
               </picture>
-            </a>
+<!--            </a>-->
             <picture>
               <img th:src="@{/picture/common2/procedure2.png}" alt="">
             </picture>
@@ -210,11 +212,12 @@
 
           <div class="procedure_mobile">
             <div class="flex">
-              <a th:href="@{/subSign_big}" target="_blank">
+              <!-- 신청하기  -->
+<!--              <a th:href="@{/subSign_big}" target="_blank">-->
                 <picture>
-                  <img th:src="@{/picture/common2/common2_mobile/procedure2.svg}" alt="" class="img_hover">
+                  <img th:src="@{/picture/common2/common2_mobile/procedure2.svg}" alt="" class="img_hover ban_btn">
                 </picture>
-              </a>
+<!--              </a>-->
               <picture>
                 <img th:src="@{/picture/common2/common2_mobile/procedure3.svg}" alt="">
               </picture>
@@ -242,8 +245,31 @@
         <th:block th:replace="sub/sub_inclulde/digital_tran :: digital_tran"></th:block>
         <th:block th:replace="sub/sub_inclulde/map :: map"></th:block>
 
-<!--  <script th:src="@{/static/js/slide.js}"></script>-->
     <th:block th:replace="include/footer :: footer"></th:block>
+      <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
+      <div class="bottom_banner">
+        <section class="container_side ">
+          <div class="image_content direct_column">
+            <picture>
+              <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner1.svg" media="(max-width: 450px)">
+              <img th:src="@{/picture/common2/bottom_banner1.png}" alt="df">
+            </picture>
+            <!-- 신청하기  -->
+            <div class="flex">
+<!--              <a th:href="@{/subSign_big}" target='_blank'>-->
+                <picture>
+                  <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner_btn.svg" media="(max-width: 450px)">
+                  <img th:src="@{/picture/common2/bottom_banner2.svg}" alt="df" class="bottom_button ban_btn">
+                </picture>
+<!--              </a>-->
+              <picture>
+                <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner2.png" media="(max-width: 450px)" ids="ban_btn">
+                <img src="" alt="" >
+              </picture>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   </body>
 </html>

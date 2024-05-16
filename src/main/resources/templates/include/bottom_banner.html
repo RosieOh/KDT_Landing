@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <th:block th:fragment="bottom_banner">
+      <div class="bottom_banner">
+        <section class="container_side ">
+          <div class="image_content direct_column">
+            <picture>
+              <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner1.svg" media="(max-width: 450px)">
+              <img th:src="@{/picture/common2/bottom_banner1.png}" alt="df">
+            </picture>
+            <div class="flex">
+              <picture>
+                <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner_btn.svg" media="(max-width: 450px)">
+                <img th:src="@{/picture/common2/bottom_banner2.svg}" alt="df" class="bottom_button" id="ban_btn">
+              </picture>
+              <picture>
+                <source srcset="../../../static/images/picture/common2/common2_mobile/bottom_banner2.png" media="(max-width: 450px)" ids="ban_btn">
+                <img src="" alt="" >
+              </picture>
+            </div>
+          </div>
+        </section>
+      </div>
+    </th:block>
+  </body>
+</html>
